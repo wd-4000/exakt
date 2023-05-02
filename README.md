@@ -2,19 +2,19 @@
 Get your module up and running quickly.
 
 Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
+- Name: exakt
 - Package name: exakt-ui
 - Description: My new Nuxt module
 -->
 
-# My Module
+# exakt
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-My new Nuxt module for doing amazing things.
+a simple nuxt ui library focused on doing as much as possible with css
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
@@ -22,9 +22,9 @@ My new Nuxt module for doing amazing things.
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- 💇‍♀️ &nbsp; mostly uses css to do things
+- 👜 &nbsp; relatively lightweight
+- 👁️‍🗨️ &nbsp; customizable
 
 ## Quick Setup
 
@@ -51,7 +51,7 @@ export default defineNuxtConfig({
 })
 ```
 
-That's it! You can now use My Module in your Nuxt app ✨
+That's it! You can now use exakt in your Nuxt app ✨
 
 ## Development
 
