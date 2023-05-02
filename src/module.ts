@@ -91,7 +91,7 @@ export default defineNuxtModule<ModuleOptions>({
       });
     });
 
-    nuxt.options.css.push(resolver.resolve("./css/main.scss"));
+    nuxt.options.css.push(resolver.resolve("./runtime/css/main.scss"));
     addComponentsDir({ path: resolver.resolve("./components") });
   },
 });
