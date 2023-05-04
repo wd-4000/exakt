@@ -91,7 +91,11 @@ export default defineNuxtModule<ModuleOptions>({
       });
     });
 
-    nuxt.options.css.push(resolver.resolve("./runtime/css/main.scss"));
+    await fs.promises.rename(
+      resolver.resolve("./runtime/main.scssx"),
+      resolver.resolve("../node_modules/.cache/exakt-ui/main.scss")
+    );
+    nuxt.options.css.push(resolver.resolve("../node_modules/.cache/exakt-ui/main.scss"));
     addComponentsDir({ path: resolver.resolve("./components") });
   },
 });
