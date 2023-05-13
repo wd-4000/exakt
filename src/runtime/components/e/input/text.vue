@@ -120,7 +120,7 @@ const transitionEnd = (a) => {
   width: 100%;
   box-sizing: border-box;
 
-  // padding: 0px var(--core-padding-x);
+  // padding: 0px var(--e-core-padding-x);
 }
 .input {
   border: none;
@@ -129,10 +129,10 @@ const transitionEnd = (a) => {
   width: 100%;
   outline: none;
   resize: none;
-  margin: var(--core-padding-x)/2;
+  margin: var(--e-core-padding-x)/2;
   font-size: 1rem;
   color: var(--e-color-dark);
-  font-family: $font-family;
+  font-family: var(--e-font-family);
 height:v-bind(height);
 
   &:-webkit-autofill {

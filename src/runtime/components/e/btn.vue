@@ -145,7 +145,7 @@ const hoverColor = computed(() => {
   justify-content: center;
   align-content: center;
   align-items: center;
-  padding: 0.3rem var(--core-padding-x);
+  padding: 0.3rem var(--e-core-padding-x);
   overflow: hidden;
   color: var(--e-color-dark);
   outline: none;
@@ -158,7 +158,7 @@ const hoverColor = computed(() => {
 
   transition: background 0.4s, color 0.3s, opacity 0.4s;
 
-  font-family: $font-family;
+  font-family: var(--e-font-family);
 
   &.loading {
     pointer-events: none;
@@ -228,7 +228,7 @@ const hoverColor = computed(() => {
   }
 }
 
-@media screen and (max-width: $md-screen-breakpoint) {
+@media screen and (max-width: var(--e-md-screen-breakpoint)) {
   .e-btn.fab {
     right: 1rem;
   }
