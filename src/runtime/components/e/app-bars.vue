@@ -72,7 +72,7 @@ const { $store, $platform } = useNuxtApp();
     z-index: 4;
 }
 
-@media screen and (max-width: ($md-screen-breakpoint)) {
+@media screen and (max-width: (var(--e-md-screen-breakpoint))) {
     .title-bar {
         display: unset;
         top: 0px;

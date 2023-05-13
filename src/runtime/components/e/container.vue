@@ -14,7 +14,7 @@ defineProps(["noBtnPadding", "forceFullWidth"]);
 
   width: 95%;
 
-  @media (max-width: $md-screen-breakpoint) {
+  @media (max-width: var(--e-md-screen-breakpoint)) {
     &.forceFullWidth {
       width: 100%;
     }
@@ -22,11 +22,11 @@ defineProps(["noBtnPadding", "forceFullWidth"]);
 
   $padding: 0rem;
 
-  @media (min-width: $md-screen-breakpoint) {
+  @media (min-width: var(--e-md-screen-breakpoint)) {
     width: calc(85% - $padding);
   }
 
-  @media (min-width: $l-screen-breakpoint) {
+  @media (min-width: var(--e-l-screen-breakpoint)) {
     width: calc(65% - $padding);
   }
 }
@@ -46,6 +46,6 @@ defineProps(["noBtnPadding", "forceFullWidth"]);
   word-wrap: break-word;
   box-sizing: border-box; /* Opera/IE 8+ */
 
-  padding: 0px var(--core-padding-x);
+  padding: 0px var(--e-core-padding-x);
 }
 </style>

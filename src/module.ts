@@ -7,7 +7,7 @@ import {
   extendViteConfig,
 } from "@nuxt/kit";
 import fs from "fs";
-// Module options TypeScript inteface definition
+// Module options TypeScript interface definition
 export interface ModuleOptions {
   colors: {
     primary?: string;
@@ -22,6 +22,7 @@ export interface ModuleOptions {
     xl?: string;
   };
   borderRadius: string;
+  corePaddingX: string;
   font: string;
 }
 
@@ -39,6 +40,7 @@ const defaults: ModuleOptions = {
     xl: "60em",
   },
   borderRadius: "8px",
+  corePaddingX: "1rem",
   font: "Roboto, sans-serif",
 };
 
@@ -56,25 +58,35 @@ export default defineNuxtModule<ModuleOptions>({
     addPlugin(resolver.resolve("./runtime/plugin"));
 
     /* Variables file section */
-    await fs.promises.mkdir("node_modules/.cache/exakt-ui", {
-      recursive: true,
-    });
+    await fs.promises.mkdir(
+      resolver.resolve("../node_modules/.cache/exakt-ui"),
+      {
+        recursive: true,
+      }
+    );
 
-    // Create variables file
-    let variables = "";
+    // Create variables files
+    let SCSSvariables = "";
+    let CSSvariables = ":root{";
 
     for (const [key, value] of Object.entries(options.colors)) {
-      variables += `$root-${key}: ${value}; `;
+      SCSSvariables += `$root-${key}: ${value}; `;
     }
     for (const [key, value] of Object.entries(options.breakpoints)) {
-      variables += `$${key}-screen-breakpoint: ${value}; `;
+      CSSvariables += `--e-${key}-screen-breakpoint: ${value}; `;
     }
-    variables += `$font-family: ${options.font}; `;
-    variables += `$rounded-border-radius: ${options.borderRadius}; `;
+
+    CSSvariables += `--e-font-family: ${options.font}; `;
+    CSSvariables += `--e-rounded-border-radius: ${options.borderRadius}; `;
+    CSSvariables += `--e-core-padding-x: ${options.corePaddingX}; `;
 
     await fs.promises.writeFile(
-      "node_modules/.cache/exakt-ui/variables.scss",
-      new Uint8Array(Buffer.from(variables))
+      resolver.resolve("../node_modules/.cache/exakt-ui/variables.scss"),
+      new Uint8Array(Buffer.from(SCSSvariables))
+    );
+    await fs.promises.writeFile(
+      resolver.resolve("../node_modules/.cache/exakt-ui/variables.css"),
+      new Uint8Array(Buffer.from(CSSvariables + "}"))
     );
 
     extendViteConfig((config) => {
@@ -91,11 +103,23 @@ export default defineNuxtModule<ModuleOptions>({
       });
     });
 
-    await fs.promises.rename(
-      resolver.resolve("./runtime/main.scssx"),
+    // Yeah, I know, it's ugly, but it (mostly) works.
+    //    Nuxt seems insistent on transpiling the scss file to regular css when packaging the module,
+    //    which breaks the scss variables.
+
+    await fs.promises.copyFile(
+      resolver.resolve("./runtime/css/main.scssx"),
       resolver.resolve("../node_modules/.cache/exakt-ui/main.scss")
     );
-    nuxt.options.css.push(resolver.resolve("../node_modules/.cache/exakt-ui/main.scss"));
-    addComponentsDir({ path: resolver.resolve("./components") });
+
+    nuxt.options.css.push(
+      resolver.resolve("../node_modules/.cache/exakt-ui/main.scss")
+    );
+    nuxt.options.css.push(resolver.resolve("./runtime/css/util.css"));
+    nuxt.options.css.push(
+      resolver.resolve("../node_modules/.cache/exakt-ui/variables.css")
+    );
+
+    addComponentsDir({ path: resolver.resolve("./runtime/components") });
   },
 });
