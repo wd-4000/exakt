@@ -3,7 +3,7 @@ Get your module up and running quickly.
 
 Find and replace all on all files (CMD+SHIFT+F):
 - Name: exakt
-- Package name: exakt-ui
+- Package name: @exakt/ui
 - Description: My new Nuxt module
 -->
 
@@ -28,25 +28,25 @@ a simple nuxt ui library focused on doing as much as possible with css
 
 ## Quick Setup
 
-1. Add `exakt-ui` dependency to your project
+1. Add `@exakt/ui` dependency to your project
 
 ```bash
 # Using pnpm
-pnpm add -D exakt-ui
+pnpm add -D @exakt/ui
 
 # Using yarn
-yarn add --dev exakt-ui
+yarn add --dev @exakt/ui
 
 # Using npm
-npm install --save-dev exakt-ui
+npm install --save-dev @exakt/ui
 ```
 
-2. Add `exakt-ui` to the `modules` section of `nuxt.config.ts`
+2. Add `@exakt/ui` to the `modules` section of `nuxt.config.ts`
 
 ```js
 export default defineNuxtConfig({
   modules: [
-    'exakt-ui'
+    '@exakt/ui'
   ]
 })
 ```
@@ -80,14 +80,14 @@ npm run release
 ```
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/exakt-ui/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-version-href]: https://npmjs.com/package/exakt-ui
+[npm-version-src]: https://img.shields.io/npm/v/@exakt/ui/latest.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-version-href]: https://npmjs.com/package/@exakt/ui
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/exakt-ui.svg?style=flat&colorA=18181B&colorB=28CF8D
-[npm-downloads-href]: https://npmjs.com/package/exakt-ui
+[npm-downloads-src]: https://img.shields.io/npm/dm/@exakt/ui.svg?style=flat&colorA=18181B&colorB=28CF8D
+[npm-downloads-href]: https://npmjs.com/package/@exakt/ui
 
-[license-src]: https://img.shields.io/npm/l/exakt-ui.svg?style=flat&colorA=18181B&colorB=28CF8D
-[license-href]: https://npmjs.com/package/exakt-ui
+[license-src]: https://img.shields.io/npm/l/@exakt/ui.svg?style=flat&colorA=18181B&colorB=28CF8D
+[license-href]: https://npmjs.com/package/@exakt/ui
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-18181B?logo=nuxt.js
 [nuxt-href]: https://nuxt.com
