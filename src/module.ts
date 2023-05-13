@@ -73,7 +73,7 @@ export default defineNuxtModule<ModuleOptions>({
       SCSSvariables += `$root-${key}: ${value}; `;
     }
     for (const [key, value] of Object.entries(options.breakpoints)) {
-      CSSvariables += `--e-${key}-screen-breakpoint: ${value}; `;
+      SCSSvariables += `$e-${key}-screen-breakpoint: ${value}; `;
     }
 
     CSSvariables += `--e-font-family: ${options.font}; `;

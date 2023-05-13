@@ -141,7 +141,7 @@ const select = (i: number) => {
 
 
 
-@media screen and (max-width: var(--e-md-screen-breakpoint)) {
+@media screen and (max-width: $e-md-screen-breakpoint) {
   .list {
     top: unset;
     bottom: 0px;

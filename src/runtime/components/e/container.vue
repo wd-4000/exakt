@@ -14,7 +14,7 @@ defineProps(["noBtnPadding", "forceFullWidth"]);
 
   width: 95%;
 
-  @media (max-width: var(--e-md-screen-breakpoint)) {
+  @media (max-width: $e-md-screen-breakpoint) {
     &.forceFullWidth {
       width: 100%;
     }
@@ -22,7 +22,7 @@ defineProps(["noBtnPadding", "forceFullWidth"]);
 
   $padding: 0rem;
 
-  @media (min-width: var(--e-md-screen-breakpoint)) {
+  @media (min-width: $e-md-screen-breakpoint) {
     width: calc(85% - $padding);
   }
 

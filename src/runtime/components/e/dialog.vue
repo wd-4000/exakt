@@ -48,7 +48,7 @@ const state = reactive({ active: false });
   overflow: clip;
 }
 
-@media (max-width: var(--e-md-screen-breakpoint)) {
+@media (max-width: $e-md-screen-breakpoint) {
   .dialog {
     width: 100%;
     max-width: 100vw;
