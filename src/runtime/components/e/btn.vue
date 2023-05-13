@@ -46,7 +46,6 @@ const props = withDefaults(
     loadingGradient?: boolean;
     fab?: boolean;
     disabled?: boolean;
-    to?: string;
     type?: "button" | "submit" | "reset";
   }>(),
   { type: "button", background: "primary", solid: true }
@@ -228,7 +227,7 @@ const hoverColor = computed(() => {
   }
 }
 
-@media screen and (max-width: var(--e-md-screen-breakpoint)) {
+@media screen and (max-width: $e-md-screen-breakpoint) {
   .e-btn.fab {
     right: 1rem;
   }

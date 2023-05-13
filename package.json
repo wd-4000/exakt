@@ -31,7 +31,7 @@
     "@nuxt/kit": "^3.2.3",
     "blurhash": "^2.0.5",
     "lodash": "^4.17.21",
-    "sass": "^1.58.3"
+    "sass": "^1.62.1"
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",

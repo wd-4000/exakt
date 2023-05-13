@@ -33,7 +33,7 @@ const emit = defineEmits(["update:modelValue"]);
   }
 }
 
-@media screen and (max-width: var(--e-md-screen-breakpoint)) {
+@media screen and (max-width: $e-md-screen-breakpoint) {
   .focus-sheet {
     background-color: rgba(var(--e-color-light-rgb), 0.5);
   }
