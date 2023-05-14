@@ -2,6 +2,8 @@
   <e-btn
     class="a-btn"
     :loading="loading"
+    :solid="false"
+    background="transparent"
   >
     <e-icon
       :icon="icon"
