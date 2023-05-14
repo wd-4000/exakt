@@ -12,16 +12,18 @@
   </div>
 
   <div class="bar-container">
-    <e-container class="bar-e-container" :force-full-width="true">
+    <e-container
+      class="bar-e-container"
+      :force-full-width="true"
+    >
       <div class="rounded bar">
         <e-progress-linear
           :model-value="props.loading"
           class="md-and-up-only"
         />
         <div class="bar-content">
-      
           <div class="bar-section">
-                <!-- Normally the logo -->
+            <!-- Normally the logo -->
             <div class="md-and-up-only flex-stretch">
               <slot name="center" />
             </div>
@@ -31,7 +33,10 @@
 
           <!-- Normally the sign in button -->
           <div class="md-and-up-only bar-section">
-            <slot name="right" class="fullwidth" />
+            <slot
+              name="right"
+              class="fullwidth"
+            />
           </div>
         </div>
       </div>
