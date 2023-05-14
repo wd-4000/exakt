@@ -12,8 +12,8 @@
  withDefaults(
   defineProps<{
     icon: string;
-    color: string;
-    size: number | string;
+    color?: string;
+    size?: number | string;
   }>(),
   {
     icon: "",
