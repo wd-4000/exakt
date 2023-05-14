@@ -44,9 +44,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, watch } from "vue";
-const input = ref<HTMLInputElement>();
-const emit = defineEmits(["update:modelValue"]);
+import { ref, watch, reactive, computed } from "#imports";
 
 const inputState = reactive({
   overtakeStyle: "",
@@ -54,15 +52,21 @@ const inputState = reactive({
   focused: false,
 });
 
+const input = ref<HTMLInputElement>();
+const emit = defineEmits(["update:modelValue"]);
+
 const focus = () => {
-  if(!input.value){
-    return
+  if (!input.value) {
+    return;
   }
   const length = input.value.value.length;
 
   // Not all input types support setSelectionRange
-  if(!inputState.focused && ['text', 'search', 'URL', 'tel', 'password'].includes(props.type)) {
-     input.value.setSelectionRange(length, length);
+  if (
+    !inputState.focused &&
+    ["text", "search", "URL", "tel", "password"].includes(props.type)
+  ) {
+    input.value.setSelectionRange(length, length);
   }
   input.value.focus();
 };
@@ -86,7 +90,15 @@ const props = withDefaults(
     spellcheck?: boolean;
     height?: string;
   }>(),
-  { icon: undefined, label: "Search", solid: false, type: "text" }
+  {
+    icon: undefined,
+    label: "Search",
+    solid: false,
+    type: "text",
+    modelValue: "",
+    autocomplete: "off",
+    height: "unset",
+  }
 );
 
 watch(
@@ -103,7 +115,7 @@ const getInputStyle = (prop: string) => {
   return c;
 };
 
-const transitionEnd = (a) => {
+const transitionEnd = () => {
   inputState.autofilled = !inputState.autofilled;
 
   if (inputState.autofilled) {
@@ -133,11 +145,11 @@ const transitionEnd = (a) => {
   width: 100%;
   outline: none;
   resize: none;
-  margin: var(--e-core-padding-x)/2;
+  margin: var(--e-core-padding-x) / 2;
   font-size: 1rem;
   color: var(--e-color-dark);
   font-family: var(--e-font-family);
-height:v-bind(height);
+  height: v-bind(height);
 
   &:-webkit-autofill {
     // Expose a hook for JavaScript when auto fill is shown.

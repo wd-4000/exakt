@@ -11,7 +11,7 @@
   </div>
 </template>
 <script setup lang="ts">
-const props = defineProps<{
+/*const props =*/ defineProps<{
   modelValue: boolean;
   opaqueOnDesktop?: boolean;
 }>();

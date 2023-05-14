@@ -27,7 +27,6 @@
           class="rounded lv-blur fullsize border-rad-custom"
           :class="{ hidden: state.loaded, rounded: !borderRadius }"
         />
-        <!--     @transitionend.passive="transitionend" -->
       </div>
 
       <div
@@ -146,11 +145,7 @@ const dimensionFix = (value) => {
   return value;
 };
 
-const transitionend = () => {
-  if (state.loaded) {
-    state.renderBlur = false;
-  }
-};
+
 
 const onIntersect = (intersecting) => {
   if (intersecting && !state.intersected) {

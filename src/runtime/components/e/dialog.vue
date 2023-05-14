@@ -28,11 +28,10 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+ defineProps<{
   modelValue: boolean;
 }>();
 const emit = defineEmits(["update:modelValue"]);
-const state = reactive({ active: false });
 </script>
 <style scoped lang="scss">
 .dialog-wrap {

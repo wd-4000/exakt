@@ -9,7 +9,19 @@
   </svg>
 </template>
 <script setup lang="ts">
-defineProps(["icon", "size", "color"]);
+ withDefaults(
+  defineProps<{
+    icon: string;
+    color: string;
+    size: number | string;
+  }>(),
+  {
+    icon: "",
+    color: "",
+    size: "21",
+  }
+);
+
 </script>
 <style scoped>
 svg {

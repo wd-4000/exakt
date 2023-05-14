@@ -1,6 +1,10 @@
 <template>
   <Transition name="fade">
-    <div v-if="modelValue" class="e-progress-linear" :class="posClass" />
+    <div
+      v-if="modelValue"
+      class="e-progress-linear"
+      :class="posClass"
+    />
   </Transition>
 </template>
 <script setup lang="ts">

@@ -9,5 +9,13 @@
 <script setup lang="ts">
 import { mdiEye, mdiEyeOff } from "@mdi/js";
 const emit = defineEmits(["update:modelValue"]);
-defineProps(["modelValue"]);
+
+withDefaults(
+  defineProps<{
+    modelValue: boolean;
+  }>(),
+  {
+    modelValue: false,
+  }
+);
 </script>

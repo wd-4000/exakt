@@ -12,7 +12,17 @@
   </div>
 </template>
 <script setup lang="ts">
-defineProps(["noBtnPadding", "forceFullWidth"]);
+withDefaults(
+  defineProps<{
+    noBtnPadding: boolean;
+    forceFullWidth: boolean;
+
+  }>(),
+  {
+    noBtnPadding: false,
+    forceFullWidth:false
+  }
+);
 </script>
 <style lang="scss" scoped>
 .content {
