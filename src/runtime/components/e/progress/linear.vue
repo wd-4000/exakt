@@ -1,31 +1,29 @@
 <template>
   <Transition name="fade">
-    <div
-      v-if="modelValue"
-      class="e-progress-linear"
-      :class="posClass"
-    />
+    <div v-if="modelValue" class="e-progress-linear" :class="posClass" />
   </Transition>
 </template>
 <script setup lang="ts">
-const props = withDefaults(defineProps<{
-  modelValue: boolean;
-  position?: 'top' | 'bottom' | null;
-
-}>(), {
-  position: 'bottom'
-});
+import { computed } from "vue";
+const props = withDefaults(
+  defineProps<{
+    modelValue: boolean;
+    position?: "top" | "bottom" | null;
+  }>(),
+  {
+    position: "bottom",
+  }
+);
 
 const posClass = computed(() => {
-  if (props.position === 'top') {
-    return 'pos-top'
-  } else if (props.position === 'bottom') {
-    return 'pos-bottom'
-
+  if (props.position === "top") {
+    return "pos-top";
+  } else if (props.position === "bottom") {
+    return "pos-bottom";
   }
 
-  return null
-})
+  return null;
+});
 </script>
 <style scoped lang="scss">
 .pos-top,
