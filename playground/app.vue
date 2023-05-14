@@ -1,46 +1,91 @@
 <template>
   <div>
     <EContainer>
-      <h1 class="text-center mb-0 pb-3">Exakt UI</h1>
-      <h3 >Buttons</h3>
-      <EBtn :loading="state.button1loading" @click="state.button1loading = !state.button1loading">Solid button</EBtn>
-      <EBtn :loading="state.button1loading" @click="state.button1loading = !state.button1loading" :loading-gradient="true">Gradient-loading button</EBtn>
+      <h1 class="text-center mb-0 pb-3">
+        Exakt UI
+      </h1>
+      <h3>Buttons</h3>
+      <EBtn
+        :loading="state.button1loading"
+        @click="state.button1loading = !state.button1loading"
+      >
+        Solid button
+      </EBtn>
+      <EBtn
+        :loading="state.button1loading"
+        :loading-gradient="true"
+        @click="state.button1loading = !state.button1loading"
+      >
+        Gradient-loading button
+      </EBtn>
       <div style="position: relative;">
-<e-progress-linear :model-value="true"/>
-
+        <e-progress-linear :model-value="true" />
       </div>
       
-      <h3 >Alert</h3>
-      <EAlert type="error">This is an error alert</EAlert>
+      <h3>Alert</h3>
+      <EAlert type="error">
+        This is an error alert
+      </EAlert>
   
-      <h3 >Dialogs</h3>
-      <EDialog v-model="state.dialog1" title="Dialog title">
+      <h3>Dialogs</h3>
+      <EDialog
+        v-model="state.dialog1"
+        title="Dialog title"
+      >
         <p>Dialog content</p>
-        <template v-slot:buttons>
-          <EBtn @click="state.dialog1 = false">Close</EBtn>
+        <template #buttons>
+          <EBtn @click="state.dialog1 = false">
+            Close
+          </EBtn>
         </template>
       </EDialog>
-      <EBtn @click="state.dialog1 = true">Open dialog</EBtn>
+      <EBtn @click="state.dialog1 = true">
+        Open dialog
+      </EBtn>
 
-      <h3 >Dropdown</h3>
-      <EDropdown width="10rem" :items="presets" @update:model-value="state.dropdown = $event">
-        <EBtn :solid="true" background="primary" :icon="mdiAbacus">
-          <e-icon v-if="presets[state.dropdown].icon" :size="20" :icon="mdiPlus" class="mr-2" />
+      <h3>Dropdown</h3>
+      <EDropdown
+        width="10rem"
+        :items="presets"
+        @update:model-value="state.dropdown = $event"
+      >
+        <EBtn
+          :solid="true"
+          background="primary"
+          :icon="mdiAbacus"
+        >
+          <e-icon
+            v-if="presets[state.dropdown].icon"
+            :size="20"
+            :icon="mdiPlus"
+            class="mr-2"
+          />
           Menu
         </EBtn>
       </EDropdown>
-      <h2 class="text-center mb-0 pb-3">Form inputs</h2>
-<hr>
-      <h3 >Radio</h3>
-      <e-input-radio :items="presets" v-model="state.dropdown" use-key="name" />
-      <h3 >Input</h3>
-      <e-input-text label="Regular input" :solid="true">
-      </e-input-text>
+      <h2 class="text-center mb-0 pb-3">
+        Form inputs
+      </h2>
+      <hr>
+      <h3>Radio</h3>
+      <e-input-radio
+        v-model="state.dropdown"
+        :items="presets"
+        use-key="name"
+      />
+      <h3>Input</h3>
+      <e-input-text
+        label="Regular input"
+        :solid="true"
+      />
 
-      <e-input-text type="textarea" label="Text area" :solid="true" class="mt-2">
-      </e-input-text>
+      <e-input-text
+        type="textarea"
+        label="Text area"
+        :solid="true"
+        class="mt-2"
+      />
     </EContainer>
-
   </div>
 </template>
 

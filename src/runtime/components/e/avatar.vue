@@ -11,7 +11,12 @@
       :src="src"
       border-radius="100%"
     />
-    <div v-else><e-icon :size="size" :icon="mdiAccountCircle"></e-icon></div>
+    <div v-else>
+      <e-icon
+        :size="size"
+        :icon="mdiAccountCircle"
+      />
+    </div>
   </div>
 </template>
 <script setup lang="ts">

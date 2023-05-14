@@ -1,6 +1,13 @@
 <template>
-  <div v-if="disabled || !to"><slot /></div>
-  <router-link :to="to" v-else><slot /></router-link>
+  <div v-if="disabled || !to">
+    <slot />
+  </div>
+  <router-link
+    v-else
+    :to="to"
+  >
+    <slot />
+  </router-link>
 </template>
 <script setup lang="ts">
 defineProps<{

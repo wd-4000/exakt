@@ -2,17 +2,20 @@
   <div class="title-bar">
     <e-progress-linear :model-value="props.loading" />
     <div class="pf-wrap">
-      <slot name="left"></slot>
+      <slot name="left" />
     </div>
-    <slot name="center"></slot>
+    <slot name="center" />
 
     <div class="pf-wrap">
-      <slot name="right"></slot>
+      <slot name="right" />
     </div>
   </div>
 
   <div class="bar-container">
-    <e-container class="bar-e-container" :forceFullWidth="true">
+    <e-container
+      class="bar-e-container"
+      :force-full-width="true"
+    >
       <div class="rounded bar">
         <e-progress-linear
           :model-value="props.loading"
@@ -20,11 +23,14 @@
         />
 
         <div class="md-and-up-only flex-stretch">
-          <slot name="center"></slot>
+          <slot name="center" />
         </div>
-        <slot name="nav-items"></slot>
+        <slot name="nav-items" />
         <div class="md-and-up-only flex-stretch">
-          <slot name="right" class="fullwidth"></slot>
+          <slot
+            name="right"
+            class="fullwidth"
+          />
         </div>
       </div>
     </e-container>

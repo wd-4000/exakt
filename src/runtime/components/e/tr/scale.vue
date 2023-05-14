@@ -1,8 +1,8 @@
 <template>
-    <!-- wrap the built-in Transition component -->
-    <Transition name="e-tr-scale">
-        <slot></slot> <!-- pass down slot content -->
-    </Transition>
+  <!-- wrap the built-in Transition component -->
+  <Transition name="e-tr-scale">
+    <slot /> <!-- pass down slot content -->
+  </Transition>
 </template>
 
 <script setup lang="ts">

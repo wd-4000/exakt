@@ -2,12 +2,12 @@
   <div>
     <Transition name="fade">
       <div
-        class="focus-sheet"
-        @click="emit('update:modelValue', false)"
-        :class="{ 'opaque-on-desktop': opaqueOnDesktop }"
         v-if="modelValue"
-      ></div
-    ></Transition>
+        class="focus-sheet"
+        :class="{ 'opaque-on-desktop': opaqueOnDesktop }"
+        @click="emit('update:modelValue', false)"
+      />
+    </Transition>
   </div>
 </template>
 <script setup lang="ts">

@@ -1,6 +1,9 @@
 <template>
   <div class="flex-stretch">
-    <e-link :to="to" class="flex-stretch fullwidth">
+    <e-link
+      :to="to"
+      class="flex-stretch fullwidth"
+    >
       <e-btn
         :active="active"
         class="button fullwidth"
@@ -11,16 +14,25 @@
       >
         <div class="content">
           <div
+            v-if="icon"
             class="icon-wrapper flex-center"
             :class="{ 'mr-2': label, 'mx-4': !label }"
-            v-if="icon"
           >
-            <e-icon :icon="icon" class="icon" :size="size" />
+            <e-icon
+              :icon="icon"
+              class="icon"
+              :size="size"
+            />
             <transition name="fade">
-              <div class="icon-alert" v-if="alert" />
+              <div
+                v-if="alert"
+                class="icon-alert"
+              />
             </transition>
           </div>
-          <p v-if="label">{{ label }}</p>
+          <p v-if="label">
+            {{ label }}
+          </p>
         </div>
         <slot />
       </e-btn>
@@ -57,7 +69,7 @@ const active = computed(() => {
   return route && route.path === props.to;
 });
 const inactive = computed(() => {
-  return !active && Boolean(props.icon);
+  return !active.value && Boolean(props.icon);
 });
 </script>
 

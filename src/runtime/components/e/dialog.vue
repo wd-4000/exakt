@@ -1,10 +1,16 @@
 <template>
   <div>
-    <e-focus-sheet :model-value="modelValue" :opaque-on-desktop="true"
-      @update:model-value="emit('update:modelValue', $event)" />
+    <e-focus-sheet
+      :model-value="modelValue"
+      :opaque-on-desktop="true"
+      @update:model-value="emit('update:modelValue', $event)"
+    />
 
     <e-tr-scale :multiplier="1.3">
-      <div class="dialog-wrap flex-center" v-if="modelValue">
+      <div
+        v-if="modelValue"
+        class="dialog-wrap flex-center"
+      >
         <div class="dialog rounded px-6 pe-6 pb-2">
           <div class="mb-4">
             <h2 class="ma-0 pa-0">
@@ -13,7 +19,7 @@
           </div>
           <slot />
           <div class="button-bar me-4 mb-3">
-            <slot name="buttons"></slot>
+            <slot name="buttons" />
           </div>
         </div>
       </div>

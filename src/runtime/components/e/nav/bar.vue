@@ -1,7 +1,13 @@
 <template>
-  <nav class="nav e-blur" :class="{ fixed }">
-    <e-container :noBtnPadding="true" :forceFullWidth="true"
-      ><div class="nav-content">
+  <nav
+    class="nav e-blur"
+    :class="{ fixed }"
+  >
+    <e-container
+      :no-btn-padding="true"
+      :force-full-width="true"
+    >
+      <div class="nav-content">
         <slot />
       </div>
     </e-container>

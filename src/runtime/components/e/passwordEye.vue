@@ -1,5 +1,7 @@
 <template>
-  <e-icon-button class="rounded pa-1" size="20"
+  <e-icon-button
+    class="rounded pa-1"
+    size="20"
     :icon="modelValue ? mdiEye : mdiEyeOff"
     @click.stop="emit('update:modelValue', !modelValue)"
   />

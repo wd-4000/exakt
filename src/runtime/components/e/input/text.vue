@@ -2,15 +2,19 @@
   <div class="pos-wrap">
     <div
       class="wrapper fullwidth"
-      @click="focus"
       :style="inputState.overtakeStyle"
       :class="{ rounded: solid, solid }"
+      @click="focus"
     >
-      <e-icon :icon="icon" size="21" v-if="icon"></e-icon>
+      <e-icon
+        v-if="icon"
+        :icon="icon"
+        size="21"
+      />
       <textarea
         v-if="type === 'textarea'"
-        v-model="currentText"
         ref="input"
+        v-model="currentText"
         class="input"
         :placeholder="label"
         autocomplete="off"
@@ -21,20 +25,20 @@
       />
       <input
         v-else
+        ref="input"
+        v-model="currentText"
         :disabled="disabled"
         :type="type"
         :autocomplete="autocomplete"
         :spellcheck="spellcheck"
         class="input"
-        @click.stop=""
         :required="required"
-        v-model="currentText"
-        ref="input"
         :placeholder="label"
+        @click.stop=""
         @focus="inputState.focused = true"
         @blur="inputState.focused = false"
         @transitionend="transitionEnd"
-      />
+      >
       <slot />
     </div>
   </div>
