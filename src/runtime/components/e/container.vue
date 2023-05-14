@@ -14,8 +14,8 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    noBtnPadding: boolean;
-    forceFullWidth: boolean;
+    noBtnPadding?: boolean;
+    forceFullWidth?: boolean;
 
   }>(),
   {

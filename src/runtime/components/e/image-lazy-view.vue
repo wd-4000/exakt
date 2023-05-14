@@ -51,8 +51,8 @@ import {
 } from "vue";
 
 const props = defineProps<{
-  width?: number;
-  height?: number;
+  width: number;
+  height: number;
   aspectRatio?: number;
   blur?: string;
   src?: string;
@@ -65,7 +65,7 @@ const slots = useSlots();
 const wrapper = ref();
 const canvas = ref();
 
-const state = reactive({
+const state = reactive<{loaded: boolean|undefined, renderBlur:boolean, blurHeight:number, blurWidth:number, resizeListenerActive:boolean, intersected:boolean}>({
   loaded: undefined,
   renderBlur: true,
   blurHeight: 32,
@@ -86,12 +86,15 @@ const slotContentPresent = computed(() => {
   return Boolean(slots.default);
 });
 const backgroundImage = computed(() => {
+  if(!props.src) {
+    return undefined;
+  }
   return "url(".concat(props.src, ")");
 });
 
 watch(
   () => props.blur,
-  (newBlur: string) => {
+  (newBlur: string|undefined) => {
     if (!state.loaded) {
       initialize(newBlur);
     }
@@ -134,9 +137,13 @@ const getAspectRatio = () => {
   return undefined;
 };
 
-const dimensionFix = (value) => {
+const dimensionFix = (value: string|number) => {
   if (!value) {
     return undefined;
+  }
+
+  if(typeof value === "number") {
+    value = value.toString();
   }
 
   if (/^\d+$/.test(value)) {
@@ -147,7 +154,7 @@ const dimensionFix = (value) => {
 
 
 
-const onIntersect = (intersecting) => {
+const onIntersect = (intersecting: boolean) => {
   if (intersecting && !state.intersected) {
     initialize();
     state.intersected = true;
