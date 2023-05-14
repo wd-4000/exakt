@@ -143,6 +143,11 @@ body {
   width: 100%;
 }
 
+.fullsize {
+  @extend .fullheight;
+  @extend .fullwidth;
+}
+
 .text-center {
   text-align: center;
 }

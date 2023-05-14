@@ -1,12 +1,6 @@
 <template>
-  <div
-    class="container"
-    :class="{ 'no-btn-padding': noBtnPadding }"
-  >
-    <div
-      class="content"
-      :class="{ forceFullWidth }"
-    >
+  <div class="container" :class="{ 'no-btn-padding': noBtnPadding }">
+    <div class="content" :class="{ forceFullWidth }">
       <slot />
     </div>
   </div>
@@ -29,11 +23,15 @@ defineProps(["noBtnPadding", "forceFullWidth"]);
   $padding: 0rem;
 
   @media (min-width: $e-md-screen-breakpoint) {
-    width: calc(85% - $padding);
+    width: calc(100% - $padding);
   }
 
-  @media (min-width: var(--e-l-screen-breakpoint)) {
-    width: calc(65% - $padding);
+  @media (min-width: $e-lg-screen-breakpoint) {
+    width: calc(95% - $padding);
+  }
+
+  @media (min-width: $e-xl-screen-breakpoint) {
+    width: calc(85% - $padding);
   }
 }
 

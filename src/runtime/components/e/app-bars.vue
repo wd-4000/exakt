@@ -12,25 +12,27 @@
   </div>
 
   <div class="bar-container">
-    <e-container
-      class="bar-e-container"
-      :force-full-width="true"
-    >
+    <e-container class="bar-e-container" :force-full-width="true">
       <div class="rounded bar">
         <e-progress-linear
           :model-value="props.loading"
           class="md-and-up-only"
         />
+        <div class="bar-content">
+      
+          <div class="bar-section">
+                <!-- Normally the logo -->
+            <div class="md-and-up-only flex-stretch">
+              <slot name="center" />
+            </div>
+            <!-- All the links-->
+            <slot name="nav-items" />
+          </div>
 
-        <div class="md-and-up-only flex-stretch">
-          <slot name="center" />
-        </div>
-        <slot name="nav-items" />
-        <div class="md-and-up-only flex-stretch">
-          <slot
-            name="right"
-            class="fullwidth"
-          />
+          <!-- Normally the sign in button -->
+          <div class="md-and-up-only bar-section">
+            <slot name="right" class="fullwidth" />
+          </div>
         </div>
       </div>
     </e-container>
@@ -43,7 +45,6 @@ const props = withDefaults(
   }>(),
   { loading: false }
 );
-
 </script>
 
 <style lang="scss" scoped>
@@ -74,6 +75,18 @@ const props = withDefaults(
   position: sticky;
   align-self: flex-start;
   z-index: 4;
+}
+
+.bar-content{
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  width: 100%;
+}
+
+.bar-section{
+  display:flex;
+  align-items: stretch;
 }
 
 @media screen and (max-width: ($e-md-screen-breakpoint)) {
@@ -122,7 +135,17 @@ const props = withDefaults(
     width: 100%;
     height: 100%;
 
-    padding-bottom: calc(env(safe-area-insee-bottom));
+    padding-bottom: calc(env(safe-area-inset-bottom));
+  }
+
+  .bar-content{
+    justify-content: stretch;
+ 
+  }
+
+  .bar-section{
+    justify-content: stretch;
+    width: 100%;
   }
 }
 </style>

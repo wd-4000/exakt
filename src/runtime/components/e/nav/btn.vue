@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-stretch">
+  <div class="flex-stretch nav-btn">
     <e-link
       :to="to"
       class="flex-stretch fullwidth"
@@ -74,6 +74,10 @@ const inactive = computed(() => {
 </script>
 
 <style scoped lang="scss">
+
+.nav-btn{
+  flex-grow: 1;
+}
 .button:first-child {
   aspect-ratio: unset;
 

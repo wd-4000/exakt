@@ -16,8 +16,9 @@ export interface ModuleOptions {
     blue?: string;
   };
   breakpoints: {
+    sm?: string;
     md?: string;
-    l?: string;
+    lg?: string;
     xl?: string;
   };
   borderRadius: string;
@@ -34,8 +35,9 @@ const defaults: ModuleOptions = {
     blue: "#2196f3",
   },
   breakpoints: {
+    sm: "16em",
     md: "33em",
-    l: "48em",
+    lg: "48em",
     xl: "60em",
   },
   borderRadius: "8px",
