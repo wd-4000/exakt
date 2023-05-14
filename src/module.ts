@@ -2,7 +2,6 @@ import {
   defineNuxtModule,
   addPlugin,
   createResolver,
-  addComponent,
   addComponentsDir,
   extendViteConfig,
 } from "@nuxt/kit";
@@ -103,19 +102,8 @@ export default defineNuxtModule<ModuleOptions>({
       });
     });
 
-    // Yeah, I know, it's ugly, but it (mostly) works.
-    //    Nuxt seems insistent on transpiling the scss file to regular css when packaging the module,
-    //    which breaks the scss variables.
-
-    await fs.promises.copyFile(
-      resolver.resolve("./runtime/css/main.scssx"),
-      resolver.resolve("../node_modules/.cache/exakt-ui/main.scss")
-    );
-
-    nuxt.options.css.push(
-      resolver.resolve("../node_modules/.cache/exakt-ui/main.scss")
-    );
-    nuxt.options.css.push(resolver.resolve("./runtime/css/util.css"));
+    nuxt.options.css.push(resolver.resolve("./runtime/css/main.scss"));
+    nuxt.options.css.push(resolver.resolve("./runtime/css/util.scss"));
     nuxt.options.css.push(
       resolver.resolve("../node_modules/.cache/exakt-ui/variables.css")
     );

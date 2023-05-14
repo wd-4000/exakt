@@ -1,5 +1,9 @@
 <template>
-  <button class="e-btn " :style="{ width, justifyContent: justifyWrapper }" :type="type" :disabled="disabled || loading"
+  <button
+    class="e-btn "
+    :style="{ width, justifyContent: justifyWrapper }"
+    :type="type"
+    :disabled="disabled || loading"
     :class="{
       active,
       inactive,
@@ -12,14 +16,24 @@
       fab,
       loadingGradient,
       colored: background !== 'transparent' || color || solid,
-    }">
-      <e-progress-gradient class="prog-grad" color="primary" v-if="loading && loadingGradient" />
+    }"
+  >
+    <e-progress-gradient
+      v-if="loading && loadingGradient"
+      class="prog-grad"
+      color="primary"
+    />
 
-    <div ref="content" class="e-btn-content" :style="contentStyles">
-
-      <div class="load-overlay" v-if="loading  && !loadingGradient">
+    <div
+      ref="content"
+      class="e-btn-content"
+      :style="contentStyles"
+    >
+      <div
+        v-if="loading && !loadingGradient"
+        class="load-overlay"
+      >
         <e-loading-spinner />
-
       </div>
       <span class="actual-content flex-center">
 

@@ -1,18 +1,42 @@
 <template>
   <div class="flex-stretch">
     <!-- class="flex-stretch fullwidth" -->
-    <div @click="onClick" ref="activator">
+    <div
+      ref="activator"
+      @click="onClick"
+    >
       <slot />
     </div>
     <e-focus-sheet v-model="state.active" />
     <e-tr-scale>
-      <div class="list rounded" v-if="state.active">
-        <component v-for="(item, i) in items" :key="i" class="fullwidth" :is="item.href ? 'a' : 'div'"
-          :href="item.href ? item.href : undefined">
-          <e-btn justify="start" @click="select(i)" class="item fullwidth" :color="item.color" :solid="false" 
-            :background="item.background || 'transparent'" :class="{ active: currentItem === i }"><e-icon v-if="item.icon"
-              :size="20" :icon="item.icon" class="mr-2" />
-            {{ item.name }}</e-btn>
+      <div
+        v-if="state.active"
+        class="list rounded"
+      >
+        <component
+          :is="item.href ? 'a' : 'div'"
+          v-for="(item, i) in items"
+          :key="i"
+          class="fullwidth"
+          :href="item.href ? item.href : undefined"
+        >
+          <e-btn
+            justify="start"
+            class="item fullwidth"
+            :color="item.color"
+            :solid="false"
+            :background="item.background || 'transparent'" 
+            :class="{ active: currentItem === i }"
+            @click="select(i)"
+          >
+            <e-icon
+              v-if="item.icon"
+              :size="20"
+              :icon="item.icon"
+              class="mr-2"
+            />
+            {{ item.name }}
+          </e-btn>
         </component>
       </div>
     </e-tr-scale>

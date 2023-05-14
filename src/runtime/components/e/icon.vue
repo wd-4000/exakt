@@ -5,7 +5,7 @@
     :width="size"
     :fill="color"
   >
-    <path :d="icon"></path>
+    <path :d="icon" />
   </svg>
 </template>
 <script setup lang="ts">

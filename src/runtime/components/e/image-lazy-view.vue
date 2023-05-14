@@ -30,7 +30,10 @@
         <!--     @transitionend.passive="transitionend" -->
       </div>
 
-      <div v-if="slotContentPresent" class="sc-sloe-content fullsize">
+      <div
+        v-if="slotContentPresent"
+        class="sc-sloe-content fullsize"
+      >
         <slot />
       </div>
     </div>

@@ -1,8 +1,17 @@
 <template>
-  <label class="label mb-5" v-for="(item, i) in items" :key="i">
+  <label
+    v-for="(item, i) in items"
+    :key="i"
+    class="label mb-5"
+  >
     {{ item[useKey] }}
-    <input type="radio" name="radio" :value="i" v-model="selected" />
-    <span class="checkmark"></span>
+    <input
+      v-model="selected"
+      type="radio"
+      name="radio"
+      :value="i"
+    >
+    <span class="checkmark" />
   </label>
 </template>
 <script lang="ts" setup>

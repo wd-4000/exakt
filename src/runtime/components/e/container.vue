@@ -1,6 +1,12 @@
 <template>
-  <div class="container" :class="{ 'no-btn-padding': noBtnPadding }">
-    <div class="content" :class="{ forceFullWidth }">
+  <div
+    class="container"
+    :class="{ 'no-btn-padding': noBtnPadding }"
+  >
+    <div
+      class="content"
+      :class="{ forceFullWidth }"
+    >
       <slot />
     </div>
   </div>

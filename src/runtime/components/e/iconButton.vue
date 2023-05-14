@@ -1,6 +1,12 @@
 <template>
-  <e-btn class="a-btn" :loading="loading">
-    <e-icon :icon="icon" :size="size"></e-icon>
+  <e-btn
+    class="a-btn"
+    :loading="loading"
+  >
+    <e-icon
+      :icon="icon"
+      :size="size"
+    />
   </e-btn>
 </template>
 <script setup lang="ts">
