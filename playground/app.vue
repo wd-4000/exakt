@@ -90,6 +90,7 @@
 </template>
 
 <script setup>
+import { reactive } from "#imports";
 import { mdiPlus, mdiAbacus } from "@mdi/js";
 const state = reactive({ button1loading: false, dialog1: false, dropdown: 0 })
 

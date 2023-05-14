@@ -43,10 +43,9 @@
   </div>
 </template>
 <script setup lang="ts">
-
+import { computed, ref, reactive } from "#imports";
 import _ from "lodash";
 
-const { $platform } = useNuxtApp();
 
 function parseWidth(input: string | number) {
   const div = document.createElement("div");
@@ -84,7 +83,7 @@ const updatePosition = () => {
 
 const debouncedUpdatePosition = _.debounce(updatePosition, 200);
 
-const onClick = ({ pageX, pageY }:MouseEvent) => {
+const onClick = (/*{ pageX, pageY }:MouseEvent*/) => {
   state.active = !state.active;
 
   if (state.active) {

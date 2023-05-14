@@ -1,6 +1,6 @@
 <template>
   <button
-    class="e-btn "
+    class="e-btn"
     :style="{ width, justifyContent: justifyWrapper }"
     :type="type"
     :disabled="disabled || loading"
@@ -11,7 +11,7 @@
       block,
       rounded: solid,
       'e-disabled': disabled,
-      'my-2':solid,
+      'my-2': solid,
       loading,
       fab,
       loadingGradient,
@@ -36,14 +36,13 @@
         <e-loading-spinner />
       </div>
       <span class="actual-content flex-center">
-
         <slot />
       </span>
     </div>
   </button>
 </template>
 <script lang="ts" setup>
-import { computed, reactive, ref, onMounted } from "vue";
+import { computed, useNuxtApp } from "#imports";
 //import { IonSpinner } from "@ionic/vue";
 const { $exakt } = useNuxtApp();
 const props = withDefaults(
@@ -62,14 +61,15 @@ const props = withDefaults(
     disabled?: boolean;
     type?: "button" | "submit" | "reset";
   }>(),
-  { type: "button", background: "primary", solid: true }
+  {
+    type: "button",
+    background: "primary",
+    solid: true,
+    width: undefined,
+    justify: undefined,
+    color: undefined,
+  }
 );
-
-
-
-
-
-
 
 const justifyWrapper = computed(() => {
   if (props.justify === "space-between") {
@@ -104,7 +104,9 @@ const backgroundColorRgb = computed(() => {
   return parseColor(parsedBackgroundProp.value);
 });
 
-const parsedBackgroundProp = computed(() => $exakt.parseColor(props.background));
+const parsedBackgroundProp = computed(() =>
+  $exakt.parseColor(props.background)
+);
 
 const textColor = computed(() => {
   if (props.color) {
@@ -124,8 +126,8 @@ const textColor = computed(() => {
 });
 
 const hoverColor = computed(() => {
-  if (parsedBackgroundProp.value === 'transparent') {
-    return 'rgba(98, 98, 98, 0.15)';
+  if (parsedBackgroundProp.value === "transparent") {
+    return "rgba(98, 98, 98, 0.15)";
   }
 
   const rgb = backgroundColorRgb.value;
@@ -182,16 +184,14 @@ const hoverColor = computed(() => {
       transition: background 0.8s, color 0.5s, opacity 0.4s;
 
       .actual-content {
-
         opacity: 0.8;
-        transition: opacity 0.5s;;
+        transition: opacity 0.5s;
       }
     }
 
     .actual-content {
       opacity: 0;
     }
-
   }
 
   &:hover {

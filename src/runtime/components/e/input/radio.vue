@@ -15,7 +15,7 @@
   </label>
 </template>
 <script lang="ts" setup>
-
+import {computed} from '#imports';
 const props = defineProps<{
   items: { [shot: string]: string }[];
   modelValue: number;
