@@ -1,12 +1,3 @@
-<!--
-Get your module up and running quickly.
-
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: exakt
-- Package name: @exakt/ui
-- Description: My new Nuxt module
--->
-
 # exakt
 
 [![npm version][npm-version-src]][npm-version-href]
@@ -54,6 +45,10 @@ export default defineNuxtConfig({
 That's it! You can now use exakt in your Nuxt app ✨
 
 ## Development
+
+### Important note
+
+Because mkdist (and subsequently nuxt-module-builder) don't yet support *not* compiling SASS files, you'll need to use ``yarn link`` to substitute mkdist with the force-scss-off branch of https://github.com/wd-4000/mkdist
 
 ```bash
 # Install dependencies
