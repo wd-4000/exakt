@@ -39,6 +39,7 @@
     "@nuxt/schema": "^3.2.3",
     "@nuxt/test-utils": "^3.2.3",
     "@types/lodash": "^4.14.191",
+    "@types/node": "^20.2.4",
     "changelogen": "^0.5.1",
     "eslint": "^8.35.0",
     "nuxt": "^3.4.3",

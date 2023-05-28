@@ -1,47 +1,47 @@
 <template>
-  <div class="pos-wrap">
-    <div
-      class="wrapper fullwidth"
-      :style="inputState.overtakeStyle"
-      :class="{ rounded: solid, solid }"
-      @click="focus"
+  <!-- <div class="pos-wrap">-->
+  <div
+    class="wrapper fullwidth"
+    :style="inputState.overtakeStyle"
+    :class="{ rounded: solid, solid }"
+    @click="focus"
+  >
+    <e-icon
+      v-if="icon"
+      :icon="icon"
+      size="21"
+    />
+    <textarea
+      v-if="type === 'textarea'"
+      ref="input"
+      v-model="currentText"
+      class="input"
+      :placeholder="label"
+      autocomplete="off"
+      auto-grow
+      rows="5"
+      @focus="inputState.focused = true"
+      @blur="inputState.focused = false"
+    />
+    <input
+      v-else
+      ref="input"
+      v-model="currentText"
+      :disabled="disabled"
+      :type="type"
+      :autocomplete="autocomplete"
+      :spellcheck="spellcheck"
+      class="input"
+      :required="required"
+      :placeholder="label"
+      @click.stop=""
+      @focus="inputState.focused = true"
+      @blur="inputState.focused = false"
+      @transitionend="transitionEnd"
     >
-      <e-icon
-        v-if="icon"
-        :icon="icon"
-        size="21"
-      />
-      <textarea
-        v-if="type === 'textarea'"
-        ref="input"
-        v-model="currentText"
-        class="input"
-        :placeholder="label"
-        autocomplete="off"
-        auto-grow
-        rows="5"
-        @focus="inputState.focused = true"
-        @blur="inputState.focused = false"
-      />
-      <input
-        v-else
-        ref="input"
-        v-model="currentText"
-        :disabled="disabled"
-        :type="type"
-        :autocomplete="autocomplete"
-        :spellcheck="spellcheck"
-        class="input"
-        :required="required"
-        :placeholder="label"
-        @click.stop=""
-        @focus="inputState.focused = true"
-        @blur="inputState.focused = false"
-        @transitionend="transitionEnd"
-      >
-      <slot />
-    </div>
+    <slot />
   </div>
+  <!-- </div>-->
 </template>
 <script setup lang="ts">
 import { ref, watch, reactive, computed } from "#imports";

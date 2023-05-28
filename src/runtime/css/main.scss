@@ -10,6 +10,15 @@ $root-blue-rgb: red($root-blue), green($root-blue), blue($root-blue);
 .rounded {
   border-radius: var(--e-rounded-border-radius);
 }
+.rounded-top{
+  border-top-left-radius: var(--e-rounded-border-radius);
+  border-top-right-radius: var(--e-rounded-border-radius);
+}
+
+.rounded-bottom{
+  border-bottom-left-radius: var(--e-rounded-border-radius);
+  border-bottom-right-radius: var(--e-rounded-border-radius);
+}
 
 
 
