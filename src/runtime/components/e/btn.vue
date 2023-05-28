@@ -168,13 +168,19 @@ const hoverColor = computed(() => {
   border: none;
   text-decoration: none;
   cursor: pointer;
-  position: relative;
   flex-shrink: 1;
-
+  position: relative;
   transition: background 0.4s, color 0.3s, opacity 0.4s;
 
   font-family: var(--e-font-family);
+  box-sizing: border-box;
 
+
+  border: transparent solid 0.1rem;
+  &:focus-visible {
+    transition: border-width 0.2s;
+    border: var(--e-color-dark) solid 0.1rem;
+  }
   &.loading {
     pointer-events: none;
 
@@ -196,6 +202,7 @@ const hoverColor = computed(() => {
 
   &:hover {
     background: rgba(98, 98, 98, 0.15);
+    border: transparent solid 0.1rem;
   }
 
   &:active {

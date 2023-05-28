@@ -1,6 +1,7 @@
 <template>
   <div>
     <EContainer>
+      <e-input-combo />
       <h1 class="text-center mb-0 pb-3">
         Exakt UI
       </h1>
