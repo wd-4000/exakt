@@ -23,7 +23,7 @@
 );
 
 </script>
-<style scoped>
+<style scoped lang="css">
 svg {
   fill: currentColor;
 }

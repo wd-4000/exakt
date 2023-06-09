@@ -3005,7 +3005,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.17.14, esbuild@npm:^0.17.16, esbuild@npm:^0.17.18, esbuild@npm:^0.17.5":
+"esbuild@npm:^0.17.16, esbuild@npm:^0.17.18, esbuild@npm:^0.17.5":
   version: 0.17.18
   resolution: "esbuild@npm:0.17.18"
   dependencies:
@@ -4893,31 +4893,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mkdist@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "mkdist@npm:1.2.0"
+"mkdist@portal:/Users/vadym/Proj/mkdist::locator=%40exakt%2Fui%40workspace%3A.":
+  version: 0.0.0-use.local
+  resolution: "mkdist@portal:/Users/vadym/Proj/mkdist::locator=%40exakt%2Fui%40workspace%3A."
   dependencies:
     defu: ^6.1.2
-    esbuild: ^0.17.14
+    esbuild: ^0.17.18
     fs-extra: ^11.1.1
-    globby: ^13.1.3
+    globby: ^13.1.4
     jiti: ^1.18.2
     mlly: ^1.2.0
     mri: ^1.2.0
     pathe: ^1.1.0
   peerDependencies:
-    sass: ^1.60.0
-    typescript: ">=4.9.5"
+    sass: ^1.62.1
+    typescript: ">=5.0.4"
   peerDependenciesMeta:
     sass:
       optional: true
     typescript:
       optional: true
   bin:
-    mkdist: dist/cli.cjs
-  checksum: 3d94d04d8d74a5111192e39a606579f149ac8cc031d5350765fdfc7cbd2efa4b702c5fa79f062e0d59e57201bb8400fb38c8253c911eb5b8a50b2ebb869a82ca
+    mkdist: ./dist/cli.cjs
   languageName: node
-  linkType: hard
+  linkType: soft
 
 "mlly@npm:^1.0.0, mlly@npm:^1.1.0, mlly@npm:^1.2.0":
   version: 1.2.0
