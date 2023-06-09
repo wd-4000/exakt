@@ -582,6 +582,7 @@ __metadata:
     changelogen: ^0.5.1
     eslint: ^8.35.0
     lodash: ^4.17.21
+    mkdist: ^1.2.0
     nuxt: ^3.4.3
     sass: ^1.62.1
     vitest: ^0.29.2
@@ -4893,9 +4894,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mkdist@portal:/Users/vadym/Proj/mkdist::locator=%40exakt%2Fui%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "mkdist@portal:/Users/vadym/Proj/mkdist::locator=%40exakt%2Fui%40workspace%3A."
+"mkdist@npm:@wd4000/mkdist-no-scss@1.2.0":
+  version: 1.2.0
+  resolution: "@wd4000/mkdist-no-scss@npm:1.2.0"
   dependencies:
     defu: ^6.1.2
     esbuild: ^0.17.18
@@ -4914,9 +4915,10 @@ __metadata:
     typescript:
       optional: true
   bin:
-    mkdist: ./dist/cli.cjs
+    mkdist: dist/cli.cjs
+  checksum: ab6b4ff1a4426c5aed4f60d5a2ebe1cf1f2317f2cd8fe2bcd908502c4da124b64bb478089ec5f205cb7e3f504f820fa04e842ff034ccf517aa27b1c725c5eeb7
   languageName: node
-  linkType: soft
+  linkType: hard
 
 "mlly@npm:^1.0.0, mlly@npm:^1.1.0, mlly@npm:^1.2.0":
   version: 1.2.0
