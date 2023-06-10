@@ -20,6 +20,9 @@ $root-blue-rgb: red($root-blue), green($root-blue), blue($root-blue);
   border-bottom-right-radius: var(--e-rounded-border-radius);
 }
 
+body{
+  margin: 0px;
+}
 
 
 $color-map: (
