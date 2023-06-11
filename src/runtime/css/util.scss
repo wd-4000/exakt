@@ -157,11 +157,11 @@ body {
 }
 
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
-    .e-blur {
-      backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.7);
-    }
+  .e-blur {
+    backdrop-filter: blur(12px);
+    background-color: rgba(255, 255, 255, 0.7);
   }
+}
 
 .e-disabled {
   opacity: 0.7;
