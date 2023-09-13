@@ -151,7 +151,10 @@ body {
 .text-center {
   text-align: center;
 }
-
+.text-secondary{
+  opacity: 0.8;
+  font-size: small;
+}
 .e-blur {
   background-color: rgba(0, 0, 0, 0.9);
 }
@@ -174,4 +177,17 @@ input,
 label {
   text-decoration: none !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.5s ease-in-out;
+}
+
+.slide-up-enter-from {
+  transform: translateY(100%);
+}
+
+.slide-up-leave-to {
+  transform: translateY(-100%);
 }

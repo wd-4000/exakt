@@ -3,7 +3,7 @@
   <div
     class="wrapper fullwidth"
     :style="inputState.overtakeStyle"
-    :class="{ rounded: solid, solid }"
+    :class="{ rounded: rounded==undefined?solid:rounded, solid }"
     @click="focus"
   >
     <e-icon
@@ -82,6 +82,7 @@ const props = withDefaults(
     label: string;
     modelValue?: string;
     solid?: boolean;
+    rounded?: boolean;
     type?: string;
     autocomplete?: string;
     disabled?: boolean;
@@ -98,6 +99,7 @@ const props = withDefaults(
     modelValue: "",
     autocomplete: "off",
     height: "unset",
+    rounded:undefined,
   }
 );
 
