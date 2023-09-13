@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.14
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.13...v0.0.14)
+
+### 🏡 Chore
+
+- **release:** V0.0.14 ([2523a2d](https://github.com/wd-4000/exakt/commit/2523a2d))
+- **release:** V0.0.13 ([bef897e](https://github.com/wd-4000/exakt/commit/bef897e))
+
+### ❤️ Contributors
+
+- Wd4000 ([@wd-4000](http://github.com/wd-4000))
+
 ## v0.0.13
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.14...v0.0.13)
