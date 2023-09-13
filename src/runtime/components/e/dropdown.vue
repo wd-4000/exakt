@@ -1,21 +1,46 @@
 <template>
   <div class="flex-stretch t-dropdown">
     <!-- class="flex-stretch fullwidth" -->
-    <div ref="activator" @click="onActivatorClick">
+    <div
+      ref="activator"
+      @click="onActivatorClick"
+    >
       <slot />
     </div>
     <e-focus-sheet v-model="visibleComputed" />
     <e-tr-scale>
-      <div v-if="visibleComputed" ref="list" class="list rounded" :style="{position:(fixed?'fixed':undefined)}">
-        <component :is="item.href ? 'a' : 'div'" v-for="(item, i) in items" :key="i" class="fullwidth"
-          :href="item.href ? item.href : undefined">
-          <e-btn justify="start" class="item fullwidth" :color="item.color" :solid="false"
-            :background="item.background || 'transparent'" :class="{
+      <div
+        v-if="visibleComputed"
+        ref="list"
+        class="list rounded"
+        :style="{position:(fixed?'fixed':undefined)}"
+      >
+        <component
+          :is="item.href ? 'a' : 'div'"
+          v-for="(item, i) in items"
+          :key="i"
+          class="fullwidth"
+          :href="item.href ? item.href : undefined"
+        >
+          <e-btn
+            justify="start"
+            class="item fullwidth"
+            :color="item.color"
+            :solid="false"
+            :background="item.background || 'transparent'"
+            :class="{
               'rounded-top': i === 0,
               'rounded-bottom': i === items.length - 1,
               active: currentItem === i,
-            }" @click="select(i)">
-            <e-icon v-if="item.icon" :size="20" :icon="item.icon" class="mr-2" />
+            }"
+            @click="select(i)"
+          >
+            <e-icon
+              v-if="item.icon"
+              :size="20"
+              :icon="item.icon"
+              class="mr-2"
+            />
             {{ item.name }}
           </e-btn>
         </component>
@@ -50,7 +75,6 @@ const props = withDefaults(
   { center: false, visible: null, paddingY: "", modelValue: undefined }
 );
 
-import { log } from "console";
 const activator = ref<HTMLDivElement>();
 const list = ref<HTMLDivElement>();
 

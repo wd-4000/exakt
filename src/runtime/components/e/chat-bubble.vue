@@ -1,13 +1,21 @@
 <template>
-    <div class="bubble" :class="bubbleClasses">
-        <div class="content" :style="{textAlign}">
-            <slot />
-        </div>
-        <div class="status text-secondary" v-if="!hideStatus">
-            <slot name="status" />
-
-        </div>
+  <div
+    class="bubble"
+    :class="bubbleClasses"
+  >
+    <div
+      class="content"
+      :style="{textAlign}"
+    >
+      <slot />
     </div>
+    <div
+      v-if="!hideStatus"
+      class="status text-secondary"
+    >
+      <slot name="status" />
+    </div>
+  </div>
 </template>
 <script lang="ts" setup>
 import { computed } from "#imports";
