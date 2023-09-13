@@ -1,45 +1,21 @@
 <template>
   <div class="flex-stretch t-dropdown">
     <!-- class="flex-stretch fullwidth" -->
-    <div
-      ref="activator"
-      @click="onActivatorClick"
-    >
+    <div ref="activator" @click="onActivatorClick">
       <slot />
     </div>
     <e-focus-sheet v-model="visibleComputed" />
     <e-tr-scale>
-      <div
-        v-if="visibleComputed"
-        ref="list"
-        class="list rounded"
-      >
-        <component
-          :is="item.href ? 'a' : 'div'"
-          v-for="(item, i) in items"
-          :key="i"
-          class="fullwidth"
-          :href="item.href ? item.href : undefined"
-        >
-          <e-btn
-            justify="start"
-            class="item fullwidth"
-            :color="item.color"
-            :solid="false"
-            :background="item.background || 'transparent'"
-            :class="{
+      <div v-if="visibleComputed" ref="list" class="list rounded" :style="{position:(fixed?'fixed':undefined)}">
+        <component :is="item.href ? 'a' : 'div'" v-for="(item, i) in items" :key="i" class="fullwidth"
+          :href="item.href ? item.href : undefined">
+          <e-btn justify="start" class="item fullwidth" :color="item.color" :solid="false"
+            :background="item.background || 'transparent'" :class="{
               'rounded-top': i === 0,
               'rounded-bottom': i === items.length - 1,
               active: currentItem === i,
-            }"
-            @click="select(i)"
-          >
-            <e-icon
-              v-if="item.icon"
-              :size="20"
-              :icon="item.icon"
-              class="mr-2"
-            />
+            }" @click="select(i)">
+            <e-icon v-if="item.icon" :size="20" :icon="item.icon" class="mr-2" />
             {{ item.name }}
           </e-btn>
         </component>
@@ -68,10 +44,13 @@ const props = withDefaults(
     items: DropdownItem[];
     visible?: boolean | null;
     paddingY?: string;
+    position?: { x: number, y: number }
+    fixed?:boolean;
   }>(),
   { center: false, visible: null, paddingY: "", modelValue: undefined }
 );
 
+import { log } from "console";
 const activator = ref<HTMLDivElement>();
 const list = ref<HTMLDivElement>();
 
@@ -111,24 +90,36 @@ function computeWidth(input: string | number) {
 }
 
 const updatePosition = async () => {
-  if (
-    !visibleComputed.value ||
-    !activator.value ||
-    !activator.value.firstElementChild
-  ) {
+
+  if (!visibleComputed.value) {
     window.removeEventListener("resize", debouncedUpdatePosition);
     return;
   }
-  const activatorRect = activator.value.getBoundingClientRect();
 
-  if (props.width === "100%") {
-    state.width = activatorRect.width;
+  if (activator.value) {
+    const activatorRect = activator.value.getBoundingClientRect();
+
+    if (props.width === "100%") {
+      state.width = activatorRect.width;
+    } else {
+      state.width = computeWidth(props.width);
+    }
+
+    state.y = activatorRect.height;
+    state.x = 0;
+
   } else {
     state.width = computeWidth(props.width);
-  }
 
-  state.y = activatorRect.height;
+
+  }
+  if (props.position) {
+      state.x = props.position.x;
+      state.y = props.position.y;
+      return;
+    }
   state.x = 0;
+  state.y = 0;
 
   /* await nextTick();
   if (!list.value) return;
@@ -172,11 +163,12 @@ const onActivatorClick = () => {
 .t-dropdown {
   position: relative;
 }
+
 .list {
   position: absolute;
-  left: v-bind('state.x + "px"');
-  top: v-bind('state.y + "px"');
-  width: v-bind('state.width+"px"');
+  left: v-bind('(state.x) + "px"');
+  top: v-bind('(state.y) + "px"');
+  width: v-bind('state.width + "px"');
   display: flex;
 
   background-color: var(--e-color-elev-2);
@@ -199,8 +191,8 @@ const onActivatorClick = () => {
     &:hover {
       background-color: rgba(var(--e-color-dark-rgb), 0.2);
     }
-    &:focus {
-    }
+
+    &:focus {}
 
     &.active {
       background-color: rgba(var(--e-color-primary-rgb), 0.2);

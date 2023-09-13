@@ -48,13 +48,13 @@ const bubbleClasses = computed(() => {
 $bottom-triangle-height: 0.3rem;
 
 .bubble {
-    --current-color: var(--e-color-elev-2);
+    --current-color: var(--e-color-elev);
     --text-color: var(--e-color-dark);
     position: relative;
     font-family: sans-serif;
     width: fit-content;
     min-width: 0;
-    word-break: break-all;
+    overflow-wrap: break-word;
     padding: var(--e-core-padding-x);
     background: var(--current-color);
     //outline: 0.07rem solid var(--e-color-elev-2);

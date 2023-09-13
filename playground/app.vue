@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <EContainer>
+  <div class="pt-2">
+    <EContainer >
 
       <NuxtPage />
     </EContainer>
