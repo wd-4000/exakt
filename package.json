@@ -1,6 +1,6 @@
 {
   "name": "@exakt/ui",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "A UI library for Nuxt.js",
   "license": "MIT",
   "type": "module",
@@ -30,7 +30,7 @@
     "@mdi/js": "^7.1.96",
     "@nuxt/kit": "^3.2.3",
     "blurhash": "^2.0.5",
-    "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "sass": "^1.62.1"
   },
   "devDependencies": {
@@ -39,6 +39,7 @@
     "@nuxt/schema": "^3.2.3",
     "@nuxt/test-utils": "^3.2.3",
     "@types/lodash": "^4.14.191",
+    "@types/lodash-es": "^4.17.9",
     "@types/node": "^20.2.4",
     "changelogen": "^0.5.1",
     "eslint": "^8.35.0",
