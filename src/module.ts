@@ -23,7 +23,7 @@ export interface ModuleOptions {
   };
   borderRadius: string;
   corePaddingX: string;
-  font: string;
+  font: {family: string, weight?: number};
 }
 
 const defaults: ModuleOptions = {
@@ -42,7 +42,7 @@ const defaults: ModuleOptions = {
   },
   borderRadius: "8px",
   corePaddingX: "1rem",
-  font: "Roboto, sans-serif",
+  font: {family: "Roboto, sans-serif", weight: 400},
 };
 
 export default defineNuxtModule<ModuleOptions>({
@@ -77,7 +77,9 @@ export default defineNuxtModule<ModuleOptions>({
       SCSSvariables += `$e-${key}-screen-breakpoint: ${value}; `;
     }
 
-    CSSvariables += `--e-font-family: ${options.font}; `;
+    CSSvariables += `--e-font-family: ${options.font.family}; `;
+    CSSvariables += `--e-font-weight: ${options.font.weight}; `;
+
     CSSvariables += `--e-rounded-border-radius: ${options.borderRadius}; `;
     CSSvariables += `--e-core-padding-x: ${options.corePaddingX}; `;
 
