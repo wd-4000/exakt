@@ -7,14 +7,16 @@
     background="transparent"
   >
     <e-icon
+      v-if="icon"
       :icon="icon"
       :size="size"
     />
+    <slot />
   </e-btn>
 </template>
 <script setup lang="ts">
 withDefaults(
-  defineProps<{ icon: string; size?: string; loading?: boolean, type?: "button" | "submit" | "reset" }>(),
+  defineProps<{ icon?: string; size?: string; loading?: boolean, type?: "button" | "submit" | "reset" }>(),
   { size: "21" }
 );
 </script>

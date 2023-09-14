@@ -50,7 +50,7 @@
 </template>
 <script setup lang="ts">
 import { computed, ref, reactive, watch/*, nextTick*/ } from "#imports";
-import _ from "lodash";
+import  _ from "lodash-es";
 
 interface DropdownItem {
   name: string;
