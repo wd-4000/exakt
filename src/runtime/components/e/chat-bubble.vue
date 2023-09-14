@@ -59,7 +59,8 @@ $bottom-triangle-height: 0.3rem;
     --current-color: var(--e-color-elev);
     --text-color: var(--e-color-dark);
     position: relative;
-    font-family: sans-serif;
+    font-family: var(--e-font-family);
+
     width: fit-content;
     min-width: 0;
     overflow-wrap: break-word;

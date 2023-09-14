@@ -889,12 +889,13 @@ __metadata:
     "@nuxt/schema": ^3.2.3
     "@nuxt/test-utils": ^3.2.3
     "@types/lodash": ^4.14.191
+    "@types/lodash-es": ^4.17.9
     "@types/node": ^20.2.4
     blurhash: ^2.0.5
     changelogen: ^0.5.1
     eslint: ^8.35.0
     eslint-plugin-unused-imports: ^3.0.0
-    lodash: ^4.17.21
+    lodash-es: ^4.17.21
     mkdist: ^1.2.0
     nuxt: ^3.7.1
     sass: ^1.62.1
@@ -1664,7 +1665,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.191":
+"@types/lodash-es@npm:^4.17.9":
+  version: 4.17.9
+  resolution: "@types/lodash-es@npm:4.17.9"
+  dependencies:
+    "@types/lodash": "*"
+  checksum: a2c7ab8da13892f89ab86b61dd9a0125c767b9db7b9bdaac7fd8508c9fa884bbb19a9760dbdc1e7e698e3322b7a8ba03daa80832371da32a8bd42da0920be838
+  languageName: node
+  linkType: hard
+
+"@types/lodash@npm:*, @types/lodash@npm:^4.14.191":
   version: 4.14.198
   resolution: "@types/lodash@npm:4.14.198"
   checksum: b290e4480707151bcec738bca40527915defe52a0d8e26c83685c674163a265e1a88cb2ee56b0fb587a89819d0cd5df86ada836aec3e9c2e4bf516e7d348d524
@@ -5075,6 +5085,13 @@ __metadata:
   dependencies:
     p-locate: ^5.0.0
   checksum: 72eb661788a0368c099a184c59d2fee760b3831c9c1c33955e8a19ae4a21b4116e53fa736dc086cdeb9fce9f7cc508f2f92d2d3aae516f133e16a2bb59a39f5a
+  languageName: node
+  linkType: hard
+
+"lodash-es@npm:^4.17.21":
+  version: 4.17.21
+  resolution: "lodash-es@npm:4.17.21"
+  checksum: 05cbffad6e2adbb331a4e16fbd826e7faee403a1a04873b82b42c0f22090f280839f85b95393f487c1303c8a3d2a010048bf06151a6cbe03eee4d388fb0a12d2
   languageName: node
   linkType: hard
 
