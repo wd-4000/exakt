@@ -1,10 +1,21 @@
 <template>
   <div class="flex-center a-container">
     <slot />
-    <e-image-lazy-view v-if="src" class="avatar" :width="props.size" :height="props.size" :contain="true"
-      :immediate-render="true" :src="src" border-radius="100%" />
+    <e-image-lazy-view
+      v-if="src"
+      class="avatar"
+      :width="props.size"
+      :height="props.size"
+      :contain="true"
+      :immediate-render="true"
+      :src="src"
+      border-radius="100%"
+    />
     <div v-else>
-      <e-icon :size="props.size" :icon="mdiAccountCircle" />
+      <e-icon
+        :size="props.size"
+        :icon="mdiAccountCircle"
+      />
     </div>
   </div>
 </template>
