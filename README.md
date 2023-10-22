@@ -9,7 +9,9 @@ a simple nuxt ui library focused on doing as much as possible with css
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 <!-- - [📖 &nbsp;Documentation](https://example.com) -->
-
+### DO NOT USE THIS LIBRARY IN YOUR PROJECT.
+### THIS LIBRARY IS VERY UNSTABLE AND EXPERIMENTAL
+### first rule of exakt is to be yourself and have fun :)
 ## Features
 
 <!-- Highlight some of the features your module provide here -->
