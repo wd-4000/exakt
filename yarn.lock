@@ -960,7 +960,7 @@ __metadata:
     eslint-plugin-unused-imports: ^3.0.0
     lodash-es: ^4.17.21
     mkdist: ^1.2.0
-    nuxt: ^3.7.1
+    nuxt: ^3.8.2
     sass: ^1.62.1
     vitest: ^0.29.2
   languageName: unknown
@@ -2830,7 +2830,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.4.14, autoprefixer@npm:^10.4.16":
+"autoprefixer@npm:^10.4.16":
   version: 10.4.16
   resolution: "autoprefixer@npm:10.4.16"
   dependencies:
@@ -3889,7 +3889,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.17.16":
+"esbuild@npm:^0.17.16, esbuild@npm:^0.17.18":
   version: 0.17.19
   resolution: "esbuild@npm:0.17.19"
   dependencies:
@@ -4043,7 +4043,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:^0.19.6, esbuild@npm:^0.19.7, esbuild@npm:^0.19.8":
+"esbuild@npm:^0.19.6, esbuild@npm:^0.19.8":
   version: 0.19.10
   resolution: "esbuild@npm:0.19.10"
   dependencies:
@@ -4822,7 +4822,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"globby@npm:^13.1.4, globby@npm:^13.2.2":
+"globby@npm:^13.1.4":
   version: 13.2.2
   resolution: "globby@npm:13.2.2"
   dependencies:
@@ -5968,26 +5968,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mkdist@npm:@wd4000/mkdist-no-scss@1.4.1":
-  version: 1.4.1
-  resolution: "@wd4000/mkdist-no-scss@npm:1.4.1"
+"mkdist@npm:@wd4000/mkdist-no-scss@1.2.0":
+  version: 1.2.0
+  resolution: "@wd4000/mkdist-no-scss@npm:1.2.0"
   dependencies:
-    autoprefixer: ^10.4.14
-    citty: ^0.1.5
-    cssnano: ^6.0.1
-    defu: ^6.1.3
-    esbuild: ^0.19.7
+    defu: ^6.1.2
+    esbuild: ^0.17.18
     fs-extra: ^11.1.1
-    globby: ^13.2.2
-    jiti: ^1.21.0
-    mlly: ^1.4.2
+    globby: ^13.1.4
+    jiti: ^1.18.2
+    mlly: ^1.2.0
     mri: ^1.2.0
-    pathe: ^1.1.1
-    postcss: ^8.4.26
-    postcss-nested: ^6.0.1
+    pathe: ^1.1.0
   peerDependencies:
-    sass: ^1.69.5
-    typescript: ">=5.3.2"
+    sass: ^1.62.1
+    typescript: ">=5.0.4"
   peerDependenciesMeta:
     sass:
       optional: true
@@ -5995,7 +5990,7 @@ __metadata:
       optional: true
   bin:
     mkdist: dist/cli.cjs
-  checksum: ce0ecc42abdd1918af312ff0522628290ecfdd43ff090b58a4918a58e481245893d67ba92b6b0c657d256c51dcca69e659dfd7cf7735a640b65d03b5d7b42805
+  checksum: ab6b4ff1a4426c5aed4f60d5a2ebe1cf1f2317f2cd8fe2bcd908502c4da124b64bb478089ec5f205cb7e3f504f820fa04e842ff034ccf517aa27b1c725c5eeb7
   languageName: node
   linkType: hard
 
@@ -6424,7 +6419,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"nuxt@npm:^3.7.1":
+"nuxt@npm:^3.8.2":
   version: 3.8.2
   resolution: "nuxt@npm:3.8.2"
   dependencies:
@@ -6987,17 +6982,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-nested@npm:^6.0.1":
-  version: 6.0.1
-  resolution: "postcss-nested@npm:6.0.1"
-  dependencies:
-    postcss-selector-parser: ^6.0.11
-  peerDependencies:
-    postcss: ^8.2.14
-  checksum: 7ddb0364cd797de01e38f644879189e0caeb7ea3f78628c933d91cc24f327c56d31269384454fc02ecaf503b44bfa8e08870a7c4cc56b23bc15640e1894523fa
-  languageName: node
-  linkType: hard
-
 "postcss-normalize-charset@npm:^6.0.1":
   version: 6.0.1
   resolution: "postcss-normalize-charset@npm:6.0.1"
@@ -7171,7 +7155,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.26, postcss@npm:^8.4.27, postcss@npm:^8.4.31, postcss@npm:^8.4.32":
+"postcss@npm:^8.4.27, postcss@npm:^8.4.31, postcss@npm:^8.4.32":
   version: 8.4.32
   resolution: "postcss@npm:8.4.32"
   dependencies:
