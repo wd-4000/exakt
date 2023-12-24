@@ -190,9 +190,9 @@ const onActivatorClick = () => {
 
 .list {
   position: absolute;
-  left: v-bind('(state.x) + "px"');
-  top: v-bind('(state.y) + "px"');
-  width: v-bind('state.width + "px"');
+  left: v-bind('(state.x) + `px`');
+  top: v-bind('(state.y) + `px`');
+  width: v-bind('state.width + `px`');
   display: flex;
 
   background-color: var(--e-color-elev-2);
