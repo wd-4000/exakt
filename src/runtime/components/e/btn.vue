@@ -24,15 +24,8 @@
       color="primary"
     />
 
-    <div
-      ref="content"
-      class="e-btn-content"
-      :style="contentStyles"
-    >
-      <div
-        v-if="loading && !loadingGradient"
-        class="load-overlay"
-      >
+    <div ref="content" class="e-btn-content" :style="contentStyles">
+      <div v-if="loading && !loadingGradient" class="load-overlay">
         <e-loading-spinner />
       </div>
       <span class="actual-content flex-center">
@@ -175,7 +168,6 @@ const hoverColor = computed(() => {
   font-family: var(--e-font-family);
   box-sizing: border-box;
 
-
   border: transparent solid 0.1rem;
   &:focus-visible {
     transition: border-width 0.2s;
@@ -219,6 +211,7 @@ const hoverColor = computed(() => {
     border-radius: 100%;
     height: 4.2rem;
     z-index: 3;
+    padding: 0 !important;
   }
 
   &.block {
