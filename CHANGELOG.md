@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.23
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.21...v0.0.23)
+
+### 🩹 Fixes
+
+- Dropdown ([df71b3f](https://github.com/wd-4000/exakt/commit/df71b3f))
+
+### 🏡 Chore
+
+- **release:** V0.0.21 ([d2a78f6](https://github.com/wd-4000/exakt/commit/d2a78f6))
+- **release:** V0.0.22 ([120621a](https://github.com/wd-4000/exakt/commit/120621a))
+
+### ❤️ Contributors
+
+- Wd4000 ([@wd-4000](http://github.com/wd-4000))
+
 ## v0.0.22
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.21...v0.0.22)
