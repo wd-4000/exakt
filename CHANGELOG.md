@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.24
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.23...v0.0.24)
+
+### 🩹 Fixes
+
+- Fab padding on safari ([0120871](https://github.com/wd-4000/exakt/commit/0120871))
+
+### 🏡 Chore
+
+- **release:** V0.0.23 ([ebc70c2](https://github.com/wd-4000/exakt/commit/ebc70c2))
+
+### ❤️ Contributors
+
+- Wd4000 ([@wd-4000](http://github.com/wd-4000))
+
 ## v0.0.23
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.21...v0.0.23)
