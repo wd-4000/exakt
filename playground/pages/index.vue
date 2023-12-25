@@ -1,6 +1,5 @@
 <template>
   <div>
-    <e-input-combo />
     <h1 class="text-center mb-0 pb-3">
       Exakt UI
     </h1>
@@ -78,6 +77,9 @@
       label="Regular input"
       :solid="true"
     />
+
+    <e-input-text type="date" />
+
 
     <e-input-text
       type="textarea"

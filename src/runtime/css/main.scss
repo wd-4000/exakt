@@ -88,7 +88,7 @@ a,
 
     --e-color-dark: #{$root-light};
     --e-color-dark-rgb: #{$root-light-rgb};
-
+color-scheme: dark;
     @include elev($root-dark, 5%);
   }
 }

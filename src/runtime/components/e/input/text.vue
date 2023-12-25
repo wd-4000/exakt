@@ -93,8 +93,8 @@ const props = withDefaults(
   }>(),
   {
     icon: undefined,
-    label: "Search",
-    solid: false,
+    label: "",
+    solid: true,
     type: "text",
     modelValue: "",
     autocomplete: "off",
