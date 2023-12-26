@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.28
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.27...v0.0.28)
+
+### 🩹 Fixes
+
+- Forgor to commit ([62291fe](https://github.com/wd-4000/exakt/commit/62291fe))
+
+### 🏡 Chore
+
+- **release:** V0.0.27 ([e24ff6e](https://github.com/wd-4000/exakt/commit/e24ff6e))
+
+### ❤️ Contributors
+
+- Wd4000 ([@wd-4000](http://github.com/wd-4000))
+
 ## v0.0.27
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.26...v0.0.27)
