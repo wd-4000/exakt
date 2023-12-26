@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sidebar"
+    class="sidebar d-flex flex-column justify-start"
     @mouseenter="state.hover = true"
     @mouseleave="state.hover = false"
   >
@@ -56,6 +56,7 @@ const state = reactive({
     );
 }
 .sidebar {
+  
   height: 100vh;
   width: var(--collapsed-sidebar-width);
   z-index: 5;
@@ -68,6 +69,7 @@ const state = reactive({
   .btn-text {
     text-align: left;
     max-width: calc(var(--expansion-amount) - 0.1rem*2);
+    display: none;
   }
 
   &:hover ~ .app-content {
@@ -88,6 +90,7 @@ const state = reactive({
     width: 100%;
     flex-grow: 0;
     flex-shrink: 0;
+    min-height: 5rem;
   }
 }
 
