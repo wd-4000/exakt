@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.26
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.25...v0.0.26)
+
+### 🩹 Fixes
+
+- Lint and prepack ([1851510](https://github.com/wd-4000/exakt/commit/1851510))
+
+### 🏡 Chore
+
+- **release:** V0.0.25 ([c3aa51b](https://github.com/wd-4000/exakt/commit/c3aa51b))
+
+### ❤️ Contributors
+
+- Wd4000 ([@wd-4000](http://github.com/wd-4000))
+
 ## v0.0.25
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.24...v0.0.25)
