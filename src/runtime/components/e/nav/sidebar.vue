@@ -69,7 +69,6 @@ const state = reactive({
   .btn-text {
     text-align: left;
     max-width: calc(var(--expansion-amount) - 0.1rem*2);
-    display: none;
   }
 
   &:hover ~ .app-content {
@@ -81,6 +80,12 @@ const state = reactive({
 
   }
   &:hover .btn-text {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+  }
+  .btn-text {
     display: block;
     flex-grow: 0;
     flex-shrink: 0;
