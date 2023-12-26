@@ -4,7 +4,7 @@
     @mouseenter="state.hover = true"
     @mouseleave="state.hover = false"
   >
-   <slot/>
+    <slot />
   </div>
   <div class="e-sidebar-app-content">
     <slot name="app" />
