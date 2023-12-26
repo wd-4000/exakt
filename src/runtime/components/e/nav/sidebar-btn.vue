@@ -1,29 +1,34 @@
 <template>
-   <e-btn
-      :solid="false"
-      justify="stretch"
-      block
-      background="transparent"
-      class="pa-0 ma-0 e-sidebar-btn"
+  <e-btn
+    :solid="false"
+    justify="stretch"
+    block
+    background="transparent"
+    class="pa-0 ma-0 e-sidebar-btn"
+  >
+    <div
+      v-if="icon"
+      class="e-sidebar-btn-icon"
     >
-      <div class="e-sidebar-btn-icon" v-if="icon">
-        <e-icon
-          :icon="icon"
-          size="22"
-        />
+      <e-icon
+        :icon="icon"
+        size="22"
+      />
+    </div>
+    <div class="ml-4 d-flex flex-column e-sidebar-btn-text">
+      <div class="mb-1">
+        {{ title }}
       </div>
-      <div class="ml-4 d-flex flex-column e-sidebar-btn-text">
-        <div class="mb-1">
-        {{title}}
-        </div>
-        <div class="text-secondary" v-if="subtitle">
+      <div
+        v-if="subtitle"
+        class="text-secondary"
+      >
         {{ subtitle }}
-        </div>
       </div>
-    </e-btn>
-    </template>
+    </div>
+  </e-btn>
+</template>
     <script setup lang="ts">
-  import {mdiHome} from "@mdi/js"
   defineProps<{
     title: string;
     subtitle?:string;

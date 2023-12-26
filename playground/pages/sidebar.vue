@@ -3,7 +3,11 @@
     <template #app>
       <div>Sidebar example</div>
     </template><template>
-      <e-nav-sidebar-btn title="John Pork" subtitle="hi i'm john pork" :icon="mdiHome"/>
+      <e-nav-sidebar-btn
+        title="John Pork"
+        subtitle="hi i'm john pork"
+        :icon="mdiHome"
+      />
     </template>
   </e-nav-sidebar>
 </template>
