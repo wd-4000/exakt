@@ -24,8 +24,15 @@
       color="primary"
     />
 
-    <div ref="content" class="e-btn-content" :style="contentStyles">
-      <div v-if="loading && !loadingGradient" class="load-overlay">
+    <div
+      ref="content"
+      class="e-btn-content"
+      :style="contentStyles"
+    >
+      <div
+        v-if="loading && !loadingGradient"
+        class="load-overlay"
+      >
         <e-loading-spinner />
       </div>
       <span class="actual-content flex-center">
