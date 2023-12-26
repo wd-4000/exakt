@@ -35,7 +35,8 @@
       >
         <e-loading-spinner />
       </div>
-      <span class="actual-content flex-center">
+      <span class="actual-content d-flex" :style="{justifyContent:
+      justifyWrapper, alignContent: props.align, alignItems: props.align}">
         <slot />
       </span>
     </div>
@@ -59,6 +60,7 @@ const props = withDefaults(
     loadingGradient?: boolean;
     fab?: boolean;
     disabled?: boolean;
+    align?: string;
     type?: "button" | "submit" | "reset";
   }>(),
   {
@@ -66,7 +68,8 @@ const props = withDefaults(
     background: "primary",
     solid: true,
     width: undefined,
-    justify: undefined,
+    justify: "center",
+    align: "center",
     color: undefined,
   }
 );
