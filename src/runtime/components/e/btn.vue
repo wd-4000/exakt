@@ -35,8 +35,11 @@
       >
         <e-loading-spinner />
       </div>
-      <span class="actual-content d-flex" :style="{justifyContent:
-      justifyWrapper, alignContent: props.align, alignItems: props.align}">
+      <span
+        class="actual-content d-flex"
+        :style="{justifyContent:
+          justifyWrapper, alignContent: props.align, alignItems: props.align}"
+      >
         <slot />
       </span>
     </div>
