@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.0.25
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.24...v0.0.25)
+
+### 🚀 Enhancements
+
+- Clickable-card component ([105c466](https://github.com/wd-4000/exakt/commit/105c466))
+
+### 🩹 Fixes
+
+- Sidebar break: button (potentially) ([88e225d](https://github.com/wd-4000/exakt/commit/88e225d))
+
+### 🏡 Chore
+
+- **release:** V0.0.24 ([68c4627](https://github.com/wd-4000/exakt/commit/68c4627))
+
+### ❤️ Contributors
+
+- Wd4000 ([@wd-4000](http://github.com/wd-4000))
+
 ## v0.0.24
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.23...v0.0.24)
