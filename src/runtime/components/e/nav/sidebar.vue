@@ -1,40 +1,17 @@
 <template>
   <div
-    class="sidebar d-flex flex-column justify-start"
+    class="e-sidebar d-flex flex-column justify-start"
     @mouseenter="state.hover = true"
     @mouseleave="state.hover = false"
   >
-    <e-btn
-      :solid="false"
-      justify="stretch"
-      block
-      background="transparent"
-      class="pa-0 ma-0 btn"
-    >
-      <div class="icon">
-        <e-icon
-          :icon="mdiHome"
-          size="22"
-        />
-      </div>
-      <div class="ml-4 d-flex flex-column btn-text">
-        <div class="mb-1">
-          John Pork
-        </div>
-        <div class="text-secondary">
-          Hey I was wondering if you've got your bogos
-          binted
-        </div>
-      </div>
-    </e-btn>
+   <slot/>
   </div>
-  <div class="app-content">
+  <div class="e-sidebar-app-content">
     <slot name="app" />
   </div>
 </template>
 <script setup lang="ts">
 import { reactive } from "#imports";
-import { mdiHome } from "@mdi/js";
 const props = withDefaults(
   defineProps<{
     collapsedWidth?: number | string;
@@ -47,15 +24,15 @@ const state = reactive({
 });
 </script>
 <style lang="scss" scoped>
-.sidebar,
-.app-content {
+.e-sidebar,
+.e-sidebar-app-content {
   --collapsed-sidebar-width: v-bind(collapsedWidth);
   --expanded-sidebar-width: 20rem; //v-bind(width);
   --expansion-amount: calc(
       var(--expanded-sidebar-width) - var(--collapsed-sidebar-width)
     );
 }
-.sidebar {
+.e-sidebar {
   
   height: 100vh;
   width: var(--collapsed-sidebar-width);
@@ -66,12 +43,9 @@ const state = reactive({
   background-color: var(--e-color-elev-2);
   overflow-x: hidden;
   transition: width 0.25s ease-in-out;
-  .btn-text {
-    text-align: left;
-    max-width: calc(var(--expansion-amount) - 0.1rem*2);
-  }
 
-  &:hover ~ .app-content {
+
+  &:hover ~ .e-sidebar-app-content {
 
    // transform: translateX(var(--expansion-amount));
   }
@@ -79,27 +53,11 @@ const state = reactive({
     width: var(--expanded-sidebar-width);
 
   }
-  &:hover .btn-text {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 0;
-    position: relative;
-  }
-  .btn-text {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 0;
-    position: relative;
-  }
-  .btn {
-    width: 100%;
-    flex-grow: 0;
-    flex-shrink: 0;
-    min-height: 5rem;
-  }
+
+
 }
 
-.app-content {
+.e-sidebar-app-content {
   transition: transform 0.25s ease-in-out;
   background-color: var(--e-color-light);
   width: 100%;
@@ -107,14 +65,6 @@ const state = reactive({
   left: 3.5rem;
   top: 0rem;
   position: absolute;
-}
-
-.icon {
-  min-width: calc(
-    var(--collapsed-sidebar-width) - 0.1rem * 2
-  ); // Compensate the btn's accessibility border
-
-  display: block;
 }
 
 
