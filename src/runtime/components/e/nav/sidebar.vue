@@ -31,6 +31,8 @@ const state = reactive({
   --expansion-amount: calc(
       var(--expanded-sidebar-width) - var(--collapsed-sidebar-width)
     );
+
+
 }
 .e-sidebar {
   
@@ -61,6 +63,9 @@ const state = reactive({
   transition: transform 0.25s ease-in-out;
   background-color: var(--e-color-light);
   width: 100%;
+  width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
   height: 100%;
   left: 3.5rem;
   top: 0rem;
