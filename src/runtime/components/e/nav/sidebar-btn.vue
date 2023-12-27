@@ -7,14 +7,23 @@
       background="transparent"
       class="pa-0 ma-0 e-sidebar-btn"
     >
-      <div v-if="icon" class="e-sidebar-btn-icon">
-        <e-icon :icon="icon" size="22" />
+      <div
+        v-if="icon"
+        class="e-sidebar-btn-icon"
+      >
+        <e-icon
+          :icon="icon"
+          size="22"
+        />
       </div>
       <div class="ml-4 d-flex flex-column e-sidebar-btn-text">
         <div class="mb-1">
           {{ title }}
         </div>
-        <div v-if="subtitle" class="text-secondary">
+        <div
+          v-if="subtitle"
+          class="text-secondary"
+        >
           {{ subtitle }}
         </div>
       </div>
