@@ -7,6 +7,13 @@
         title="John Pork"
         subtitle="hi i'm john pork"
         :icon="mdiHome"
+        to="/"
+      />
+      <e-nav-sidebar-btn
+        title="John Pork"
+        subtitle="hi i'm john pork"
+        :icon="mdiHome"
+        to="/sidebar"
       />
     </template>
   </e-nav-sidebar>
