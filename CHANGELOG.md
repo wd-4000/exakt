@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.29
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.28...v0.0.29)
+
+### 🚀 Enhancements
+
+- Sidebar: slightly janky active tab indicator ([0f20064](https://github.com/wd-4000/exakt/commit/0f20064))
+
+### 🏡 Chore
+
+- **release:** V0.0.28 ([d7d49d7](https://github.com/wd-4000/exakt/commit/d7d49d7))
+
+### ❤️ Contributors
+
+- Wd4000 ([@wd-4000](http://github.com/wd-4000))
+
 ## v0.0.28
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.27...v0.0.28)
