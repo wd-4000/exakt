@@ -9,6 +9,7 @@
     <e-icon
       v-if="icon"
       :icon="icon"
+      class="mr-2"
       size="21"
     />
     <textarea
