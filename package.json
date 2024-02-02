@@ -66,9 +66,6 @@
   "bugs": {
     "url": "https://github.com/wd-4000/exakt/issues"
   },
-  "resolutions": {
-    "mkdist": "npm:@wd4000/mkdist-no-scss@1.4.1"
-  },
   "homepage": "https://github.com/wd-4000/exakt#readme",
   "packageManager": "yarn@3.5.1"
 }
