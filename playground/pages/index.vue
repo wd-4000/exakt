@@ -10,6 +10,15 @@
     >
       Solid button
     </EBtn>
+    <e-btn
+      :solid="false"
+      :block="true"
+      background="transparent"
+      justify="space-between"
+    >
+      <div>Space</div><div>Between</div>
+    </e-btn>
+
     <EBtn
       :loading="state.button1loading"
       :loading-gradient="true"
@@ -77,6 +86,12 @@
       label="Regular input"
       :solid="true"
     />
+    <e-input-text
+      label="Regular input w/icon"
+      :solid="true"
+      :icon="mdiText"
+    />
+
 
     <e-input-text type="date" />
 
@@ -92,7 +107,7 @@
     
 <script setup>
 import { reactive } from "#imports";
-import { mdiPlus, mdiAbacus } from "@mdi/js";
+import { mdiPlus, mdiAbacus, mdiText } from "@mdi/js";
 const state = reactive({ msgToSend: "", button1loading: false, dialog1: false, dropdown: 0 })
 
 const presets = [

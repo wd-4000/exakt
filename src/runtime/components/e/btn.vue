@@ -1,7 +1,7 @@
 <template>
   <button
     class="e-btn"
-    :style="{ width, justifyContent: justifyWrapper }"
+    :style="{ width }"
     :type="type"
     :disabled="disabled || loading"
     :class="{
@@ -37,8 +37,9 @@
       </div>
       <span
         class="actual-content d-flex"
+        :class="{fullwidth: props.justify == 'space-between'}"
         :style="{justifyContent:
-          justifyWrapper, alignContent: props.align, alignItems: props.align}"
+          justify, alignContent: props.align, alignItems: props.align}"
       >
         <slot />
       </span>
@@ -77,16 +78,10 @@ const props = withDefaults(
   }
 );
 
-const justifyWrapper = computed(() => {
-  if (props.justify === "space-between") {
-    return "stretch";
-  }
-  return props.justify;
-});
 
 const contentStyles = computed(() => {
   if (props.justify === "space-between") {
-    return "justify-content:space-between; flex-grow: 1";
+    return "justify-content:stretch; flex-grow: 1";
   }
 
   return "";
