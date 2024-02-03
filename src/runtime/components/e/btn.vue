@@ -1,46 +1,27 @@
 <template>
-  <button
-    class="e-btn"
-    :style="{ width }"
-    :type="type"
-    :disabled="disabled || loading"
-    :class="{
-      active,
-      inactive,
-      solid,
-      block,
-      rounded: solid,
-      'e-disabled': disabled,
-      'my-2': solid,
-      loading,
-      fab,
-      loadingGradient,
-      colored: background !== 'transparent' || color || solid,
-    }"
-  >
-    <e-progress-gradient
-      v-if="loading && loadingGradient"
-      class="prog-grad"
-      color="primary"
-    />
+  <button class="e-btn" :style="{ width }" :type="type" :disabled="disabled || loading" :class="{
+    active,
+    inactive,
+    solid,
+    block,
+    rounded: solid,
+    'e-disabled': disabled,
+    'my-2': solid,
+    loading,
+    fab,
+    loadingGradient,
+    colored: background !== 'transparent' || color || solid,
+  }">
+    <e-progress-gradient v-if="loading && loadingGradient" class="prog-grad" color="primary" />
 
-    <div
-      ref="content"
-      class="e-btn-content"
-      :style="contentStyles"
-    >
-      <div
-        v-if="loading && !loadingGradient"
-        class="load-overlay"
-      >
+    <div ref="content" class="e-btn-content" :style="contentStyles">
+      <div v-if="loading && !loadingGradient" class="load-overlay">
         <e-loading-spinner />
       </div>
-      <span
-        class="actual-content d-flex"
-        :class="{fullwidth: props.justify == 'space-between'}"
-        :style="{justifyContent:
-          justify, alignContent: props.align, alignItems: props.align}"
-      >
+      <span class="actual-content d-flex" :class="{ fullwidth: props.justify == 'space-between' }" :style="{
+        justifyContent:
+          justify, alignContent: props.align, alignItems: props.align
+      }">
         <slot />
       </span>
     </div>
@@ -113,7 +94,9 @@ const textColor = computed(() => {
   if (props.color) {
     return props.color;
   }
-
+  if (props.background == 'transparent') {
+    return 'var(--e-color-dark)'
+  }
   const rgb = backgroundColorRgb.value;
 
   const brightness = Math.round(
@@ -177,10 +160,12 @@ const hoverColor = computed(() => {
   box-sizing: border-box;
 
   border: transparent solid 0.1rem;
+
   &:focus-visible {
     transition: border-width 0.2s;
     border: var(--e-color-dark) solid 0.1rem;
   }
+
   &.loading {
     pointer-events: none;
 
