@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v0.0.33
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.32...v0.0.33)
+
 ## v0.0.32
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.30...v0.0.32)
