@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.34
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.33...v0.0.34)
+
+### 🏡 Chore
+
+- **release:** V0.0.33 ([680b467](https://github.com/wd-4000/exakt/commit/680b467))
+
+### ❤️ Contributors
+
+- Wd4000 <git@jorb.cc>
+
 ## v0.0.33
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.32...v0.0.33)
