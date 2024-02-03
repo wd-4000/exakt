@@ -30,7 +30,7 @@ const defaults: ModuleOptions = {
   colors: {
     primary: "#008dff",
     dark: "#212121",
-    light: "#f5f5f5",
+    light: "#ffffff",
     red: "#f44336",
     blue: "#2196f3",
   },
