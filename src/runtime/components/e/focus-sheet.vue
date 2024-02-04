@@ -25,7 +25,7 @@ const emit = defineEmits(["update:modelValue"]);
   height: 100%;
   left: 0px;
   top: 0px;
-  z-index: 3;
+  z-index: 5;
   //background-color: red;
 
   &.opaque-on-desktop {
