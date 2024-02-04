@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.0.35
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.34...v0.0.35)
+
+### 🚀 Enhancements
+
+- Add yellow ([a8ed346](https://github.com/wd-4000/exakt/commit/a8ed346))
+
+### 🩹 Fixes
+
+- Change focus sheet height ([e0166b0](https://github.com/wd-4000/exakt/commit/e0166b0))
+
+### 🏡 Chore
+
+- **release:** V0.0.34 ([bc98139](https://github.com/wd-4000/exakt/commit/bc98139))
+
+### ❤️ Contributors
+
+- Wd4000 <git@jorb.cc>
+
 ## v0.0.34
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.33...v0.0.34)
