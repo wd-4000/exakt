@@ -197,7 +197,7 @@ const onActivatorClick = () => {
 
   background-color: var(--e-color-elev-2);
   color: var(--e-color-dark);
-  z-index: 4;
+  z-index: 6;
 
   flex-shrink: 1;
   flex-direction: column;
