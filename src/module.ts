@@ -14,6 +14,7 @@ export interface ModuleOptions {
     light?: string;
     red?: string;
     blue?: string;
+    yellow?: string;
   };
   breakpoints: {
     sm?: string;
@@ -23,7 +24,7 @@ export interface ModuleOptions {
   };
   borderRadius: string;
   corePaddingX: string;
-  font: {family: string, weight?: number};
+  font: { family: string, weight?: number };
 }
 
 const defaults: ModuleOptions = {
@@ -33,6 +34,7 @@ const defaults: ModuleOptions = {
     light: "#ffffff",
     red: "#f44336",
     blue: "#2196f3",
+    yellow: '#FFA000'
   },
   breakpoints: {
     sm: "16em",
@@ -42,7 +44,7 @@ const defaults: ModuleOptions = {
   },
   borderRadius: "8px",
   corePaddingX: "1rem",
-  font: {family: "Roboto, sans-serif", weight: 400},
+  font: { family: "Roboto, sans-serif", weight: 400 },
 };
 
 export default defineNuxtModule<ModuleOptions>({
