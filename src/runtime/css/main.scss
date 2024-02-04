@@ -6,10 +6,13 @@ $root-light-rgb: red($root-light), green($root-light), blue($root-light);
 $root-primary-rgb: red($root-primary), green($root-primary), blue($root-primary);
 $root-red-rgb: red($root-red), green($root-red), blue($root-red);
 $root-blue-rgb: red($root-blue), green($root-blue), blue($root-blue);
+$root-yellow-rgb: red($root-yellow), green($root-yellow), blue($root-yellow);
+
 
 .rounded {
   border-radius: var(--e-rounded-border-radius);
 }
+
 .rounded-top {
   border-top-left-radius: var(--e-rounded-border-radius);
   border-top-right-radius: var(--e-rounded-border-radius);
@@ -30,15 +33,18 @@ $color-map: (
   "primary": $root-primary,
   "dark": $root-dark,
   "light": $root-light,
+  "yellow": $root-yellow,
 );
 
 @each $name, $color in $color-map {
   :root {
     #{'--e-color-'+$name}: $color;
   }
+
   .bg-#{$name} {
     background: $color;
   }
+
   .color-#{$name} {
     color: $color;
   }
@@ -51,6 +57,7 @@ a,
   &:visited {
     color: color.scale($root-blue, $lightness: -10%);
   }
+
   &:active,
   .e-link-active {
     color: color.scale($root-blue, $lightness: 10%);
@@ -66,7 +73,10 @@ a,
 
   --e-color-elev-2: #{$root-elev-2};
   --e-color-elev-2-rgb: #{red($root-elev-2), green($root-elev-2),
-    blue($root-elev-2)};
+ blue($root-elev-2)
+}
+
+;
 }
 
 :root {
@@ -88,7 +98,7 @@ a,
 
     --e-color-dark: #{$root-light};
     --e-color-dark-rgb: #{$root-light-rgb};
-color-scheme: dark;
+    color-scheme: dark;
     @include elev($root-dark, 5%);
   }
 }
