@@ -1,27 +1,35 @@
 <template>
-  <button class="e-btn" :style="{ width }" :type="type" :disabled="disabled || loading" :class="{
-    active,
-    inactive,
-    solid,
-    block,
-    rounded: solid,
-    'e-disabled': disabled,
-    'my-2': solid,
-    loading,
-    fab,
-    loadingGradient,
-    colored: background !== 'transparent' || color || solid,
-  }">
-    <e-progress-gradient v-if="loading && loadingGradient" class="prog-grad" color="primary" />
-
+  <button
+    class="e-btn"
+    :style="{ width }"
+    :type="type"
+    :disabled="disabled || loading"
+    :class="{
+      active,
+      inactive,
+      solid,
+      block,
+      rounded: solid,
+      'e-disabled': disabled,
+      'my-2': solid,
+      loading,
+      fab,
+      loadingGradient,
+      colored: background !== 'transparent' || color || solid,
+    }"
+  >
     <div ref="content" class="e-btn-content" :style="contentStyles">
       <div v-if="loading && !loadingGradient" class="load-overlay">
         <e-loading-spinner />
       </div>
-      <span class="actual-content d-flex" :class="{ fullwidth: props.justify == 'space-between' }" :style="{
-        justifyContent:
-          justify, alignContent: props.align, alignItems: props.align
-      }">
+      <span
+        class="actual-content d-flex fullwidth"
+        :style="{
+          justifyContent: justify,
+          alignContent: props.align,
+          alignItems: props.align,
+        }"
+      >
         <slot />
       </span>
     </div>
@@ -59,13 +67,8 @@ const props = withDefaults(
   }
 );
 
-
 const contentStyles = computed(() => {
-  if (props.justify === "space-between") {
-    return "justify-content:stretch; flex-grow: 1";
-  }
-
-  return "";
+  return "justify-content:stretch; flex-grow: 1";
 });
 
 function parseColor(input: string) {
@@ -94,8 +97,8 @@ const textColor = computed(() => {
   if (props.color) {
     return props.color;
   }
-  if (props.background == 'transparent') {
-    return 'var(--e-color-dark)'
+  if (props.background == "transparent") {
+    return "var(--e-color-dark)";
   }
   const rgb = backgroundColorRgb.value;
 
@@ -141,7 +144,7 @@ const hoverColor = computed(() => {
   display: flex;
   font-size: 1rem;
 
-  justify-content: center;
+  justify-content: stretch;
   align-content: center;
   align-items: center;
   padding: 0.3rem var(--e-core-padding-x);
