@@ -14,12 +14,11 @@
       'my-2': solid,
       loading,
       fab,
-      loadingGradient,
       colored: background !== 'transparent' || color || solid,
     }"
   >
-    <div ref="content" class="e-btn-content" :style="contentStyles">
-      <div v-if="loading && !loadingGradient" class="load-overlay">
+    <div ref="content" class="e-btn-content">
+      <div v-if="loading" class="load-overlay">
         <e-loading-spinner />
       </div>
       <span
@@ -50,7 +49,6 @@ const props = withDefaults(
     background?: string;
     block?: boolean;
     loading?: boolean;
-    loadingGradient?: boolean;
     fab?: boolean;
     disabled?: boolean;
     align?: string;
@@ -66,10 +64,6 @@ const props = withDefaults(
     color: undefined,
   }
 );
-
-const contentStyles = computed(() => {
-  return "justify-content:stretch; flex-grow: 1";
-});
 
 function parseColor(input: string) {
   const div = document.createElement("div");
@@ -122,12 +116,6 @@ const hoverColor = computed(() => {
 });
 </script>
 <style lang="scss" scoped>
-.prog-grad {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .e-btn-content {
   transition: transform 0.1s ease-in-out;
   flex-direction: row;
@@ -135,7 +123,8 @@ const hoverColor = computed(() => {
   position: relative;
   align-content: center;
   align-items: center;
-  justify-content: center;
+  justify-content: stretch;
+  flex-grow: 1;
 }
 
 .e-btn {
@@ -171,17 +160,6 @@ const hoverColor = computed(() => {
 
   &.loading {
     pointer-events: none;
-
-    &.loadingGradient {
-      background: rgba(0, 0, 0, 0) !important;
-      color: var(--e-color-dark) !important;
-      transition: background 0.8s, color 0.5s, opacity 0.4s;
-
-      .actual-content {
-        opacity: 0.8;
-        transition: opacity 0.5s;
-      }
-    }
 
     .actual-content {
       opacity: 0;

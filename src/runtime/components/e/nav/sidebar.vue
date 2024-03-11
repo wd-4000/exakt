@@ -49,7 +49,7 @@ const state = reactive({
 
   &:hover ~ .e-sidebar-app-content {
 
-   // transform: translateX(var(--expansion-amount));
+    transform: translateX(calc(var(--expansion-amount)*0.5));
   }
   &:hover {
     width: var(--expanded-sidebar-width);
