@@ -18,14 +18,6 @@
     >
       <div>Space</div><div>Between</div>
     </e-btn>
-
-    <EBtn
-      :loading="state.button1loading"
-      :loading-gradient="true"
-      @click="state.button1loading = !state.button1loading"
-    >
-      Gradient-loading button
-    </EBtn>
     <div style="position: relative;">
       <e-progress-linear :model-value="true" />
     </div>

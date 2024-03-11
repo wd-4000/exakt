@@ -2,8 +2,8 @@
   <nuxt-link :to="to">
     <e-btn
       :solid="false"
-      justify="stretch"
-      block
+      justify="start"
+      :block="true"
       background="transparent"
       class="pa-0 ma-0 e-sidebar-btn"
     >
@@ -49,9 +49,6 @@ defineProps<{
   position: relative;
 }
 .e-sidebar-btn {
-  width: 100%;
-  flex-grow: 0;
-  flex-shrink: 0;
   min-height: 5rem;
 }
 
