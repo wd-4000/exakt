@@ -99,10 +99,10 @@ const background = computed(() =>
   height: 100%;
   position: fixed;
   left: 0;
-  top: 0;
+  
   background-color: v-bind("background");
   overflow: clip;
-  padding-top: calc(var(--btn-height) * v-bind("props.nestingLevel"));
+  top: calc(var(--btn-height) * v-bind("props.nestingLevel"));
 
   &:hover ~ .app-content {
     transform: translateX(

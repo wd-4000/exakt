@@ -34,6 +34,7 @@
         elev="2"
       >
         <template #app>
+          <e-nav-titlebar></e-nav-titlebar>
           <div class="bg-red">
             Sidebar example Sidebar example Sidebar example Sidebar example
             Sidebar example Sidebar example Sidebar example Sidebar example
