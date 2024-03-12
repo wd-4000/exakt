@@ -53,7 +53,13 @@ const props = withDefaults(
     collapsedWidth?: number | string;
     expandedWidth?: number | string;
     buttonHeight: string;
-    items: { title: string; icon: string; subtitle?: string; to: string }[];
+    items: {
+      title: string;
+      icon: string;
+      subtitle?: string;
+      to: string;
+      position?: "top" | "bottom";
+    }[];
     elev: 1 | 2 | 3 | "1" | "2" | "3";
     moveContent: number;
     nestingLevel: number;
@@ -90,12 +96,12 @@ const background = computed(() =>
   --reveal-duration: 0.25s;
 }
 .e-sidebar {
-  height: 100vh;
+  height: 100%;
   position: fixed;
-  left: calc(var(--collapsed-sidebar-width) * v-bind("props.nestingLevel"));
+  left: 0;
   top: 0;
   background-color: v-bind("background");
-  overflow: hidden;
+  overflow: clip;
   padding-top: calc(var(--btn-height) * v-bind("props.nestingLevel"));
 
   &:hover ~ .app-content {
@@ -107,25 +113,29 @@ const background = computed(() =>
   &.collapsed {
     width: var(--collapsed-sidebar-width);
     z-index: 6;
+    padding-left: calc(
+      var(--collapsed-sidebar-width) * v-bind("props.nestingLevel")
+    );
 
     &:hover ~ .extended {
-      transform: translateX(0);
+      transform: translateX(
+        calc(var(--collapsed-sidebar-width) * v-bind("props.nestingLevel"))
+      );
     }
   }
 
   &.extended {
     z-index: 5;
     width: var(--expanded-sidebar-width);
-    transform: translateX(
-      calc(
-      -1 *  var(--expanded-sidebar-width) * calc(v-bind("props.nestingLevel") + 1)
-      )
-    );
-    transition: transform var(--reveal-duration) ease-in-out,
-      opacity var(--reveal-duration) ease-in-out;
+    position: fixed;
+    // transform: translateX(calc(-1 * var(--expanded-sidebar-width)));
+    transform: translateX(-100%);
+    transition: transform var(--reveal-duration) ease-in-out;
 
     &:hover {
-      transform: translateX(0);
+      transform: translateX(
+        calc(var(--collapsed-sidebar-width) * v-bind("props.nestingLevel"))
+      );
     }
   }
 }
@@ -139,7 +149,7 @@ const background = computed(() =>
   left: 0;
   padding-left: var(--collapsed-sidebar-width);
   top: 0rem;
-  position: absolute;
+ position: absolute;
   transform: translateX(0);
 }
 
