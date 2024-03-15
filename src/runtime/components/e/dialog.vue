@@ -69,7 +69,7 @@ const emit = defineEmits(["update:modelValue"]);
 .button-bar {
   display: flex;
   align-items: stretch;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
 }
 </style>
