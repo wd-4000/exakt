@@ -1,9 +1,13 @@
 <template>
   <div>
     <div class="e-sidebar collapsed d-flex flex-column justify-start">
-      <slot name="collapsed"></slot>
+      <slot name="collapsed" />
 
-      <nuxt-link :to="item.to" v-for="(item, i) in props.items" :key="i">
+      <nuxt-link
+        v-for="(item, i) in props.items"
+        :key="i"
+        :to="item.to"
+      >
         <e-btn
           :solid="false"
           justify="center"
@@ -11,14 +15,21 @@
           background="transparent"
           class="pa-0 ma-0 e-sidebar-btn"
         >
-          <e-icon :icon="item.icon" size="22"
-        /></e-btn>
+          <e-icon
+            :icon="item.icon"
+            size="22"
+          />
+        </e-btn>
       </nuxt-link>
     </div>
     <div class="extended e-sidebar">
-      <slot name="extension"></slot>
+      <slot name="extension" />
 
-      <nuxt-link :to="item.to" v-for="(item, i) in props.items">
+      <nuxt-link
+        v-for="(item, i) in props.items"
+        :key="i"
+        :to="item.to"
+      >
         <e-btn
           :solid="false"
           justify="start"
@@ -26,14 +37,23 @@
           background="transparent"
           class="pa-0 ma-0 e-sidebar-btn"
         >
-          <div v-if="item.icon" class="icon">
-            <e-icon :icon="item.icon" size="22" />
+          <div
+            v-if="item.icon"
+            class="icon"
+          >
+            <e-icon
+              :icon="item.icon"
+              size="22"
+            />
           </div>
           <div class="ml-4 d-flex flex-column text">
             <div :class="{ 'mb-1': item.subtitle }">
               {{ item.title }}
             </div>
-            <div v-if="item.subtitle" class="text-secondary">
+            <div
+              v-if="item.subtitle"
+              class="text-secondary"
+            >
               {{ item.subtitle }}
             </div>
           </div>

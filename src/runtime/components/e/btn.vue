@@ -17,8 +17,14 @@
       colored: background !== 'transparent' || color || solid,
     }"
   >
-    <div ref="content" class="e-btn-content">
-      <div v-if="loading" class="load-overlay">
+    <div
+      ref="content"
+      class="e-btn-content"
+    >
+      <div
+        v-if="loading"
+        class="load-overlay"
+      >
         <e-loading-spinner />
       </div>
       <span

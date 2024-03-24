@@ -12,11 +12,21 @@
     ]"
   >
     <template #collapsed>
-      <img src="/sample-logo.svg" style="width: 3.5rem" />
+      <img
+        src="/sample-logo.svg"
+        style="width: 3.5rem"
+      >
     </template>
     <template #extension>
-      <div style="height: 3.5rem" class="d-flex flex-align-center">
-        <img src="/sample-logo.svg" style="width: 3.5rem" class="mr-4" /> My
+      <div
+        style="height: 3.5rem"
+        class="d-flex flex-align-center"
+      >
+        <img
+          src="/sample-logo.svg"
+          style="width: 3.5rem"
+          class="mr-4"
+        > My
         Crappy App
       </div>
     </template>
@@ -34,7 +44,7 @@
         elev="2"
       >
         <template #app>
-          <e-nav-titlebar></e-nav-titlebar>
+          <e-nav-titlebar />
           <div class="bg-red">
             Sidebar example Sidebar example Sidebar example Sidebar example
             Sidebar example Sidebar example Sidebar example Sidebar example
