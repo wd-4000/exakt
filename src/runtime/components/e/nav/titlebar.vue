@@ -1,9 +1,9 @@
 
 
 <template>
-<div class="titlebar d-flex flex-align-center">
-<h4>Title</h4>
-</div>
+  <div class="titlebar d-flex flex-align-center">
+    <h4>Title</h4>
+  </div>
 </template>
 <style lang="scss" scoped>
 .titlebar{
