@@ -3,7 +3,7 @@
     class="material-symbol"
     :icon-style="iconStyle"
   >
-    person
+    <slot/>
   </div>
 </template>
 <script setup lang="ts">
