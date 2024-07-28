@@ -10,7 +10,7 @@
       v-if="icon"
       class="mr-2"
       size="24"
-      :fill="inputState.focused || currentText.length"
+      :fill="inputState.focused || currentText.length > 0"
     >
       {{ icon }}
     </e-icon>
