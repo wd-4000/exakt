@@ -41,7 +41,7 @@
   </button>
 </template>
 <script lang="ts" setup>
-import { computed, useNuxtApp } from "#imports";
+import { computed, useNuxtApp,  } from "#imports";
 //import { IonSpinner } from "@ionic/vue";
 const { $exakt } = useNuxtApp();
 const props = withDefaults(
