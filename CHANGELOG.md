@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.41
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.40...v0.0.41)
+
+### 🏡 Chore
+
+- **release:** V0.0.40 ([c73281d](https://github.com/wd-4000/exakt/commit/c73281d))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.40
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.39...v0.0.40)
