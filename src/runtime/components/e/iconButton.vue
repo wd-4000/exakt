@@ -8,9 +8,9 @@
   >
     <e-icon
       v-if="icon"
-      :icon="icon"
+      
       :size="size"
-    />
+    >{{ icon }}</e-icon>
     <slot />
   </e-btn>
 </template>

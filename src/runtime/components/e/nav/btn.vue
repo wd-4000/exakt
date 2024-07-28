@@ -19,10 +19,10 @@
             :class="{ 'mr-2': label, 'mx-4': !label }"
           >
             <e-icon
-              :icon="icon"
+              
               class="icon"
               :size="size"
-            />
+            >{{ icon }}</e-icon>
             <transition name="fade">
               <div
                 v-if="alert"

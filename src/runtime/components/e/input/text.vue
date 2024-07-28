@@ -8,10 +8,10 @@
   >
     <e-icon
       v-if="icon"
-      :icon="icon"
       class="mr-2"
-      size="21"
-    />
+      size="24"
+      :fill="inputState.focused"
+    >{{icon}}</e-icon>
     <textarea
       v-if="type === 'textarea'"
       ref="input"

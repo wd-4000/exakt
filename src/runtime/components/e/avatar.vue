@@ -14,13 +14,12 @@
     <div v-else>
       <e-icon
         :size="props.size"
-        :icon="mdiAccountCircle"
-      />
+       
+      >person_circle</e-icon>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { mdiAccountCircle } from "@mdi/js";
 
 const props = withDefaults(defineProps<{
   src?: string;

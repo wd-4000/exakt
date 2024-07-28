@@ -52,14 +52,14 @@
       <EBtn
         :solid="true"
         background="primary"
-        :icon="mdiAbacus"
+        icon="person"
       >
         <e-icon
           v-if="presets[state.dropdown].icon"
           :size="20"
-          :icon="mdiPlus"
+       
           class="mr-2"
-        />
+        >add</e-icon>
         Menu
       </EBtn>
     </EDropdown>
@@ -81,7 +81,7 @@
     <e-input-text
       label="Regular input w/icon"
       :solid="true"
-      :icon="mdiText"
+      icon="person"
     />
 
 
@@ -99,23 +99,22 @@
     
 <script setup>
 import { reactive } from "#imports";
-import { mdiPlus, mdiAbacus, mdiText } from "@mdi/js";
 const state = reactive({ msgToSend: "", button1loading: false, dialog1: false, dropdown: 0 })
 
 const presets = [
   {
     name: "Blank",
-    icon: mdiAbacus,
+    icon: 'home',
     segments: [{ text: "" }],
   },
   {
     name: "Yes/No/Maybe",
-    icon: mdiAbacus,
+    icon: 'home',
     segments: [{ text: "Yes" }, { text: "No" }, { text: "Maybe" }],
   },
   {
     name: "6-side Dice",
-    icon: mdiAbacus,
+    icon: 'home',
     segments: [
       { text: "1" },
       { text: "2" },
@@ -127,7 +126,7 @@ const presets = [
   },
   {
     name: "D20",
-    icon: mdiAbacus,
+    icon: 'home',
     segments: [
       { text: "1" },
       { text: "2" },
@@ -153,7 +152,7 @@ const presets = [
   },
   {
     name: "8-ball",
-    icon: mdiAbacus,
+    icon: 'home',
     segments: [
       { text: "Uncertain" },
       { text: "Definitely No" },
@@ -165,7 +164,7 @@ const presets = [
   },
   {
     name: "Food",
-    icon: mdiAbacus,
+    icon: 'home',
     segments: [
       { text: "Pizza" },
       { text: "Sushi" },
@@ -176,7 +175,7 @@ const presets = [
   },
   {
     name: "Import",
-    icon: mdiAbacus,
+    icon: 'home',
   },
 ];
 

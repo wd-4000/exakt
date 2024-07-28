@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build",
-    "dev": "nuxi dev playground",
+    "dev": "nuxi dev playground --host 0.0.0.0",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
@@ -27,10 +27,10 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@mdi/js": "^7.1.96",
     "@nuxt/kit": "^3.2.3",
     "blurhash": "^2.0.5",
     "lodash-es": "^4.17.21",
+    "material-symbols": "latest",
     "sass": "^1.62.1"
   },
   "devDependencies": {

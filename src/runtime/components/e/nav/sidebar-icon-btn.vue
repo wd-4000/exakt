@@ -6,16 +6,13 @@
       :block="true"
       background="transparent"
       class="pa-0 ma-0 e-sidebar-icon"
-    >
-      <e-icon
-        :icon="mdiHome"
-        size="22"
-      />
-    </e-btn>
-  </nuxt-link>
+    >   <e-icon
+       
+          size="22"
+        >home</e-icon></e-btn>
+   </nuxt-link>
 </template>
 <script lang="ts" setup>
-import { mdiHome } from '@mdi/js';
 </script>
 <style lang="scss">
 

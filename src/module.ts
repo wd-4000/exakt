@@ -4,6 +4,7 @@ import {
   createResolver,
   addComponentsDir,
   extendViteConfig,
+  addImportsSources
 } from "@nuxt/kit";
 import fs from "fs";
 // Module options TypeScript interface definition
@@ -94,6 +95,7 @@ export default defineNuxtModule<ModuleOptions>({
       new Uint8Array(Buffer.from(CSSvariables + "}"))
     );
 
+
     extendViteConfig((config) => {
       Object.assign(config, {
         css: {
@@ -107,6 +109,10 @@ export default defineNuxtModule<ModuleOptions>({
         },
       });
     });
+
+    addImportsSources({
+      from: 'material-symbols', imports: ['material-symbols']
+    })
 
     nuxt.options.css.push(resolver.resolve("./runtime/css/main.scss"));
     nuxt.options.css.push(resolver.resolve("./runtime/css/util.scss"));
