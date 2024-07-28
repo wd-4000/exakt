@@ -1,6 +1,10 @@
 <template>
-
-  <div class="material-symbol" :icon-style="iconStyle">person</div>
+  <div
+    class="material-symbol"
+    :icon-style="iconStyle"
+  >
+    person
+  </div>
 </template>
 <script setup lang="ts">
 import { computed } from "#imports";

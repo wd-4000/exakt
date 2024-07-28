@@ -27,7 +27,7 @@
                   <e-icon
                     :size="17"
                     :icon="msgStatus[0].icon"
-                  ></e-icon>
+                  />
                 </div>
                 <div
                   v-else-if="status === `sent`"

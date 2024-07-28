@@ -14,8 +14,9 @@
     <div v-else>
       <e-icon
         :size="props.size"
-       
-      >person_circle</e-icon>
+      >
+        person_circle
+      </e-icon>
     </div>
   </div>
 </template>

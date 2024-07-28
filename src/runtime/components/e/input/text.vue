@@ -11,7 +11,9 @@
       class="mr-2"
       size="24"
       :fill="inputState.focused"
-    >{{icon}}</e-icon>
+    >
+      {{ icon }}
+    </e-icon>
     <textarea
       v-if="type === 'textarea'"
       ref="input"

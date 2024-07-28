@@ -6,11 +6,15 @@
       :block="true"
       background="transparent"
       class="pa-0 ma-0 e-sidebar-icon"
-    >   <e-icon
+    >
+      <e-icon
        
-          size="22"
-        >home</e-icon></e-btn>
-   </nuxt-link>
+        size="22"
+      >
+        home
+      </e-icon>
+    </e-btn>
+  </nuxt-link>
 </template>
 <script lang="ts" setup>
 </script>

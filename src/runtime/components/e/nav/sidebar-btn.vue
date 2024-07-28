@@ -14,7 +14,9 @@
         <e-icon
       
           size="22"
-        >{{ icon }}</e-icon>
+        >
+          {{ icon }}
+        </e-icon>
       </div>
       <div class="ml-4 d-flex flex-column e-sidebar-btn-text">
         <div class="mb-1">
