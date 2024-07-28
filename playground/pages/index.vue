@@ -59,7 +59,9 @@
           :size="20"
        
           class="mr-2"
-        >add</e-icon>
+        >
+          add
+        </e-icon>
         Menu
       </EBtn>
     </EDropdown>

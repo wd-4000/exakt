@@ -22,7 +22,9 @@
               
               class="icon"
               :size="size"
-            >{{ icon }}</e-icon>
+            >
+              {{ icon }}
+            </e-icon>
             <transition name="fade">
               <div
                 v-if="alert"

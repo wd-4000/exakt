@@ -4,7 +4,9 @@
       
       size="19"
       class="mr-2"
-    >warning</e-icon><small><slot /></small>
+    >
+      warning
+    </e-icon><small><slot /></small>
   </div>
 </template>
 <script setup lang="ts">

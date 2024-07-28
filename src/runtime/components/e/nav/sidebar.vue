@@ -15,8 +15,10 @@
           background="transparent"
           class="pa-0 ma-0 e-sidebar-btn"
         >
-          <e-icon  size="22"
-        >{{ item.icon }}</e-icon></e-btn>
+          <e-icon size="22">
+            {{ item.icon }}
+          </e-icon>
+        </e-btn>
       </nuxt-link>
     </div>
     <div class="extended e-sidebar">
@@ -34,8 +36,13 @@
           background="transparent"
           class="pa-0 ma-0 e-sidebar-btn"
         >
-          <div v-if="item.icon" class="icon">
-            <e-icon  size="22" >{{ item.icon }} </e-icon>
+          <div
+            v-if="item.icon"
+            class="icon"
+          >
+            <e-icon size="22">
+              {{ item.icon }}
+            </e-icon>
           </div>
           <div class="ml-4 d-flex flex-column text">
             <div :class="{ 'mb-1': item.subtitle }">

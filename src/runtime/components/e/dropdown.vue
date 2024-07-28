@@ -39,7 +39,9 @@
               v-if="item.icon"
               :size="20"
               class="mr-2"
-            >{{ item.icon }}</e-icon>
+            >
+              {{ item.icon }}
+            </e-icon>
             {{ item.name }}
           </e-btn>
         </component>
