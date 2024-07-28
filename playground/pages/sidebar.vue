@@ -5,10 +5,10 @@
     elev="3"
     :move-content="0.5"
     :items="[
-      { icon: mdiHome, title: 'Home', to: '/' },
-      { icon: mdiAccountMultiple, title: 'Users', to: '/' },
-      { icon: mdiEthernet, title: 'Network', to: '/sidebar' },
-      { icon: mdiCalendar, title: 'Events', to: '/' },
+      { icon: 'home', title: 'Home', to: '/' },
+      { icon: 'home', title: 'Users', to: '/' },
+      { icon: 'home', title: 'Network', to: '/sidebar' },
+      { icon: 'home', title: 'Events', to: '/' },
     ]"
   >
     <template #collapsed>
@@ -37,9 +37,9 @@
         :move-content="0"
         :nesting-level="1"
         :items="[
-          { icon: mdiDevices, title: 'Devices', to: '/' },
-          { icon: mdiServer, title: 'Infrastructure', to: '/' },
-          { icon: mdiWifi, title: 'WLAN', to: '/' },
+          { icon: 'home', title: 'Devices', to: '/' },
+          { icon: 'home', title: 'Infrastructure', to: '/' },
+          { icon: 'home', title: 'WLAN', to: '/' },
         ]"
         elev="2"
       >
@@ -56,13 +56,5 @@
   </e-nav-sidebar>
 </template>
 <script setup lang="ts">
-import {
-  mdiAccountMultiple,
-  mdiCalendar,
-  mdiDevices,
-  mdiEthernet,
-  mdiHome,
-  mdiServer,
-  mdiWifi,
-} from "@mdi/js";
+
 </script>

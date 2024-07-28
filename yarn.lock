@@ -1357,7 +1357,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@exakt/ui@workspace:."
   dependencies:
-    "@mdi/js": ^7.1.96
     "@nuxt/eslint-config": ^0.1.1
     "@nuxt/kit": ^3.2.3
     "@nuxt/module-builder": ^0.2.1
@@ -1371,6 +1370,7 @@ __metadata:
     eslint: ^8.35.0
     eslint-plugin-unused-imports: ^3.0.0
     lodash-es: ^4.17.21
+    material-symbols: latest
     mkdist: ^1.2.0
     nuxt: ^3.7.1
     sass: ^1.62.1
@@ -1515,13 +1515,6 @@ __metadata:
   bin:
     node-pre-gyp: bin/node-pre-gyp
   checksum: b848f6abc531a11961d780db813cc510ca5a5b6bf3184d72134089c6875a91c44d571ba6c1879470020803f7803609e7b2e6e429651c026fe202facd11d444b8
-  languageName: node
-  linkType: hard
-
-"@mdi/js@npm:^7.1.96":
-  version: 7.3.67
-  resolution: "@mdi/js@npm:7.3.67"
-  checksum: bba88d6f1305a02c3b7372930746314aec1ddc31f04372c4da419a345661de3be34181a749afa00b1c0cd8281d9f443efe1876ee9ba683032e88f35466886900
   languageName: node
   linkType: hard
 
@@ -6670,6 +6663,13 @@ __metadata:
     promise-retry: ^2.0.1
     ssri: ^10.0.0
   checksum: 7c7a6d381ce919dd83af398b66459a10e2fe8f4504f340d1d090d3fa3d1b0c93750220e1d898114c64467223504bd258612ba83efbc16f31b075cd56de24b4af
+  languageName: node
+  linkType: hard
+
+"material-symbols@npm:latest":
+  version: 0.21.2
+  resolution: "material-symbols@npm:0.21.2"
+  checksum: b52d34d1aee9b6fb1ab371d2cf307721a1a5acf9914613cb49a9c521cae9d0c2b441a4c0ff6fd15f022db1fbe530e7bf2af3b5acfd36b4a3a04647a5d89f6048
   languageName: node
   linkType: hard
 

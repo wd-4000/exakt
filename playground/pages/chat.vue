@@ -27,7 +27,7 @@
                   <e-icon
                     :size="17"
                     :icon="msgStatus[0].icon"
-                  />
+                  ></e-icon>
                 </div>
                 <div
                   v-else-if="status === `sent`"
@@ -62,12 +62,12 @@
           :solid="true"
           :rounded="false"
         /><e-icon-button
-          :icon="mdiPaperclip"
+          :icon="'home'"
           size="19"
           background="transparent"
         /><e-icon-button
           type="submit"
-          :icon="mdiSend"
+          :icon="'home'"
           size="19"
           background="transparent"
         />
@@ -79,8 +79,7 @@
 <script setup lang="ts">
 import { reactive, useNuxtApp } from "#imports";
 const { $exakt } = useNuxtApp()
-import { mdiCheck, mdiCheckAll, mdiClockTimeThreeOutline, mdiPaperclip, mdiSend } from "@mdi/js";
-const msgStatus = [{ icon: mdiClockTimeThreeOutline, text: "sending" }, { icon: mdiCheck, text: "sent" }, { icon: mdiCheckAll, text: "read" },]
+const msgStatus = [{ icon: 'home', text: "sending" }, { icon: 'home', text: "sent" }, { icon: 'home', text: "read" },]
 const state = reactive({ msgstatus: 0, interval: null, messages: [{ posy: "bottom", liveTyping: false, pointer: true, id: "1", text: "Hey I was wondering if you got your bogos binted?", status: "received", date: new Date() }, { liveTyping: false, pointer: true, id: "1", text: "Michael filed a suit against you.", status: "system", date: new Date(), }], msgToSend: "" })
 const submitMessage = () => {
   console.log("Submit")

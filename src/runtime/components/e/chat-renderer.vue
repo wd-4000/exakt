@@ -19,11 +19,10 @@
   </div>
 </template>
 <script setup lang="ts">
-import { mdiDelete, mdiFlag, mdiMinusCircle } from "@mdi/js";
 import { reactive, computed } from "#imports";
 
 const status = reactive({ dropdown: { visible: false, x: 0, y: 0 } });
-const items = [{ icon: mdiDelete, name: "Delete" }, { icon: mdiMinusCircle, name: "Delete just for me" }, { icon: mdiFlag, name: "Dox" }];
+const items = [{ icon: 'delete', name: "Delete" }, { icon: 'remove', name: "Delete just for me" }, { icon: 'flag', name: "Dox" }];
 
 const openDropdown = ({ clientX, clientY }: MouseEvent) => {
     status.dropdown.visible = true;
