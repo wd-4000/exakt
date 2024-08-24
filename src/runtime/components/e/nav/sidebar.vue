@@ -160,7 +160,7 @@ const background = computed(() =>
 
 .app-content {
   transition: transform var(--reveal-duration) ease-in-out;
-  background-color: var(--e-color-light);
+  background-color: var(--e-color-bg);
   width: 100%;
   width: fill-available;
   height: 100%;

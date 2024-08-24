@@ -63,12 +63,40 @@ a,
   }
 }
 
-@mixin elev($source, $lightness) {
+@mixin elev($lightness, $light) {
+  
+  $source: hsl($root-hue,15%, $lightness);
+  $source-i:  color.change($source, $saturation: 20%);
+
+    $full: 0;
+    $factor: 1;
+    @if $light == 1 {
+    $full: 100;
+    $factor: -1;
+  }
+  $root-i-depressed: color.adjust($source-i, $lightness: -2.5%);
+  $root-i-depressed-2: color.adjust($source-i, $lightness: -7.5%);
+  $root-i-depressed-active: color.adjust($source-i, $lightness: -5%, $saturation: 2%);
+  //$root-depressed: color.change($source, $lightness: $full + $factor*20%, $saturation:22%);
+  --e-color-i-depressed: #{$root-i-depressed};
+  --e-color-i-depressed-active: #{$root-i-depressed-active};
+  //--e-color-depressed: #{$root-depressed};
+  --e-color-i-depressed-2: #{$root-i-depressed-2};
+
+
+  $root-i-outline: color.change($source, $lightness:  $full + $factor*30%, $saturation: 20%);
+  --e-color-i-outline: #{$root-i-outline};
+
+  $root-bg: color.adjust($source, $lightness:  -2%);
+  $root-fg: color.adjust($source, $lightness:  2%);
+  --e-color-fg: #{$root-fg};
+  --e-color-bg: #{$root-bg};
+  
+
   $root-elev: color.scale($source, $lightness: $lightness);
-  $root-elev-2: color.scale($source, $lightness: $lightness * 1.5);
-  $root-elev-3: color.scale($source, $lightness: $lightness * 2);
-
-
+  $root-elev-2: color.scale($source, $lightness: $lightness);
+  $root-elev-3: color.scale($source, $lightness: $lightness);
+  
   --e-color-elev: #{$root-elev};
   --e-color-elev-rgb: #{red($root-elev), green($root-elev), blue($root-elev)};
 
@@ -84,23 +112,23 @@ a,
 :root {
   --e-color-primary-rgb: #{$root-primary-rgb};
 
-  --e-color-light: #{$root-light};
-  --e-color-light-rgb: #{$root-light-rgb};
+  --e-color-bg: #{$root-light};
+  --e-color-bg-rgb: #{$root-light-rgb};
 
   --e-color-dark: #{$root-dark};
   --e-color-dark-rgb: #{$root-dark-rgb};
 
-  @include elev($root-light, -5%);
+  @include elev(83%, 1);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --e-color-light: #{$root-dark};
-    --e-color-light-rgb: #{$root-dark-rgb};
+    --e-color-bg: #{$root-dark};
+    --e-color-bg-rgb: #{$root-dark-rgb};
 
     --e-color-dark: #{$root-light};
     --e-color-dark-rgb: #{$root-light-rgb};
     color-scheme: dark;
-    @include elev($root-dark, 5%);
+    @include elev(18%, 0);
   }
 }
