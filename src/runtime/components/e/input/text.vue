@@ -156,6 +156,7 @@ const transitionEnd = () => {
   color: var(--e-color-dark);
   font-family: var(--e-font-family);
   height: v-bind(height);
+  transition: outline ease-in-out 0.15s, background-color ease-in-out 0.15s;
 
   &:-webkit-autofill {
     // Expose a hook for JavaScript when auto fill is shown.
@@ -192,13 +193,24 @@ const transitionEnd = () => {
   background-color: transparent;
   color: var(--e-color-dark);
   padding: 10px;
+  outline: var(--e-color-i-outline) solid 0.1rem;
+  //box-shadow: 0 0 0 0.1rem  var(--e-color-i-outline);
 
   overflow: clip;
+  transition: outline ease-in-out 0.15s, background-color ease-in-out 0.15s;
+}
+
+.wrapper.solid:has(:focus){
+  outline: var(--e-color-primary) solid 0.125rem;
+  //box-shadow: 0 0 0 0.125rem  var(--e-color-primary);
+
+  background-color: var(--e-color-i-depressed-active);
+
 }
 
 .wrapper.solid {
   padding: 15px;
-  background-color: var(--e-color-elev);
+  background-color: var(--e-color-i-depressed);
 }
 
 .fullwidth {
@@ -206,7 +218,8 @@ const transitionEnd = () => {
 }
 
 .wrapper:active {
-  background-color: rgba(var(--e-color-elev-2-rgb), 0.4);
+  background-color: var(--e-color-i-depressed-2) !important;
+  outline: var(--e-color-primary) solid 0.2rem !important;
 }
 
 .input::-ms-reveal {

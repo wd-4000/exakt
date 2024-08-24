@@ -1,6 +1,6 @@
 <template>
   <e-btn
-    class="a-btn"
+    class="a-btn pa-1"
     :loading="loading"
     :solid="false"
     :type="type"

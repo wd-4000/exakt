@@ -29,13 +29,13 @@ const emit = defineEmits(["update:modelValue"]);
   //background-color: red;
 
   &.opaque-on-desktop {
-    background-color: rgba(var(--e-color-light-rgb), 0.7);
+    background-color: rgba(var(--e-color-bg-rgb), 0.7);
   }
 }
 
 @media screen and (max-width: $e-md-screen-breakpoint) {
   .focus-sheet {
-    background-color: rgba(var(--e-color-light-rgb), 0.7);
+    background-color: rgba(var(--e-color-bg-rgb), 0.7);
   }
 }
 </style>

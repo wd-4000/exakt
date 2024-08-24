@@ -9,6 +9,7 @@ import {
 import fs from "fs";
 // Module options TypeScript interface definition
 export interface ModuleOptions {
+  hue: number,
   colors: {
     primary?: string;
     dark?: string;
@@ -29,6 +30,7 @@ export interface ModuleOptions {
 }
 
 const defaults: ModuleOptions = {
+  hue: 9,
   colors: {
     primary: "#008dff",
     dark: "#212121",
@@ -73,7 +75,7 @@ export default defineNuxtModule<ModuleOptions>({
     let SCSSvariables = "";
     let CSSvariables = ":root{";
 
-    for (const [key, value] of Object.entries(options.colors)) {
+    for (const [key, value] of [['hue', options.hue+'deg'], ...Object.entries(options.colors)]) {
       SCSSvariables += `$root-${key}: ${value}; `;
     }
     for (const [key, value] of Object.entries(options.breakpoints)) {

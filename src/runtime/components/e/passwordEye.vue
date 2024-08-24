@@ -1,6 +1,6 @@
 <template>
   <e-icon-button
-    class="rounded pa-1"
+    class="rounded"
     size="20"
     :icon="modelValue ? 'visibility' : 'visibility_off'"
     @click.stop="emit('update:modelValue', !modelValue)"
