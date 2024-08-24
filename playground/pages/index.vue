@@ -75,38 +75,39 @@
       :items="presets"
       use-key="name"
     />
-    <div style="background-color: var(--e-color-fg);" class="px-6 pt-2 pb-6 rounded"> 
-      <h3 class="mb-6">Input</h3>
+    <div
+      style="background-color: var(--e-color-fg);"
+      class="px-6 pt-2 pb-6 rounded"
+    > 
+      <h3 class="mb-6">
+        Input
+      </h3>
 
-    <e-input-text
-      label="Regular input"
-      :solid="true"
-      class="mb-4"
-    />
-    <e-input-text
-      label="Regular input w/icon"
-      :solid="true"
-      icon="person"
-      class="mb-4"
-
-    />
-
-
-    <e-input-text type="date" 
-    class="mb-4"
-    
-    />
+      <e-input-text
+        label="Regular input"
+        :solid="true"
+        class="mb-4"
+      />
+      <e-input-text
+        label="Regular input w/icon"
+        :solid="true"
+        icon="person"
+        class="mb-4"
+      />
 
 
-    <e-input-text
-      type="textarea"
-      label="Text area"
-      :solid="true"
-    />
+      <e-input-text
+        type="date" 
+        class="mb-4"
+      />
 
 
+      <e-input-text
+        type="textarea"
+        label="Text area"
+        :solid="true"
+      />
     </div>
-
   </div>
 </template>
     
