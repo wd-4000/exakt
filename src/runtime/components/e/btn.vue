@@ -1,48 +1,32 @@
 <template>
-  <button
-    class="e-btn"
-    :style="{ width }"
-    :type="type"
-    :disabled="disabled || loading"
-    :class="{
-      active,
-      inactive,
-      solid,
-      block,
-      rounded: solid,
-      'e-disabled': disabled,
-      'my-2': solid,
-      loading,
-      fab,
-      colored: background !== 'transparent' || color || solid,
-    }"
-  >
-    <div
-      ref="content"
-      class="e-btn-content"
-    >
-      <div
-        v-if="loading"
-        class="load-overlay"
-      >
+  <button class="e-btn" :style="{ width }" :type="type" :disabled="disabled || loading" :class="{
+    active,
+    inactive,
+    solid,
+    block,
+    rounded: solid,
+    'e-disabled': disabled,
+    'my-2': solid,
+    loading,
+    fab,
+    ...backgroundClass
+  }">
+    <div ref="content" class="e-btn-content">
+      <div v-if="loading" class="load-overlay">
         <e-loading-spinner />
       </div>
-      <span
-        class="actual-content d-flex fullwidth"
-        :style="{
-          justifyContent: justify,
-          alignContent: props.align,
-          alignItems: props.align,
-        }"
-      >
+      <span class="actual-content d-flex fullwidth" :style="{
+        justifyContent: justify,
+        alignContent: props.align,
+        alignItems: props.align,
+      }">
         <slot />
       </span>
     </div>
   </button>
 </template>
 <script lang="ts" setup>
-import { computed, useNuxtApp,  } from "#imports";
-//import { IonSpinner } from "@ionic/vue";
+import { computed, useNuxtApp, } from "#imports";
 const { $exakt } = useNuxtApp();
 const props = withDefaults(
   defineProps<{
@@ -86,14 +70,32 @@ const backgroundColorRgb = computed(() => {
   if (!props.background || process.server) {
     return { r: 0, g: 0, b: 0 };
   }
-  return parseColor(parsedBackgroundProp.value);
+  return parseColor($exakt.parseColor(props.background));
 });
 
-const parsedBackgroundProp = computed(() =>
-  $exakt.parseColor(props.background)
-);
+const isRootColor = computed(() => $exakt.rootColors.includes(props.background))
+const backgroundClass = computed(() => {
+  const c: { [key: string]: boolean } = {}
 
+  if(props.background == 'transparent'){
+    c['transparent'] = true;
+  }else if (isRootColor.value) {
+    c["bg-" + props.background] = true
+  } else {
+    c['custom-color'] = true
+  }
+
+  return c
+})
+const backgroundColor = computed(() => {
+  if (isRootColor) { return 'unset' } else {
+    return props.background
+  }
+})
 const textColor = computed(() => {
+  if (isRootColor) {
+    return 'unset';
+  }
   if (props.color) {
     return props.color;
   }
@@ -112,14 +114,7 @@ const textColor = computed(() => {
   return "#FFFFFF";
 });
 
-const hoverColor = computed(() => {
-  if (parsedBackgroundProp.value === "transparent") {
-    return "rgba(98, 98, 98, 0.15)";
-  }
 
-  const rgb = backgroundColorRgb.value;
-  return `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, 0.9)`;
-});
 </script>
 <style lang="scss" scoped>
 .e-btn-content {
@@ -135,7 +130,6 @@ const hoverColor = computed(() => {
 
 .e-btn {
   user-select: none;
-  background: rgba(0, 0, 0, 0);
   display: flex;
   font-size: 1rem;
 
@@ -144,7 +138,6 @@ const hoverColor = computed(() => {
   align-items: center;
   padding: 0.3rem var(--e-core-padding-x);
   overflow: hidden;
-  color: var(--e-color-dark);
   outline: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   border: none;
@@ -158,6 +151,14 @@ const hoverColor = computed(() => {
   box-sizing: border-box;
 
   border: transparent solid 0.1rem;
+
+  &.transparent {
+    color: var(--e-color-dark);
+    background: rgba(0, 0, 0, 0);
+    &:hover {
+       background: rgba(98, 98, 98, 0.15);
+    }
+  }
 
   &:focus-visible {
     transition: border-width 0.2s;
@@ -173,7 +174,8 @@ const hoverColor = computed(() => {
   }
 
   &:hover {
-    background: rgba(98, 98, 98, 0.15);
+   // background: rgba(98, 98, 98, 0.15);
+   opacity: 0.7;
     border: transparent solid 0.1rem;
   }
 
@@ -198,13 +200,13 @@ const hoverColor = computed(() => {
     width: 100%;
   }
 
-  &.colored {
-    background-color: v-bind(parsedBackgroundProp);
+  &.custom-color {
+    background-color: v-bind(backgroundColor);
     color: v-bind(textColor);
 
-    &:hover {
-      background-color: v-bind(hoverColor);
-    }
+   /* &:hover {
+      opacity: 0.9;
+    } */
   }
 
   &.solid {
