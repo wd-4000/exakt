@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.44
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.43...v0.0.44)
+
+### 🚀 Enhancements
+
+- Hr ([047cee2](https://github.com/wd-4000/exakt/commit/047cee2))
+- Bg-* classes mandate text color feat: less js-intensive buttons ([332de13](https://github.com/wd-4000/exakt/commit/332de13))
+
+### 🏡 Chore
+
+- **release:** V0.0.43 ([c0a8a5c](https://github.com/wd-4000/exakt/commit/c0a8a5c))
+- Lint ([03b4838](https://github.com/wd-4000/exakt/commit/03b4838))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.43
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.42...v0.0.43)
