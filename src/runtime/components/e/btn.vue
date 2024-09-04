@@ -1,25 +1,40 @@
 <template>
-  <button class="e-btn" :style="{ width }" :type="type" :disabled="disabled || loading" :class="{
-    active,
-    inactive,
-    solid,
-    block,
-    rounded: solid,
-    'e-disabled': disabled,
-    'my-2': solid,
-    loading,
-    fab,
-    ...backgroundClass
-  }">
-    <div ref="content" class="e-btn-content">
-      <div v-if="loading" class="load-overlay">
+  <button
+    class="e-btn"
+    :style="{ width }"
+    :type="type"
+    :disabled="disabled || loading"
+    :class="{
+      active,
+      inactive,
+      solid,
+      block,
+      rounded: solid,
+      'e-disabled': disabled,
+      'my-2': solid,
+      loading,
+      fab,
+      ...backgroundClass
+    }"
+  >
+    <div
+      ref="content"
+      class="e-btn-content"
+    >
+      <div
+        v-if="loading"
+        class="load-overlay"
+      >
         <e-loading-spinner />
       </div>
-      <span class="actual-content d-flex fullwidth" :style="{
-        justifyContent: justify,
-        alignContent: props.align,
-        alignItems: props.align,
-      }">
+      <span
+        class="actual-content d-flex fullwidth"
+        :style="{
+          justifyContent: justify,
+          alignContent: props.align,
+          alignItems: props.align,
+        }"
+      >
         <slot />
       </span>
     </div>
@@ -88,12 +103,12 @@ const backgroundClass = computed(() => {
   return c
 })
 const backgroundColor = computed(() => {
-  if (isRootColor) { return 'unset' } else {
+  if (isRootColor.value) { return 'unset' } else {
     return props.background
   }
 })
 const textColor = computed(() => {
-  if (isRootColor) {
+  if (isRootColor.value) {
     return 'unset';
   }
   if (props.color) {
@@ -157,6 +172,7 @@ const textColor = computed(() => {
     background: rgba(0, 0, 0, 0);
     &:hover {
        background: rgba(98, 98, 98, 0.15);
+       opacity: 1;
     }
   }
 
