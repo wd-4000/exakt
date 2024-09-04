@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.45
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.44...v0.0.45)
+
+### 🩹 Fixes
+
+- Opacity reduction @hover on transparent buttons ([c120ed9](https://github.com/wd-4000/exakt/commit/c120ed9))
+
+### 🏡 Chore
+
+- **release:** V0.0.44 ([6f1334b](https://github.com/wd-4000/exakt/commit/6f1334b))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.44
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.43...v0.0.44)
