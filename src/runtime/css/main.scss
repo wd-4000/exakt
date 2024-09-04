@@ -42,6 +42,11 @@ $color-map: (
 
   .bg-#{$name} {
     background: $color;
+    @if (color.lightness($color) > 49%){
+      color: $root-dark
+    }@else{
+      color: $root-light
+    }
   }
 
   .color-#{$name} {
