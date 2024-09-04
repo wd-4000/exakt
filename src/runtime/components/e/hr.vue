@@ -1,5 +1,7 @@
 <template>
-    <div class="hr"><slot/></div>
+  <div class="hr">
+    <slot />
+  </div>
 </template>
 <style scoped>
 .hr {
