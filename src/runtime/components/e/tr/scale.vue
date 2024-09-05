@@ -1,9 +1,9 @@
 <template>
-    <!-- wrap the built-in Transition component -->
-    <Transition name="e-tr-scale">
-      <slot /> <!-- pass down slot content -->
-    </Transition>
-  </template>
+  <!-- wrap the built-in Transition component -->
+  <Transition name="e-tr-scale">
+    <slot /> <!-- pass down slot content -->
+  </Transition>
+</template>
   
   <script setup lang="ts">
   const props = withDefaults(
