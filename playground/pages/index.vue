@@ -21,6 +21,7 @@
     <div style="position: relative;">
       <e-progress-linear :model-value="true" />
     </div>
+<EChip icon="water_drop" v-model="chip">Chip</EChip>
 
     <h3>Alert</h3>
     <EAlert type="error">
@@ -112,9 +113,9 @@
 </template>
     
 <script setup>
-import { reactive } from "#imports";
+import { reactive, ref } from "#imports";
 const state = reactive({ msgToSend: "", button1loading: false, dialog1: false, dropdown: 0 })
-
+const chip = ref(false);
 const presets = [
   {
     name: "Blank",
