@@ -1,13 +1,26 @@
 <template>
-
-    <div class="e-chip py-3 px-4 ma-1 d-flex flex-center" :class="{ active }" @click="active = !active"><e-icon
-            :fill="false" size="17" class="mr-1 icon">{{ icon }}</e-icon><e-icon size="17"
-            class="mr-1 check">check</e-icon>
-        <slot />
-    </div>
+  <div
+    class="e-chip py-3 px-4 ma-1 d-flex flex-center"
+    :class="{ active }"
+    @click="active = !active"
+  >
+    <e-icon
+      :fill="false"
+      size="17"
+      class="mr-2 icon"
+    >
+      {{ icon }}
+    </e-icon><e-icon
+      size="17"
+      class="mr-2 check"
+    >
+      check
+    </e-icon>
+    <slot />
+  </div>
 </template>
 <script setup lang="ts">
-import { computed, ref } from '#imports';
+import { computed } from '#imports';
 const props = defineProps<{
     icon: string;
     modelValue: boolean;

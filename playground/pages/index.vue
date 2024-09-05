@@ -21,7 +21,12 @@
     <div style="position: relative;">
       <e-progress-linear :model-value="true" />
     </div>
-<EChip icon="water_drop" v-model="chip">Chip</EChip>
+    <EChip
+      v-model="chip"
+      icon="water_drop"
+    >
+      Chip
+    </EChip>
 
     <h3>Alert</h3>
     <EAlert type="error">
