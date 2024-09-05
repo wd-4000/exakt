@@ -83,13 +83,18 @@ a,
   $root-i-depressed-2: color.adjust($source-i, $lightness: -7.5%);
   $root-i-depressed-active: color.adjust($source-i, $lightness: -5%, $saturation: 2%);
   //$root-depressed: color.change($source, $lightness: $full + $factor*20%, $saturation:22%);
+  --e-color-i-inactive: #{color.adjust($source-i, $lightness: 10%)};
+  --e-color-i: #{color.adjust($source-i, $lightness: 20%)};
+  --e-color-i-active: #{color.change($root-primary, $lightness: 30%)};
+
+
   --e-color-i-depressed: #{$root-i-depressed};
   --e-color-i-depressed-active: #{$root-i-depressed-active};
   //--e-color-depressed: #{$root-depressed};
   --e-color-i-depressed-2: #{$root-i-depressed-2};
 
 
-  $root-i-outline: color.change($source, $lightness:  $full + $factor*30%, $saturation: 20%);
+  $root-i-outline: color.change($source-i, $lightness:  $full + $factor*30%, $saturation: 20%);
   --e-color-i-outline: #{$root-i-outline};
 
   $root-bg: color.adjust($source, $lightness:  -2%);
