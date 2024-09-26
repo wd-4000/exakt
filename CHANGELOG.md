@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.52
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.51...v0.0.52)
+
+### 🩹 Fixes
+
+- Text input placeholder ([19eb69e](https://github.com/wd-4000/exakt/commit/19eb69e))
+
+### 🏡 Chore
+
+- **release:** V0.0.51 ([1be71f9](https://github.com/wd-4000/exakt/commit/1be71f9))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.51
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.50...v0.0.51)
