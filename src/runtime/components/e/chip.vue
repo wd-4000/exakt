@@ -1,7 +1,7 @@
 <template>
   <div
     class="e-chip py-3 px-4 ma-1 d-flex flex-center"
-    :class="{ active }"
+    :class="{ active, 'bg-i-active':active, 'bg-i-inactive':!active }"
     @click="active = !active"
   >
     <e-icon
@@ -41,7 +41,6 @@ const active = computed({
 .e-chip {
     outline: var(--e-color-i-outline) solid 0.1rem;
     width: fit-content;
-    background-color: var(--e-color-i-inactive);
     transition: background-color 0.15s;
     border-radius: 15rem;
     user-select: none;
@@ -53,7 +52,6 @@ const active = computed({
     }
 
     &.active {
-        background-color: var(--e-color-i-active);
         outline: var(--e-color-primary) solid 0.1rem;
 
         &>.icon {

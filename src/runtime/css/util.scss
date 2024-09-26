@@ -144,7 +144,7 @@ $directions: (
 
 body {
   background-color: var(--e-color-bg);
-  color: var(--e-color-dark);
+  color: var(--e-color-text);
   font-family: var(--e-font-family);
   font-weight: var(--e-font-weight);
 
@@ -189,8 +189,6 @@ body {
   cursor: not-allowed !important;
 }
 
-router-link,
-a,
 input,
 label {
   text-decoration: none !important;

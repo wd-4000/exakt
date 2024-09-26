@@ -2,7 +2,7 @@
   <div>
     <h1 class="text-center mb-0 pb-3">
       Exakt UI
-    </h1>
+    </h1>   
     <h3>Buttons</h3>
     <EBtn
       :loading="state.button1loading"
@@ -82,8 +82,8 @@
       use-key="name"
     />
     <div
-      style="background-color: var(--e-color-fg);"
-      class="px-6 pt-2 pb-6 rounded"
+  
+      class="px-6 pt-2 pb-6 rounded bg-fg"
     > 
       <h3 class="mb-6">
         Input

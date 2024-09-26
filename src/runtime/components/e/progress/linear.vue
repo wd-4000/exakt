@@ -2,7 +2,7 @@
   <Transition name="fade">
     <div
       v-if="modelValue"
-      class="e-progress-linear"
+      class="e-progress-linear bg-elev"
       :class="posClass"
     />
   </Transition>
@@ -51,7 +51,6 @@ const posClass = computed(() => {
   height: 0.2rem;
   overflow: clip;
 
-  background-color: var(--e-color-elev);
 }
 
 .e-progress-linear:before {

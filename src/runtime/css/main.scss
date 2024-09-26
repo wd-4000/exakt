@@ -1,13 +1,5 @@
 /* This is very much a hack, but it will have to do for now */
 
-/* Color Definitions */
-$root-dark-rgb: red($root-dark), green($root-dark), blue($root-dark);
-$root-light-rgb: red($root-light), green($root-light), blue($root-light);
-$root-primary-rgb: red($root-primary), green($root-primary), blue($root-primary);
-$root-red-rgb: red($root-red), green($root-red), blue($root-red);
-$root-blue-rgb: red($root-blue), green($root-blue), blue($root-blue);
-$root-yellow-rgb: red($root-yellow), green($root-yellow), blue($root-yellow);
-
 .rounded {
   border-radius: var(--e-rounded-border-radius);
 }
@@ -26,119 +18,113 @@ body {
   margin: 0px;
 }
 
-$color-map: (
-  "red": $root-red,
-  "blue": $root-blue,
-  "primary": $root-primary,
-  "dark": $root-dark,
-  "light": $root-light,
-  "yellow": $root-yellow,
-);
 
-@each $name, $color in $color-map {
-  :root {
-    #{'--e-color-'+$name}: $color;
+a {
+  color: var(--e-color-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  text-decoration-thickness: 0.05rem;
+
+
+  &:visited {
+    color: var(--e-color-primary);
   }
 
-  .bg-#{$name} {
-    background: $color;
-    @if (color.lightness($color) > 49%){
-      color: $root-dark
-    }@else{
-      color: $root-light
+  &:active {
+    color: var(--e-color-i);
+  }
+
+  &:hover {
+    text-underline-offset: 0.15rem;
+    text-decoration-thickness: 0.1rem;
+
+  }
+}
+
+@mixin color-definitions($color-map) {
+
+  :root {
+    @each $name, $color in $color-map {
+      #{'--e-color-'+$name}: $color;
+      #{'--e-color-'+$name+'-rgb'}: red($color), green($color), blue($color);
+
     }
   }
 
-  .color-#{$name} {
-    color: $color;
+  @each $name, $color in $color-map {
+    .bg-#{$name} {
+      background: $color;
+
+      @if (color.lightness($color) > 49%) {
+        color: map.get($root-colors-light, "text");
+      }
+
+      @else {
+        color: map.get($root-colors-dark, "text");
+      }
+    }
+
+    .color-#{$name} {
+      color: $color;
+    }
   }
 }
 
-a,
-.e-link {
-  color: $root-blue;
+@mixin elev($lightness, $light, $color-map) {
 
-  &:visited {
-    color: color.scale($root-blue, $lightness: -10%);
-  }
+  $source: hsl($root-hue, 15%, $lightness);
+  $source-i: color.change($source, $saturation: 20%);
 
-  &:active,
-  .e-link-active {
-    color: color.scale($root-blue, $lightness: 10%);
-  }
-}
+  $full: 0;
+  $factor: 1;
 
-@mixin elev($lightness, $light) {
-  
-  $source: hsl($root-hue,15%, $lightness);
-  $source-i:  color.change($source, $saturation: 20%);
-
-    $full: 0;
-    $factor: 1;
-    @if $light == 1 {
+  @if $light ==1 {
     $full: 100;
     $factor: -1;
   }
-  $root-i-depressed: color.adjust($source-i, $lightness: -2.5%);
-  $root-i-depressed-2: color.adjust($source-i, $lightness: -7.5%);
-  $root-i-depressed-active: color.adjust($source-i, $lightness: -5%, $saturation: 2%);
-  //$root-depressed: color.change($source, $lightness: $full + $factor*20%, $saturation:22%);
-  --e-color-i-inactive: #{color.adjust($source-i, $lightness: 10%)};
-  --e-color-i: #{color.adjust($source-i, $lightness: 20%)};
-  --e-color-i-active: #{color.change($root-primary, $lightness: 30%)};
+
+  $color-map: map.set($color-map, "i-depressed", color.adjust($source-i, $lightness: -2.5%));
+  $color-map: map.set($color-map, "i-depressed-2", color.adjust($source-i, $lightness: -7.5%));
+  $color-map: map.set($color-map, "i-depressed-active", color.adjust($source-i, $lightness: -5%, $saturation: 2%));
 
 
-  --e-color-i-depressed: #{$root-i-depressed};
-  --e-color-i-depressed-active: #{$root-i-depressed-active};
-  //--e-color-depressed: #{$root-depressed};
-  --e-color-i-depressed-2: #{$root-i-depressed-2};
+  $color-map: map.set($color-map, "i-inactive", color.adjust($source-i, $lightness: 10%));
+  $color-map: map.set($color-map, "i", color.adjust($source-i, $lightness: 20%));
+  $color-map: map.set($color-map, "i-active", color.change(map.get($color-map, "primary"), $lightness: 30%));
+
+  $color-map: map.set($color-map, "i-outline", color.change($source-i, $lightness: $full + $factor*30%, $saturation: 20%));
+
+  $color-map: map.set($color-map, "bg", color.adjust($source, $lightness: -2%));
+  $color-map: map.set($color-map, "fg", color.adjust($source, $lightness: 2%));
 
 
-  $root-i-outline: color.change($source-i, $lightness:  $full + $factor*30%, $saturation: 20%);
-  --e-color-i-outline: #{$root-i-outline};
+  $color-map: map.set($color-map, "elev", color.scale($source, $lightness: $lightness));
+  $color-map: map.set($color-map, "elev-2", color.scale($source, $lightness: $lightness));
+  $color-map: map.set($color-map, "elev-3", color.scale($source, $lightness: $lightness));
 
-  $root-bg: color.adjust($source, $lightness:  -2%);
-  $root-fg: color.adjust($source, $lightness:  2%);
-  --e-color-fg: #{$root-fg};
-  --e-color-bg: #{$root-bg};
-  
+
 
   $root-elev: color.scale($source, $lightness: $lightness);
   $root-elev-2: color.scale($source, $lightness: $lightness);
   $root-elev-3: color.scale($source, $lightness: $lightness);
-  
-  --e-color-elev: #{$root-elev};
-  --e-color-elev-rgb: #{red($root-elev), green($root-elev), blue($root-elev)};
 
-  --e-color-elev-2: #{$root-elev-2};
-  --e-color-elev-2-rgb: #{red($root-elev-2), green($root-elev-2),
-    blue($root-elev-2)};
+  @include color-definitions($color-map);
 
-    --e-color-elev-3: #{$root-elev-3};
-    --e-color-elev-3-rgb: #{red($root-elev-3), green($root-elev-3),
-      blue($root-elev-3)};
 }
 
 :root {
-  --e-color-primary-rgb: #{$root-primary-rgb};
-
-  --e-color-bg: #{$root-light};
-  --e-color-bg-rgb: #{$root-light-rgb};
-
-  --e-color-dark: #{$root-dark};
-  --e-color-dark-rgb: #{$root-dark-rgb};
-
-  @include elev(83%, 1);
+  color-scheme: light;
 }
+
+@include elev(83%, 1, $root-colors-light);
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --e-color-bg: #{$root-dark};
-    --e-color-bg-rgb: #{$root-dark-rgb};
-
-    --e-color-dark: #{$root-light};
-    --e-color-dark-rgb: #{$root-light-rgb};
     color-scheme: dark;
-    @include elev(15%, 0);
   }
+
+  @include elev(15%, 0, $root-colors-dark);
+
+
 }

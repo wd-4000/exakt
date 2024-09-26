@@ -16,7 +16,7 @@
       class="bar-e-container"
       :force-full-width="true"
     >
-      <div class="rounded bar">
+      <div class="rounded bar bg-elev-2">
         <e-progress-linear
           :model-value="props.loading"
           class="md-and-up-only"
@@ -62,7 +62,6 @@ const props = withDefaults(
   display: flex;
   justify-content: flex-start;
   justify-items: flex-start;
-  background-color: var(--e-color-elev-2);
   width: 100%;
   overflow: clip;
   position: relative;

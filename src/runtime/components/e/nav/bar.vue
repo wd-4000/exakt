@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="nav e-blur"
+    class="nav bg-elev e-blur"
     :class="{ fixed }"
   >
     <e-container
@@ -32,7 +32,6 @@ defineProps<{
   height: 3.5rem;
   box-shadow: 0 0 0 0.06rem rgba(0, 0, 0, 0.12) !important;
 
-  background-color: var(--e-color-elev);
   position: sticky;
   top: 0;
 }

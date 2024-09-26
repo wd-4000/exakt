@@ -11,7 +11,7 @@
         v-if="modelValue"
         class="dialog-wrap flex-center"
       >
-        <div class="dialog rounded px-6 pe-6 pb-2">
+        <div class="dialog bg-elev rounded px-6 pe-6 pb-2">
           <div class="mb-4">
             <h2 class="ma-0 pa-0">
               <slot name="title" />
@@ -47,8 +47,6 @@ const emit = defineEmits(["update:modelValue"]);
 .dialog {
   min-width: 25rem;
   pointer-events: all;
-  background-color: var(--e-color-elev);
-  color: var(--e-color-dark);
   position: relative;
   overflow: clip;
 }

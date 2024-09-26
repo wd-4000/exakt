@@ -116,7 +116,7 @@ const selected = computed({
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: var(--e-color-dark);
+  background: var(--e-color-text);
   transform: scale(0);
   transition: transform 0.25s;
   box-sizing: border-box;
