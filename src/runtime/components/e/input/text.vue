@@ -44,7 +44,7 @@
       :spellcheck="spellcheck"
       class="input"
       :required="required"
-      :placeholder="label"
+      :placeholder="placeholder"
       @click.stop=""
       @focus="inputState.focused = true"
       @blur="inputState.focused = false"
@@ -91,7 +91,7 @@ const currentText = computed({
 const props = withDefaults(
   defineProps<{
     icon?: string;
-    label: string;
+    label?: string;
     placeholder?: string;
 
     modelValue?: string;
