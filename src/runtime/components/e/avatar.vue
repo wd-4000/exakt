@@ -3,7 +3,7 @@
     <slot />
     <e-image-lazy-view
       v-if="src"
-      class="avatar"
+      class="avatar bg-elev"
       :width="props.size"
       :height="props.size"
       :contain="true"
@@ -15,7 +15,7 @@
       <e-icon
         :size="props.size"
       >
-        person_circle
+        account_circle
       </e-icon>
     </div>
   </div>
@@ -30,9 +30,8 @@ const props = withDefaults(defineProps<{
 <style lang="scss" scoped>
 .avatar {
   border-radius: 100%;
-  width: fie-content;
-  height: fie-content;
-  background-color: var(--e-color-elev);
+  width: fit-content;
+  height: fit-content;
 }
 
 .a-container {

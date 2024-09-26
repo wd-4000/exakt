@@ -7,16 +7,25 @@ import {
   addImportsSources
 } from "@nuxt/kit";
 import fs from "fs";
+
+
+interface Colors {
+  primary?: string;
+  text?: string;
+  bg?: string;
+  
+  red?: string;
+  blue?: string;
+  yellow?: string;
+}
+
 // Module options TypeScript interface definition
 export interface ModuleOptions {
   hue: number,
   colors: {
-    primary?: string;
-    dark?: string;
-    light?: string;
-    red?: string;
-    blue?: string;
-    yellow?: string;
+    light: Colors,
+    dark: Colors
+
   };
   breakpoints: {
     sm?: string;
@@ -32,12 +41,25 @@ export interface ModuleOptions {
 const defaults: ModuleOptions = {
   hue: 9,
   colors: {
-    primary: "#008dff",
-    dark: "#212121",
-    light: "#ffffff",
-    red: "#f44336",
-    blue: "#2196f3",
-    yellow: '#FFA000'
+    light: {
+      primary: "#008dff",
+      text: "#212121",
+      red: "#f44336",
+      blue: "#2196f3",
+      yellow: '#FFA000',
+    bg: "#ffffff",
+
+    },
+    dark: {
+      primary: "#008dff",
+      text: "#ffffff",
+      red: "#f44336",
+      blue: "#2196f3",
+      yellow: '#FFA000',
+      bg: "#212121",
+
+    }
+
   },
   breakpoints: {
     sm: "16em",
@@ -75,9 +97,16 @@ export default defineNuxtModule<ModuleOptions>({
     let SCSSvariables = "";
     let CSSvariables = ":root{";
 
-    for (const [key, value] of [['hue', options.hue+'deg'], ...Object.entries(options.colors)]) {
-      SCSSvariables += `$root-${key}: ${value}; `;
+    SCSSvariables += `$root-hue: ${options.hue}; `;
+    for (const mode of ['light', 'dark']) {
+      SCSSvariables += `$root-colors-${mode}: (`
+      for (const [key, value] of Object.entries(options.colors[mode as 'light'|'dark'])) {
+        SCSSvariables += `"${key}": ${value}, `;
+      }
+      SCSSvariables += ');';
     }
+
+
     for (const [key, value] of Object.entries(options.breakpoints)) {
       SCSSvariables += `$e-${key}-screen-breakpoint: ${value}; `;
     }
@@ -103,7 +132,7 @@ export default defineNuxtModule<ModuleOptions>({
         css: {
           preprocessorOptions: {
             scss: {
-              additionalData: `@use "sass:color"; @import "${resolver.resolve(
+              additionalData: `@use "sass:color"; @use "sass:map"; @import "${resolver.resolve(
                 "../node_modules/.cache/exakt-ui/variables.scss"
               )}";  `,
             },

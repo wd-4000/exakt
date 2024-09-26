@@ -1,9 +1,16 @@
 <template>
-  <!-- <div class="pos-wrap">-->
+  <div
+    v-if="label"
+    class="mb-3 mt-6"
+  >
+    <label :for="id">
+      {{ label }} </label>
+  </div>
+
   <div
     class="wrapper fullwidth"
     :style="inputState.overtakeStyle"
-    :class="{ rounded: rounded==undefined?solid:rounded, solid }"
+    :class="{ rounded: rounded == undefined ? solid : rounded, solid }"
     @click="focus"
   >
     <e-icon
@@ -19,7 +26,7 @@
       ref="input"
       v-model="currentText"
       class="input"
-      :placeholder="label"
+      :placeholder="placeholder"
       autocomplete="off"
       auto-grow
       rows="5"
@@ -28,6 +35,7 @@
     />
     <input
       v-else
+      :id="id"
       ref="input"
       v-model="currentText"
       :disabled="disabled"
@@ -44,16 +52,17 @@
     >
     <slot />
   </div>
-  <!-- </div>-->
 </template>
 <script setup lang="ts">
-import { ref, watch, reactive, computed } from "#imports";
+import { ref, watch, reactive, computed, useId } from "#imports";
 
 const inputState = reactive({
   overtakeStyle: "",
   autofilled: false,
   focused: false,
 });
+
+const id = useId();
 
 const input = ref<HTMLInputElement>();
 const emit = defineEmits(["update:modelValue"]);
@@ -81,8 +90,10 @@ const currentText = computed({
 
 const props = withDefaults(
   defineProps<{
-    icon?: string | undefined;
+    icon?: string;
     label: string;
+    placeholder?: string;
+
     modelValue?: string;
     solid?: boolean;
     rounded?: boolean;
@@ -102,7 +113,7 @@ const props = withDefaults(
     modelValue: "",
     autocomplete: "off",
     height: "unset",
-    rounded:undefined,
+    rounded: undefined,
   }
 );
 
@@ -116,7 +127,7 @@ watch(
 );
 
 const getInputStyle = (prop: string) => {
-  if(input.value === undefined) return;
+  if (input.value === undefined) return;
   const c = getComputedStyle(input.value).getPropertyValue(prop);
   return c;
 };
@@ -144,6 +155,7 @@ const transitionEnd = () => {
 
   // padding: 0px var(--e-core-padding-x);
 }
+
 .input {
   border: none;
   box-sizing: border-box;
@@ -153,7 +165,7 @@ const transitionEnd = () => {
   resize: none;
   margin: var(--e-core-padding-x) / 2;
   font-size: 1rem;
-  color: var(--e-color-dark);
+  color: var(--e-color-text);
   font-family: var(--e-font-family);
   height: v-bind(height);
   transition: outline ease-in-out 0.15s, background-color ease-in-out 0.15s;
@@ -191,7 +203,7 @@ const transitionEnd = () => {
   position: relative;
 
   background-color: transparent;
-  color: var(--e-color-dark);
+  color: var(--e-color-text);
   padding: 10px;
   outline: var(--e-color-i-outline) solid 0.1rem;
   //box-shadow: 0 0 0 0.1rem  var(--e-color-i-outline);
@@ -200,7 +212,7 @@ const transitionEnd = () => {
   transition: outline ease-in-out 0.15s, background-color ease-in-out 0.15s;
 }
 
-.wrapper.solid:has(:focus){
+.wrapper.solid:has(:focus) {
   outline: var(--e-color-primary) solid 0.125rem;
   //box-shadow: 0 0 0 0.125rem  var(--e-color-primary);
 

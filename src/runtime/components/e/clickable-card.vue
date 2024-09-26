@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded clickable-card py-4 my-2">
+  <div class="rounded clickable-card bg-elev py-4 my-2">
     <div class=" px-6">
       <slot />
     </div>
@@ -9,7 +9,6 @@
 
 <style lang="scss" scoped>
 .clickable-card {
-  background-color: var(--e-color-elev);
   cursor: pointer;
   transition: background 0.15s;
   & > * {

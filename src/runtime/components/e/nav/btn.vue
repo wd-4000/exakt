@@ -1,6 +1,6 @@
 <template>
   <div class="flex-stretch nav-btn">
-    <e-link
+    <e-undecorated-link
       :to="to"
       class="flex-stretch fullwidth"
     >
@@ -38,7 +38,7 @@
         </div>
         <slot />
       </e-btn>
-    </e-link>
+    </e-undecorated-link>
   </div>
 </template>
 <script setup lang="ts">

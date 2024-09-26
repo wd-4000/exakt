@@ -12,7 +12,7 @@
       <div
         v-if="visibleComputed"
         ref="list"
-        class="list rounded"
+        class="list bg-elev-2 rounded"
         :style="{position:(fixed?'fixed':undefined)}"
       >
         <component
@@ -196,8 +196,6 @@ const onActivatorClick = () => {
   width: v-bind('state.width + `px`');
   display: flex;
 
-  background-color: var(--e-color-elev-2);
-  color: var(--e-color-dark);
   z-index: 6;
 
   flex-shrink: 1;
@@ -207,14 +205,14 @@ const onActivatorClick = () => {
   margin-top: v-bind("props.paddingY");
 
   .item {
-    // color: var(--e-color-dark);
+    // color: var(--e-color-text);
     font-size: 1rem;
     padding: 0.7rem;
     text-transform: capitalize;
     position: relative;
 
     &:hover {
-      background-color: rgba(var(--e-color-dark-rgb), 0.2);
+      background-color: rgba(var(--e-color-fg-rgb), 0.5);
     }
 
     &:focus {}

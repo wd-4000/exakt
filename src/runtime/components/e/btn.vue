@@ -115,7 +115,7 @@ const textColor = computed(() => {
     return props.color;
   }
   if (props.background == "transparent") {
-    return "var(--e-color-dark)";
+    return "var(--e-color-text)";
   }
   const rgb = backgroundColorRgb.value;
 
@@ -168,7 +168,7 @@ const textColor = computed(() => {
   border: transparent solid 0.1rem;
 
   &.transparent {
-    color: var(--e-color-dark);
+    color: var(--e-color-text);
     background: rgba(0, 0, 0, 0);
     &:hover {
        background: rgba(98, 98, 98, 0.15);
@@ -178,7 +178,7 @@ const textColor = computed(() => {
 
   &:focus-visible {
     transition: border-width 0.2s;
-    border: var(--e-color-dark) solid 0.1rem;
+    border: var(--e-color-text) solid 0.1rem;
   }
 
   &.loading {
@@ -234,7 +234,7 @@ const textColor = computed(() => {
   }
 
   &.inactive {
-    color: var(--e-color-dark);
+    color: var(--e-color-text);
     opacity: 80%;
   }
 }
