@@ -7,5 +7,5 @@
 
 </template>
 <script setup lang="ts">
-const colors = ['primary', 'text', 'red', 'blue', 'yellow', 'bg', 'fg']
+const colors = ['primary', 'text', 'red', 'blue', 'yellow', 'green', 'bg', 'fg']
 </script>

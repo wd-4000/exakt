@@ -13,7 +13,7 @@ interface Colors {
   primary?: string;
   text?: string;
   bg?: string;
-  
+  green?: string;
   red?: string;
   blue?: string;
   yellow?: string;
@@ -46,18 +46,19 @@ const defaults: ModuleOptions = {
       text: "#212121",
       red: "#f44336",
       blue: "#2196f3",
-      yellow: '#FFA000',
-    bg: "#ffffff",
+      green: "#00b850",
+      yellow: '#ebbc00',
+      bg: "#ffffff",
 
     },
     dark: {
       primary: "#008dff",
       text: "#ffffff",
-      red: "#f44336",
-      blue: "#2196f3",
+      red: "#ff8980",
+      blue: "#008dff",
+      green: "#00ff6e",
       yellow: '#FFA000',
       bg: "#212121",
-
     }
 
   },
@@ -100,7 +101,7 @@ export default defineNuxtModule<ModuleOptions>({
     SCSSvariables += `$root-hue: ${options.hue}; `;
     for (const mode of ['light', 'dark']) {
       SCSSvariables += `$root-colors-${mode}: (`
-      for (const [key, value] of Object.entries(options.colors[mode as 'light'|'dark'])) {
+      for (const [key, value] of Object.entries(options.colors[mode as 'light' | 'dark'])) {
         SCSSvariables += `"${key}": ${value}, `;
       }
       SCSSvariables += ');';
