@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.53
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.52...v0.0.53)
+
+### 🚀 Enhancements
+
+- Modify loading spinner size ([50f76cd](https://github.com/wd-4000/exakt/commit/50f76cd))
+
+### 🏡 Chore
+
+- **release:** V0.0.52 ([f426d26](https://github.com/wd-4000/exakt/commit/f426d26))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.52
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.51...v0.0.52)
