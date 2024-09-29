@@ -1,55 +1,21 @@
 <template>
-  <div
-    v-if="label"
-    class="mb-3 mt-6"
-  >
+  <div v-if="label" class="mb-3 mt-6">
     <label :for="id">
       {{ label }} </label>
   </div>
 
-  <div
-    class="wrapper fullwidth"
-    :style="inputState.overtakeStyle"
-    :class="{ rounded: rounded == undefined ? solid : rounded, solid }"
-    @click="focus"
-  >
-    <e-icon
-      v-if="icon"
-      class="mr-2"
-      size="19"
-      fill="true"
-    >
+  <div class="wrapper fullwidth" :style="inputState.overtakeStyle"
+    :class="{ rounded: rounded == undefined ? solid : rounded, solid }" @click="focus">
+    <e-icon v-if="icon" class="mr-2" size="19" fill="true">
       {{ icon }}
     </e-icon>
-    <textarea
-      v-if="type === 'textarea'"
-      ref="input"
-      v-model="currentText"
-      class="input"
-      :placeholder="placeholder"
-      autocomplete="off"
-      auto-grow
-      rows="5"
-      @focus="inputState.focused = true"
-      @blur="inputState.focused = false"
-    />
-    <input
-      v-else
-      :id="id"
-      ref="input"
-      v-model="currentText"
-      :disabled="disabled"
-      :type="type"
-      :autocomplete="autocomplete"
-      :spellcheck="spellcheck"
-      class="input"
-      :required="required"
-      :placeholder="placeholder"
-      @click.stop=""
-      @focus="inputState.focused = true"
-      @blur="inputState.focused = false"
-      @transitionend="transitionEnd"
-    >
+    <textarea v-if="type === 'textarea'" ref="input" v-model="currentText" class="input" :name="name"
+      :placeholder="placeholder" autocomplete="off" auto-grow rows="5" @focus="inputState.focused = true"
+      @blur="inputState.focused = false" />
+    <input v-else :id="id" ref="input" v-model="currentText" :disabled="disabled" :type="type" :name="name"
+      :autocomplete="autocomplete" :spellcheck="spellcheck" class="input" :required="required"
+      :placeholder="placeholder" @click.stop="" @focus="inputState.focused = true" @blur="inputState.focused = false"
+      @transitionend="transitionEnd">
     <slot />
   </div>
 </template>
@@ -93,7 +59,7 @@ const props = withDefaults(
     icon?: string;
     label?: string;
     placeholder?: string;
-
+    name?: string;
     modelValue?: string;
     solid?: boolean;
     rounded?: boolean;
