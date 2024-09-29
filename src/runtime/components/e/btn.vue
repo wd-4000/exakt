@@ -25,7 +25,7 @@
         v-if="loading"
         class="load-overlay"
       >
-        <e-loading-spinner />
+        <e-loading-spinner size="1" />
       </div>
       <span
         class="actual-content d-flex fullwidth"
@@ -245,9 +245,6 @@ const textColor = computed(() => {
   }
 }
 
-.loading-spinner {
-  max-height: 1rem;
-}
 
 .load-overlay {
   position: absolute;
