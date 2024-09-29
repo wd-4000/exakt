@@ -1,11 +1,29 @@
 <template>
   <div class="cont d-flex flex-center">
-    <svg class="spinner" viewBox="0 0 66 66" 
+    <svg
+      class="spinner"
+      viewBox="0 0 66 66" 
 
-    xmlns="http://www.w3.org/2000/svg">
-      <circle class="op-1" fill="none" stroke-width="9" cx="33" cy="33" r="25" />
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        class="op-1"
+        fill="none"
+        stroke-width="9"
+        cx="33"
+        cy="33"
+        r="25"
+      />
 
-      <circle class="path" fill="none" stroke-width="9" stroke-linecap="round" cx="33" cy="33" r="25" />
+      <circle
+        class="path"
+        fill="none"
+        stroke-width="9"
+        stroke-linecap="round"
+        cx="33"
+        cy="33"
+        r="25"
+      />
     </svg>
   </div>
 </template>
