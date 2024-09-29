@@ -25,7 +25,7 @@
         v-if="loading"
         class="load-overlay"
       >
-        <e-loading-spinner size="1" />
+        <e-loading-spinner size="1.25" />
       </div>
       <span
         class="actual-content d-flex fullwidth"
