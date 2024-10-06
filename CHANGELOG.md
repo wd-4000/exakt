@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.55
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.54...v0.0.55)
+
+### 🚀 Enhancements
+
+- Default content for input ([4f2c4f9](https://github.com/wd-4000/exakt/commit/4f2c4f9))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.54
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.53...v0.0.54)
