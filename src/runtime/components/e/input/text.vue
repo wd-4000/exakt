@@ -1,62 +1,26 @@
 <template>
-  <div
-    v-if="label"
-    class="mb-3 mt-6"
-  >
+  <div v-if="label" class="mb-3 mt-6">
     <label :for="id">
       {{ label }} </label>
   </div>
 
-  <div
-    class="wrapper fullwidth"
-    :style="inputState.overtakeStyle"
-    :class="{ rounded: rounded == undefined ? solid : rounded, solid }"
-    @click="focus"
-  >
-    <e-icon
-      v-if="icon"
-      class="mr-2"
-      size="19"
-      fill="true"
-    >
+  <div class="wrapper fullwidth" :style="inputState.overtakeStyle"
+    :class="{ rounded: rounded == undefined ? solid : rounded, solid }" @click="focus">
+    <e-icon v-if="icon" class="mr-2" size="19" fill="true">
       {{ icon }}
     </e-icon>
-    <textarea
-      v-if="type === 'textarea'"
-      ref="input"
-      v-model="currentText"
-      class="input"
-      :name="name"
-      :placeholder="placeholder"
-      autocomplete="off"
-      auto-grow
-      rows="5"
-      @focus="inputState.focused = true"
-      @blur="inputState.focused = false"
-    />
-    <input
-      v-else
-      :id="id"
-      ref="input"
-      v-model="currentText"
-      :disabled="disabled"
-      :type="type"
-      :name="name"
-      :autocomplete="autocomplete"
-      :spellcheck="spellcheck"
-      class="input"
-      :required="required"
-      :placeholder="placeholder"
-      @click.stop=""
-      @focus="inputState.focused = true"
-      @blur="inputState.focused = false"
-      @transitionend="transitionEnd"
-    >
+    <textarea v-if="type === 'textarea'" ref="input" v-model="currentText" class="input" :name="name"
+      :placeholder="placeholder" autocomplete="off" auto-grow rows="5" @focus="inputState.focused = true"
+      @blur="inputState.focused = false" />
+    <input v-else :id="id" ref="input" v-model="currentText" :disabled="disabled" :type="type" :name="name"
+      :autocomplete="autocomplete" :spellcheck="spellcheck" class="input" :required="required"
+      :placeholder="placeholder" @click.stop="" @focus="inputState.focused = true" @blur="inputState.focused = false"
+      @transitionend="transitionEnd">
     <slot />
   </div>
 </template>
 <script setup lang="ts">
-import { ref, watch, reactive, computed, useId } from "#imports";
+import { ref, watch, reactive, computed, useId, onMounted } from "#imports";
 
 const inputState = reactive({
   overtakeStyle: "",
@@ -88,9 +52,23 @@ const focus = () => {
 const internalText = ref('')
 
 const currentText = computed({
-  get: () => props.modelValue ? props.modelValue : internalText.value,
+  get: () => {
+    const setValue = props.modelValue ? props.modelValue : internalText.value
+
+    if (!setValue || !setValue.length) {
+      return props.defaultValue || ''
+    }
+
+    return setValue
+  },
   set: (value) => { if (props.modelValue) { emit("update:modelValue", value) } else { internalText.value = value } },
 });
+
+onMounted(() => {
+  if (props.defaultValue) {
+    currentText.value = props.defaultValue
+  }
+})
 
 const props = withDefaults(
   defineProps<{
@@ -99,6 +77,7 @@ const props = withDefaults(
     placeholder?: string;
     name?: string;
     modelValue?: string;
+    defaultValue?: string;
     solid?: boolean;
     rounded?: boolean;
     type?: string;
