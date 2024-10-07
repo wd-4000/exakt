@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.56
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.55...v0.0.56)
+
+### 🚀 Enhancements
+
+- Wrap text input to make click listener work ([068920e](https://github.com/wd-4000/exakt/commit/068920e))
+
+### 🏡 Chore
+
+- **release:** V0.0.55 ([d58b217](https://github.com/wd-4000/exakt/commit/d58b217))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.55
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.54...v0.0.55)
