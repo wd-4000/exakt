@@ -70,7 +70,7 @@ const defaults: ModuleOptions = {
   },
   borderRadius: "8px",
   corePaddingX: "1rem",
-  font: { family: "Roboto, sans-serif", weight: 400 },
+  font: { family: "Open Sans, sans-serif", weight: 400 },
 };
 
 export default defineNuxtModule<ModuleOptions>({

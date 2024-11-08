@@ -1,16 +1,7 @@
 <template>
-  <nav
-    class="nav bg-elev e-blur"
-    :class="{ fixed }"
-  >
-    <e-container
-      :no-btn-padding="true"
-      :force-full-width="true"
-    >
-      <div class="nav-content">
-        <slot />
-      </div>
-    </e-container>
+  <nav class="d-flex flex-align-center" :class="{ fixed }">
+
+    <slot />
   </nav>
 </template>
 <script setup lang="ts">
@@ -27,17 +18,32 @@ defineProps<{
   height: 100%;
 }
 
-.nav {
+nav {
   z-index: 5;
-  height: 3.5rem;
-  box-shadow: 0 0 0 0.06rem rgba(0, 0, 0, 0.12) !important;
-
-  position: sticky;
+  min-height: 3.5rem;
+  border-radius: var(--e-rounded-border-radius);
+  background: var(--e-color-bg);
+overflow-y: scroll;
+ // position: sticky;
   top: 0;
+  left: 0;
 }
 
-.nav.fixed {
+nav.fixed {
   position: fixed;
   width: 100%;
 }
+
+/*
+@media screen and (max-width: $e-md-screen-breakpoint) {
+  nav {
+    position: fixed;
+    bottom: 0;
+    top: unset;
+    border-radius: 0;
+    width: 100%;
+    background: var(--e-color-elev);
+  }
+}
+  */
 </style>

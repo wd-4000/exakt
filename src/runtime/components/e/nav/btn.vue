@@ -1,45 +1,22 @@
 <template>
-  <div class="flex-stretch nav-btn">
-    <e-undecorated-link
-      :to="to"
-      class="flex-stretch fullwidth"
-    >
-      <e-btn
-        :active="active"
-        class="button fullwidth"
-        :inactive="inactive"
-        :solid="false"
-        background="transparent"
-        :class="{ responsive }"
-      >
-        <div class="content">
-          <div
-            v-if="icon"
-            class="icon-wrapper flex-center"
-            :class="{ 'mr-2': label, 'mx-4': !label }"
-          >
-            <e-icon
-              
-              class="icon"
-              :size="size"
-            >
-              {{ icon }}
-            </e-icon>
-            <transition name="fade">
-              <div
-                v-if="alert"
-                class="icon-alert"
-              />
-            </transition>
-          </div>
-          <p v-if="label">
-            {{ label }}
-          </p>
+  <e-undecorated-link :to="to">
+    <e-btn :solid="true" background="transparent" class="nav-btn" align="center" :active="active">
+      <div class="content">
+        <div v-if="icon" class="icon-wrapper flex-center mr-2">
+          <e-icon class="icon" size="20" :fill="active">
+            {{ icon }}
+          </e-icon>
+          <transition name="fade">
+            <div v-if="alert" class="icon-alert" />
+          </transition>
         </div>
+        <p v-if="label">
+          {{ label }}
+        </p>
         <slot />
-      </e-btn>
-    </e-undecorated-link>
-  </div>
+      </div>
+    </e-btn>
+  </e-undecorated-link>
 </template>
 <script setup lang="ts">
 import { useRoute } from "vue-router";
@@ -51,21 +28,14 @@ const props = withDefaults(
     label?: string;
     icon?: string;
     size?: string;
-    responsive?: boolean;
     alert?: boolean;
   }>(),
-  { to: "", label: "", icon: "", responsive: true, size: "20" }
+  { to: "", label: "", icon: "" }
 );
 
 const route = useRoute();
 
-const aspect = computed(() => {
-  if (props.icon) {
-    return "3/2";
-  }
 
-  return "unset";
-});
 
 const active = computed(() => {
   return route && route.path === props.to;
@@ -76,28 +46,30 @@ const inactive = computed(() => {
 </script>
 
 <style scoped lang="scss">
+/*a.router-link-active > .nav-btn {
+  color:var(--e-color-primary) !important;
+  background-color: rgba(var(--e-color-primary-rgb), 0.075);
+}*/
 
-.nav-btn{
-  flex-grow: 1;
-}
-.button:first-child {
-  aspect-ratio: unset;
 
-  .content {
-    display: flex;
 
-    flex-direction: row;
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
 
-    justify-content: center;
-    align-content: center;
-    justify-items: center;
-    align-items: center;
+  p {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
 
-    .icon {
-      font-size: 1.5rem;
-    }
   }
+
 }
+
 
 .icon-wrapper {
   position: relative;
@@ -114,14 +86,14 @@ const inactive = computed(() => {
     border-radius: 100%;
     bottom: 0.1rem;
     right: 0px;
-    background-color: var(--t-color-primary);
-    outline: 0.1rem solid var(--t-elev-2);
+    background-color: var(--e-color-primary);
+    outline: 0.1rem solid var(--e-color-elev);
   }
 }
 
+/*
 @media screen and (max-width: $e-md-screen-breakpoint) {
-  .button.responsive {
-    aspect-ratio: v-bind(aspect);
+
 
     p {
       margin: 0px;
@@ -136,5 +108,5 @@ const inactive = computed(() => {
       }
     }
   }
-}
+*/
 </style>

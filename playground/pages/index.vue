@@ -4,6 +4,7 @@
       Exakt UI
     </h1>   
     <h3>Buttons</h3>
+    <ENavBtn>Bruh</ENavBtn>
     <EBtn
       :loading="state.button1loading"
       @click="state.button1loading = !state.button1loading"
