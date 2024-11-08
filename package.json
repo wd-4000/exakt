@@ -45,7 +45,7 @@
     "eslint": "^8.35.0",
     "eslint-plugin-unused-imports": "^3.0.0",
     "mkdist": "^1.2.0",
-    "nuxt": "^3.12.4",
+    "nuxt": "^3.14.159",
     "vitest": "^0.29.2"
   },
   "directories": {
