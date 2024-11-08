@@ -1,58 +1,22 @@
 <template>
   <div>
-    <div
-      v-if="label"
-      class="mb-3 mt-6"
-    >
+    <div v-if="label" class="mb-3 mt-6">
       <label :for="id">
         {{ label }} </label>
     </div>
 
-    <div
-      class="wrapper fullwidth"
-      :style="inputState.overtakeStyle"
-      :class="{ rounded: rounded == undefined ? solid : rounded, solid }"
-      @click="focus"
-    >
-      <e-icon
-        v-if="icon"
-        class="mr-2"
-        size="19"
-        fill="true"
-      >
+    <div class="wrapper fullwidth" :style="inputState.overtakeStyle"
+      :class="{ rounded: rounded == undefined ? solid : rounded, solid, compact }" @click="focus">
+      <e-icon v-if="icon" class="mr-2" size="19" fill="true">
         {{ icon }}
       </e-icon>
-      <textarea
-        v-if="type === 'textarea'"
-        ref="input"
-        v-model="currentText"
-        class="input"
-        :name="name"
-        :placeholder="placeholder"
-        autocomplete="off"
-        auto-grow
-        rows="5"
-        @focus="inputState.focused = true"
-        @blur="inputState.focused = false"
-      />
-      <input
-        v-else
-        :id="id"
-        ref="input"
-        v-model="currentText"
-        :disabled="disabled"
-        :type="type"
-        :name="name"
-        :autocomplete="autocomplete"
-        :spellcheck="spellcheck"
-        class="input"
-        :required="required"
-        :placeholder="placeholder"
-        @click.stop=""
-        @focus="inputState.focused = true"
-        @blur="inputState.focused = false"
-        @transitionend="transitionEnd"
-      >
+      <textarea v-if="type === 'textarea'" ref="input" v-model="currentText" class="input" :name="name"
+        :placeholder="placeholder" autocomplete="off" auto-grow rows="5" @focus="inputState.focused = true"
+        @blur="inputState.focused = false" />
+      <input v-else :id="id" ref="input" v-model="currentText" :disabled="disabled" :type="type" :name="name"
+        :autocomplete="autocomplete" :spellcheck="spellcheck" class="input" :required="required"
+        :placeholder="placeholder" @click.stop="" @focus="inputState.focused = true" @blur="inputState.focused = false"
+        @transitionend="transitionEnd">
       <slot />
     </div>
   </div>
@@ -87,12 +51,12 @@ const focus = () => {
   input.value.focus();
 };
 
-const internalText = ref<string|null>(null)
+const internalText = ref<string | null>(null)
 
 
 const currentText = computed({
   get: () => {
-    const setValue = props.modelValue == undefined ? internalText.value: props.modelValue 
+    const setValue = props.modelValue == undefined ? internalText.value : props.modelValue
 
     if (!setValue || !setValue.length) {
       return props.defaultValue || ''
@@ -100,7 +64,7 @@ const currentText = computed({
 
     return setValue
   },
-  set: (value) => { if (props.modelValue == undefined) { internalText.value = value  } else { emit("update:modelValue", value)} },
+  set: (value) => { if (props.modelValue == undefined) { internalText.value = value } else { emit("update:modelValue", value) } },
 });
 
 onMounted(() => {
@@ -126,6 +90,8 @@ const props = withDefaults(
     focus?: boolean;
     spellcheck?: boolean;
     height?: string;
+
+    compact?: boolean;
   }>(),
   {
     icon: undefined,
@@ -135,6 +101,7 @@ const props = withDefaults(
     modelValue: "",
     autocomplete: "off",
     height: "unset",
+    compact: false,
     rounded: undefined,
   }
 );
@@ -243,9 +210,19 @@ const transitionEnd = () => {
 }
 
 .wrapper.solid {
-  padding: 15px;
+  padding: 0.8rem 1rem;
   background-color: var(--e-color-i-depressed);
+
+  @media screen and (min-width: $e-md-screen-breakpoint) {
+    &.compact {
+      padding: 0.6rem 0.8rem;
+    }
+  }
 }
+
+
+
+
 
 .fullwidth {
   width: 100%;

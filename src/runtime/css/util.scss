@@ -158,9 +158,31 @@ body {
   width: 100%;
 }
 
+.md-and-under {
+  display: none;
+}
+
+@media screen and (max-width: ($e-md-screen-breakpoint)) {
+  .md-and-under {
+      display: block;
+  }
+  .md-and-over {
+      display: none;
+  
+}
+}
+
 .fullsize {
   @extend .fullheight;
   @extend .fullwidth;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
 }
 
 .text-center {

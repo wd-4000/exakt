@@ -1,40 +1,26 @@
 <template>
-  <button
-    class="e-btn"
-    :style="{ width }"
-    :type="type"
-    :disabled="disabled || loading"
-    :class="{
-      active,
-      inactive,
-      solid,
-      block,
-      rounded: solid,
-      'e-disabled': disabled,
-      'my-2': solid,
-      loading,
-      fab,
-      ...backgroundClass
-    }"
-  >
-    <div
-      ref="content"
-      class="e-btn-content"
-    >
-      <div
-        v-if="loading"
-        class="load-overlay"
-      >
+  <button class="e-btn" :style="{ width }" :type="type" :disabled="disabled || loading" :class="{
+    active,
+    inactive,
+    solid,
+    block,
+    rounded: solid,
+    'e-disabled': disabled,
+    'my-2': solid,
+    loading,
+    fab,
+    compact,
+    ...backgroundClass
+  }">
+    <div ref="content" class="e-btn-content">
+      <div v-if="loading" class="load-overlay">
         <e-loading-spinner size="1.25" />
       </div>
-      <span
-        class="actual-content d-flex fullwidth"
-        :style="{
-          justifyContent: justify,
-          alignContent: props.align,
-          alignItems: props.align,
-        }"
-      >
+      <span class="actual-content d-flex fullwidth" :style="{
+        justifyContent: justify,
+        alignContent: props.align,
+        alignItems: props.align,
+      }">
         <slot />
       </span>
     </div>
@@ -50,6 +36,7 @@ const props = withDefaults(
     active?: boolean;
     inactive?: boolean;
     solid?: boolean;
+    compact?: boolean;
     color?: string;
     background?: string;
     block?: boolean;
@@ -65,6 +52,7 @@ const props = withDefaults(
     solid: true,
     width: undefined,
     justify: "center",
+    compact: false,
     align: "center",
     color: undefined,
   }
@@ -92,9 +80,9 @@ const isRootColor = computed(() => $exakt.rootColors.includes(props.background))
 const backgroundClass = computed(() => {
   const c: { [key: string]: boolean } = {}
 
-  if(props.background == 'transparent'){
+  if (props.background == 'transparent') {
     c['transparent'] = true;
-  }else if (isRootColor.value) {
+  } else if (isRootColor.value) {
     c["bg-" + props.background] = true
   } else {
     c['custom-color'] = true
@@ -170,9 +158,10 @@ const textColor = computed(() => {
   &.transparent {
     color: var(--e-color-text);
     background: rgba(0, 0, 0, 0);
+
     &:hover {
-       background: rgba(98, 98, 98, 0.15);
-       opacity: 1;
+      background: rgba(98, 98, 98, 0.15);
+      opacity: 1;
     }
   }
 
@@ -190,8 +179,8 @@ const textColor = computed(() => {
   }
 
   &:hover {
-   // background: rgba(98, 98, 98, 0.15);
-   opacity: 0.7;
+    // background: rgba(98, 98, 98, 0.15);
+    opacity: 0.7;
     border: transparent solid 0.1rem;
   }
 
@@ -220,17 +209,30 @@ const textColor = computed(() => {
     background-color: v-bind(backgroundColor);
     color: v-bind(textColor);
 
-   /* &:hover {
+    /* &:hover {
       opacity: 0.9;
     } */
   }
 
   &.solid {
     padding: 0.7rem 0.9rem;
+
+    &.compact {
+      padding: 0.6rem 0.8rem;
+    }
   }
 
   &.active {
     color: var(--e-color-primary);
+
+    &.transparent {
+      background: rgba(var(--e-color-primary-rgb), 0.1);
+
+      &:hover {
+        background: rgba(var(--e-color-primary-rgb),0.075);
+        opacity: 1;
+      }
+    }
   }
 
   &.inactive {
