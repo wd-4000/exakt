@@ -27,7 +27,6 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^3.2.3",
     "blurhash": "^2.0.5",
     "lodash-es": "^4.17.21",
     "material-symbols": "latest",
@@ -35,6 +34,7 @@
   },
   "devDependencies": {
     "@nuxt/eslint-config": "^0.1.1",
+    "@nuxt/kit": "^3.14.159",
     "@nuxt/module-builder": "^0.2.1",
     "@nuxt/schema": "^3.2.3",
     "@nuxt/test-utils": "^3.2.3",

@@ -6,6 +6,7 @@ import {
   extendViteConfig,
   addImportsSources
 } from "@nuxt/kit";
+import type { Nuxt, NuxtOptions } from "@nuxt/schema";
 import fs from "fs";
 
 
@@ -80,7 +81,7 @@ export default defineNuxtModule<ModuleOptions>({
   },
   // Default configuration options of the Nuxt module
   defaults: defaults,
-  async setup(options, nuxt) {
+  async setup(options: ModuleOptions, nuxt: Nuxt) {
     const resolver = createResolver(import.meta.url);
 
     // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
