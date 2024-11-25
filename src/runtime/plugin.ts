@@ -37,7 +37,8 @@ export default defineNuxtPlugin((/*nuxtApp*/) => {
           }
           return p;
         },
-        rootColors: ['primary', 'red', 'text', 'yellow', 'elev'],
+        rootColors: ['primary', 'red', 'text', 'yellow', 'elev', 'i'],
+        isRootColor: (c:string)=>['primary', 'red', 'text', 'yellow', 'elev', 'i'].includes(c),
         /**
          * Generates an alphanumeric ID of a given length.
          */        
