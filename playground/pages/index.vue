@@ -1,8 +1,18 @@
 <template>
-  <div>
+  <div class="bg-fg px-6 rounded my-6">
     <h1 class="text-center mb-0 pb-3">
       Exakt UI
     </h1>   
+    <h3>Colors</h3>
+    <div class="pa-5 rounded fullwidth mb-6 bg-source">Source</div>
+    <div class="bg-fg pa-5 rounded">fg
+
+      <div class="fullwidth bg-elev">Elev</div>
+    <div class="fullwidth bg-elev-2">Elev-2</div>
+    <div class="fullwidth bg-elev-3">Elev-3</div>
+    </div>
+ 
+
     <h3>Buttons</h3>
     <ENavBtn>Bruh</ENavBtn>
     <EBtn
