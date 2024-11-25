@@ -76,7 +76,7 @@ const backgroundColorRgb = computed(() => {
   return parseColor($exakt.parseColor(props.background));
 });
 
-const isRootColor = computed(() => $exakt.rootColors.includes(props.background))
+const isRootColor = computed(() =>  $exakt&&$exakt.rootColors && $exakt.rootColors.includes(props.background))
 const backgroundClass = computed(() => {
   const c: { [key: string]: boolean } = {}
 

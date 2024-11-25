@@ -97,8 +97,8 @@ a {
 
 @mixin elev($lightness, $light, $color-map) {
 
-  $source: hsl($root-hue, 15%, $lightness);
-  $source-i: color.change($source, $saturation: 20%);
+  $source: hsl($root-hue, 8%, $lightness);
+  $source-i: color.change($source, $saturation: 12%);
 
   $full: 0;
   $factor: 1;
@@ -115,9 +115,9 @@ a {
 
   $color-map: map.set($color-map, "i-inactive", color.adjust($source-i, $lightness: 10%));
   $color-map: map.set($color-map, "i", color.adjust($source-i, $lightness: 20%));
-  $color-map: map.set($color-map, "i-active", color.change(map.get($color-map, "primary"), $lightness: 30%));
+  $color-map: map.set($color-map, "i-active", color.scale(map.get($color-map, "i"), $saturation: 20%));
 
-  $color-map: map.set($color-map, "i-outline", color.change($source-i, $lightness: $full + $factor*30%, $saturation: 20%));
+  $color-map: map.set($color-map, "i-outline", color.change($source-i, $lightness: $full + $factor*30%));
 
   $color-map: map.set($color-map, "bg", color.adjust($source, $lightness: -2%));
   $color-map: map.set($color-map, "fg", color.adjust($source, $lightness: 2%));
@@ -126,6 +126,7 @@ a {
   $color-map: map.set($color-map, "elev", color.scale($source, $lightness: $lightness*0.25));
   $color-map: map.set($color-map, "elev-2", color.scale($source, $lightness: $lightness*0.5));
   $color-map: map.set($color-map, "elev-3", color.scale($source, $lightness: $lightness));
+
 
 
 
