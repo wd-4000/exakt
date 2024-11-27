@@ -1,6 +1,6 @@
 <template>
-  <e-undecorated-link :to="to">
-    <e-btn :solid="true" background="transparent" class="nav-btn" align="center" :active="active">
+  <e-undecorated-link :to="to" class="grow-on-mobile">
+    <e-btn :solid="true" background="transparent" class="nav-btn grow-on-mobile" align="center" :active="active">
       <div class="content">
         <div v-if="icon" class="icon-wrapper flex-center mr-2">
           <e-icon class="icon" size="20" :fill="active">
@@ -91,22 +91,27 @@ const inactive = computed(() => {
   }
 }
 
-/*
+
 @media screen and (max-width: $e-md-screen-breakpoint) {
 
+  .grow-on-mobile {
+    flex-grow: 1;
+    width: 100%;
+  }
 
-    p {
-      margin: 0px;
-      white-space: nowrap;
-    }
+  p {
+    margin: 0px;
+    white-space: nowrap;
+    font-size: small;
 
-    .content {
-      flex-direction: column;
+  }
 
-      .icon-wrapper {
-        margin-right: 0rem;
-      }
+  .content {
+    flex-direction: column;
+
+    .icon-wrapper {
+      margin-right: 0rem;
     }
   }
-*/
+}
 </style>

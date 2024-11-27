@@ -1,5 +1,5 @@
 <template>
-  <nav class="d-flex flex-align-center" :class="{ fixed }">
+  <nav :class="{ fixed }">
 
     <slot />
   </nav>
@@ -12,18 +12,16 @@ defineProps<{
 //const colorFromScriptSetup = "green";
 </script>
 <style lang="scss" scoped>
-.nav-content {
-  display: flex;
-  align-items: stretch;
-  height: 100%;
-}
+
 
 nav {
   z-index: 5;
   min-height: 3.5rem;
   border-radius: var(--e-rounded-border-radius);
   background: var(--e-color-bg);
-overflow-y: scroll;
+  overflow-y: none;
+  display: flex;
+  align-items: center;
  // position: sticky;
   top: 0;
   left: 0;
@@ -34,7 +32,7 @@ nav.fixed {
   width: 100%;
 }
 
-/*
+
 @media screen and (max-width: $e-md-screen-breakpoint) {
   nav {
     position: fixed;
@@ -42,8 +40,11 @@ nav.fixed {
     top: unset;
     border-radius: 0;
     width: 100%;
+    justify-content: stretch;
+    margin: 0 !important;
+    padding: 0.2rem 0.6rem calc(0.2rem + env(safe-area-inset-bottom)) 0.6rem ;
     background: var(--e-color-elev);
   }
 }
-  */
+
 </style>
