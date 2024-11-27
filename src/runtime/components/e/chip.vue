@@ -1,6 +1,6 @@
 <template>
   <div
-    class="e-chip py-3 px-4 ma-1 d-flex flex-center"
+    class="e-chip py-3 px-4 ma-1 flex-center"
     :class="{ active, 'bg-i-active':active, 'bg-i-inactive':!active }"
     @click="active = !active"
   >
@@ -46,6 +46,7 @@ const active = computed({
     user-select: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     cursor: pointer;
+    display: inline-flex;
 
     &>.check {
         display: none;
