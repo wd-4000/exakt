@@ -72,7 +72,7 @@ a {
   :root {
     @each $name, $color in $color-map {
       #{'--e-color-'+$name}: $color;
-      #{'--e-color-'+$name+'-rgb'}: red($color), green($color), blue($color);
+      #{'--e-color-'+$name+'-rgb'}: color.channel($color, "red", $space: rgb), color.channel($color, "green", $space: rgb), color.channel($color, "blue", $space: rgb);
 
     }
   }
@@ -81,7 +81,7 @@ a {
     .bg-#{$name} {
       background: $color;
 
-      @if (color.lightness($color) > 49%) {
+      @if (color.channel($color, "lightness", $space: hsl) > 49%) {
         color: map.get($root-colors-light, "text");
       }
 
