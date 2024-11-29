@@ -6,7 +6,6 @@
     block,
     rounded: solid,
     'e-disabled': disabled,
-    'my-2': solid,
     loading,
     fab,
     compact,
