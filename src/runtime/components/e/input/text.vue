@@ -194,7 +194,7 @@ const transitionEnd = () => {
   background-color: transparent;
   color: var(--e-color-text);
   padding: 10px;
-  outline: var(--e-color-i-outline) solid 0.1rem;
+  outline: var(--e-color-i-depressed-outline) solid 0.1rem;
   //box-shadow: 0 0 0 0.1rem  var(--e-color-i-outline);
 
   overflow: clip;
@@ -202,7 +202,7 @@ const transitionEnd = () => {
 }
 
 .wrapper.solid:has(:focus) {
-  outline: var(--e-color-primary) solid 0.125rem;
+  outline: var(--e-color-i-depressed-active-outline) solid 0.125rem;
   //box-shadow: 0 0 0 0.125rem  var(--e-color-primary);
 
   background-color: var(--e-color-i-depressed-active);
@@ -230,7 +230,7 @@ const transitionEnd = () => {
 
 .wrapper:active {
   background-color: var(--e-color-i-depressed-2) !important;
-  outline: var(--e-color-primary) solid 0.2rem !important;
+  outline: var(--e-color-i-depressed-active-outline) solid 0.2rem !important;
 }
 
 .input::-ms-reveal {

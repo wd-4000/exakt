@@ -144,15 +144,14 @@ a {
   color-scheme: light;
 }
 
-@include elev(95%,1, 1, $root-colors-light);
+//@include elev(95%,1, 1, $root-colors-light);
+@include color-definitions($root-colors-light);
+
 
 
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
   }
-
-  @include elev(15%,1,0, $root-colors-dark);
-
-
+  @include color-definitions($root-colors-dark);
 }

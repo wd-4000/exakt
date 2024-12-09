@@ -8,7 +8,7 @@
   >
     <e-icon
       v-if="icon"
-      
+      :fill="fill"
       :size="size"
     >
       {{ icon }}
@@ -18,8 +18,8 @@
 </template>
 <script setup lang="ts">
 withDefaults(
-  defineProps<{ icon?: string; size?: string; loading?: boolean, type?: "button" | "submit" | "reset" }>(),
-  { size: "21" }
+  defineProps<{ icon?: string; size?: string; loading?: boolean, type?: "button" | "submit" | "reset" , fill?: boolean}>(),
+  { size: "21", fill:false}
 );
 </script>
 <style scoped>
