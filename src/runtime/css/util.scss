@@ -158,16 +158,21 @@ body {
   width: 100%;
 }
 
-.md-and-under {
-  display: none;
+
+@media screen and (min-width: ($e-md-screen-breakpoint)) {
+  .md-and-under {
+      display: none !important;
+  
+}
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
 @media screen and (max-width: ($e-md-screen-breakpoint)) {
-  .md-and-under {
-      display: block;
-  }
   .md-and-over {
-      display: none;
+      display: none !important;
   
 }
 }
