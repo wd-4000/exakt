@@ -1,5 +1,4 @@
 import { defineNuxtPlugin } from "#app";
-import 'material-symbols';
 
 export default defineNuxtPlugin((/*nuxtApp*/) => {
   return {
