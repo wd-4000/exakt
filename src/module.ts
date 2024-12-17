@@ -144,12 +144,9 @@ export default defineNuxtModule<ModuleOptions>({
       });
     });
 
-    addImportsSources({
-      from: 'material-symbols', imports: ['material-symbols']
-    })
-
     nuxt.options.css.push(resolver.resolve("./runtime/css/main.scss"));
     nuxt.options.css.push(resolver.resolve("./runtime/css/util.scss"));
+    nuxt.options.css.push("material-symbols");
     nuxt.options.css.push(
       resolver.resolve("../node_modules/.cache/exakt-ui/variables.css")
     );
