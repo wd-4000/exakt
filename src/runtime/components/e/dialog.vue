@@ -51,7 +51,7 @@ const emit = defineEmits(["update:modelValue"]);
   overflow: clip;
 }
 
-@media (max-width: $e-md-screen-breakpoint) {
+@media (max-width: exakt.$e-md-screen-breakpoint) {
   .dialog {
     width: 100%;
     max-width: 100vw;

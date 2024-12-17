@@ -92,7 +92,7 @@ const inactive = computed(() => {
 }
 
 
-@media screen and (max-width: $e-md-screen-breakpoint) {
+@media screen and (max-width: exakt.$e-md-screen-breakpoint) {
 
   .grow-on-mobile {
     flex-grow: 1;

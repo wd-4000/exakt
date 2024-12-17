@@ -213,7 +213,7 @@ const transitionEnd = () => {
   padding: 0.8rem 1rem;
   background-color: var(--e-color-i-depressed);
 
-  @media screen and (min-width: $e-md-screen-breakpoint) {
+  @media screen and (min-width: exakt.$e-md-screen-breakpoint) {
     &.compact {
       padding: 0.6rem 0.8rem;
     }
