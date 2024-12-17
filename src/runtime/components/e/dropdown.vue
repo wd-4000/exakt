@@ -230,7 +230,7 @@ const onActivatorClick = () => {
   }
 }
 
-@media screen and (max-width: $e-md-screen-breakpoint) {
+@media screen and (max-width: exakt.$e-md-screen-breakpoint) {
   .list {
     position: fixed;
     top: unset;

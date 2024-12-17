@@ -14,7 +14,7 @@ header{
     font-size: 0.75rem;
 }
 
-@media screen and (max-width: $e-md-screen-breakpoint) {
+@media screen and (max-width: exakt.$e-md-screen-breakpoint) {
   header {
     position: fixed;
     font-size: 0.5rem;

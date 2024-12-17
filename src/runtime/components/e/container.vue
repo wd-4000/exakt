@@ -30,7 +30,7 @@ withDefaults(
 
   width: 95%;
 
-  @media (max-width: $e-md-screen-breakpoint) {
+  @media (max-width: exakt.$e-md-screen-breakpoint) {
     &.forceFullWidth {
       width: 100%;
     }
@@ -38,15 +38,15 @@ withDefaults(
 
   $padding: 0rem;
 
-  @media (min-width: $e-md-screen-breakpoint) {
+  @media (min-width: exakt.$e-md-screen-breakpoint) {
     width: calc(100% - $padding);
   }
 
-  @media (min-width: $e-lg-screen-breakpoint) {
+  @media (min-width: exakt.$e-lg-screen-breakpoint) {
     width: calc(95% - $padding);
   }
 
-  @media (min-width: $e-xl-screen-breakpoint) {
+  @media (min-width: exakt.$e-xl-screen-breakpoint) {
     width: calc(85% - $padding);
   }
 }

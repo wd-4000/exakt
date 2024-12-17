@@ -240,7 +240,7 @@ const textColor = computed(() => {
   }
 }
 
-@media screen and (max-width: $e-md-screen-breakpoint) {
+@media screen and (max-width: exakt.$e-md-screen-breakpoint) {
   .e-btn.fab {
     right: 1rem;
   }

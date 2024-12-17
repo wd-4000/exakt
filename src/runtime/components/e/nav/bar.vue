@@ -33,7 +33,7 @@ nav.fixed {
 }
 
 
-@media screen and (max-width: $e-md-screen-breakpoint) {
+@media screen and (max-width: exakt.$e-md-screen-breakpoint) {
   nav {
     position: fixed;
     bottom: 0;

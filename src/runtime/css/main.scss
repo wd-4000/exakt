@@ -82,11 +82,11 @@ a {
       background: $color;
 
       @if (color.channel($color, "lightness", $space: hsl) > 49%) {
-        color: map.get($root-colors-light, "text");
+        color: map.get(exakt.$root-colors-light, "text");
       }
 
       @else {
-        color: map.get($root-colors-dark, "text");
+        color: map.get(exakt.$root-colors-dark, "text");
       }
     }
 
@@ -98,7 +98,7 @@ a {
 
 @mixin elev($lightness, $contrast, $light, $color-map) {
 
-  $source: hsl($root-hue, 8%, $lightness);
+  $source: hsl(exakt.$root-hue, 8%, $lightness);
   $source-i: color.change($source, $saturation: 12%);
 
   $full: 0;
@@ -144,7 +144,7 @@ a {
   color-scheme: light;
 }
 
-@include elev(95%,1, 1, $root-colors-light);
+@include elev(95%,1, 1, exakt.$root-colors-light);
 
 
 @media (prefers-color-scheme: dark) {
@@ -152,7 +152,7 @@ a {
     color-scheme: dark;
   }
 
-  @include elev(8%,1,0, $root-colors-dark);
+  @include elev(8%,1,0, exakt.$root-colors-dark);
 
 
 }

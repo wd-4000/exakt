@@ -135,9 +135,9 @@ export default defineNuxtModule<ModuleOptions>({
           preprocessorOptions: {
             scss: {
               api: 'modern-compiler',
-              additionalData: `@use "sass:color"; @use "sass:map"; @import "${resolver.resolve(
+              additionalData: `@use "sass:color"; @use "sass:map"; @use "${resolver.resolve(
                 "../node_modules/.cache/exakt-ui/variables.scss"
-              )}";  `,
+              )}" as exakt;  `,
             },
           },
         },

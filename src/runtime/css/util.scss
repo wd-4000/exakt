@@ -159,7 +159,7 @@ body {
 }
 
 
-@media screen and (min-width: ($e-md-screen-breakpoint)) {
+@media screen and (min-width: (exakt.$e-md-screen-breakpoint)) {
   .md-and-under {
       display: none !important;
   
@@ -170,7 +170,7 @@ body {
   flex-wrap: wrap;
 }
 
-@media screen and (max-width: ($e-md-screen-breakpoint)) {
+@media screen and (max-width: (exakt.$e-md-screen-breakpoint)) {
   .md-and-over {
       display: none !important;
   
