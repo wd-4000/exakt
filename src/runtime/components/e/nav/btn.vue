@@ -1,13 +1,32 @@
 <template>
-  <e-undecorated-link :to="to" class="grow-on-mobile">
-    <e-btn :solid="true" background="transparent" class="nav-btn grow-on-mobile" align="center" :active="active">
+  <e-undecorated-link
+    :to="to"
+    class="grow-on-mobile"
+  >
+    <e-btn
+      :solid="true"
+      background="transparent"
+      class="nav-btn grow-on-mobile"
+      align="center"
+      :active="active"
+    >
       <div class="content">
-        <div v-if="icon" class="icon-wrapper flex-center mr-2">
-          <e-icon class="icon" size="20" :fill="active">
+        <div
+          v-if="icon"
+          class="icon-wrapper flex-center mr-2"
+        >
+          <e-icon
+            class="icon"
+            size="20"
+            :fill="active"
+          >
             {{ icon }}
           </e-icon>
           <transition name="fade">
-            <div v-if="alert" class="icon-alert" />
+            <div
+              v-if="alert"
+              class="icon-alert"
+            />
           </transition>
         </div>
         <p v-if="label">
@@ -27,7 +46,6 @@ const props = withDefaults(
     to?: string;
     label?: string;
     icon?: string;
-    size?: string;
     alert?: boolean;
   }>(),
   { to: "", label: "", icon: "" }
@@ -40,9 +58,7 @@ const route = useRoute();
 const active = computed(() => {
   return route && route.path === props.to;
 });
-const inactive = computed(() => {
-  return !active.value && Boolean(props.icon);
-});
+
 </script>
 
 <style scoped lang="scss">

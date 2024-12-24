@@ -65,7 +65,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, reactive } from "#imports";
+import { computed } from "#imports";
 const props = withDefaults(
   defineProps<{
     collapsedWidth?: number | string;
@@ -91,9 +91,7 @@ const props = withDefaults(
     nestingLevel: 0,
   }
 );
-const state = reactive({
-  hover: false,
-});
+
 
 const background = computed(() =>
   Number(props.elev) == 1

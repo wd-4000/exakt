@@ -2,7 +2,7 @@
 
 <template>
   <header class="d-flex flex-align-center">
-    <h1><slot/></h1>
+    <h1><slot /></h1>
   </header>
 </template>
 <style lang="scss" scoped>
