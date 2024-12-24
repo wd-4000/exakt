@@ -1,6 +1,5 @@
 <template>
   <nav :class="{ fixed }">
-
     <slot />
   </nav>
 </template>

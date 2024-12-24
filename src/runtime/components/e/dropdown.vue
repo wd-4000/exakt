@@ -73,7 +73,7 @@ const props = withDefaults(
     position?: { x: number, y: number }
     fixed?:boolean;
   }>(),
-  { center: false, visible: null, paddingY: "", modelValue: undefined }
+  { center: false, visible: null, paddingY: "", modelValue: undefined, position: undefined}
 );
 
 const activator = ref<HTMLDivElement>();

@@ -19,7 +19,7 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{ icon?: string; size?: number|`${number}`; loading?: boolean, type?: "button" | "submit" | "reset", fill?: boolean }>(),
-  { size: "21" }
+  { size: "21", icon: undefined, type:undefined }
 );
 </script>
 <style scoped>

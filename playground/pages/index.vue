@@ -4,12 +4,21 @@
       Exakt UI
     </h1>   
     <h3>Colors</h3>
-    <div class="pa-5 rounded fullwidth mb-6 bg-source">Source</div>
-    <div class="bg-fg pa-5 rounded">fg
+    <div class="pa-5 rounded fullwidth mb-6 bg-source">
+      Source
+    </div>
+    <div class="bg-fg pa-5 rounded">
+      fg
 
-      <div class="fullwidth bg-elev">Elev</div>
-    <div class="fullwidth bg-elev-2">Elev-2</div>
-    <div class="fullwidth bg-elev-3">Elev-3</div>
+      <div class="fullwidth bg-elev">
+        Elev
+      </div>
+      <div class="fullwidth bg-elev-2">
+        Elev-2
+      </div>
+      <div class="fullwidth bg-elev-3">
+        Elev-3
+      </div>
     </div>
  
 

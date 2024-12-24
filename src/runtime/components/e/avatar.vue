@@ -25,7 +25,7 @@
 const props = withDefaults(defineProps<{
   src?: string;
   size?: number;
-}>(), { size: 120 });
+}>(), { size: 120, src: undefined });
 </script>
 <style lang="scss" scoped>
 .avatar {

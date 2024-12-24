@@ -3,10 +3,9 @@ import {
   addPlugin,
   createResolver,
   addComponentsDir,
-  extendViteConfig,
-  addImportsSources
+  extendViteConfig
 } from "@nuxt/kit";
-import type { Nuxt, NuxtOptions } from "@nuxt/schema";
+import type { Nuxt } from "@nuxt/schema";
 import fs from "fs";
 
 

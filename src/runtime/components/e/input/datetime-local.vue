@@ -1,12 +1,27 @@
 <template>
-    <div>
-        <div class="pb-2" v-if="label"> <label :for="id" class="text-secondary">{{ label }}</label></div>
-        <input :id="id" type="datetime-local" class="py-3 px-4" :name="name" v-model="currentText" :required="required"
-            :disabled="disabled" />
+  <div>
+    <div
+      v-if="label"
+      class="pb-2"
+    >
+      <label
+        :for="id"
+        class="text-secondary"
+      >{{ label }}</label>
     </div>
+    <input
+      :id="id"
+      v-model="currentText"
+      type="datetime-local"
+      class="py-3 px-4"
+      :name="name"
+      :required="required"
+      :disabled="disabled"
+    >
+  </div>
 </template>
 <script setup lang="ts">
-import { ref, watch, reactive, computed, useId, onMounted } from "#imports";
+import { ref, computed, useId, onMounted } from "#imports";
 
 
 const props = withDefaults(
@@ -21,6 +36,8 @@ const props = withDefaults(
     {
         label: "",
         modelValue: "",
+        name: undefined,
+        defaultValue: undefined
     }
 );
 

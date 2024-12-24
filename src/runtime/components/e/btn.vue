@@ -1,25 +1,40 @@
 <template>
-  <button class="e-btn" :style="{ width }" :type="type" :disabled="disabled || loading" :class="{
-    active,
-    inactive,
-    solid,
-    block,
-    rounded: solid,
-    'e-disabled': disabled,
-    loading,
-    fab,
-    compact,
-    ...backgroundClass
-  }">
-    <div ref="content" class="e-btn-content">
-      <div v-if="loading" class="load-overlay">
+  <button
+    class="e-btn"
+    :style="{ width }"
+    :type="type"
+    :disabled="disabled || loading"
+    :class="{
+      active,
+      inactive,
+      solid,
+      block,
+      rounded: solid,
+      'e-disabled': disabled,
+      loading,
+      fab,
+      compact,
+      ...backgroundClass
+    }"
+  >
+    <div
+      ref="content"
+      class="e-btn-content"
+    >
+      <div
+        v-if="loading"
+        class="load-overlay"
+      >
         <e-loading-spinner size="1.25" />
       </div>
-      <span class="actual-content d-flex fullwidth" :style="{
-        justifyContent: justify,
-        alignContent: props.align,
-        alignItems: props.align,
-      }">
+      <span
+        class="actual-content d-flex fullwidth"
+        :style="{
+          justifyContent: justify,
+          alignContent: props.align,
+          alignItems: props.align,
+        }"
+      >
         <slot />
       </span>
     </div>

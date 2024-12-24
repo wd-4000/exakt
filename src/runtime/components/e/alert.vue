@@ -1,6 +1,12 @@
 <template>
-  <div class="flex-center" :class="{ [severityMatrix[severity].class]: true }">
-    <e-icon size="19" class="mr-2">
+  <div
+    class="flex-center"
+    :class="{ [severityMatrix[severity].class]: true }"
+  >
+    <e-icon
+      size="19"
+      class="mr-2"
+    >
       {{ severityMatrix[severity].icon }}
     </e-icon><small>
       <slot />
