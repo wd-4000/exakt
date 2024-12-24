@@ -1,6 +1,31 @@
 # Changelog
 
 
+## v0.0.58
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.56...v0.0.58)
+
+### 🚀 Enhancements
+
+- Improve nav on mobile ([8c935e2](https://github.com/wd-4000/exakt/commit/8c935e2))
+- Migrate to @use rules instead of @import ([7b3c114](https://github.com/wd-4000/exakt/commit/7b3c114))
+
+### 🩹 Fixes
+
+- Weird behavior with default value ([941d2ea](https://github.com/wd-4000/exakt/commit/941d2ea))
+- D-flex for e-chip ([795c129](https://github.com/wd-4000/exakt/commit/795c129))
+- Legacy scss bickering ([992c23b](https://github.com/wd-4000/exakt/commit/992c23b))
+- Properly import material-symbols ([f373147](https://github.com/wd-4000/exakt/commit/f373147))
+
+### 🏡 Chore
+
+- **release:** V0.0.56 ([704b5d0](https://github.com/wd-4000/exakt/commit/704b5d0))
+- Bump nuxt to 3.14.1592 ([ef58cae](https://github.com/wd-4000/exakt/commit/ef58cae))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.56
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.55...v0.0.56)
