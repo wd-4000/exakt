@@ -163,7 +163,7 @@ const textColor = computed(() => {
   flex-shrink: 1;
   position: relative;
   transition: background 0.4s, color 0.3s, opacity 0.4s;
-
+white-space:nowrap;
   font-family: var(--e-font-family);
   box-sizing: border-box;
 
