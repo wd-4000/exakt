@@ -5,6 +5,10 @@
     class="label mb-5"
   >
     {{ item[useKey] }}
+    <div
+      v-if="useSecondaryKey && item[useSecondaryKey]"
+      class="text-secondary"
+    >{{ item[useSecondaryKey] }}</div>
     <input
       v-model="selected"
       type="radio"
@@ -17,9 +21,10 @@
 <script lang="ts" setup>
 import {computed} from '#imports';
 const props = defineProps<{
-  items: { [shot: string]: string }[];
-  modelValue: number;
+  items: { [key: string]: string }[];
+  modelValue?: number;
   useKey: string;
+  useSecondaryKey?:string;
 }>();
 
 const emit = defineEmits(["update:modelValue"]);
@@ -67,7 +72,9 @@ const selected = computed({
   left: 0;
   height: var(--size);
   width: var(--size);
-  background-color: var(--e-color-elev);
+  background-color: var(--e-color-i-inactive);
+  outline: var(--e-color-i-outline) solid 0.1rem; 
+
   border-radius: 50%;
   transition: background-color 0.15s, transform 0.25s;
 }
@@ -84,7 +91,10 @@ const selected = computed({
 
   &~.checkmark::after {
     transform: scale(1) !important;
+    background-color: var(--e-color-primary);
   }
+
+
 }
 
 /* Checked */
@@ -116,7 +126,7 @@ const selected = computed({
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: var(--e-color-text);
+  background: var(--e-color-i-active);
   transform: scale(0);
   transition: transform 0.25s;
   box-sizing: border-box;

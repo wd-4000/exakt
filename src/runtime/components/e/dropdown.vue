@@ -16,11 +16,12 @@
         :style="{position:(fixed?'fixed':undefined)}"
       >
         <component
-          :is="item.href ? 'a' : 'div'"
+          :is="item.to ? EUndecoratedLink : (item.href ? 'a' : 'div')"
           v-for="(item, i) in items"
           :key="i"
           class="fullwidth"
           :href="item.href ? item.href : undefined"
+          :to="item.to ? item.to : undefined"
         >
           <e-btn
             justify="start"
@@ -50,13 +51,14 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, ref, reactive, watch/*, nextTick*/ } from "#imports";
-import  _ from "lodash-es";
+import { computed, ref, reactive, watch, resolveComponent } from "#imports";
+import {debounce} from "lodash-es";
 
 interface DropdownItem {
   name: string;
   icon?: string;
   href?: string;
+  to?:string;
   callback?: () => void;
   color?: string;
   background?: string;
@@ -65,27 +67,24 @@ interface DropdownItem {
 const props = withDefaults(
   defineProps<{
     modelValue?: number;
-    width: string | number | "100%";
+    width?: string | "100%";
     center?: boolean;
     items: DropdownItem[];
     visible?: boolean | null;
-    paddingY?: string;
-    position?: { x: number, y: number }
     fixed?:boolean;
   }>(),
-  { center: false, visible: null, paddingY: "", modelValue: undefined, position: undefined}
+  { center: false, visible: null, paddingY: "", modelValue: undefined, position: undefined, width:undefined}
 );
 
 const activator = ref<HTMLDivElement>();
 const list = ref<HTMLDivElement>();
-
+const EUndecoratedLink = resolveComponent('EUndecoratedLink')
 const state = reactive({
   visibleInternal: false,
   x: 0,
   y: 0,
-  width: 0,
-});
 
+});
 // Visibility computed variable. We use the state unless we have a variable from the parent.
 const visibleComputed = computed<boolean>({
   get: () => {
@@ -103,16 +102,6 @@ const visibleComputed = computed<boolean>({
   },
 });
 
-function computeWidth(input: string | number) {
-  const div = document.createElement("div");
-  document.body.appendChild(div);
-  div.style.width = String(input);
-  const c = getComputedStyle(div).width as any;
-  // const res = c.match(/[.\d]+/g).map(Number);
-
-  div.remove();
-  return parseInt(c, 10);
-}
 
 const updatePosition = async () => {
 
@@ -121,31 +110,22 @@ const updatePosition = async () => {
     return;
   }
 
-  if (activator.value) {
+  if (activator.value &&  list.value) {
+    console.log('activator')
     const activatorRect = activator.value.getBoundingClientRect();
+    const listRect = list.value.getBoundingClientRect();
 
-    if (props.width === "100%") {
-      state.width = activatorRect.width;
-    } else {
-      state.width = computeWidth(props.width);
-    }
+      
 
     state.y = activatorRect.height;
     state.x = 0;
 
-  } else {
-    state.width = computeWidth(props.width);
-
-
-  }
-  if (props.position) {
-      state.x = props.position.x;
-      state.y = props.position.y;
-      return;
+    // Too far right :(
+    if (window.innerWidth > listRect.right) {
+      state.x = -1 * activatorRect.width
     }
-  state.x = 0;
-  state.y = 0;
 
+  } 
   /* await nextTick();
   if (!list.value) return;
 
@@ -157,7 +137,7 @@ const updatePosition = async () => {
   } */
 };
 
-const debouncedUpdatePosition = _.debounce(updatePosition, 200);
+const debouncedUpdatePosition = debounce(updatePosition, 200);
 
 watch(visibleComputed, (value) => {
   if (value) {
@@ -196,7 +176,7 @@ const onActivatorClick = () => {
   position: absolute;
   left: v-bind('(state.x) + `px`');
   top: v-bind('(state.y) + `px`');
-  width: v-bind('state.width + `px`');
+  width: v-bind('props.width || "unset"');
   display: flex;
 
   z-index: 6;
@@ -205,7 +185,6 @@ const onActivatorClick = () => {
   flex-direction: column;
   overflow: clip;
   justify-items: stretch;
-  margin-top: v-bind("props.paddingY");
 
   .item {
     // color: var(--e-color-text);
@@ -213,7 +192,7 @@ const onActivatorClick = () => {
     padding: 0.7rem;
     text-transform: capitalize;
     position: relative;
-
+    white-space: nowrap;
     &:hover {
       background-color: rgba(var(--e-color-fg-rgb), 0.5);
     }

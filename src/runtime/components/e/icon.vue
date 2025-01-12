@@ -13,7 +13,7 @@ const props = withDefaults(
   defineProps<{
     iconStyle?: 'outlined' | 'rounded' | 'sharp', size?: number|`${number}`, fill?:boolean|"0"|"1"|`${boolean}`, grade?:number|`${number}`, weight?: number|`${number}`
   }>(),
-  { iconStyle: 'rounded', size: 24, fill:true, weight: 400, grade:0}
+  { iconStyle: 'outlined', size: 24, fill:true, weight: 400, grade:0}
 );
 
 const sizePx = computed(() => props.size + "px")

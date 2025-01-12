@@ -2,7 +2,7 @@
   <div>
     <div
       v-if="label"
-      class="mb-3 mt-6"
+      class="my-3"
     >
       <label :for="id">
         {{ label }} </label>
