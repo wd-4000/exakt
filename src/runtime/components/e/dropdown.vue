@@ -105,27 +105,27 @@ const visibleComputed = computed<boolean>({
 
 const updatePosition = async () => {
 
-  if (!visibleComputed.value) {
-    window.removeEventListener("resize", debouncedUpdatePosition);
-    return;
-  }
 
-  if (activator.value &&  list.value) {
-    console.log('activator')
+  if (activator.value) {
     const activatorRect = activator.value.getBoundingClientRect();
-    const listRect = list.value.getBoundingClientRect();
+    console.log('activator', activatorRect)
+
 
       
 
-    state.y = activatorRect.height;
+    state.y = Math.round(activatorRect.height);
+    console.log(state.y, activatorRect.right)
     state.x = 0;
 
-    // Too far right :(
-    if (window.innerWidth > listRect.right) {
-      state.x = -1 * activatorRect.width
-    }
 
-  } 
+    // Too far right :(
+    //if (window.innerWidth > listRect.right) {
+     //state.x = -1 * activatorRect.width
+   // }
+
+  }//else{
+    //console.log(activator.value,  list.value)
+  //}
   /* await nextTick();
   if (!list.value) return;
 
