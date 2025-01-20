@@ -1,32 +1,14 @@
 <template>
-  <e-undecorated-link
-    :to="to"
-    class="grow-on-mobile"
-  >
-    <e-btn
-      :solid="true"
-      background="transparent"
-      class="nav-btn grow-on-mobile"
-      align="center"
-      :active="active"
-    >
-      <div class="content">
-        <div
-          v-if="icon"
-          class="icon-wrapper flex-center mr-2"
-        >
-          <e-icon
-            class="icon"
-            size="20"
-            :fill="active"
-          >
+  <e-undecorated-link :to="to" :class="{ 'grow-on-mobile': responsive }">
+    <e-btn :solid="true" background="transparent" class="nav-btn" :class="{ 'grow-on-mobile': responsive }"
+      align="center" :active="active">
+      <div class="content" :class="{ responsive }">
+        <div v-if="icon" class="icon-wrapper flex-center mr-2">
+          <e-icon class="icon" size="20" :fill="active">
             {{ icon }}
           </e-icon>
           <transition name="fade">
-            <div
-              v-if="alert"
-              class="icon-alert"
-            />
+            <div v-if="alert" class="icon-alert" />
           </transition>
         </div>
         <p v-if="label">
@@ -47,8 +29,9 @@ const props = withDefaults(
     label?: string;
     icon?: string;
     alert?: boolean;
+    responsive?: boolean
   }>(),
-  { to: "", label: "", icon: "" }
+  { to: "", label: "", icon: "", responsive: true }
 );
 
 const route = useRoute();
@@ -115,18 +98,20 @@ const active = computed(() => {
     width: 100%;
   }
 
-  p {
-    margin: 0px;
-    white-space: nowrap;
-    font-size: small;
 
-  }
 
-  .content {
+  .content.responsive {
     flex-direction: column;
 
     .icon-wrapper {
       margin-right: 0rem;
+    }
+
+    p {
+      margin: 0px;
+      white-space: nowrap;
+      font-size: small;
+
     }
   }
 }
