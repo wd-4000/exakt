@@ -1,7 +1,7 @@
 <template>
-    <label class="d-flex flex-align-center">
+    <label class="d-flex flex-align-center mt-3">
         <input type="checkbox" name="checkbox"></input>
-        Checkbox Disabled
+        <slot />
     </label>
 </template>
 <style lang="scss" scoped>
