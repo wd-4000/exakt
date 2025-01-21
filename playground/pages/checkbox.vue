@@ -1,4 +1,3 @@
 <template>
-
-    <div><e-input-checkbox /></div>
+  <div><e-input-checkbox /></div>
 </template>

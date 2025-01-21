@@ -1,14 +1,37 @@
 <template>
-  <e-undecorated-link :to="to" :class="{ 'grow-on-mobile': responsive }">
-    <e-btn :solid="true" background="transparent" class="nav-btn" :class="{ 'grow-on-mobile': responsive }"
-      align="center" :active="active">
-      <div class="content" :class="{ responsive }">
-        <div v-if="icon" class="icon-wrapper flex-center mr-2">
-          <e-icon class="icon" size="20" :fill="active">
+  <e-undecorated-link
+    :to="to"
+    :class="{ 'grow-on-mobile': responsive }"
+  >
+    <e-btn
+      :solid="true"
+      background="transparent"
+      class="nav-btn"
+      :class="{ 'grow-on-mobile': responsive }"
+      align="center"
+      :active="active"
+      :button="false"
+    >
+      <div
+        class="content"
+        :class="{ responsive }"
+      >
+        <div
+          v-if="icon"
+          class="icon-wrapper flex-center mr-2"
+        >
+          <e-icon
+            class="icon"
+            size="20"
+            :fill="active"
+          >
             {{ icon }}
           </e-icon>
           <transition name="fade">
-            <div v-if="alert" class="icon-alert" />
+            <div
+              v-if="alert"
+              class="icon-alert"
+            />
           </transition>
         </div>
         <p v-if="label">
@@ -50,7 +73,10 @@ const active = computed(() => {
   background-color: rgba(var(--e-color-primary-rgb), 0.075);
 }*/
 
+a {
+  border-radius: var(--e-rounded-border-radius);
 
+}
 
 .content {
   display: flex;

@@ -1,9 +1,29 @@
 <template>
-    <label class="d-flex flex-align-center mt-3">
-        <input type="checkbox" name="checkbox"></input>
-        <slot />
-    </label>
+  <label class="d-flex flex-align-center mt-3">
+    <input
+      v-bind="{ name }"
+      v-model="selected"
+      type="checkbox"
+    >
+    <slot />
+  </label>
 </template>
+<script setup lang="ts">
+import { computed } from '#imports';
+
+const emit = defineEmits(["update:modelValue"]);
+const props = defineProps<{ modelValue: boolean, name?: string }>();
+
+
+const selected = computed({
+    get() {
+        return props.modelValue;
+    },
+    set(v) {
+        emit("update:modelValue", v);
+    },
+});
+</script>
 <style lang="scss" scoped>
 input[type="checkbox"] {
     -webkit-appearance: none;
@@ -16,9 +36,9 @@ input[type="checkbox"] {
     font-family: 'Material Symbols Outlined';
     color: transparent;
 
-    width: 1.15em;
-    margin-right: 0.4rem;
-    height: 1.15em;
+    width: 1rem;
+    margin-right: 0.6rem;
+    height: 1rem;
     border-radius: 0.15em;
 
     display: flex;
@@ -66,10 +86,13 @@ input[type="checkbox"]:active {
 
 
 
-// input[type="checkbox"]:focus {
-//     outline: max(2px, 0.15em) solid currentColor;
-//     outline-offset: max(2px, 0.15em);
-// }
+input[type="checkbox"]:focus {
+    outline: var(--e-color-primary) solid 0.125rem;
+    background-color: var(--e-color-i-depressed-active);
+    &::before {
+        opacity: 0.7;
+    }
+}
 
 input[type="checkbox"]:disabled {
     --form-control-color: var(--form-control-disabled);

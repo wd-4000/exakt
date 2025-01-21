@@ -1,5 +1,6 @@
 <template>
-  <button
+  <component
+    :is="button ? 'button' : 'div'"
     class="e-btn"
     :style="{ width }"
     :type="type"
@@ -38,7 +39,7 @@
         <slot />
       </span>
     </div>
-  </button>
+  </component>
 </template>
 <script lang="ts" setup>
 import { computed, useNuxtApp, } from "#imports";
@@ -59,6 +60,7 @@ const props = withDefaults(
     disabled?: boolean;
     align?: string;
     type?: "button" | "submit" | "reset";
+    button?: boolean;
   }>(),
   {
     type: "button",
@@ -69,6 +71,7 @@ const props = withDefaults(
     compact: false,
     align: "center",
     color: undefined,
+    button: true
   }
 );
 
@@ -90,7 +93,7 @@ const backgroundColorRgb = computed(() => {
   return parseColor($exakt.parseColor(props.background));
 });
 
-const isRootColor = computed(() =>  $exakt&&$exakt.rootColors && $exakt.rootColors.includes(props.background))
+const isRootColor = computed(() => $exakt && $exakt.rootColors && $exakt.rootColors.includes(props.background))
 const backgroundClass = computed(() => {
   const c: { [key: string]: boolean } = {}
 
@@ -163,7 +166,7 @@ const textColor = computed(() => {
   flex-shrink: 1;
   position: relative;
   transition: background 0.4s, color 0.3s, opacity 0.4s;
-white-space:nowrap;
+  white-space: nowrap;
   font-family: var(--e-font-family);
   box-sizing: border-box;
 
@@ -243,7 +246,7 @@ white-space:nowrap;
       background: rgba(var(--e-color-primary-rgb), 0.1);
 
       &:hover {
-        background: rgba(var(--e-color-primary-rgb),0.075);
+        background: rgba(var(--e-color-primary-rgb), 0.075);
         opacity: 1;
       }
     }

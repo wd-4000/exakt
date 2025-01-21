@@ -9,7 +9,7 @@
     </div>
 
     <div
-      class="wrapper fullwidth"
+      class="wrapper"
       :style="inputState.overtakeStyle"
       :class="{ rounded: rounded == undefined ? solid : rounded, solid, compact }"
       @click="focus"
@@ -126,7 +126,7 @@ const props = withDefaults(
     focus?: boolean;
     spellcheck?: boolean;
     height?: string;
-
+    width?:string;
     compact?: boolean;
   }>(),
   {
@@ -137,6 +137,7 @@ const props = withDefaults(
     modelValue: "",
     autocomplete: "off",
     height: "unset",
+    width: "100%",
     compact: false,
     rounded: undefined,
     placeholder: undefined,
@@ -161,7 +162,7 @@ const getInputStyle = (prop: string) => {
 };
 
 const transitionEnd = () => {
-  inputState.autofilled = !inputState.autofilled;
+  //inputState.autofilled = !inputState.autofilled;
 
   if (inputState.autofilled) {
     inputState.overtakeStyle = `color: ${getInputStyle(
@@ -173,17 +174,6 @@ const transitionEnd = () => {
 };
 </script>
 <style scoped lang="scss">
-.pos-wrap {
-  display: flex;
-  align-content: stretch;
-  align-items: stretch;
-  justify-content: stretch;
-  width: 100%;
-  box-sizing: border-box;
-
-  // padding: 0px var(--e-core-padding-x);
-}
-
 .input {
   border: none;
   box-sizing: border-box;
@@ -196,6 +186,7 @@ const transitionEnd = () => {
   color: var(--e-color-text);
   font-family: var(--e-font-family);
   height: v-bind(height);
+
   transition: outline ease-in-out 0.15s, background-color ease-in-out 0.15s;
 
   &:-webkit-autofill {
@@ -227,7 +218,7 @@ const transitionEnd = () => {
   justify-content: stretch;
   align-items: center;
   justify-items: stretch;
-
+width: v-bind(width);
   position: relative;
 
   background-color: transparent;
@@ -242,8 +233,6 @@ const transitionEnd = () => {
 
 .wrapper.solid:has(:focus) {
   outline: var(--e-color-primary) solid 0.125rem;
-  //box-shadow: 0 0 0 0.125rem  var(--e-color-primary);
-
   background-color: var(--e-color-i-depressed-active);
 
 }
@@ -262,10 +251,6 @@ const transitionEnd = () => {
 
 
 
-
-.fullwidth {
-  width: 100%;
-}
 
 .wrapper:active {
   background-color: var(--e-color-i-depressed-2) !important;

@@ -102,6 +102,13 @@ $directions: (
   align-items: center;
 }
 
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+
 .flex-align-center {
   display: flex;
   align-items: center;
