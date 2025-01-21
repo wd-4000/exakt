@@ -12,11 +12,8 @@
     <input
       :id="id"
       v-model="currentText"
-      type="datetime-local"
+      v-bind="{required, disabled, type, name}"
       class="py-3 px-4"
-      :name="name"
-      :required="required"
-      :disabled="disabled"
     >
   </div>
 </template>
@@ -32,11 +29,13 @@ const props = withDefaults(
         defaultValue?: string;
         disabled?: boolean;
         required?: boolean;
+        type?:string
     }>(),
     {
         label: "",
         modelValue: "",
         name: undefined,
+        type: "datetime-local",
         defaultValue: undefined
     }
 );
@@ -70,11 +69,12 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 
-input[type=datetime-local] {
+input[type=datetime-local], input[type=date] {
     border-radius: var(--e-rounded-border-radius);
     border: none;
     outline: var(--e-color-i-outline) solid 0.1rem;
     background-color: var(--e-color-i-depressed);
+    font-family: var(--e-font-family);
 
     transition: outline ease-in-out 0.15s, background-color ease-in-out 0.15s;
 
@@ -92,7 +92,7 @@ input[type=datetime-local] {
 }
 
 
-::-webkit-datetime-edit {
+::-webkit-datetime-edit,  ::-webkit-date-edit{
     font-family: var(--e-font-family);
 }
 </style>
