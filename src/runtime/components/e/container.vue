@@ -16,11 +16,12 @@ withDefaults(
   defineProps<{
     noBtnPadding?: boolean;
     forceFullWidth?: boolean;
-
+    sizes?: number[],
   }>(),
   {
     noBtnPadding: false,
-    forceFullWidth:false
+    forceFullWidth:false,
+    sizes: () => [100, 95, 85]
   }
 );
 </script>
@@ -39,15 +40,15 @@ withDefaults(
   $padding: 0rem;
 
   @media (min-width: exakt.$e-md-screen-breakpoint) {
-    width: calc(100% - $padding);
+    width: calc(v-bind('sizes[0]') - $padding);
   }
 
   @media (min-width: exakt.$e-lg-screen-breakpoint) {
-    width: calc(95% - $padding);
+    width: calc(v-bind('sizes[1]') - $padding);
   }
 
   @media (min-width: exakt.$e-xl-screen-breakpoint) {
-    width: calc(85% - $padding);
+    width: calc(v-bind('sizes[2]') - $padding);
   }
 }
 

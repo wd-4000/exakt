@@ -30,13 +30,14 @@ const fillNum = computed(()=> {
   font-weight: normal;
   font-style: normal;
   /* Preferred icon size */
-  display: inline-block;
+  display: inline;
   line-height: 1;
   text-transform: none;
   letter-spacing: normal;
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
+
 }
 
 .material-symbol[icon-style="outlined"] {
