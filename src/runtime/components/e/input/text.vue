@@ -156,7 +156,7 @@ watch(
 );
 
 const getInputStyle = (prop: string) => {
-  if (input.value ==== undefined) return;
+  if (input.value === undefined) return;
   const c = getComputedStyle(input.value).getPropertyValue(prop);
   return c;
 };
