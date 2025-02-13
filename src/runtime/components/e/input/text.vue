@@ -11,7 +11,7 @@
     <div
       class="wrapper"
       :style="inputState.overtakeStyle"
-      :class="{ rounded: rounded == undefined ? solid : rounded, solid, compact }"
+      :class="{ rounded: rounded === undefined ? solid : rounded, solid, compact }"
       @click="focus"
     >
       <e-icon
@@ -92,7 +92,7 @@ const internalText = ref<string | null>(null)
 
 const currentText = computed({
   get: () => {
-    const setValue = props.modelValue == undefined ? internalText.value : props.modelValue
+    const setValue = props.modelValue === undefined ? internalText.value : props.modelValue
 
     if (!setValue || !setValue.length) {
       return props.defaultValue || ''
@@ -100,7 +100,7 @@ const currentText = computed({
 
     return setValue
   },
-  set: (value) => { if (props.modelValue == undefined) { internalText.value = value } else { emit("update:modelValue", value) } },
+  set: (value) => { if (props.modelValue === undefined) { internalText.value = value } else { emit("update:modelValue", value) } },
 });
 
 onMounted(() => {
@@ -156,7 +156,7 @@ watch(
 );
 
 const getInputStyle = (prop: string) => {
-  if (input.value === undefined) return;
+  if (input.value ==== undefined) return;
   const c = getComputedStyle(input.value).getPropertyValue(prop);
   return c;
 };
