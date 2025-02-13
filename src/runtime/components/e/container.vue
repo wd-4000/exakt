@@ -40,15 +40,15 @@ withDefaults(
   $padding: 0rem;
 
   @media (min-width: exakt.$e-md-screen-breakpoint) {
-    width: calc(v-bind('sizes[0]') - $padding);
+    width: calc(v-bind('`${sizes[0]}vw`') - $padding);
   }
 
   @media (min-width: exakt.$e-lg-screen-breakpoint) {
-    width: calc(v-bind('sizes[1]') - $padding);
+    width: calc(v-bind('`${sizes[1]}vw`') - $padding);
   }
 
   @media (min-width: exakt.$e-xl-screen-breakpoint) {
-    width: calc(v-bind('sizes[2]') - $padding);
+    width: calc(v-bind('`${sizes[2]}vw`') - $padding);
   }
 }
 
