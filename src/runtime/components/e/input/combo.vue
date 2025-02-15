@@ -1,9 +1,20 @@
 <template>
   <div>
-    <e-dropdown v-model="dropdownActive" :items="items" :visible="disabled ? false : dropdownVisible" v-bind="{ width }"
-      @update:visible="dropdownVisible = $event" @update:model-value="updateSelection">
-      <e-input-text v-model="searchField" v-bind="{ label, placeholder, icon }" solid :disabled="disabled"
-        :class="{ 'e-disabled': props.disabled }">
+    <e-dropdown
+      v-model="dropdownActive"
+      :items="items"
+      :visible="disabled ? false : dropdownVisible"
+      v-bind="{ width }"
+      @update:visible="dropdownVisible = $event"
+      @update:model-value="updateSelection"
+    >
+      <e-input-text
+        v-model="searchField"
+        v-bind="{ label, placeholder, icon }"
+        solid
+        :disabled="disabled"
+        :class="{ 'e-disabled': props.disabled }"
+      >
         <slot />
       </e-input-text>
     </e-dropdown>

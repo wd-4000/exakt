@@ -12,13 +12,16 @@
         class="dialog-wrap flex-center"
       >
         <div class="dialog bg-elev rounded px-6 pe-6 pb-2">
-          <div class="mb-4">
+          <div
+            v-if="!!slots.title"
+            class="my-4"
+          >
             <h2 class="ma-0 pa-0">
               <slot name="title" />
             </h2>
           </div>
           <slot />
-          <div class="button-bar me-4 mb-3">
+          <div class="button-bar mb-3">
             <slot name="buttons" />
           </div>
         </div>
@@ -31,6 +34,8 @@
  defineProps<{
   modelValue: boolean;
 }>();
+const slots = useSlots();
+
 const emit = defineEmits(["update:modelValue"]);
 </script>
 <style scoped lang="scss">
