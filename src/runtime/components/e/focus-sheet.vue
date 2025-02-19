@@ -1,21 +1,24 @@
 <template>
   <div>
     <Transition name="fade">
-      <div
-        v-if="modelValue"
-        class="focus-sheet"
-        :class="{ 'opaque-on-desktop': opaqueOnDesktop }"
-        @click="emit('update:modelValue', false)"
-      />
+      <div v-if="modelValue" class="focus-sheet" :class="{ 'opaque-on-desktop': opaqueOnDesktop }" @click="dismiss" />
     </Transition>
   </div>
 </template>
 <script setup lang="ts">
-/*const props =*/ defineProps<{
+
+const props = withDefaults(defineProps<{
   modelValue: boolean;
   opaqueOnDesktop?: boolean;
-}>();
+  dismissable?: boolean;
+}>(), { dismissable: true });
 const emit = defineEmits(["update:modelValue"]);
+
+const dismiss = () => {
+  if (props.dismissable) {
+    emit('update:modelValue', false);
+  }
+}
 </script>
 
 <style scoped lang="scss">
