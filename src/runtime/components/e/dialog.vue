@@ -1,21 +1,12 @@
 <template>
   <div>
-    <e-focus-sheet
-      :model-value="modelValue"
-      :opaque-on-desktop="true"
-      @update:model-value="emit('update:modelValue', $event)"
-    />
+    <e-focus-sheet :model-value="modelValue" :opaque-on-desktop="true"
+      @update:model-value="emit('update:modelValue', $event)" v-bind="{ dismissable }" />
 
     <e-tr-scale :multiplier="1.3">
-      <div
-        v-if="modelValue"
-        class="dialog-wrap flex-center"
-      >
+      <div v-if="modelValue" class="dialog-wrap flex-center">
         <div class="dialog bg-elev rounded px-6 pe-6 pb-2">
-          <div
-            v-if="!!slots.title"
-            class="my-4"
-          >
+          <div v-if="!!slots.title" class="my-4">
             <h2 class="ma-0 pa-0">
               <slot name="title" />
             </h2>
@@ -31,9 +22,13 @@
 </template>
 
 <script setup lang="ts">
- defineProps<{
-  modelValue: boolean;
-}>();
+import { useSlots } from '#imports';
+withDefaults(
+  defineProps<{
+    modelValue: boolean;
+    dismissable?: boolean;
+  }>(), { dismissable: true });
+
 const slots = useSlots();
 
 const emit = defineEmits(["update:modelValue"]);
