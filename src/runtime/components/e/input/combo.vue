@@ -9,9 +9,10 @@
       @update:model-value="updateSelection"
     >
       <e-input-text
-        v-model="searchField"
+        v-model="searchFieldComputed"
         v-bind="{ label, placeholder, icon }"
         solid
+        @input="inputHandler"
         :disabled="disabled"
         :class="{ 'e-disabled': props.disabled }"
       >
@@ -21,36 +22,62 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, watch } from "#imports";
+import { ref, watch, computed } from "#imports";
 const dropdownActive = ref<undefined | number>(undefined);
 const dropdownVisible = ref<boolean>(false);
-const props = defineProps<{ label?: string, placeholder?: string, width?: string, items: { name: string, id: string | number }[], modelValue?: number | string, icon?: string, disabled?: boolean }>()
+const props = defineProps<{
+  label?: string;
+  placeholder?: string;
+  width?: string;
+  items: { name: string; id: string | number }[];
+  modelValue?: number | string;
+  value?: string;
+
+  icon?: string;
+  disabled?: boolean;
+}>();
 const searchField = ref("");
 const emit = defineEmits(["update:modelValue", "update:searchValue"]);
-
+const modified = ref(false);
 const updateSelection = ($event: number) => {
-  emit('update:modelValue', props.items[$event]?.id)
-}
+  emit("update:modelValue", props.items[$event]?.id);
+};
 
-watch(searchField, (value) => {
-  emit("update:searchValue", value)
-  if (value.length > 0) {
+const inputHandler = () => {
+  emit("update:searchValue", searchField.value);
+  modified.value = true;
+  if (searchField.value.length > 0) {
     //dropdownActive.value = 0;
     dropdownVisible.value = true;
   } else {
     dropdownActive.value = undefined;
     dropdownVisible.value = false;
   }
+};
+
+watch(
+  () => props.modelValue,
+  (modelValue) => {
+    if (modelValue) {
+      const foundItem = props.items.find(({ id }) => id == modelValue);
+      searchField.value = foundItem?.name || "";
+    } else {
+      searchField.value = "";
+    }
+  },
+);
+
+const searchFieldComputed = computed({
+  get: () => {
+    if (modified.value) {
+      return searchField.value;
+    }
+    return searchField.value || props.value || "";
+  },
+  set: (newValue) => {
+    searchField.value = newValue;
+  },
 });
-
-watch(() => props.modelValue, (value) => {
-  if (!value) {
-    searchField.value = "";
-
-  }
-  const foundItem = props.items.find(({ id }) => id == value);
-  searchField.value = foundItem?.name || "";
-})
 
 watch(dropdownActive, (value) => {
   if (value == undefined) {
