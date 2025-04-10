@@ -44,7 +44,7 @@ const props = withDefaults(
 const route = useRoute();
 
 const active = computed(() => {
-  return route && route.path.startsWith(props.to);
+  return route && route.path && route.path.startsWith(props.to);
 });
 </script>
 
