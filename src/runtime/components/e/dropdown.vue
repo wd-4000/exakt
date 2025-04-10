@@ -108,10 +108,8 @@ const visibleComputed = computed<boolean>({
 const updatePosition = async () => {
   if (activator.value) {
     const activatorRect = activator.value.getBoundingClientRect();
-    console.log("activator", activatorRect);
 
     state.y = Math.round(activatorRect.height);
-    console.log(state.y, activatorRect.right);
     state.x = 0;
 
     // Too far right :(
