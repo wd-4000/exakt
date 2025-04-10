@@ -1,8 +1,5 @@
 <template>
-  <e-undecorated-link
-    :to="to"
-    :class="{ 'grow-on-mobile': responsive }"
-  >
+  <e-undecorated-link :to="to" :class="{ 'grow-on-mobile': responsive }">
     <e-btn
       :solid="true"
       background="transparent"
@@ -12,26 +9,13 @@
       :active="active"
       :button="false"
     >
-      <div
-        class="content"
-        :class="{ responsive }"
-      >
-        <div
-          v-if="icon"
-          class="icon-wrapper flex-center mr-2"
-        >
-          <e-icon
-            class="icon"
-            size="20"
-            :fill="active"
-          >
+      <div class="content" :class="{ responsive }">
+        <div v-if="icon" class="icon-wrapper flex-center mr-2">
+          <e-icon class="icon" size="20" :fill="active">
             {{ icon }}
           </e-icon>
           <transition name="fade">
-            <div
-              v-if="alert"
-              class="icon-alert"
-            />
+            <div v-if="alert" class="icon-alert" />
           </transition>
         </div>
         <p v-if="label">
@@ -52,19 +36,16 @@ const props = withDefaults(
     label?: string;
     icon?: string;
     alert?: boolean;
-    responsive?: boolean
+    responsive?: boolean;
   }>(),
-  { to: "", label: "", icon: "", responsive: true }
+  { to: "", label: "", icon: "", responsive: true },
 );
 
 const route = useRoute();
 
-
-
 const active = computed(() => {
-  return route && route.path === props.to;
+  return route && route.path.startsWith(props.to);
 });
-
 </script>
 
 <style scoped lang="scss">
@@ -75,7 +56,6 @@ const active = computed(() => {
 
 a {
   border-radius: var(--e-rounded-border-radius);
-
 }
 
 .content {
@@ -90,11 +70,8 @@ a {
     margin: 0;
     padding: 0;
     white-space: nowrap;
-
   }
-
 }
-
 
 .icon-wrapper {
   position: relative;
@@ -116,15 +93,11 @@ a {
   }
 }
 
-
 @media screen and (max-width: exakt.$e-md-screen-breakpoint) {
-
   .grow-on-mobile {
     flex-grow: 1;
     width: 100%;
   }
-
-
 
   .content.responsive {
     flex-direction: column;
@@ -137,7 +110,6 @@ a {
       margin: 0px;
       white-space: nowrap;
       font-size: small;
-
     }
   }
 }
