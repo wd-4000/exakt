@@ -1,10 +1,7 @@
 <template>
   <div class="flex-stretch t-dropdown">
     <!-- class="flex-stretch fullwidth" -->
-    <div
-      ref="activator"
-      @click="onActivatorClick"
-    >
+    <div ref="activator" @click="onActivatorClick">
       <slot />
     </div>
     <e-focus-sheet v-model="visibleComputed" />
@@ -13,10 +10,10 @@
         v-if="visibleComputed"
         ref="list"
         class="list bg-elev-2 rounded"
-        :style="{position:(fixed?'fixed':undefined)}"
+        :style="{ position: fixed ? 'fixed' : undefined }"
       >
         <component
-          :is="item.to ? EUndecoratedLink : (item.href ? 'a' : 'div')"
+          :is="item.to ? EUndecoratedLink : item.href ? 'a' : 'div'"
           v-for="(item, i) in items"
           :key="i"
           class="fullwidth"
@@ -36,29 +33,28 @@
             }"
             @click="select(i)"
           >
-            <e-icon
-              v-if="item.icon"
-              :size="20"
-              class="mr-2"
-            >
+            <e-icon v-if="item.icon" :size="20" class="mr-2">
               {{ item.icon }}
             </e-icon>
             {{ item.name }}
           </e-btn>
         </component>
+        <div class="mx-4 my-2 fullwidth text-secondary" v-if="hint">
+          {{ hint }}
+        </div>
       </div>
     </e-tr-scale>
   </div>
 </template>
 <script setup lang="ts">
 import { computed, ref, reactive, watch, resolveComponent } from "#imports";
-import {debounce} from "lodash-es";
+import { debounce } from "lodash-es";
 
 interface DropdownItem {
   name: string;
   icon?: string;
   href?: string;
-  to?:string;
+  to?: string;
   callback?: () => void;
   color?: string;
   background?: string;
@@ -70,20 +66,27 @@ const props = withDefaults(
     width?: string | "100%";
     center?: boolean;
     items: DropdownItem[];
+    hint?: string;
     visible?: boolean | null;
-    fixed?:boolean;
+    fixed?: boolean;
   }>(),
-  { center: false, visible: null, paddingY: "", modelValue: undefined, position: undefined, width:undefined}
+  {
+    center: false,
+    visible: null,
+    paddingY: "",
+    modelValue: undefined,
+    position: undefined,
+    width: undefined,
+  },
 );
 
 const activator = ref<HTMLDivElement>();
 const list = ref<HTMLDivElement>();
-const EUndecoratedLink = resolveComponent('EUndecoratedLink')
+const EUndecoratedLink = resolveComponent("EUndecoratedLink");
 const state = reactive({
   visibleInternal: false,
   x: 0,
   y: 0,
-
 });
 // Visibility computed variable. We use the state unless we have a variable from the parent.
 const visibleComputed = computed<boolean>({
@@ -102,29 +105,21 @@ const visibleComputed = computed<boolean>({
   },
 });
 
-
 const updatePosition = async () => {
-
-
   if (activator.value) {
     const activatorRect = activator.value.getBoundingClientRect();
-    console.log('activator', activatorRect)
-
-
-      
+    console.log("activator", activatorRect);
 
     state.y = Math.round(activatorRect.height);
-    console.log(state.y, activatorRect.right)
+    console.log(state.y, activatorRect.right);
     state.x = 0;
-
 
     // Too far right :(
     //if (window.innerWidth > listRect.right) {
-     //state.x = -1 * activatorRect.width
-   // }
-
-  }//else{
-    //console.log(activator.value,  list.value)
+    //state.x = -1 * activatorRect.width
+    // }
+  } //else{
+  //console.log(activator.value,  list.value)
   //}
   /* await nextTick();
   if (!list.value) return;
@@ -158,7 +153,7 @@ const currentItem = computed({
 const select = (i: number) => {
   visibleComputed.value = false;
   currentItem.value = i;
-  if(props.items[i].callback){
+  if (props.items[i].callback) {
     props.items[i].callback();
   }
 };
@@ -174,8 +169,8 @@ const onActivatorClick = () => {
 
 .list {
   position: absolute;
-  left: v-bind('(state.x) + `px`');
-  top: v-bind('(state.y) + `px`');
+  left: v-bind("(state.x) + `px`");
+  top: v-bind("(state.y) + `px`");
   width: v-bind('props.width || "unset"');
   display: flex;
 
@@ -197,7 +192,8 @@ const onActivatorClick = () => {
       background-color: rgba(var(--e-color-fg-rgb), 0.5);
     }
 
-    &:focus {}
+    &:focus {
+    }
 
     &.active {
       background-color: rgba(var(--e-color-primary-rgb), 0.2);

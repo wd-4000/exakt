@@ -4,7 +4,7 @@
       v-model="dropdownActive"
       :items="items"
       :visible="disabled ? false : dropdownVisible"
-      v-bind="{ width }"
+      v-bind="{ width, hint }"
       @update:visible="dropdownVisible = $event"
       @update:model-value="updateSelection"
     >
@@ -32,7 +32,7 @@ const props = defineProps<{
   items: { name: string; id: string | number }[];
   modelValue?: number | string;
   value?: string;
-
+  hint?: string;
   icon?: string;
   disabled?: boolean;
 }>();
@@ -49,10 +49,14 @@ const inputHandler = () => {
   if (searchField.value.length > 0) {
     //dropdownActive.value = 0;
     dropdownVisible.value = true;
+    return;
+  }
+  if (props.hint) {
+    dropdownVisible.value = true;
   } else {
-    dropdownActive.value = undefined;
     dropdownVisible.value = false;
   }
+  dropdownActive.value = undefined;
 };
 
 watch(
