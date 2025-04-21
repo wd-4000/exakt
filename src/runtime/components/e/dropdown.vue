@@ -112,10 +112,13 @@ const updatePosition = async () => {
     state.y = Math.round(activatorRect.height);
     state.x = 0;
 
-    // Too far right :(
-    //if (window.innerWidth > listRect.right) {
-    //state.x = -1 * activatorRect.width
-    // }
+    //Too far right :(
+    console.log(list.value);
+    if (list.value) {
+      if (window?.innerWidth > list.value?.getBoundingClientRect().right) {
+        state.x = -1 * activatorRect.width;
+      }
+    }
   } //else{
   //console.log(activator.value,  list.value)
   //}
@@ -129,6 +132,19 @@ const updatePosition = async () => {
     state.y = 0 - listRect.height;
   } */
 };
+
+watch(
+  () => list.value,
+  (newList) => {
+    const activatorRect = activator.value?.getBoundingClientRect();
+
+    if (newList && activatorRect) {
+      if (window?.innerWidth < newList.getBoundingClientRect().right) {
+        state.x = -1 * activatorRect.width * 2;
+      }
+    }
+  },
+);
 
 const debouncedUpdatePosition = debounce(updatePosition, 200);
 
