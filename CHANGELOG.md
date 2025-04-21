@@ -1,6 +1,36 @@
 # Changelog
 
 
+## v0.0.61
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.58...v0.0.61)
+
+### 🚀 Enhancements
+
+- E-input-checkbox ([2525341](https://github.com/wd-4000/exakt/commit/2525341))
+- E-input-combo (but it actually kind of works) ([22b2b4b](https://github.com/wd-4000/exakt/commit/22b2b4b))
+- Optional responsiveness for e-nav-btn ([e59739d](https://github.com/wd-4000/exakt/commit/e59739d))
+- Container size settings ([cb35eea](https://github.com/wd-4000/exakt/commit/cb35eea))
+- Improve e-dialog ([f49f345](https://github.com/wd-4000/exakt/commit/f49f345))
+
+### 🩹 Fixes
+
+- Fix and slightly break dropdown ([4fda47b](https://github.com/wd-4000/exakt/commit/4fda47b))
+- E-input-checkbox ([577f53a](https://github.com/wd-4000/exakt/commit/577f53a))
+- Improve checkbox and other components ([e22a65b](https://github.com/wd-4000/exakt/commit/e22a65b))
+- E-input-text: null values not getting modified ([4b90709](https://github.com/wd-4000/exakt/commit/4b90709))
+- E-input-text: accidental quadruple equals ([76128df](https://github.com/wd-4000/exakt/commit/76128df))
+
+### 🏡 Chore
+
+- **release:** V0.0.58 ([5ef9560](https://github.com/wd-4000/exakt/commit/5ef9560))
+- Bump yarn and nuxt ([2007403](https://github.com/wd-4000/exakt/commit/2007403))
+- Bump nuxt to 3.16.2 ([3175176](https://github.com/wd-4000/exakt/commit/3175176))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.58
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.56...v0.0.58)
