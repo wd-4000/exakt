@@ -1,14 +1,20 @@
 <template>
   <div>
-    <div v-if="label" class="pb-2">
-      <label :for="id" class="text-secondary">{{ label }}</label>
+    <div
+      v-if="label"
+      class="pb-2"
+    >
+      <label
+        :for="id"
+        class="text-secondary"
+      >{{ label }}</label>
     </div>
     <input
       :id="id"
       v-model="currentText"
       v-bind="{ required, disabled, type, name }"
       class="py-3 px-4"
-    />
+    >
   </div>
 </template>
 <script setup lang="ts">

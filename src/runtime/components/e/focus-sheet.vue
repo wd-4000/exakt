@@ -1,7 +1,12 @@
 <template>
   <div>
     <Transition name="fade">
-      <div v-if="modelValue" class="focus-sheet" :class="{ 'opaque-on-desktop': opaqueOnDesktop }" @click="dismiss" />
+      <div
+        v-if="modelValue"
+        class="focus-sheet"
+        :class="{ 'opaque-on-desktop': opaqueOnDesktop }"
+        @click="dismiss"
+      />
     </Transition>
   </div>
 </template>
