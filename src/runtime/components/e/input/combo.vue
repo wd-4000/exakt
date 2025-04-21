@@ -12,9 +12,9 @@
         v-model="searchFieldComputed"
         v-bind="{ label, placeholder, icon }"
         solid
-        @input="inputHandler"
         :disabled="disabled"
         :class="{ 'e-disabled': props.disabled }"
+        @input="inputHandler"
       >
         <slot />
       </e-input-text>
