@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.62
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.61...v0.0.62)
+
+### 🩹 Fixes
+
+- Slightly improve dropdown x offset ([3e2214d](https://github.com/wd-4000/exakt/commit/3e2214d))
+- Really not great handling of icon-only nav buttons ([a77f21b](https://github.com/wd-4000/exakt/commit/a77f21b))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.61
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.58...v0.0.61)
