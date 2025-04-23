@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.64
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.63...v0.0.64)
+
+### 🩹 Fixes
+
+- Remove uglyyyy underline on dropdowns with hrefs ([68a5647](https://github.com/wd-4000/exakt/commit/68a5647))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.63
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.62...v0.0.63)
