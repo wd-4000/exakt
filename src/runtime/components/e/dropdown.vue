@@ -113,7 +113,6 @@ const updatePosition = async () => {
     state.x = 0;
 
     //Too far right :(
-    console.log(list.value);
     if (list.value) {
       if (window?.innerWidth > list.value?.getBoundingClientRect().right) {
         state.x = -1 * activatorRect.width;

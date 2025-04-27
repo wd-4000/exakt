@@ -36,11 +36,20 @@ export default defineNuxtPlugin((/*nuxtApp*/) => {
           }
           return p;
         },
-        rootColors: ['primary', 'red', 'text', 'yellow', 'elev', 'i'],
-        isRootColor: (c:string)=>['primary', 'red', 'text', 'yellow', 'elev', 'i'].includes(c),
+        rootColors: [
+          "primary",
+          "red",
+          "text",
+          "yellow",
+          "elev",
+          "i",
+          "i-depressed",
+        ],
+        isRootColor: (c: string) =>
+          ["primary", "red", "text", "yellow", "elev", "i"].includes(c),
         /**
          * Generates an alphanumeric ID of a given length.
-         */        
+         */
         makeid: (length: number) => {
           let result = "";
           const characters =
@@ -49,7 +58,7 @@ export default defineNuxtPlugin((/*nuxtApp*/) => {
           let counter = 0;
           while (counter < length) {
             result += characters.charAt(
-              Math.floor(Math.random() * charactersLength)
+              Math.floor(Math.random() * charactersLength),
             );
             counter += 1;
           }
