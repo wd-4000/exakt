@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.65
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.64...v0.0.65)
+
+### 🚀 Enhancements
+
+- Select ([c531ac5](https://github.com/wd-4000/exakt/commit/c531ac5))
+
+### 🏡 Chore
+
+- Lint ([0dcca72](https://github.com/wd-4000/exakt/commit/0dcca72))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.64
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.63...v0.0.64)
