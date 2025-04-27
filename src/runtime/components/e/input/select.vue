@@ -2,27 +2,40 @@
   <e-dropdown
     :items="items"
     :visible="focus"
-    :modelValue="modelValue"
+    :model-value="modelValue"
     @update:model-value="modelValue = $event"
     @update:visible="focus = $event"
   >
-    <e-btn background="i-depressed" :class="{ focus }" class="btn">
+    <e-btn
+      background="i-depressed"
+      :class="{ focus }"
+      class="btn"
+    >
       <div class="d-flex justify-space-between">
         <div
           v-if="modelValue != undefined && items[modelValue]"
           class="flex-center"
         >
-          <e-icon size="20">{{ items[modelValue].icon }}</e-icon>
-          <div class="ml-2 md-and-over">{{ items[modelValue].name }}</div>
+          <e-icon size="20">
+            {{ items[modelValue].icon }}
+          </e-icon>
+          <div class="ml-2 md-and-over">
+            {{ items[modelValue].name }}
+          </div>
         </div>
-        <div v-else></div>
-        <e-icon class="text-secondary ml-1" size="20">arrow_drop_down</e-icon>
-      </div></e-btn
-    ></e-dropdown
-  >
+        <div v-else />
+        <e-icon
+          class="text-secondary ml-1"
+          size="20"
+        >
+          arrow_drop_down
+        </e-icon>
+      </div>
+    </e-btn>
+  </e-dropdown>
 </template>
 <script setup lang="ts">
-import { ref, reactive } from "#imports";
+import { ref } from "#imports";
 const focus = ref(false);
 const modelValue = ref(undefined);
 
