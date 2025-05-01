@@ -1,11 +1,12 @@
 <template>
   <div class="flex-stretch t-dropdown">
     <!-- class="flex-stretch fullwidth" -->
-    <div
-      ref="activator"
-      @click="onActivatorClick"
-    >
-      <slot />
+    <div ref="activator" @click="onActivatorClick">
+      <slot
+        :current-item="
+          typeof currentItem == 'number' ? items[currentItem] : undefined
+        "
+      />
     </div>
     <e-focus-sheet v-model="visibleComputed" />
     <e-tr-scale>
@@ -36,20 +37,13 @@
             }"
             @click="select(i)"
           >
-            <e-icon
-              v-if="item.icon"
-              :size="20"
-              class="mr-2"
-            >
+            <e-icon v-if="item.icon" :size="20" class="mr-2">
               {{ item.icon }}
             </e-icon>
             {{ item.name }}
           </e-btn>
         </component>
-        <div
-          v-if="hint"
-          class="mx-4 my-2 fullwidth text-secondary"
-        >
+        <div v-if="hint" class="mx-4 my-2 fullwidth text-secondary">
           {{ hint }}
         </div>
       </div>
@@ -68,15 +62,17 @@ interface DropdownItem {
   callback?: () => void;
   color?: string;
   background?: string;
+  id?: string | number;
 }
 
 const props = withDefaults(
   defineProps<{
-    modelValue?: number;
+    modelValue?: number | string;
     width?: string | "100%";
     center?: boolean;
     items: DropdownItem[];
     hint?: string;
+    useIds?: boolean;
     visible?: boolean | null;
     fixed?: boolean;
   }>(),
@@ -87,6 +83,7 @@ const props = withDefaults(
     modelValue: undefined,
     position: undefined,
     width: undefined,
+    useIds: false,
   },
 );
 
@@ -170,8 +167,12 @@ watch(visibleComputed, (value) => {
 const emit = defineEmits(["update:modelValue", "update:visible"]);
 
 const currentItem = computed({
-  get: () => props.modelValue,
-  set: (value) => emit("update:modelValue", value),
+  get: () =>
+    props.useIds
+      ? props.items.findIndex(({ id }) => props.modelValue == id)
+      : props.modelValue,
+  set: (value: number) =>
+    emit("update:modelValue", props.useIds ? props.items[value]?.id : value),
 });
 
 const select = (i: number) => {
