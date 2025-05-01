@@ -2,15 +2,11 @@
   <e-dropdown
     :items="items"
     :visible="focus"
-    :model-value="modelValue"
-    @update:model-value="modelValue = $event"
+    :model-value="props.modelValue"
+    @update:model-value="emit('update:modelValue', $event)"
     @update:visible="focus = $event"
   >
-    <e-btn
-      background="i-depressed"
-      :class="{ focus }"
-      class="btn"
-    >
+    <e-btn background="i-depressed" :class="{ focus }" class="btn">
       <div class="d-flex justify-space-between">
         <div
           v-if="modelValue != undefined && items[modelValue]"
@@ -24,12 +20,7 @@
           </div>
         </div>
         <div v-else />
-        <e-icon
-          class="text-secondary ml-1"
-          size="20"
-        >
-          arrow_drop_down
-        </e-icon>
+        <e-icon class="text-secondary ml-1" size="20"> arrow_drop_down </e-icon>
       </div>
     </e-btn>
   </e-dropdown>
@@ -37,7 +28,6 @@
 <script setup lang="ts">
 import { ref } from "#imports";
 const focus = ref(false);
-const modelValue = ref(undefined);
 
 interface DropdownItem {
   name: string;
@@ -49,11 +39,14 @@ interface DropdownItem {
   background?: string;
 }
 
+const emit = defineEmits(["update:modelValue"]);
+
 const props = withDefaults(
   defineProps<{
     items: DropdownItem[] | [];
+    modelValue: number | undefined;
   }>(),
-  { items: () => [] },
+  { items: () => [], modelValue: undefined },
 );
 </script>
 <style lang="scss" scoped>
