@@ -9,8 +9,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -103,10 +103,13 @@ a {
 
   $full: 0;
   $factor: 1;
+  $elev-factor: 1;
 
   @if $light ==1 {
     $full: 100;
     $factor: -1;
+    $elev-factor: -0.1;
+
   }
   $color-map: map.set($color-map, "source", $source);
 
@@ -125,9 +128,9 @@ a {
   $color-map: map.set($color-map, "fg", color.adjust($source, $lightness: 2%));
 
 
-  $color-map: map.set($color-map, "elev", color.scale(map.get($color-map, "fg"), $lightness: $lightness*0.25));
-  $color-map: map.set($color-map, "elev-2", color.scale(map.get($color-map, "fg"), $lightness: $lightness*0.5));
-  $color-map: map.set($color-map, "elev-3", color.scale(map.get($color-map, "fg"), $lightness: $lightness));
+  $color-map: map.set($color-map, "elev", color.scale(map.get($color-map, "fg"), $lightness: $lightness*$elev-factor*0.25));
+  $color-map: map.set($color-map, "elev-2", color.scale(map.get($color-map, "fg"), $lightness: $lightness*$elev-factor*0.5));
+  $color-map: map.set($color-map, "elev-3", color.scale(map.get($color-map, "fg"), $lightness: $lightness*$elev-factor));
 
 
 
@@ -144,7 +147,7 @@ a {
   color-scheme: light;
 }
 
-@include elev(95%,1, 1, exakt.$root-colors-light);
+@include elev(98%,1, 1, exakt.$root-colors-light);
 
 
 @media (prefers-color-scheme: dark) {
