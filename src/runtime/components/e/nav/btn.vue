@@ -15,13 +15,14 @@
           class="icon-wrapper flex-center"
           :class="{ 'mr-2': label }"
         >
-          <div
-            class="icon material-symbol"
+          <e-icon
+            class="icon"
             :fill="active"
             icon-style="outlined"
+            :size="label ? 20 : 25"
           >
             {{ icon }}
-          </div>
+          </e-icon>
           <transition name="fade">
             <div v-if="alert" class="icon-alert" />
           </transition>
