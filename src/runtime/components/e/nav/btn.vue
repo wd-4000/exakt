@@ -1,8 +1,5 @@
 <template>
-  <e-undecorated-link
-    :to="to"
-    :class="{ 'grow-on-mobile': responsive }"
-  >
+  <e-undecorated-link :to="to" :class="{ 'grow-on-mobile': responsive }">
     <e-btn
       :solid="true"
       background="transparent"
@@ -12,27 +9,21 @@
       :active="active"
       :button="false"
     >
-      <div
-        class="content"
-        :class="{ responsive }"
-      >
+      <div class="content" :class="{ responsive }">
         <div
           v-if="icon"
           class="icon-wrapper flex-center"
           :class="{ 'mr-2': label }"
         >
-          <e-icon
-            class="icon"
-            :size="label ? 20 : 25"
+          <div
+            class="icon material-symbol"
             :fill="active"
+            icon-style="outlined"
           >
             {{ icon }}
-          </e-icon>
+          </div>
           <transition name="fade">
-            <div
-              v-if="alert"
-              class="icon-alert"
-            />
+            <div v-if="alert" class="icon-alert" />
           </transition>
         </div>
         <p v-if="label">
@@ -54,6 +45,7 @@ const props = withDefaults(
     icon?: string;
     alert?: boolean;
     responsive?: boolean;
+    excludeActive?: string[];
   }>(),
   { to: "", label: "", icon: "", responsive: true },
 );
@@ -61,7 +53,20 @@ const props = withDefaults(
 const route = useRoute();
 
 const active = computed(() => {
-  return route && route.path && route.path.startsWith(props.to);
+  if (!route || !route.path) {
+    return false;
+  }
+
+  let excluded = false;
+  if (props.excludeActive) {
+    for (const e of props.excludeActive) {
+      if (route.path.startsWith(e)) {
+        excluded = true;
+        break;
+      }
+    }
+  }
+  return !excluded && route.path.startsWith(props.to);
 });
 </script>
 
@@ -126,7 +131,7 @@ a {
     p {
       margin: 0px;
       white-space: nowrap;
-      font-size: small;
+      font-size: 0.6rem;
     }
   }
 }
