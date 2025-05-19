@@ -16,6 +16,9 @@
         class="list bg-elev-2 rounded"
         :style="{ position: fixed ? 'fixed' : undefined }"
       >
+        <div v-if="title" class="mx-4 my-2 fullwidth text-secondary">
+          {{ title }}
+        </div>
         <component
           :is="item.to ? EUndecoratedLink : item.href ? 'a' : 'div'"
           v-for="(item, i) in items"
@@ -31,8 +34,8 @@
             :solid="false"
             :background="item.background || 'transparent'"
             :class="{
-              'rounded-top': i === 0,
-              'rounded-bottom': i === items.length - 1,
+              'rounded-top': i === 0 && !title,
+              'rounded-bottom': i === items.length - 1 && !hint,
               active: currentItem === i,
             }"
             @click="select(i)"
@@ -72,6 +75,7 @@ const props = withDefaults(
     center?: boolean;
     items: DropdownItem[];
     hint?: string;
+    title?: string;
     useIds?: boolean;
     visible?: boolean | null;
     fixed?: boolean;
@@ -84,6 +88,8 @@ const props = withDefaults(
     position: undefined,
     width: undefined,
     useIds: false,
+    hint: undefined,
+    title: undefined,
   },
 );
 
@@ -148,6 +154,10 @@ watch(
       if (window?.innerWidth < newList.getBoundingClientRect().right) {
         state.x =
           window?.innerWidth - newList.getBoundingClientRect().right - 15;
+      }
+      if (window?.innerHeight < newList.getBoundingClientRect().bottom) {
+        const { bottom, top } = newList.getBoundingClientRect();
+        state.y = window?.innerHeight - bottom;
       }
     }
   },
