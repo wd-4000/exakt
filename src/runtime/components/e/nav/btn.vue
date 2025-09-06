@@ -54,6 +54,9 @@ const props = withDefaults(
 const route = useRoute();
 
 const active = computed(() => {
+  if (props.to == "/") {
+    return route.path == "/";
+  }
   if (!route || !route.path) {
     return false;
   }

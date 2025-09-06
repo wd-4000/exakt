@@ -3,11 +3,10 @@ import {
   addPlugin,
   createResolver,
   addComponentsDir,
-  extendViteConfig
+  extendViteConfig,
 } from "@nuxt/kit";
 import type { Nuxt } from "@nuxt/schema";
 import fs from "fs";
-
 
 interface Colors {
   primary?: string;
@@ -21,11 +20,10 @@ interface Colors {
 
 // Module options TypeScript interface definition
 export interface ModuleOptions {
-  hue: number,
+  hue: number;
   colors: {
-    light: Colors,
-    dark: Colors
-
+    light: Colors;
+    dark: Colors;
   };
   breakpoints: {
     sm?: string;
@@ -35,7 +33,7 @@ export interface ModuleOptions {
   };
   borderRadius: string;
   corePaddingX: string;
-  font: { family: string, weight?: number };
+  font: { family: string; weight?: number };
 }
 
 const defaults: ModuleOptions = {
@@ -47,9 +45,8 @@ const defaults: ModuleOptions = {
       red: "#f44336",
       blue: "#2196f3",
       green: "#00b850",
-      yellow: '#ebbc00',
+      yellow: "#ebbc00",
       bg: "#ffffff",
-
     },
     dark: {
       primary: "#008dff",
@@ -57,10 +54,9 @@ const defaults: ModuleOptions = {
       red: "#ff8980",
       blue: "#008dff",
       green: "#00ff6e",
-      yellow: '#FFA000',
+      yellow: "#FFA000",
       bg: "#212121",
-    }
-
+    },
   },
   breakpoints: {
     sm: "16em",
@@ -91,7 +87,7 @@ export default defineNuxtModule<ModuleOptions>({
       resolver.resolve("../node_modules/.cache/exakt-ui"),
       {
         recursive: true,
-      }
+      },
     );
 
     // Create variables files
@@ -99,17 +95,19 @@ export default defineNuxtModule<ModuleOptions>({
     let CSSvariables = ":root{";
 
     SCSSvariables += `$root-hue: ${options.hue}; `;
-    for (const mode of ['light', 'dark']) {
-      SCSSvariables += `$root-colors-${mode}: (`
-      for (const [key, value] of Object.entries(options.colors[mode as 'light' | 'dark'])) {
+    for (const mode of ["light", "dark"]) {
+      SCSSvariables += `$root-colors-${mode}: (`;
+      for (const [key, value] of Object.entries(
+        options.colors[mode as "light" | "dark"],
+      )) {
         SCSSvariables += `"${key}": ${value}, `;
       }
-      SCSSvariables += ');';
+      SCSSvariables += ");";
     }
-
 
     for (const [key, value] of Object.entries(options.breakpoints)) {
       SCSSvariables += `$e-${key}-screen-breakpoint: ${value}; `;
+      CSSvariables += `--e-${key}-screen-breakpoint: ${value}; `;
     }
 
     CSSvariables += `--e-font-family: ${options.font.family}; `;
@@ -120,22 +118,21 @@ export default defineNuxtModule<ModuleOptions>({
 
     await fs.promises.writeFile(
       resolver.resolve("../node_modules/.cache/exakt-ui/variables.scss"),
-      new Uint8Array(Buffer.from(SCSSvariables))
+      new Uint8Array(Buffer.from(SCSSvariables)),
     );
     await fs.promises.writeFile(
       resolver.resolve("../node_modules/.cache/exakt-ui/variables.css"),
-      new Uint8Array(Buffer.from(CSSvariables + "}"))
+      new Uint8Array(Buffer.from(CSSvariables + "}")),
     );
-
 
     extendViteConfig((config) => {
       Object.assign(config, {
         css: {
           preprocessorOptions: {
             scss: {
-              api: 'modern-compiler',
+              api: "modern-compiler",
               additionalData: `@use "sass:color"; @use "sass:map"; @use "${resolver.resolve(
-                "../node_modules/.cache/exakt-ui/variables.scss"
+                "../node_modules/.cache/exakt-ui/variables.scss",
               )}" as exakt;  `,
             },
           },
@@ -147,7 +144,7 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.css.push(resolver.resolve("./runtime/css/util.scss"));
     nuxt.options.css.push("material-symbols");
     nuxt.options.css.push(
-      resolver.resolve("../node_modules/.cache/exakt-ui/variables.css")
+      resolver.resolve("../node_modules/.cache/exakt-ui/variables.css"),
     );
 
     addComponentsDir({ path: resolver.resolve("./runtime/components") });
