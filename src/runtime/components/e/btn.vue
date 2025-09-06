@@ -15,17 +15,11 @@
       loading,
       fab,
       compact,
-      ...backgroundClass
+      ...backgroundClass,
     }"
   >
-    <div
-      ref="content"
-      class="e-btn-content"
-    >
-      <div
-        v-if="loading"
-        class="load-overlay"
-      >
+    <div ref="content" class="e-btn-content">
+      <div v-if="loading" class="load-overlay">
         <e-loading-spinner size="1.25" />
       </div>
       <span
@@ -42,7 +36,7 @@
   </component>
 </template>
 <script lang="ts" setup>
-import { computed, useNuxtApp, } from "#imports";
+import { computed, useNuxtApp } from "#imports";
 const { $exakt } = useNuxtApp();
 const props = withDefaults(
   defineProps<{
@@ -71,8 +65,8 @@ const props = withDefaults(
     compact: false,
     align: "center",
     color: undefined,
-    button: true
-  }
+    button: true,
+  },
 );
 
 function parseColor(input: string) {
@@ -93,28 +87,33 @@ const backgroundColorRgb = computed(() => {
   return parseColor($exakt.parseColor(props.background));
 });
 
-const isRootColor = computed(() => $exakt && $exakt.rootColors && $exakt.rootColors.includes(props.background))
+const isRootColor = computed(
+  () =>
+    $exakt && $exakt.rootColors && $exakt.rootColors.includes(props.background),
+);
 const backgroundClass = computed(() => {
-  const c: { [key: string]: boolean } = {}
+  const c: { [key: string]: boolean } = {};
 
-  if (props.background == 'transparent') {
-    c['transparent'] = true;
+  if (props.background == "transparent") {
+    c["transparent"] = true;
   } else if (isRootColor.value) {
-    c["bg-" + props.background] = true
+    c["bg-" + props.background] = true;
   } else {
-    c['custom-color'] = true
+    c["custom-color"] = true;
   }
 
-  return c
-})
+  return c;
+});
 const backgroundColor = computed(() => {
-  if (isRootColor.value) { return 'unset' } else {
-    return props.background
+  if (isRootColor.value) {
+    return "unset";
+  } else {
+    return props.background;
   }
-})
+});
 const textColor = computed(() => {
   if (isRootColor.value) {
-    return 'unset';
+    return "unset";
   }
   if (props.color) {
     return props.color;
@@ -125,7 +124,7 @@ const textColor = computed(() => {
   const rgb = backgroundColorRgb.value;
 
   const brightness = Math.round(
-    (299 * rgb.r + 224490 + 587 * rgb.g + 114 * rgb.b) / 2000
+    (299 * rgb.r + 224490 + 587 * rgb.g + 114 * rgb.b) / 2000,
   );
   if (brightness > 150) {
     // Dark Text
@@ -133,8 +132,6 @@ const textColor = computed(() => {
   }
   return "#FFFFFF";
 });
-
-
 </script>
 <style lang="scss" scoped>
 .e-btn-content {
@@ -165,7 +162,10 @@ const textColor = computed(() => {
   cursor: pointer;
   flex-shrink: 1;
   position: relative;
-  transition: background 0.4s, color 0.3s, opacity 0.4s;
+  transition:
+    background 0.4s,
+    color 0.3s,
+    opacity 0.4s;
   white-space: nowrap;
   font-family: var(--e-font-family);
   box-sizing: border-box;
@@ -263,7 +263,6 @@ const textColor = computed(() => {
     right: 1rem;
   }
 }
-
 
 .load-overlay {
   position: absolute;
