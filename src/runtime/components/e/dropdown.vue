@@ -1,7 +1,7 @@
 <template>
   <div class="flex-stretch t-dropdown">
     <!-- class="flex-stretch fullwidth" -->
-    <div ref="activator" @click="onActivatorClick">
+    <div ref="activator" @click="onActivatorClick" class="flex-1">
       <slot
         :current-item="
           typeof currentItem == 'number' ? items[currentItem] : undefined
