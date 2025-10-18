@@ -226,7 +226,7 @@ a {
     // color: var(--e-color-text);
     font-size: 1rem;
     padding: 0.7rem;
-    text-transform: capitalize;
+   // text-transform: capitalize;
     position: relative;
     white-space: nowrap;
     &:hover {
