@@ -14,10 +14,10 @@
     <div :class="{ focus }" class="btn rounded">
       <div class="d-flex justify-space-between">
         <div v-if="currentItem" class="flex-center">
-          <e-icon size="20">
+          <e-icon size="20" class="mr-2" v-if="currentItem?.icon">
             {{ currentItem?.icon }}
           </e-icon>
-          <div class="ml-2 md-and-over">
+          <div class=" md-and-over">
             {{ currentItem?.name }}
           </div>
         </div>
