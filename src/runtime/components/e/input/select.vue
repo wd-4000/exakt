@@ -17,9 +17,7 @@
           <e-icon size="20" class="mr-2" v-if="currentItem?.icon">
             {{ currentItem?.icon }}
           </e-icon>
-          <div class=" md-and-over">
-            {{ currentItem?.name }}
-          </div>
+          {{ currentItem?.name }}
         </div>
         <div v-else />
         <e-icon class="text-secondary ml-1" size="20"> arrow_drop_down </e-icon>
