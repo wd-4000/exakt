@@ -5,6 +5,7 @@
   <e-dropdown
     :items="items"
     :visible="focus"
+    :width="width"
     :model-value="props.modelValue"
     @update:model-value="emit('update:modelValue', $event)"
     @update:visible="focus = $event"
@@ -47,6 +48,7 @@ const props = withDefaults(
     label?: string;
     useIds?: boolean;
     modelValue: number | undefined;
+    width?: string | "100%";
   }>(),
   {
     items: () => [],
@@ -66,6 +68,7 @@ const props = withDefaults(
   user-select: none;
   cursor: pointer;
   padding: 0.7rem 0.9rem;
+  width: v-bind("props.width");
   background-color: var(--e-color-i-depressed);
   &.focus {
     outline: var(--e-color-primary) solid 0.125rem;
