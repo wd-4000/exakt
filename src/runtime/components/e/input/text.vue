@@ -131,7 +131,7 @@ const props = withDefaults(
   }>(),
   {
     icon: undefined,
-    label: "",
+    label: undefined,
     solid: true,
     type: "text",
     modelValue: "",
