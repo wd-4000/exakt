@@ -1,6 +1,33 @@
 # Changelog
 
 
+## v0.0.67
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.65...v0.0.67)
+
+### 🚀 Enhancements
+
+- Support IDs in e-dropdown and e-input-select ([a82b6b7](https://github.com/wd-4000/exakt/commit/a82b6b7))
+- Tweak light mode colors ([af0ede0](https://github.com/wd-4000/exakt/commit/af0ede0))
+- More polished nav ([44a95bc](https://github.com/wd-4000/exakt/commit/44a95bc))
+
+### 🩹 Fixes
+
+- Weird icon size for nav-btn ([0f5d2c0](https://github.com/wd-4000/exakt/commit/0f5d2c0))
+- E-dropdown: make activator stretchy (also impacts e-input-combo) ([a7f6cf7](https://github.com/wd-4000/exakt/commit/a7f6cf7))
+
+### 🏡 Chore
+
+- Lint? ([33cc649](https://github.com/wd-4000/exakt/commit/33cc649))
+- Yarn install ([fab8cc4](https://github.com/wd-4000/exakt/commit/fab8cc4))
+- Yarn install ([5e5a023](https://github.com/wd-4000/exakt/commit/5e5a023))
+- Bump nuxt to 4.1.1 ([dff0aaf](https://github.com/wd-4000/exakt/commit/dff0aaf))
+- Bump nuxt to 4.1.3 ([ca93471](https://github.com/wd-4000/exakt/commit/ca93471))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.65
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.64...v0.0.65)
