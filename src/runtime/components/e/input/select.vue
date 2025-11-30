@@ -1,27 +1,45 @@
 <template>
-  <div v-if="label" class="my-3">
+  <div
+    v-if="label"
+    class="my-3"
+  >
     <label> {{ label }} </label>
   </div>
   <e-dropdown
+    v-slot="{ currentItem }"
     :items="items"
     :visible="focus"
     :width="width"
     :model-value="props.modelValue"
+    :use-ids="useIds"
     @update:model-value="emit('update:modelValue', $event)"
     @update:visible="focus = $event"
-    :use-ids="useIds"
-    v-slot="{ currentItem }"
   >
-    <div :class="{ focus }" class="btn rounded">
+    <div
+      :class="{ focus }"
+      class="btn rounded"
+    >
       <div class="d-flex justify-space-between">
-        <div v-if="currentItem" class="flex-center">
-          <e-icon size="20" class="mr-2" v-if="currentItem?.icon">
+        <div
+          v-if="currentItem"
+          class="flex-center"
+        >
+          <e-icon
+            v-if="currentItem?.icon"
+            size="20"
+            class="mr-2"
+          >
             {{ currentItem?.icon }}
           </e-icon>
           {{ currentItem?.name }}
         </div>
         <div v-else />
-        <e-icon class="text-secondary ml-1" size="20"> arrow_drop_down </e-icon>
+        <e-icon
+          class="text-secondary ml-1"
+          size="20"
+        >
+          arrow_drop_down
+        </e-icon>
       </div>
     </div>
   </e-dropdown>

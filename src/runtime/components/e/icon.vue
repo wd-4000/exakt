@@ -1,5 +1,8 @@
 <template>
-  <div class="material-symbol" :icon-style="iconStyle">
+  <div
+    class="material-symbol"
+    :icon-style="iconStyle"
+  >
     <slot />
   </div>
 </template>

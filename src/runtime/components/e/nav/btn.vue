@@ -1,5 +1,8 @@
 <template>
-  <e-undecorated-link :to="to" :class="{ 'grow-on-mobile': responsive }">
+  <e-undecorated-link
+    :to="to"
+    :class="{ 'grow-on-mobile': responsive }"
+  >
     <e-btn
       :solid="true"
       background="transparent"
@@ -9,7 +12,10 @@
       :active="active"
       :button="false"
     >
-      <div class="content" :class="{ responsive }">
+      <div
+        class="content"
+        :class="{ responsive }"
+      >
         <div
           v-if="icon"
           class="icon-wrapper flex-center"
@@ -24,7 +30,10 @@
             {{ icon }}
           </e-icon>
           <transition name="fade">
-            <div v-if="alert" class="icon-alert" />
+            <div
+              v-if="alert"
+              class="icon-alert"
+            />
           </transition>
         </div>
         <p v-if="label">

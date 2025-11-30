@@ -1,7 +1,11 @@
 <template>
   <div class="flex-stretch t-dropdown">
     <!-- class="flex-stretch fullwidth" -->
-    <div ref="activator" @click="onActivatorClick" class="flex-1">
+    <div
+      ref="activator"
+      class="flex-1"
+      @click="onActivatorClick"
+    >
       <slot
         :current-item="
           typeof currentItem == 'number' ? items[currentItem] : undefined
@@ -16,7 +20,10 @@
         class="list bg-elev-2 rounded"
         :style="{ position: fixed ? 'fixed' : undefined }"
       >
-        <div v-if="title" class="mx-4 my-2 fullwidth text-secondary">
+        <div
+          v-if="title"
+          class="mx-4 my-2 fullwidth text-secondary"
+        >
           {{ title }}
         </div>
         <component
@@ -40,13 +47,20 @@
             }"
             @click="select(i)"
           >
-            <e-icon v-if="item.icon" :size="20" class="mr-2">
+            <e-icon
+              v-if="item.icon"
+              :size="20"
+              class="mr-2"
+            >
               {{ item.icon }}
             </e-icon>
             {{ item.name }}
           </e-btn>
         </component>
-        <div v-if="hint" class="mx-4 my-2 fullwidth text-secondary">
+        <div
+          v-if="hint"
+          class="mx-4 my-2 fullwidth text-secondary"
+        >
           {{ hint }}
         </div>
       </div>
