@@ -2,7 +2,10 @@
   <div v-if="disabled || !to">
     <slot />
   </div>
-  <router-link v-else :to="to">
+  <router-link
+    v-else
+    :to="to"
+  >
     <slot />
   </router-link>
 </template>
