@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.68
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.67...v0.0.68)
+
+### 🚀 Enhancements
+
+- Don't horizontally align e-alert, tweak stage 2 icon ([c8fb6e1](https://github.com/wd-4000/exakt/commit/c8fb6e1))
+
+### 🏡 Chore
+
+- **release:** V0.0.67 ([c005c99](https://github.com/wd-4000/exakt/commit/c005c99))
+- Bump nuxt to 4.3.1 ([ca11ef1](https://github.com/wd-4000/exakt/commit/ca11ef1))
+
+### ❤️ Contributors
+
+- Jorb <hello@jorb.cc>
+
 ## v0.0.67
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.65...v0.0.67)
