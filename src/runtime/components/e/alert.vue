@@ -3,9 +3,13 @@
     class="flex-align-center"
     :class="{ [severityMatrix[severity].class]: true }"
   >
-    <e-icon size="19" class="mr-2" :fill="false">
-      {{ severityMatrix[severity].icon }} </e-icon
-    ><small>
+    <e-icon
+      size="19"
+      class="mr-2"
+      :fill="false"
+    >
+      {{ severityMatrix[severity].icon }}
+    </e-icon><small>
       <slot />
     </small>
   </div>
