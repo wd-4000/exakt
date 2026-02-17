@@ -67,5 +67,5 @@
     "url": "https://github.com/wd-4000/exakt/issues"
   },
   "homepage": "https://github.com/wd-4000/exakt#readme",
-  "packageManager": "yarn@4.6.0"
+  "packageManager": "yarn@4.12.0"
 }
