@@ -153,6 +153,9 @@
       type="textarea"
       label="Text area"
       :solid="true"
+      hint="Here's a hint"
+      error="You can't see the hint because there's an error!"
+
     />
   </div>
 </template>

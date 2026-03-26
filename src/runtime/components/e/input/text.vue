@@ -11,7 +11,7 @@
     <div
       class="wrapper"
       :style="inputState.overtakeStyle"
-      :class="{ rounded: rounded === undefined ? solid : rounded, solid, compact }"
+      :class="{ rounded: rounded === undefined ? solid : rounded, solid, compact, error: !!error }"
       @click="focus"
     >
       <e-icon
@@ -24,14 +24,16 @@
       </e-icon>
       <textarea
         v-if="type === 'textarea'"
+        :id="id"
         ref="input"
         v-model="currentText"
         class="input"
         :name="name"
         :placeholder="placeholder"
         autocomplete="off"
-        auto-grow
         rows="5"
+        :aria-invalid="!!error || undefined"
+        :aria-describedby="(error || hint) ? id + '-subtext' : undefined"
         @focus="inputState.focused = true"
         @blur="inputState.focused = false"
       />
@@ -48,6 +50,8 @@
         class="input"
         :required="required"
         :placeholder="placeholder"
+        :aria-invalid="!!error || undefined"
+        :aria-describedby="(error || hint) ? id + '-subtext' : undefined"
         @click.stop=""
         @focus="inputState.focused = true"
         @blur="inputState.focused = false"
@@ -55,6 +59,14 @@
       >
       <slot />
     </div>
+    <p
+      v-if="error || hint"
+      :id="id + '-subtext'"
+      class="text-secondary pt-3"
+      :class="{ 'subtext-error': !!error }"
+    >
+      {{ typeof error === 'string' ? error : hint }}
+    </p>
   </div>
 </template>
 <script setup lang="ts">
@@ -100,7 +112,7 @@ const currentText = computed({
 
     return setValue
   },
-  set: (value) => { if (props.modelValue === undefined) { internalText.value = value } else { emit("update:modelValue", value) } },
+  set: (value: string) => { if (props.modelValue === undefined) { internalText.value = value } else { emit("update:modelValue", value) } },
 });
 
 onMounted(() => {
@@ -126,8 +138,10 @@ const props = withDefaults(
     focus?: boolean;
     spellcheck?: boolean;
     height?: string;
-    width?:string;
+    width?: string;
     compact?: boolean;
+    hint?: string;
+    error?: string | boolean;
   }>(),
   {
     icon: undefined,
@@ -142,13 +156,15 @@ const props = withDefaults(
     rounded: undefined,
     placeholder: undefined,
     name: undefined,
-    defaultValue: undefined
+    defaultValue: undefined,
+    hint: undefined,
+    error: undefined,
   }
 );
 
 watch(
   () => props.focus,
-  (value) => {
+  (value: boolean | undefined) => {
     if (value) {
       focus();
     }
@@ -181,7 +197,6 @@ const transitionEnd = () => {
   width: 100%;
   outline: none;
   resize: none;
-  margin: var(--e-core-padding-x) / 2;
   font-size: 1rem;
   color: var(--e-color-text);
   font-family: var(--e-font-family);
@@ -206,10 +221,6 @@ const transitionEnd = () => {
   }
 }
 
-.itemform.textarea {
-  overflow-y: hidden;
-}
-
 .wrapper {
   transition: background-color 0.2s;
   box-sizing: border-box;
@@ -217,8 +228,7 @@ const transitionEnd = () => {
   align-content: center;
   justify-content: stretch;
   align-items: center;
-  justify-items: stretch;
-width: v-bind(width);
+  width: v-bind(width);
   position: relative;
 
   background-color: transparent;
@@ -253,11 +263,33 @@ width: v-bind(width);
 
 
 .wrapper:active {
-  background-color: var(--e-color-i-depressed-2) !important;
-  outline: var(--e-color-primary) solid 0.2rem !important;
+  background-color: var(--e-color-i-depressed-2);
+  outline: var(--e-color-primary) solid 0.2rem;
 }
 
 .input::-ms-reveal {
   display: none;
+}
+
+.wrapper.error.solid {
+  background-color: color-mix(in srgb, var(--e-color-red) 5%, var(--e-color-i-depressed));
+  outline:  color-mix(in srgb, var(--e-color-red) 50%, var(--e-color-i-outline)) solid 0.125rem;
+
+  &:has(:focus) {
+    outline: var(--e-color-red) solid 0.125rem;
+    background-color: color-mix(in srgb, var(--e-color-red) 12%, var(--e-color-i-depressed-active));
+  }
+
+  &:active {
+    outline: var(--e-color-red) solid 0.2rem !important;
+    background-color: color-mix(in srgb, var(--e-color-red) 12%, var(--e-color-i-depressed-2));
+
+  }
+}
+
+
+.subtext-error {
+  color: var(--e-color-red);
+  opacity: 1;
 }
 </style>
