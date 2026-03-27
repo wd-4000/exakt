@@ -4,13 +4,13 @@
       v-model="dropdownActive"
       :items="items"
       :visible="disabled ? false : dropdownVisible"
-      v-bind="{ width, hint }"
+      v-bind="{ width, dropdownHint }"
       @update:visible="dropdownVisible = $event"
       @update:model-value="updateSelection"
     >
       <e-input-text
         v-model="searchFieldComputed"
-        v-bind="{ label, placeholder, icon }"
+        v-bind="{ label, placeholder, icon, hint,error }"
         solid
         :disabled="disabled"
         :class="{ 'e-disabled': props.disabled }"
@@ -29,10 +29,12 @@ const props = defineProps<{
   label?: string;
   placeholder?: string;
   width?: string;
+  error?: string | boolean;
+  hint?: string;
   items: { name: string; id: string | number }[];
   modelValue?: number | string;
   value?: string;
-  hint?: string;
+  dropdownHint?: string;
   icon?: string;
   disabled?: boolean;
 }>();
@@ -51,7 +53,7 @@ const inputHandler = () => {
     dropdownVisible.value = true;
     return;
   }
-  if (props.hint) {
+  if (props.dropdownHint) {
     dropdownVisible.value = true;
   } else {
     dropdownVisible.value = false;
