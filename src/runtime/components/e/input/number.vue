@@ -23,6 +23,8 @@ const props = withDefaults(
     spellcheck?: boolean;
     height?: string;
     width?: string;
+    error?: string | boolean;
+    hint?: string;
     compact?: boolean;
   }>(),
   {
@@ -38,6 +40,8 @@ const props = withDefaults(
     placeholder: undefined,
     name: undefined,
     defaultValue: undefined,
+    error: undefined,
+    hint: undefined,
   },
 );
 
