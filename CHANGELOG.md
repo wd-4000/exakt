@@ -1,6 +1,27 @@
 # Changelog
 
 
+## v0.0.69
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.68...v0.0.69)
+
+### 🚀 Enhancements
+
+- (?) bottom nav text enlargement ([7eb60f6](https://github.com/wd-4000/exakt/commit/7eb60f6))
+- E-input-text: add hint and error ([d1e491b](https://github.com/wd-4000/exakt/commit/d1e491b))
+- BREAKING: e-input-combo: hint and error, old hint attribute renamed to dropdownHint ([c661761](https://github.com/wd-4000/exakt/commit/c661761))
+
+### 🏡 Chore
+
+- **release:** V0.0.68 ([e284571](https://github.com/wd-4000/exakt/commit/e284571))
+- Bump yarn to 4.12.0 ([91b8268](https://github.com/wd-4000/exakt/commit/91b8268))
+- Bump nuxt to 4.12 ([9798747](https://github.com/wd-4000/exakt/commit/9798747))
+
+### ❤️ Contributors
+
+- Microplastic@pronounmail.com <microplastic@157-003.eduroam.rwth-aachen.de>
+- Jorb <hello@jorb.cc>
+
 ## v0.0.68
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.67...v0.0.68)

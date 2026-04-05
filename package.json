@@ -1,6 +1,6 @@
 {
   "name": "@exakt/ui",
-  "version": "0.0.68",
+  "version": "0.0.69",
   "description": "A UI library for Nuxt.js",
   "license": "MIT",
   "type": "module",
