@@ -11,8 +11,8 @@
     </div>
     <input
       :id="id"
-      :class="{ error: props.error }"
       v-model="currentText"
+      :class="{ error: props.error }"
       v-bind="{ required, disabled, type, name }"
       class="py-3 px-4"
     >
