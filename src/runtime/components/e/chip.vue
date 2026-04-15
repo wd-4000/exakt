@@ -1,8 +1,9 @@
 <template>
-  <div
+  <button
     class="e-chip py-3 px-4 ma-1 flex-center"
     :class="{ active, 'bg-i-active':active, 'bg-i-inactive':!active }"
     @click="active = !active"
+    tabindex="0"
   >
     <e-icon
       :fill="false"
@@ -17,7 +18,7 @@
       check
     </e-icon>
     <slot />
-  </div>
+  </button>
 </template>
 <script setup lang="ts">
 import { computed } from '#imports';
@@ -39,6 +40,12 @@ const active = computed({
 </script>
 <style scoped lang="scss">
 .e-chip {
+    // Destroy default styles
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: none;
+    font: inherit;
+    text-decoration: none;
+
     outline: var(--e-color-i-outline) solid 0.1rem;
     width: fit-content;
     transition: background-color 0.15s;
@@ -50,6 +57,10 @@ const active = computed({
 
     &>.check {
         display: none;
+    }
+
+    &:focus-visible {
+        outline: var(--e-color-primary) solid 0.1rem;
     }
 
     &.active {
