@@ -4,6 +4,7 @@
     :loading="loading"
     :solid="false"
     :type="type"
+    :button="button"
     background="transparent"
   >
     <e-icon
@@ -18,8 +19,8 @@
 </template>
 <script setup lang="ts">
 withDefaults(
-  defineProps<{ icon?: string; size?: number|`${number}`; loading?: boolean, type?: "button" | "submit" | "reset", fill?: boolean }>(),
-  { size: "21", icon: undefined, type:undefined }
+  defineProps<{ icon?: string; size?: number|`${number}`; loading?: boolean, type?: "button" | "submit" | "reset", fill?: boolean, button?: boolean }>(),
+  { size: "21", icon: undefined, type:undefined, button:true }
 );
 </script>
 <style scoped>
