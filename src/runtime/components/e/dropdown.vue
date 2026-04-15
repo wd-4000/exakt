@@ -38,6 +38,9 @@
             justify="start"
             class="item fullwidth"
             :color="item.color"
+            tabindex="0"
+            ref="btn"
+            @blur="focusLoop(i)"
             :solid="false"
             :background="item.background || 'transparent'"
             :class="{
@@ -68,9 +71,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, ref, reactive, watch, resolveComponent } from "#imports";
+import { computed, ref, reactive, watch, resolveComponent, useSlots } from "#imports";
 import { debounce } from "lodash-es";
-
 interface DropdownItem {
   name: string;
   icon?: string;
@@ -107,6 +109,7 @@ const props = withDefaults(
   },
 );
 
+const btn = ref<HTMLDivElement>();
 const activator = ref<HTMLDivElement>();
 const list = ref<HTMLDivElement>();
 const EUndecoratedLink = resolveComponent("EUndecoratedLink");
@@ -185,6 +188,11 @@ watch(visibleComputed, (value) => {
     window.addEventListener("resize", debouncedUpdatePosition);
   } else {
     window.removeEventListener("resize", debouncedUpdatePosition);
+
+    // Focus the activator when the dropdown is closed
+    const focusable = activator.value?.querySelector('button, input, [tabindex]:not([tabindex="-1"])')
+    focusable?.focus()
+
   }
 });
 
@@ -210,6 +218,16 @@ const select = (i: number) => {
 const onActivatorClick = () => {
   visibleComputed.value = !visibleComputed.value;
 };
+
+
+const focusLoop = (i: number) => {
+  if(props.visible && i == props.items.length - 1) {
+    btn.value[0].$el.focus();
+  }
+};
+
+
+
 </script>
 <style scoped lang="scss">
 a {

@@ -18,6 +18,10 @@
     <div
       :class="{ focus }"
       class="btn rounded"
+      tabindex="0"
+      @keydown.enter="focus = !focus"
+      @keydown.space="focus = !focus"
+      @keydown.escape="focus = false"
     >
       <div class="d-flex justify-space-between">
         <div
@@ -88,7 +92,7 @@ const props = withDefaults(
   padding: 0.7rem 0.9rem;
   width: v-bind("props.width");
   background-color: var(--e-color-i-depressed);
-  &.focus {
+  &.focus, &:focus {
     outline: var(--e-color-primary) solid 0.125rem;
   }
 }
