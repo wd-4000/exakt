@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @keyup.esc="dismiss">
     <e-focus-sheet
       :model-value="modelValue"
       :opaque-on-desktop="true"
@@ -11,6 +11,8 @@
       <div
         v-if="modelValue"
         class="dialog-wrap flex-center"
+        @focusout="onBlur"
+        ref="dialogContents"
       >
         <div class="dialog bg-elev rounded px-6 pe-6 pb-2">
           <div
@@ -22,7 +24,7 @@
             </h2>
           </div>
           <slot />
-          <div class="button-bar mb-3">
+          <div class="button-bar mb-3" >
             <slot name="buttons" />
           </div>
         </div>
@@ -32,17 +34,54 @@
 </template>
 
 <script setup lang="ts">
-import { useSlots } from '#imports';
-withDefaults(
+import { useSlots, watch, nextTick, ref } from '#imports';
+
+const props = withDefaults(
   defineProps<{
     modelValue: boolean;
     dismissable?: boolean;
   }>(), { dismissable: true });
 
 const slots = useSlots();
+const dialogContents = ref<HTMLDivElement | null>(null);
+
 
 const emit = defineEmits(["update:modelValue"]);
+
+const dismiss = () => {
+  if(props.dismissable){
+    emit('update:modelValue', false);
+  }
+}
+
+const refocus = () => dialogContents.value?.querySelector('button, input, [tabindex]:not([tabindex="-1"])')?.focus();
+
+// Focus on open
+watch(()=>props.modelValue, async (newValue: boolean) => {
+  if(newValue) {
+    await nextTick();
+    refocus();
+  }
+});
+
+const onBlur = async (event) => {
+  // currentTarget is the element the listener is attached to (your container)
+    const container = event.currentTarget;
+
+    // relatedTarget is the element that is receiving the new focus
+    const newFocusElement = event.relatedTarget;
+
+    // If the new focus is NOT inside our container, we've completely lost focus
+    if (!container.contains(newFocusElement)) {
+      await nextTick();
+      if(!props.modelValue) return;
+      refocus();
+    }
+
+};
+
 </script>
+
 <style scoped lang="scss">
 .dialog-wrap {
   position: fixed;
