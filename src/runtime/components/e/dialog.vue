@@ -10,9 +10,9 @@
     <e-tr-scale :multiplier="1.3">
       <div
         v-if="modelValue"
+        ref="dialogContents"
         class="dialog-wrap flex-center"
         @focusout="onBlur"
-        ref="dialogContents"
       >
         <div class="dialog bg-elev rounded px-6 pe-6 pb-2">
           <div
@@ -24,7 +24,7 @@
             </h2>
           </div>
           <slot />
-          <div class="button-bar mb-3" >
+          <div class="button-bar mb-3">
             <slot name="buttons" />
           </div>
         </div>

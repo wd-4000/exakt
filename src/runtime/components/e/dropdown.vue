@@ -35,12 +35,11 @@
           :to="item.to ? item.to : undefined"
         >
           <e-btn
+            ref="btn"
             justify="start"
             class="item fullwidth"
             :color="item.color"
             tabindex="0"
-            ref="btn"
-            @blur="focusLoop(i)"
             :solid="false"
             :background="item.background || 'transparent'"
             :class="{
@@ -48,6 +47,7 @@
               'rounded-bottom': i === items.length - 1 && !hint,
               active: currentItem === i,
             }"
+            @blur="focusLoop(i)"
             @click="select(i)"
           >
             <e-icon
@@ -71,7 +71,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { computed, ref, reactive, watch, resolveComponent, useSlots } from "#imports";
+import { computed, ref, reactive, watch, resolveComponent } from "#imports";
 import { debounce } from "lodash-es";
 interface DropdownItem {
   name: string;

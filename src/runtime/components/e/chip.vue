@@ -2,8 +2,8 @@
   <button
     class="e-chip py-3 px-4 ma-1 flex-center"
     :class="{ active, 'bg-i-active':active, 'bg-i-inactive':!active }"
-    @click="active = !active"
     tabindex="0"
+    @click="active = !active"
   >
     <e-icon
       :fill="false"
