@@ -72,7 +72,6 @@
 </template>
 <script setup lang="ts">
 import { computed, ref, reactive, watch, resolveComponent } from "#imports";
-import { debounce } from "lodash-es";
 interface DropdownItem {
   name: string;
   icon?: string;
@@ -180,7 +179,18 @@ watch(
   },
 );
 
-const debouncedUpdatePosition = debounce(updatePosition, 200);
+// Debounce position updates to avoid unnecessary re-renders
+let timeout: null | ReturnType<typeof setTimeout> = null;
+const debouncedUpdatePosition = () => {
+  if (timeout) {
+    clearTimeout(timeout);
+    timeout = null;
+  }
+  timeout = setTimeout(() => {
+    timeout = null;
+    updatePosition();
+  }, 100);
+};
 
 watch(visibleComputed, (value) => {
   if (value) {
