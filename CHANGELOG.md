@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.72
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.71...v0.0.72)
+
+### 🩹 Fixes
+
+- Component type errors ([166a9f5](https://github.com/wd-4000/exakt/commit/166a9f5))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.71
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.70...v0.0.71)
