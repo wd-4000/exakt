@@ -2,12 +2,12 @@
   <div v-if="disabled || !to">
     <slot />
   </div>
-  <router-link
+  <nuxt-link
     v-else
     :to="to"
   >
     <slot />
-  </router-link>
+  </nuxt-link>
 </template>
 <script setup lang="ts">
 defineProps<{
@@ -16,7 +16,7 @@ defineProps<{
 }>();
 </script>
 <style scoped>
-router-link,
+nuxt-link,
 a {
   text-decoration: none !important;
   color: inherit !important;
