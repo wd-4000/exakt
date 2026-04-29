@@ -54,7 +54,7 @@ const dismiss = () => {
   }
 }
 
-const refocus = () => dialogContents.value?.querySelector('button, input, [tabindex]:not([tabindex="-1"])')?.focus();
+const refocus = () => (dialogContents.value?.querySelector('button, input, [tabindex]:not([tabindex="-1"])')as HTMLElement | null | undefined)?.focus();
 
 // Focus on open
 watch(()=>props.modelValue, async (newValue: boolean) => {
@@ -64,15 +64,15 @@ watch(()=>props.modelValue, async (newValue: boolean) => {
   }
 });
 
-const onBlur = async (event) => {
+const onBlur = async (event: FocusEvent) => {
   // currentTarget is the element the listener is attached to (your container)
-    const container = event.currentTarget;
+  const container = event.currentTarget as HTMLElement | null | undefined;
 
     // relatedTarget is the element that is receiving the new focus
-    const newFocusElement = event.relatedTarget;
+    const newFocusElement = event.relatedTarget as Node;
 
     // If the new focus is NOT inside our container, we've completely lost focus
-    if (!container.contains(newFocusElement)) {
+    if (!container?.contains(newFocusElement)) {
       await nextTick();
       if(!props.modelValue) return;
       refocus();

@@ -71,6 +71,7 @@
   </div>
 </template>
 <script setup lang="ts">
+import type { ComponentPublicInstance } from "#imports";
 import { computed, ref, reactive, watch, resolveComponent } from "#imports";
 interface DropdownItem {
   name: string;
@@ -108,7 +109,8 @@ const props = withDefaults(
   },
 );
 
-const btn = ref<HTMLDivElement>();
+type ButtonComponentRef = ComponentPublicInstance & { $el: HTMLElement };
+const btn = ref<Array<ButtonComponentRef | null>>();
 const activator = ref<HTMLDivElement>();
 const list = ref<HTMLDivElement>();
 const EUndecoratedLink = resolveComponent("EUndecoratedLink");
@@ -200,7 +202,7 @@ watch(visibleComputed, (value) => {
     window.removeEventListener("resize", debouncedUpdatePosition);
 
     // Focus the activator when the dropdown is closed
-    const focusable = activator.value?.querySelector('button, input, [tabindex]:not([tabindex="-1"])')
+    const focusable: HTMLElement | null | undefined = activator.value?.querySelector('button, input, [tabindex]:not([tabindex="-1"])')
     focusable?.focus()
 
   }
@@ -220,7 +222,7 @@ const currentItem = computed({
 const select = (i: number) => {
   visibleComputed.value = false;
   currentItem.value = i;
-  if (props.items[i].callback) {
+  if (props.items[i]?.callback) {
     props.items[i].callback();
   }
 };
@@ -232,7 +234,7 @@ const onActivatorClick = () => {
 
 const focusLoop = (i: number) => {
   if(props.visible && i == props.items.length - 1) {
-    btn.value[0].$el.focus();
+    btn.value?.[0]?.$el?.focus();
   }
 };
 

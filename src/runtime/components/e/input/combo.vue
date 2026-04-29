@@ -89,7 +89,7 @@ watch(dropdownActive, (value) => {
   if (value == undefined) {
     searchField.value = "";
   } else {
-    searchField.value = props.items[value].name;
+    searchField.value = props.items?.[value]?.name || "";
   }
 });
 </script>
