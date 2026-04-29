@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.71
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.70...v0.0.71)
+
+### 🚀 Enhancements
+
+- Destroy lodash dependency ([e20134f](https://github.com/wd-4000/exakt/commit/e20134f))
+- E-undecorated-link: make to optional ([5b966bf](https://github.com/wd-4000/exakt/commit/5b966bf))
+
+### 🩹 Fixes
+
+- E-undecorated-link: use nuxt-link instead of router-link ([f793fbf](https://github.com/wd-4000/exakt/commit/f793fbf))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.70
 
 
