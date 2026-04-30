@@ -1,6 +1,6 @@
 export interface DropdownItem {
   name: string;
-  icon?: string;
+  icon?: string | null;
   href?: string;
   to?: string;
   callback?: () => void;

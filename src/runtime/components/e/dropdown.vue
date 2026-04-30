@@ -78,7 +78,7 @@ import type { DropdownItem } from "../../types/dropdownItem";
 
 const props = withDefaults(
   defineProps<{
-    modelValue?: number | string;
+    modelValue?: number | string | null;
     width?: string | "100%";
     center?: boolean;
     items: DropdownItem[];
