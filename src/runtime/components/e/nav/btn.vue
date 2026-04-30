@@ -57,7 +57,7 @@ const props = withDefaults(
     responsive?: boolean;
     excludeActive?: string[];
   }>(),
-  { to: "", label: "", icon: "", responsive: true },
+  { to: "", label: "", icon: "", responsive: true, excludeActive: () => [] },
 );
 
 const route = useRoute();

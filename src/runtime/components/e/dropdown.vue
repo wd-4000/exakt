@@ -166,7 +166,7 @@ watch(
           window?.innerWidth - newList.getBoundingClientRect().right - 15;
       }
       if (window?.innerHeight < newList.getBoundingClientRect().bottom) {
-        const { bottom, top } = newList.getBoundingClientRect();
+        const { bottom/*, top*/ } = newList.getBoundingClientRect();
         state.y = window?.innerHeight - bottom;
       }
     }

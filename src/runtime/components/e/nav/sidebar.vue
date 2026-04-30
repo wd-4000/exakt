@@ -70,7 +70,7 @@ const props = withDefaults(
   defineProps<{
     collapsedWidth?: number | string;
     expandedWidth?: number | string;
-    buttonHeight: string;
+    buttonHeight?: string;
     items: {
       title: string;
       icon: string;
@@ -78,9 +78,9 @@ const props = withDefaults(
       to: string;
       position?: "top" | "bottom";
     }[];
-    elev: 1 | 2 | 3 | "1" | "2" | "3";
-    moveContent: number;
-    nestingLevel: number;
+    elev?: 1 | 2 | 3 | "1" | "2" | "3";
+    moveContent?: number;
+    nestingLevel?: number;
   }>(),
   {
     collapsedWidth: "3.5rem",
@@ -115,7 +115,7 @@ const background = computed(() =>
   height: 100%;
   position: fixed;
   left: 0;
-  
+
   background-color: v-bind("background");
   overflow: clip;
   top: calc(var(--btn-height) * v-bind("props.nestingLevel"));

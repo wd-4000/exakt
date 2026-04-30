@@ -11,7 +11,7 @@ const emit = defineEmits(["update:modelValue"]);
 
 withDefaults(
   defineProps<{
-    modelValue: boolean;
+    modelValue?: boolean;
   }>(),
   {
     modelValue: false,

@@ -7,7 +7,7 @@ import { useNuxtApp, computed } from "#imports";
 const { $exakt } = useNuxtApp();
 const props = withDefaults(
   defineProps<{
-    color: string;
+    color?: string;
   }>(),
   { color: "primary" }
 );

@@ -59,10 +59,10 @@ const emit = defineEmits(["update:modelValue"]);
 
 const props = withDefaults(
   defineProps<{
-    items: DropdownItem[] | [];
+    items?: DropdownItem[] | [];
     label?: string;
     useIds?: boolean;
-    modelValue: number | undefined;
+    modelValue?: number | undefined;
     width?: string | "100%";
   }>(),
   {
@@ -70,6 +70,7 @@ const props = withDefaults(
     modelValue: undefined,
     label: undefined,
     useIds: false,
+    width: "100%",
   },
 );
 </script>

@@ -75,22 +75,13 @@ const props = withDefaults(
   },
 );
 
-function parseColor(input: string) {
-  const div = document.createElement("div");
-  document.body.appendChild(div);
-  div.style.color = input;
-  const c = getComputedStyle(div).color as any;
-  const res = c.match(/[.\d]+/g).map(Number);
 
-  div.remove();
-  return { r: res[0], g: res[1], b: res[2] };
-}
 
 const backgroundColorRgb = computed(() => {
   if (!props.background || import.meta.server) {
     return { r: 0, g: 0, b: 0 };
   }
-  return parseColor($exakt.parseColor(props.background));
+  return $exakt.computeColor($exakt.parseColor(props.background));
 });
 
 const isRootColor = computed(
