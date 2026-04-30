@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.74
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.73...v0.0.74)
+
+### 🩹 Fixes
+
+- E-dropdown, e-select: nullable icon and model value ([60afce5](https://github.com/wd-4000/exakt/commit/60afce5))
+
+### 🏡 Chore
+
+- Update deps ([5f4bb6f](https://github.com/wd-4000/exakt/commit/5f4bb6f))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.73
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.72...v0.0.73)
