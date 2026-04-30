@@ -27,7 +27,6 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
-    "blurhash": "^2.0.5",
     "material-symbols": "latest",
     "sass": "^1.62.1"
   },
