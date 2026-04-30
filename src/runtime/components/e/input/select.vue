@@ -52,15 +52,8 @@
 import { ref } from "#imports";
 const focus = ref(false);
 
-interface DropdownItem {
-  name: string;
-  icon?: string;
-  href?: string;
-  to?: string;
-  callback?: () => void;
-  color?: string;
-  background?: string;
-}
+import type { DropdownItem } from "../../../types/dropdownItem";
+
 
 const emit = defineEmits(["update:modelValue"]);
 

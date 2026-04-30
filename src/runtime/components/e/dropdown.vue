@@ -73,16 +73,8 @@
 <script setup lang="ts">
 import type { ComponentPublicInstance } from "#imports";
 import { computed, ref, reactive, watch, resolveComponent } from "#imports";
-interface DropdownItem {
-  name: string;
-  icon?: string;
-  href?: string;
-  to?: string;
-  callback?: () => void;
-  color?: string;
-  background?: string;
-  id?: string | number;
-}
+import type { DropdownItem } from "../../types/dropdownItem";
+
 
 const props = withDefaults(
   defineProps<{
