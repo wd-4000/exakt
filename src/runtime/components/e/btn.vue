@@ -87,7 +87,7 @@ function parseColor(input: string) {
 }
 
 const backgroundColorRgb = computed(() => {
-  if (!props.background || process.server) {
+  if (!props.background || import.meta.server) {
     return { r: 0, g: 0, b: 0 };
   }
   return parseColor($exakt.parseColor(props.background));

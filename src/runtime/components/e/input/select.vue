@@ -50,9 +50,9 @@
 </template>
 <script setup lang="ts">
 import { ref } from "#imports";
-const focus = ref(false);
 
 import type { DropdownItem } from "../../../types/dropdownItem";
+const focus = ref(false);
 
 
 const emit = defineEmits(["update:modelValue"]);
