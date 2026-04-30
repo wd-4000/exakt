@@ -1,6 +1,26 @@
 # Changelog
 
 
+## v0.0.73
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.72...v0.0.73)
+
+### 🩹 Fixes
+
+- Remove extraneous blurhash dependency ([afb2b5d](https://github.com/wd-4000/exakt/commit/afb2b5d))
+- Add id to dropdownItem type ([b859737](https://github.com/wd-4000/exakt/commit/b859737))
+- Kind of fix eslint ([b953408](https://github.com/wd-4000/exakt/commit/b953408))
+- More type issues in $exakt and components ([ec6b1b1](https://github.com/wd-4000/exakt/commit/ec6b1b1))
+
+### 🏡 Chore
+
+- Bump nuxt to 4.4.4 ([4a10b14](https://github.com/wd-4000/exakt/commit/4a10b14))
+- Bump deps ([85d6fe3](https://github.com/wd-4000/exakt/commit/85d6fe3))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.72
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.71...v0.0.72)
