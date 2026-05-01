@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.75
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.74...v0.0.75)
+
+### 🩹 Fixes
+
+- Also accept null for optional modelValue props ([0dd12fe](https://github.com/wd-4000/exakt/commit/0dd12fe))
+- E-input-select: allow string (for useIds=true) ([d8ae138](https://github.com/wd-4000/exakt/commit/d8ae138))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.74
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.73...v0.0.74)
