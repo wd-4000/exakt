@@ -62,7 +62,7 @@ const props = withDefaults(
     items?: DropdownItem[] | [];
     label?: string;
     useIds?: boolean;
-    modelValue?: number | undefined | null;
+    modelValue?: number | string | undefined | null;
     width?: string | "100%";
   }>(),
   {
