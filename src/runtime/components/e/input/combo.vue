@@ -33,7 +33,7 @@ const props = defineProps<{
   hint?: string;
   items: { name: string; id: string | number }[];
   modelValue?: number | string | null;
-  value?: string;
+  value?: string | null;
   dropdownHint?: string;
   icon?: string;
   disabled?: boolean;
