@@ -22,7 +22,7 @@
 import {computed} from '#imports';
 const props = defineProps<{
   items: { [key: string]: string }[];
-  modelValue?: number;
+  modelValue?: number | null;
   useKey: string;
   useSecondaryKey?:string;
 }>();
@@ -73,7 +73,7 @@ const selected = computed({
   height: var(--size);
   width: var(--size);
   background-color: var(--e-color-i-inactive);
-  outline: var(--e-color-i-outline) solid 0.1rem; 
+  outline: var(--e-color-i-outline) solid 0.1rem;
 
   border-radius: 50%;
   transition: background-color 0.15s, transform 0.25s;

@@ -33,7 +33,7 @@ const props = withDefaults(
   defineProps<{
     label?: string;
     name?: string;
-    modelValue?: string;
+    modelValue?: string | null;
     defaultValue?: string;
     disabled?: boolean;
     required?: boolean;

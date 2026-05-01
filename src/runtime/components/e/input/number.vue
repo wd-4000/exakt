@@ -12,7 +12,7 @@ const props = withDefaults(
     label?: string;
     placeholder?: string;
     name?: string;
-    modelValue?: number;
+    modelValue?: number | null;
     defaultValue?: string;
     solid?: boolean;
     rounded?: boolean;

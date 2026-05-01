@@ -127,7 +127,7 @@ const props = withDefaults(
     label?: string;
     placeholder?: string;
     name?: string;
-    modelValue?: string;
+    modelValue?: string | null;
     defaultValue?: string;
     solid?: boolean;
     rounded?: boolean;
