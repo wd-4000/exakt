@@ -22,6 +22,8 @@
   </div>
 </template>
 <script setup lang="ts">
+import type { DropdownItem } from "../../../types/dropdownItem";
+
 import { ref, watch, computed } from "#imports";
 const dropdownActive = ref<undefined | number>(undefined);
 const dropdownVisible = ref<boolean>(false);
@@ -31,7 +33,7 @@ const props = defineProps<{
   width?: string;
   error?: string | boolean;
   hint?: string;
-  items: { name: string; id: string | number }[];
+  items: DropdownItem[];
   modelValue?: number | string | null;
   value?: string | null;
   dropdownHint?: string;
