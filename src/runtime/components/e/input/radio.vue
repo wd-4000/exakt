@@ -18,11 +18,11 @@
     <span class="checkmark" />
   </label>
 </template>
-<script lang="ts" setup generic="K extends string">
+<script lang="ts" setup generic="K extends string, SK extends string = never">
 import {computed} from '#imports';
 
 const props = defineProps<{
-  items: Record<K, string>[];
+  items: (Record<K, string> & Partial<Record<SK, string>>)[];
   modelValue?: number | null;
   useKey: K;
   useSecondaryKey?: K;
