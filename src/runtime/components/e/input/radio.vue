@@ -18,13 +18,14 @@
     <span class="checkmark" />
   </label>
 </template>
-<script lang="ts" setup>
+<script lang="ts" setup generic="K extends string">
 import {computed} from '#imports';
+
 const props = defineProps<{
-  items: { [key: string]: string }[];
+  items: Record<K, string>[];
   modelValue?: number | null;
-  useKey: string;
-  useSecondaryKey?:string;
+  useKey: K;
+  useSecondaryKey?: K;
 }>();
 
 const emit = defineEmits(["update:modelValue"]);
