@@ -1,6 +1,20 @@
 # Changelog
 
 
+## v0.0.77
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.76...v0.0.77)
+
+### 🩹 Fixes
+
+- E-input-radio: make secondary key properly optional ([8e5e520](https://github.com/wd-4000/exakt/commit/8e5e520))
+- E-undecorated-link: make to nullable ([db3b141](https://github.com/wd-4000/exakt/commit/db3b141))
+- E-input-combo: Fix item type ([0c1438c](https://github.com/wd-4000/exakt/commit/0c1438c))
+
+### ❤️ Contributors
+
+- WD-4000 ([@wd-4000](https://github.com/wd-4000))
+
 ## v0.0.76
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.75...v0.0.76)
