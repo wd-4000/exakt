@@ -22,7 +22,7 @@
 import {computed} from '#imports';
 
 const props = defineProps<{
-  items: (Record<K, string> & Partial<Record<SK, string>>)[];
+  items: (Record<K, string> & Partial<Record<SK, string | null | undefined>>)[];
   modelValue?: number | null;
   useKey: K;
   useSecondaryKey?: K;
