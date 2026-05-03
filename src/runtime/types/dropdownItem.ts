@@ -6,5 +6,5 @@ export interface DropdownItem {
   callback?: () => void;
   color?: string;
   background?: string;
-  id?: string | number;
+  id?: string | number | null;
 }
