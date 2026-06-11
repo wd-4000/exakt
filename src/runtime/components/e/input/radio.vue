@@ -25,7 +25,7 @@ const props = defineProps<{
   items: (Record<K, string> & Partial<Record<SK, string | null | undefined>>)[];
   modelValue?: number | null;
   useKey: K;
-  useSecondaryKey?: K;
+  useSecondaryKey?: SK;
 }>();
 
 const emit = defineEmits(["update:modelValue"]);
