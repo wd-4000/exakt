@@ -213,9 +213,10 @@ const currentItem = computed({
 
 const select = (i: number) => {
   visibleComputed.value = false;
-  currentItem.value = i;
   if (props.items[i]?.callback) {
     props.items[i].callback();
+  } else {
+    currentItem.value = i;
   }
 };
 
