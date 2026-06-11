@@ -1,6 +1,29 @@
 # Changelog
 
 
+## v0.0.78
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.77...v0.0.78)
+
+### 🚀 Enhancements
+
+- E-input-dropdown (& descendants): callback on item shadows select ([62d37a8](https://github.com/wd-4000/exakt/commit/62d37a8))
+
+### 🩹 Fixes
+
+- E-input-radio: maybe actually fix secondary key ([20dbf43](https://github.com/wd-4000/exakt/commit/20dbf43))
+- DropdownItem: why not make ID also nullable? ([4a21f0e](https://github.com/wd-4000/exakt/commit/4a21f0e))
+- E-input-radio: secondary key type ([b0b2657](https://github.com/wd-4000/exakt/commit/b0b2657))
+
+### 🏡 Chore
+
+- Prepack: specify the build command explicitly ([2a65211](https://github.com/wd-4000/exakt/commit/2a65211))
+- Bump nuxt to 4.4.8 ([418ce21](https://github.com/wd-4000/exakt/commit/418ce21))
+
+### ❤️ Contributors
+
+- WD-4000 ([@wd-4000](https://github.com/wd-4000))
+
 ## v0.0.77
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.76...v0.0.77)
