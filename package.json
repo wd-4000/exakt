@@ -32,9 +32,9 @@
   "devDependencies": {
     "@nuxt/eslint": "1.15.2",
     "@nuxt/eslint-config": "^1.15.2",
-    "@nuxt/kit": "^4.4.4",
+    "@nuxt/kit": "^4.4.8",
     "@nuxt/module-builder": "^1.0.2",
-    "@nuxt/schema": "^4.4.4",
+    "@nuxt/schema": "^4.4.8",
     "@nuxt/test-utils": "^4.0.3",
     "@types/node": "^20.2.4",
     "changelogen": "^0.6.2",
@@ -42,7 +42,7 @@
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-unused-imports": "^4.4.1",
-    "nuxt": "^4.4.4",
+    "nuxt": "^4.4.8",
     "typescript": "^6.0.3",
     "vitest": "^4.1.5",
     "vue-tsc": "^3.2.7"
