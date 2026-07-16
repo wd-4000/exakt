@@ -5,12 +5,14 @@
     :solid="false"
     :type="type"
     :button="button"
-    background="transparent"
+    :active="active"
+    :background="background"
   >
     <e-icon
       v-if="icon"
       :fill="fill"
       :size="size"
+      :style="{ color: active ? 'var(--e-color-primary)' : 'unset' }"
     >
       {{ icon }}
     </e-icon>
@@ -19,8 +21,24 @@
 </template>
 <script setup lang="ts">
 withDefaults(
-  defineProps<{ icon?: string; size?: number|`${number}`; loading?: boolean, type?: "button" | "submit" | "reset", fill?: boolean, button?: boolean }>(),
-  { size: "21", icon: undefined, type:undefined, button:true }
+  defineProps<{
+    icon?: string;
+    size?: number | `${number}`;
+    loading?: boolean;
+    type?: "button" | "submit" | "reset";
+    fill?: boolean;
+    button?: boolean;
+    active?: boolean;
+    background?: string;
+  }>(),
+  {
+    size: "21",
+    icon: undefined,
+    type: undefined,
+    button: true,
+    active: false,
+    background: "transparent",
+  },
 );
 </script>
 <style scoped>
