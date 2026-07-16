@@ -3,7 +3,7 @@
     v-if="label"
     class="my-3"
   >
-    <label> {{ label }} </label>
+    <label :for="buttonId"> {{ label }} </label>
   </div>
   <e-dropdown
     v-slot="{ currentItem }"
@@ -15,12 +15,15 @@
     @update:model-value="emit('update:modelValue', $event)"
     @update:visible="focus = $event"
   >
-    <div
+    <button
+      :id="buttonId"
+      type="button"
       :class="{ focus }"
       class="btn rounded"
-      tabindex="0"
-      @keydown.enter="focus = !focus"
-      @keydown.space="focus = !focus"
+      role="combobox"
+      aria-haspopup="listbox"
+      :aria-expanded="focus"
+      :disabled="disabled"
       @keydown.escape="focus = false"
     >
       <div class="d-flex justify-space-between">
@@ -45,15 +48,16 @@
           arrow_drop_down
         </e-icon>
       </div>
-    </div>
+    </button>
   </e-dropdown>
 </template>
 <script setup lang="ts">
-import { ref } from "#imports";
+import { ref, computed, useId } from "#imports";
 
 import type { DropdownItem } from "../../../types/dropdownItem";
 const focus = ref(false);
 
+const uid = useId();
 
 const emit = defineEmits(["update:modelValue"]);
 
@@ -61,7 +65,9 @@ const props = withDefaults(
   defineProps<{
     items?: DropdownItem[] | [];
     label?: string;
+    id?: string;
     useIds?: boolean;
+    disabled?: boolean;
     modelValue?: number | string | undefined | null;
     width?: string | "100%";
   }>(),
@@ -69,13 +75,24 @@ const props = withDefaults(
     items: () => [],
     modelValue: undefined,
     label: undefined,
+    id: undefined,
     useIds: false,
+    disabled: false,
     width: "100%",
   },
 );
+
+const buttonId = computed(() => props.id || uid);
 </script>
 <style lang="scss" scoped>
 .btn {
+  appearance: none;
+  border: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  display: block;
+
   outline: var(--e-color-i-outline) solid 0.1rem;
   transition:
     outline ease-in-out 0.15s,
@@ -86,6 +103,12 @@ const props = withDefaults(
   padding: 0.7rem 0.9rem;
   width: v-bind("props.width");
   background-color: var(--e-color-i-depressed);
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
   &.focus, &:focus {
     outline: var(--e-color-primary) solid 0.125rem;
   }
