@@ -23,17 +23,18 @@ const exakt = {
     let result = null;
     if (p === "primary") {
       result = "var(--e-color-primary";
-    } else if (p === "elev") {
-      result = "var(--e-color-elev";
+    } else if (p.startsWith("elev")) {
+      const elevSuffix = p.slice(4);
+      result = "var(--e-color-elev" + elevSuffix;
     }
     if (result) {
       return result.concat(suffix ? "-".concat(suffix) : "", ")");
     }
     return p;
   },
-  rootColors: ["primary", "red", "text", "yellow", "elev", "i", "i-depressed"],
+  rootColors: ["primary", "red", "text", "yellow", "elev", "elev-2", "elev-3", "i", "i-depressed"],
   isRootColor: (c: string): boolean =>
-    ["primary", "red", "text", "yellow", "elev", "i"].includes(c),
+    ["primary", "red", "text", "yellow", "elev", "i"].includes(c) || c.startsWith("elev-"),
   /**
     * Generates an alphanumeric ID of a given length.
     */
