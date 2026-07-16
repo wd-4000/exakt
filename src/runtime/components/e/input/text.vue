@@ -4,7 +4,7 @@
       v-if="label"
       class="my-3"
     >
-      <label :for="id">
+      <label :for="inputId">
         {{ label }} </label>
     </div>
 
@@ -24,7 +24,7 @@
       </e-icon>
       <textarea
         v-if="type === 'textarea'"
-        :id="id"
+        :id="inputId"
         ref="input"
         v-model="currentText"
         class="input"
@@ -33,13 +33,13 @@
         autocomplete="off"
         rows="5"
         :aria-invalid="!!error || undefined"
-        :aria-describedby="(error || hint) ? id + '-subtext' : undefined"
+        :aria-describedby="(error || hint) ? inputId + '-subtext' : undefined"
         @focus="inputState.focused = true"
         @blur="inputState.focused = false"
       />
       <input
         v-else
-        :id="id"
+        :id="inputId"
         ref="input"
         v-model="currentText"
         :disabled="disabled"
@@ -51,7 +51,7 @@
         :required="required"
         :placeholder="placeholder"
         :aria-invalid="!!error || undefined"
-        :aria-describedby="(error || hint) ? id + '-subtext' : undefined"
+        :aria-describedby="(error || hint) ? inputId + '-subtext' : undefined"
         @click.stop=""
         @focus="inputState.focused = true"
         @blur="inputState.focused = false"
@@ -61,7 +61,7 @@
     </div>
     <p
       v-if="error || hint"
-      :id="id + '-subtext'"
+      :id="inputId + '-subtext'"
       class="text-secondary pt-3"
       :class="{ 'subtext-error': !!error }"
     >
@@ -78,7 +78,8 @@ const inputState = reactive({
   focused: false,
 });
 
-const id = useId();
+const uid = useId();
+const inputId = computed(() => props.id || uid);
 
 const input = ref<HTMLInputElement>();
 const emit = defineEmits(["update:modelValue"]);
@@ -142,8 +143,11 @@ const props = withDefaults(
     compact?: boolean;
     hint?: string;
     error?: string | boolean;
+    id?: string;
+
   }>(),
   {
+    id: undefined,
     icon: undefined,
     label: undefined,
     solid: true,
