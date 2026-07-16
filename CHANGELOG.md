@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.79
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.78...v0.0.79)
+
+### 🚀 Enhancements
+
+- IconButton: add active and background props ([c514943](https://github.com/wd-4000/exakt/commit/c514943))
+- Select: use button element, add ARIA and disabled ([d13cbf7](https://github.com/wd-4000/exakt/commit/d13cbf7))
+- Text: support custom id prop ([18a7655](https://github.com/wd-4000/exakt/commit/18a7655))
+
+### 🩹 Fixes
+
+- Plugin: support elev-2/3 in parseColor ([b6ab938](https://github.com/wd-4000/exakt/commit/b6ab938))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.78
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.77...v0.0.78)
