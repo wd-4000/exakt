@@ -89,7 +89,9 @@ a {
         color: map.get(exakt.$root-colors-dark, "text");
       }
     }
+  }
 
+  @each $name, $color in $color-map {
     .color-#{$name} {
       color: $color;
     }

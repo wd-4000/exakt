@@ -47,7 +47,22 @@
       :loading="state.button1loading"
       @click="state.button1loading = !state.button1loading"
     >
-      Solid button
+      Primary button
+    </EBtn>
+    <EBtn
+      :loading="state.button1loading"
+      background="i"
+      @click="state.button1loading = !state.button1loading"
+    >
+      Secondary button
+    </EBtn>
+    <EBtn
+      :loading="state.button1loading"
+      background="i"
+      color="red"
+      @click="state.button1loading = !state.button1loading"
+    >
+      Destructive button
     </EBtn>
     <e-btn
       :solid="false"

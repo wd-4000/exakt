@@ -15,7 +15,8 @@
       loading,
       fab,
       compact,
-      ...backgroundClass,
+      'custom-text-color': color && !isRootTextColor,
+      ...colorClasses,
     }"
   >
     <div
@@ -88,7 +89,11 @@ const isRootColor = computed(
   () =>
     $exakt && $exakt.rootColors && $exakt.rootColors.includes(props.background),
 );
-const backgroundClass = computed(() => {
+const isRootTextColor = computed(
+  () =>
+    $exakt && $exakt.rootColors && props.color != null && $exakt.rootColors.includes(props.color),
+);
+const colorClasses = computed(() => {
   const c: { [key: string]: boolean } = {};
 
   if (props.background == "transparent") {
@@ -97,6 +102,10 @@ const backgroundClass = computed(() => {
     c["bg-" + props.background] = true;
   } else {
     c["custom-color"] = true;
+  }
+
+  if (isRootTextColor.value) {
+    c["color-" + props.color] = true;
   }
 
   return c;
@@ -109,11 +118,11 @@ const backgroundColor = computed(() => {
   }
 });
 const textColor = computed(() => {
-  if (isRootColor.value) {
-    return "unset";
-  }
   if (props.color) {
     return props.color;
+  }
+  if (isRootColor.value) {
+    return "unset";
   }
   if (props.background == "transparent") {
     return "var(--e-color-text)";
@@ -252,6 +261,10 @@ const textColor = computed(() => {
   &.inactive {
     color: var(--e-color-text);
     opacity: 80%;
+  }
+
+  &.custom-text-color {
+    color: v-bind(textColor);
   }
 }
 
