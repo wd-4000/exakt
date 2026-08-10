@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.80
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.79...v0.0.80)
+
+### 🩹 Fixes
+
+- Color- and bg- precedence ([73bcafb](https://github.com/wd-4000/exakt/commit/73bcafb))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.79
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.78...v0.0.79)
