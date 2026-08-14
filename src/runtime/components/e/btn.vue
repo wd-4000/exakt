@@ -9,6 +9,7 @@
       active,
       inactive,
       solid,
+      depressed,
       block,
       rounded: solid,
       'e-disabled': disabled,
@@ -58,6 +59,8 @@ const props = withDefaults(
     block?: boolean;
     loading?: boolean;
     fab?: boolean;
+    /// Pretend the button is being pressed right now
+    depressed?: boolean;
     disabled?: boolean;
     align?: string;
     type?: "button" | "submit" | "reset";
@@ -201,13 +204,13 @@ const textColor = computed(() => {
     }
   }
 
-  &:hover {
+  &:hover, &.depressed {
     // background: rgba(98, 98, 98, 0.15);
     opacity: 0.7;
     border: transparent solid 0.1rem;
   }
 
-  &:active {
+  &:active, &.depressed {
     .e-btn-content {
       transform: scale(0.85);
     }
