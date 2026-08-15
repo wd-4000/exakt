@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.81
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.80...v0.0.81)
+
+### 🚀 Enhancements
+
+- E-btn depression ([81821c8](https://github.com/wd-4000/exakt/commit/81821c8))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.80
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.79...v0.0.80)
