@@ -110,6 +110,7 @@ const onBlur = async (event: FocusEvent) => {
   .dialog-wrap {
     align-content: flex-end;
     align-items: flex-end;
+   // padding-bottom: env(keyboard-inset-height, 0px);
   }
 }
 
