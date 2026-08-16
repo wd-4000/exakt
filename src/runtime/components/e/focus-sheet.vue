@@ -4,7 +4,7 @@
       <div
         v-if="modelValue"
         class="focus-sheet"
-        :class="{ 'opaque-on-desktop': opaqueOnDesktop }"
+        :class="{ 'opaque-on-desktop': opaqueOnDesktop, 'opaque-on-mobile': opaqueOnMobile }"
         @click="dismiss"
       />
     </Transition>
@@ -15,8 +15,9 @@
 const props = withDefaults(defineProps<{
   modelValue: boolean;
   opaqueOnDesktop?: boolean;
+  opaqueOnMobile?: boolean;
   dismissable?: boolean;
-}>(), { dismissable: true });
+}>(), { dismissable: true, opaqueOnMobile: true });
 const emit = defineEmits(["update:modelValue"]);
 
 const dismiss = () => {
@@ -42,7 +43,7 @@ const dismiss = () => {
 }
 
 @media screen and (max-width: exakt.$e-md-screen-breakpoint) {
-  .focus-sheet {
+  .focus-sheet.opaque-on-mobile {
     background-color: rgba(var(--e-color-bg-rgb), 0.7);
   }
 }

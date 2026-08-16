@@ -5,6 +5,7 @@
       :items="items"
       :visible="disabled ? false : dropdownVisible"
       v-bind="{ width, dropdownHint }"
+      :responsive="false"
       @update:visible="dropdownVisible = $event"
       @update:model-value="updateSelection"
     >

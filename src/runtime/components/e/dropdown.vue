@@ -12,12 +12,13 @@
         "
       />
     </div>
-    <e-focus-sheet v-model="visibleComputed" />
+    <e-focus-sheet v-model="visibleComputed" :opaque-on-mobile="false" />
     <e-tr-scale>
       <div
         v-if="visibleComputed"
         ref="list"
         class="list bg-elev-2 rounded"
+        :class="{ responsive }"
         :style="{ position: fixed ? 'fixed' : undefined }"
       >
         <div
@@ -87,6 +88,7 @@ const props = withDefaults(
     useIds?: boolean;
     visible?: boolean | null;
     fixed?: boolean;
+    responsive?: boolean;
   }>(),
   {
     center: false,
@@ -98,6 +100,7 @@ const props = withDefaults(
     useIds: false,
     hint: undefined,
     title: undefined,
+    responsive: true,
   },
 );
 
@@ -284,7 +287,7 @@ a {
 }
 
 @media screen and (max-width: exakt.$e-md-screen-breakpoint) {
-  .list {
+  .list.responsive {
     position: fixed;
     top: unset;
     bottom: 0px;
