@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.82
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.81...v0.0.82)
+
+### 🚀 Enhancements
+
+- E-dialog comment that would help with keyboard offset but only on chromium and also messes up UX in other fun ways which is why it is a comment ([f927c4c](https://github.com/wd-4000/exakt/commit/f927c4c))
+
+### 🩹 Fixes
+
+- Destroy e-input-combo using responsive dialog styling and opaque focus sheet on mobile ([2854ca6](https://github.com/wd-4000/exakt/commit/2854ca6))
+- E-input-radio useIds ([6e65fb2](https://github.com/wd-4000/exakt/commit/6e65fb2))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.81
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.80...v0.0.81)
