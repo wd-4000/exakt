@@ -13,7 +13,7 @@
       v-model="selected"
       type="radio"
       name="radio"
-      :value="i"
+      :value="useIds ? i : item.id"
     >
     <span class="checkmark" />
   </label>
@@ -22,9 +22,10 @@
 import {computed} from '#imports';
 
 const props = defineProps<{
-  items: (Record<K, string> & Partial<Record<SK, string | null | undefined>>)[];
+  items: (Record<K, string> & Partial<Record<SK, string | null | undefined>> & Partial<Record<"id", string>>)[];
   modelValue?: number | null;
   useKey: K;
+  useIds?: boolean;
   useSecondaryKey?: SK;
 }>();
 
