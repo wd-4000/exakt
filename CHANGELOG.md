@@ -1,6 +1,23 @@
 # Changelog
 
 
+## v0.0.83
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.82...v0.0.83)
+
+### 🚀 Enhancements
+
+- See if we can pull off switching to sass-embedded ([0d1c5b2](https://github.com/wd-4000/exakt/commit/0d1c5b2))
+- Icon font subsetting ([c9866a9](https://github.com/wd-4000/exakt/commit/c9866a9))
+
+### 🏡 Chore
+
+- Bump deps ([d0fc7bd](https://github.com/wd-4000/exakt/commit/d0fc7bd))
+
+### ❤️ Contributors
+
+- WD-4000 ([@wd-4000](https://github.com/wd-4000))
+
 ## v0.0.82
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.81...v0.0.82)
