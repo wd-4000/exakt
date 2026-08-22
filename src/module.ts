@@ -8,7 +8,12 @@ import {
 } from "@nuxt/kit";
 import type { Nuxt } from "@nuxt/schema";
 import fs from "fs";
-import { buildIconSubset, ICON_STYLES, type IconStyle } from "./icons";
+import {
+  buildIconSubset,
+  ICON_BASE_URL,
+  ICON_STYLES,
+  type IconStyle,
+} from "./icons";
 
 interface Colors {
   primary?: string;
@@ -190,6 +195,28 @@ export default defineNuxtModule<ModuleOptions>({
 
         subsetCss = result.cssPath;
         subsetted = true;
+
+        if (result.fontUrls.length) {
+          nuxt.options.nitro.publicAssets ??= [];
+          nuxt.options.nitro.publicAssets.push({
+            dir: result.fontDir,
+            baseURL: ICON_BASE_URL,
+            maxAge: 31536000,
+          });
+
+          // Preload the icon font so we don't have to wait for the CSS
+          const base = (nuxt.options.app.baseURL || "/").replace(/\/$/, "");
+          nuxt.options.app.head.link ??= [];
+          nuxt.options.app.head.link.push(
+            ...result.fontUrls.map((url) => ({
+              rel: "preload" as const,
+              as: "font" as const,
+              type: "font/woff2",
+              href: base + url,
+              crossorigin: "anonymous" as const,
+            })),
+          );
+        }
         if (result.cssPath && !result.cached) {
           // logger.info(
           //   `Subset the icon font to ${result.icons.length} icons (${(result.bytes / 1024).toFixed(1)} kB).`,

@@ -18,8 +18,11 @@ export type IconStyle = keyof typeof FONT_FAMILIES;
 
 export const ICON_STYLES = Object.keys(FONT_FAMILIES) as IconStyle[];
 
+/** Where the subset fonts are served from. We do this so that we can easily add a preload hint. */
+export const ICON_BASE_URL = "/_exakt";
+
 // Bump when the subsetting pipeline changes, so stale caches are not reused.
-const PIPELINE_VERSION = 1;
+const PIPELINE_VERSION = 3;
 
 const HB_SUBSET_FLAGS_NO_LAYOUT_CLOSURE = 0x0200;
 const HB_MEMORY_MODE_WRITABLE = 2;
@@ -59,6 +62,10 @@ export interface IconSubsetOptions {
 export interface IconSubsetResult {
   /** Stylesheet declaring the subset `@font-face`s, or null when no icons are used. */
   cssPath: string | null;
+  /** Directory holding the subset woff2s, to be served at {@link ICON_BASE_URL}. */
+  fontDir: string;
+  /** Public URLs of the subset woff2s, for preloading. */
+  fontUrls: string[];
   icons: string[];
   bytes: number;
   cached: boolean;
@@ -250,9 +257,18 @@ export const buildIconSubset = async (
     }
   }
 
+  const fontDir = path.join(options.cacheDir, "fonts");
+
   const wanted = [...candidates].sort();
   if (wanted.length === 0) {
-    return { cssPath: null, icons: [], bytes: 0, cached: false };
+    return {
+      cssPath: null,
+      fontDir,
+      fontUrls: [],
+      icons: [],
+      bytes: 0,
+      cached: false,
+    };
   }
 
   /* Cache lookup */
@@ -278,6 +294,10 @@ export const buildIconSubset = async (
     await fs.promises.access(cssPath);
     return {
       cssPath,
+      fontDir,
+      fontUrls: (manifest.fonts as string[]).map(
+        (file) => `${ICON_BASE_URL}/${file}`,
+      ),
       icons: manifest.icons,
       bytes: manifest.bytes,
       cached: true,
@@ -304,6 +324,7 @@ export const buildIconSubset = async (
   let css = "";
   let bytes = 0;
   let resolvedNames: string[] = [];
+  const fontFiles: string[] = [];
 
   for (const style of options.styles) {
     const sfnt = await fontverter.convert(
@@ -323,11 +344,13 @@ export const buildIconSubset = async (
     );
 
     const fontFile = `icons-${style}-${hash}.woff2`;
+    await fs.promises.mkdir(fontDir, { recursive: true });
     await fs.promises.writeFile(
-      path.join(options.cacheDir, fontFile),
+      path.join(fontDir, fontFile),
       new Uint8Array(woff2),
     );
     bytes += woff2.byteLength;
+    fontFiles.push(fontFile);
 
     css +=
       `@font-face{` +
@@ -335,18 +358,28 @@ export const buildIconSubset = async (
       `font-style:normal;` +
       `font-weight:100 700;` +
       `font-display:block;` +
-      `src:url("./${fontFile}") format("woff2");` +
+      `src:url("${ICON_BASE_URL}/${fontFile}") format("woff2");` +
       `}`;
   }
 
-  if (!css) return { cssPath: null, icons: [], bytes: 0, cached: false };
+  if (!css) {
+    return {
+      cssPath: null,
+      fontDir,
+      fontUrls: [],
+      icons: [],
+      bytes: 0,
+      cached: false,
+    };
+  }
 
   await fs.promises.writeFile(cssPath, css);
   await fs.promises.writeFile(
     manifestPath,
-    JSON.stringify({ icons: resolvedNames, bytes }),
+    JSON.stringify({ icons: resolvedNames, bytes, fonts: fontFiles }),
   );
   await pruneCache(options.cacheDir, hash);
+  await pruneCache(fontDir, hash);
 
   const missing = options.include.filter(
     (name) => !resolvedNames.includes(name),
@@ -357,5 +390,12 @@ export const buildIconSubset = async (
     );
   }
 
-  return { cssPath, icons: resolvedNames, bytes, cached: false };
+  return {
+    cssPath,
+    fontDir,
+    fontUrls: fontFiles.map((file) => `${ICON_BASE_URL}/${file}`),
+    icons: resolvedNames,
+    bytes,
+    cached: false,
+  };
 };
