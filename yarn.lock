@@ -1018,6 +1018,8 @@ __metadata:
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-prettier: "npm:^5.5.5"
     eslint-plugin-unused-imports: "npm:^4.4.1"
+    fontverter: "npm:^2.0.0"
+    harfbuzzjs: "npm:^1.6.0"
     material-symbols: "npm:latest"
     nuxt: "npm:^4.5.2"
     sass-embedded: "npm:^1.103.1"
@@ -5593,6 +5595,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fontverter@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "fontverter@npm:2.0.0"
+  dependencies:
+    wawoff2: "npm:^2.0.0"
+    woff2sfnt-sfnt2woff: "npm:^1.0.0"
+  checksum: 10/097e9856dfe464dc09f3887f920bb4a98fc2cd1b5af8bc33554d2fc9a486f103b09be96b395d9a5c60e07d09ec34220767431edae4fe7e67a7351cf5a35317b4
+  languageName: node
+  linkType: hard
+
 "foreground-child@npm:^3.1.0":
   version: 3.3.1
   resolution: "foreground-child@npm:3.3.1"
@@ -5868,6 +5880,13 @@ __metadata:
   bin:
     h3: bin/h3.mjs
   checksum: 10/da28b4393d6d2880be1c5ba3ddb3db5bf74d0055f8578381f6e21ba46efe70d444e512a6cd42c4ef2717475bd65b38848553dc1179ee282454e9a21bf901971f
+  languageName: node
+  linkType: hard
+
+"harfbuzzjs@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "harfbuzzjs@npm:1.6.0"
+  checksum: 10/a6f1d91888fc1fed4dd15c7a3a2f52535c0cef7eb7ff0a7387c96fa70893fcea36fdd11af2f6ed3f79a0d8a21f17b69a974ff86b9abb4d587686a1102ef782b8
   languageName: node
   linkType: hard
 
@@ -7483,6 +7502,13 @@ __metadata:
   version: 1.8.0
   resolution: "package-manager-detector@npm:1.8.0"
   checksum: 10/5d79b8bf3d0d3da312ec08749c74a3b7e4d4139c259fe3561538772c65ece8ff733e002c67a4324b5c505d2ac625c121b94cf3d5135e1b4e43fed5bced148763
+  languageName: node
+  linkType: hard
+
+"pako@npm:^1.0.7":
+  version: 1.0.11
+  resolution: "pako@npm:1.0.11"
+  checksum: 10/1ad07210e894472685564c4d39a08717e84c2a68a70d3c1d9e657d32394ef1670e22972a433cbfe48976cb98b154ba06855dcd3fcfba77f60f1777634bec48c0
   languageName: node
   linkType: hard
 
@@ -10675,6 +10701,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"wawoff2@npm:^2.0.0":
+  version: 2.0.1
+  resolution: "wawoff2@npm:2.0.1"
+  dependencies:
+    argparse: "npm:^2.0.1"
+  bin:
+    woff2_compress.js: bin/woff2_compress.js
+    woff2_decompress.js: bin/woff2_decompress.js
+  checksum: 10/13b272466fe159a390371a02930c14900744dd842d6c8c3368329e82ef8351c31b13a0b2978f853acb675fefc7666dde390b26c67ebb2e7f6ff384b67f2eaa22
+  languageName: node
+  linkType: hard
+
 "web-worker@npm:^1.5.0":
   version: 1.5.0
   resolution: "web-worker@npm:1.5.0"
@@ -10737,6 +10775,15 @@ __metadata:
   bin:
     why-is-node-running: cli.js
   checksum: 10/0de6e6cd8f2f94a8b5ca44e84cf1751eadcac3ebedcdc6e5fbbe6c8011904afcbc1a2777c53496ec02ced7b81f2e7eda61e76bf8262a8bc3ceaa1f6040508051
+  languageName: node
+  linkType: hard
+
+"woff2sfnt-sfnt2woff@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "woff2sfnt-sfnt2woff@npm:1.0.0"
+  dependencies:
+    pako: "npm:^1.0.7"
+  checksum: 10/cb5894a4b0b44e75cf91b92b69896f771f06c6a86f9eab23bfed1c807537f96d25a63e7905b0c983f6546d385e825d6f71242af0b7c8878b1edc3ecaabe19c9a
   languageName: node
   linkType: hard
 

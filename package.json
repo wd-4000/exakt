@@ -26,6 +26,8 @@
     "test:watch": "vitest watch"
   },
   "dependencies": {
+    "fontverter": "^2.0.0",
+    "harfbuzzjs": "^1.6.0",
     "material-symbols": "latest",
     "sass-embedded": "^1.103.1"
   },
