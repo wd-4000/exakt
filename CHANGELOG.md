@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.84
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.83...v0.0.84)
+
+### 🚀 Enhancements
+
+- Icon font preloading ([12fd05a](https://github.com/wd-4000/exakt/commit/12fd05a))
+
+### ❤️ Contributors
+
+- WD-4000 ([@wd-4000](https://github.com/wd-4000))
+
 ## v0.0.83
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.82...v0.0.83)
