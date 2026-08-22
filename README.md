@@ -5,33 +5,19 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-a simple nuxt ui library focused on doing as much as possible with css
+an opinionated nuxt ui library focused on a clean look 
 
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
-### DO NOT USE THIS LIBRARY IN YOUR PROJECT.
-### THIS LIBRARY IS VERY UNSTABLE AND EXPERIMENTAL
-### first rule of exakt is to be yourself and have fun :)
-## Features
+- [Release Notes](/CHANGELOG.md)
 
-<!-- Highlight some of the features your module provide here -->
-- 💇‍♀️ &nbsp; mostly uses css to do things
-- 👜 &nbsp; relatively lightweight
-- 👁️‍🗨️ &nbsp; customizable
+> [!WARNING]  
+> This library is very experimental, use it at your own peril
 
 ## Quick Setup
 
-1. Add `@exakt/ui` dependency to your project
+1. Add `@exakt/ui` as a dependency to your project. Something like:
 
 ```bash
-# Using pnpm
-pnpm add -D @exakt/ui
-
-# Using yarn
 yarn add --dev @exakt/ui
-
-# Using npm
-npm install --save-dev @exakt/ui
 ```
 
 2. Add `@exakt/ui` to the `modules` section of `nuxt.config.ts`
@@ -44,13 +30,35 @@ export default defineNuxtConfig({
 })
 ```
 
-That's it! You can now use exakt in your Nuxt app ✨
+3. Configure
+```js
+export default defineNuxtConfig({
+  exakt: { colors: { light: { primary: "#ff7d00" }, dark: { primary: "#ff7d00" } }},
+})
+```
+## Icons
 
-## Development
+exakt uses [Material Symbols](https://fonts.google.com/icons).
+When you build, it scans your project's source and only includes 
+the icons that are actually used, otherwise it's like 3.7MB (not what we wanna see)
 
-### Important note
+```js
+export default defineNuxtConfig({
+  modules: ['@exakt/ui'],
+  exakt: {
+    icons: {
+      style: 'outlined',   // 'outlined' | 'rounded' | 'sharp' | 'all'
+      subset: true,        // subset on prod build
+      subsetInDev: false,  // also subset for the dev build
+      scan: true,          // scan sources for icon names
+      include: [],         // names the scan cannot see
+    },
+  },
+})
+```
 
-Because mkdist (and subsequently nuxt-module-builder) don't yet support *not* compiling SASS files, you'll need to use ``yarn link`` to substitute mkdist with the force-scss-off branch of https://github.com/wd-4000/mkdist
+It scans dumbly for any quoted icon name, so there might be false positives.
+
 
 ### The usual
 
