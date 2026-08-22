@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "material-symbols": "latest",
-    "sass": "^1.99.0"
+    "sass-embedded": "^1.103.1"
   },
   "devDependencies": {
     "@nuxt/eslint": "1.17.0",
