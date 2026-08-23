@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.85
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.84...v0.0.85)
+
+### 🩹 Fixes
+
+- I18n nav-btn ([289df48](https://github.com/wd-4000/exakt/commit/289df48))
+
+### ❤️ Contributors
+
+- WD-4000 ([@wd-4000](https://github.com/wd-4000))
+
 ## v0.0.84
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.83...v0.0.84)
