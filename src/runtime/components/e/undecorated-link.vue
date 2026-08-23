@@ -10,8 +10,10 @@
   </nuxt-link>
 </template>
 <script setup lang="ts">
+import type { RouteLocationRaw } from "vue-router";
+
 defineProps<{
-  to?: string | null;
+  to?: RouteLocationRaw | null;
   disabled?: boolean;
 }>();
 </script>

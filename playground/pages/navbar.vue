@@ -10,6 +10,10 @@
         icon="devices"
         label="navbar"
         to="/navbar"
+      /><ENavBtn
+        icon="palette"
+        label="colors"
+        to="colors"
       />
     </ENavBar>
   </div>

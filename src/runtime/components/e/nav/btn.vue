@@ -1,6 +1,6 @@
 <template>
   <e-undecorated-link
-    :to="to"
+    :to="resolvedTo"
     :class="{ 'grow-on-mobile': responsive }"
   >
     <e-btn
@@ -45,50 +45,107 @@
   </e-undecorated-link>
 </template>
 <script setup lang="ts">
-import { useRoute } from "vue-router";
-import { computed } from "vue";
+import { computed, useNuxtApp, useRoute } from "#imports";
+import type { NuxtApp } from "#app";
+import type {
+  RouteLocationNormalizedLoaded,
+  RouteLocationRaw,
+} from "vue-router";
+
+/**
+ * The parts of @nuxtjs/i18n we care about.
+ *
+ * Its plugin hands these to the Nuxt app (`nuxt.provide("localePath", ...)`),
+ * so we can pick them up when they are there instead of importing `#i18n`,
+ * which only exists once the module is installed. `$routeBaseName` superseded
+ * `$getRouteBaseName` in v10, so accept either.
+ */
+interface I18nInjections {
+  $localePath?: (to: string, locale?: string) => string;
+  $routeBaseName?: (route: RouteLocationNormalizedLoaded) => string | undefined;
+  $getRouteBaseName?: (
+    route: RouteLocationNormalizedLoaded,
+  ) => string | undefined;
+}
 
 const props = withDefaults(
   defineProps<{
+    /**
+     * A path (`/settings`) or a route name (`settings`). Names are the useful
+     * form with @nuxtjs/i18n, since a page's path differs per locale — they
+     * are resolved through `localePath()` and matched through `routeBaseName()`
+     * so the button stays highlighted in every locale. Without i18n installed
+     * names are handed to vue-router as-is.
+     *
+     * A target matches the whole section below it: `/settings` is active on
+     * `/settings/profile`, `settings` is active on `settings-profile`.
+     */
     to?: string;
     label?: string;
     icon?: string;
     alert?: boolean;
     responsive?: boolean;
+    /** Paths or route names below `to` that should not light the button up. */
     excludeActive?: string[];
   }>(),
   { to: "", label: "", icon: "", responsive: true, excludeActive: () => [] },
 );
 
 const route = useRoute();
+const {
+  $localePath: localePath,
+  $routeBaseName,
+  $getRouteBaseName,
+} = useNuxtApp() as NuxtApp & I18nInjections;
+const routeBaseName = $routeBaseName ?? $getRouteBaseName;
+
+/** Anything that isn't a path is treated as a route name. */
+const isRouteName = (to: string) => !to.startsWith("/");
+
+/** Trailing slashes carry no meaning here, but `/` has to stay `/`. */
+const normalize = (path: string) => path.replace(/\/+$/, "") || "/";
+
+/** `to` in a shape <nuxt-link> understands, localized where applicable. */
+const resolvedTo = computed<RouteLocationRaw | undefined>(() => {
+  if (!props.to) {
+    return undefined;
+  }
+  if (localePath) {
+    return localePath(props.to);
+  }
+  return isRouteName(props.to) ? { name: props.to } : props.to;
+});
 
 const active = computed(() => {
-  if (props.to == "/") {
-    return route.path == "/";
-  }
-  if (!route || !route.path) {
+  if (!props.to) {
     return false;
   }
 
-  let excluded = false;
-  if (props.excludeActive) {
-    for (const e of props.excludeActive) {
-      if (route.path.startsWith(e)) {
-        excluded = true;
-        break;
-      }
+  const path = normalize(route.path);
+  const baseName =
+    routeBaseName?.(route) ??
+    (typeof route.name === "string" ? route.name : undefined);
+  // Under a prefixed strategy the localized root is `/de` rather than `/`, so
+  // it cannot be treated as a plain prefix or it would match every page of
+  // that locale.
+  const root = normalize(localePath?.("/") ?? "/");
+
+  const matches = (candidate: string) => {
+    if (isRouteName(candidate)) {
+      return baseName === candidate || !!baseName?.startsWith(candidate + "-");
     }
-  }
-  return !excluded && route.path.startsWith(props.to);
+    const prefix = normalize(localePath?.(candidate) ?? candidate);
+    if (prefix === root) {
+      return path === root;
+    }
+    return path === prefix || path.startsWith(prefix + "/");
+  };
+
+  return matches(props.to) && !props.excludeActive.some(matches);
 });
 </script>
 
 <style scoped lang="scss">
-/*a.router-link-active > .nav-btn {
-  color:var(--e-color-primary) !important;
-  background-color: rgba(var(--e-color-primary-rgb), 0.075);
-}*/
-
 a {
   border-radius: var(--e-rounded-border-radius);
 }
@@ -113,8 +170,8 @@ a {
   box-sizing: border-box;
   aspect-ratio: 1;
 
+  // A dot on the bottom right of the icon
   .icon-alert {
-    // Add a blue dot to the bottom right of the icon
     content: "";
     position: absolute;
     width: 0.5rem;
@@ -122,7 +179,7 @@ a {
     height: 0.5rem;
     border-radius: 100%;
     bottom: 0.1rem;
-    right: 0px;
+    right: 0;
     background-color: var(--e-color-primary);
     outline: 0.1rem solid var(--e-color-elev);
   }
@@ -138,11 +195,11 @@ a {
     flex-direction: column;
 
     .icon-wrapper {
-      margin-right: 0rem;
+      margin-right: 0;
     }
 
     p {
-      margin: 0px;
+      margin: 0;
       white-space: nowrap;
       font-size: 0.8rem;
     }
