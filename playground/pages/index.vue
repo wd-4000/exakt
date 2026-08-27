@@ -27,9 +27,12 @@
     <div class="pa-5 rounded fullwidth mb-6 bg-source">
       Source
     </div>
+
     <div class="bg-fg pa-5 rounded">
       fg
-
+      <div class="fullwidth bg-i">
+        i
+      </div>
       <div class="fullwidth bg-elev">
         Elev
       </div>
