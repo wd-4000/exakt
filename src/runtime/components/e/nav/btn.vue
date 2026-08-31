@@ -1,6 +1,6 @@
 <template>
   <e-undecorated-link
-    :to="resolvedTo"
+    :to="disabled ? undefined : resolvedTo"
     :class="{ 'grow-on-mobile': responsive }"
   >
     <e-btn
@@ -9,6 +9,7 @@
       class="nav-btn"
       :class="{ 'grow-on-mobile': responsive, 'pa-3': !label }"
       align="center"
+      :disabled="disabled"
       :active="active"
       :button="false"
     >
@@ -71,20 +72,14 @@ interface I18nInjections {
 const props = withDefaults(
   defineProps<{
     /**
-     * A path (`/settings`) or a route name (`settings`). Names are the useful
-     * form with @nuxtjs/i18n, since a page's path differs per locale — they
-     * are resolved through `localePath()` and matched through `routeBaseName()`
-     * so the button stays highlighted in every locale. Without i18n installed
-     * names are handed to vue-router as-is.
-     *
-     * A target matches the whole section below it: `/settings` is active on
-     * `/settings/profile`, `settings` is active on `settings-profile`.
+     * A path (`/settings`) or a route name (`settings`). This is done for @nuxt/i18n sake.
      */
     to?: string;
     label?: string;
     icon?: string;
     alert?: boolean;
     responsive?: boolean;
+    disabled?: boolean;
     /** Paths or route names below `to` that should not light the button up. */
     excludeActive?: string[];
   }>(),
