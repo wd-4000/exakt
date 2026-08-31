@@ -13,7 +13,7 @@
       v-model="selected"
       type="radio"
       name="radio"
-      :value="useIds ? i : item.id"
+      :value="useIds ? item.id : i"
     >
     <span class="checkmark" />
   </label>
@@ -21,13 +21,16 @@
 <script lang="ts" setup generic="K extends string, SK extends string = never">
 import {computed} from '#imports';
 
-const props = defineProps<{
-  items: (Record<K, string> & Partial<Record<SK, string | null | undefined>> & Partial<Record<"id", string>>)[];
-  modelValue?: number | null;
+const props = withDefaults(defineProps<{
+  items: (Record<K, string> & Partial<Record<SK, string | number | null | undefined>> & Partial<Record<"id", string | number>>)[];
+  modelValue?: string | number | null;
   useKey: K;
+  /** Bind each option to its item id. Set false to bind the list index instead. */
   useIds?: boolean;
   useSecondaryKey?: SK;
-}>();
+}>(), {
+  useIds: true,
+});
 
 const emit = defineEmits(["update:modelValue"]);
 
