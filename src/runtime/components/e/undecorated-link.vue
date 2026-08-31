@@ -1,13 +1,5 @@
 <template>
-  <div v-if="disabled || !to">
-    <slot />
-  </div>
-  <nuxt-link
-    v-else
-    :to="to"
-  >
-    <slot />
-  </nuxt-link>
+  <nuxt-link :to="disabled ? undefined : to ?? undefined"><slot /></nuxt-link>
 </template>
 <script setup lang="ts">
 import type { RouteLocationRaw } from "vue-router";
