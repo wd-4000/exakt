@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.86
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.85...v0.0.86)
+
+### 🚀 Enhancements
+
+- Improve light i colors ([f4c82c3](https://github.com/wd-4000/exakt/commit/f4c82c3))
+- E-nav-btn: disabled ([ab9cc09](https://github.com/wd-4000/exakt/commit/ab9cc09))
+- Slimmer e-undecorated-link ([20a03f2](https://github.com/wd-4000/exakt/commit/20a03f2))
+
+### 🩹 Fixes
+
+- E-input-radio useids behavior ([1f3abba](https://github.com/wd-4000/exakt/commit/1f3abba))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.85
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.84...v0.0.85)
