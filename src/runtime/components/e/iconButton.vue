@@ -1,18 +1,15 @@
 <template>
   <e-btn
-    class="a-btn pa-1"
+    class="icon-btn pa-1"
     :loading="loading"
     :solid="false"
-    :type="type"
-    :button="button"
-    :active="active"
-    :background="background"
+    v-bind="{type, button, active, background}"
   >
     <e-icon
       v-if="icon"
       :fill="fill"
       :size="size"
-      :style="{ color: active ? 'var(--e-color-primary)' : 'unset' }"
+      :style="{ color: active ? 'var(--e-color-primary)' : undefined }"
     >
       {{ icon }}
     </e-icon>
@@ -42,8 +39,7 @@ withDefaults(
 );
 </script>
 <style scoped>
-.a-btn {
-  color: inherit !important;
+.icon-btn {
   aspect-ratio: 1;
 }
 </style>

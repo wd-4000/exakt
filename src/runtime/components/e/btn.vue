@@ -128,7 +128,7 @@ const textColor = computed(() => {
     return "unset";
   }
   if (props.background == "transparent") {
-    return "var(--e-color-text)";
+    return "inherit";
   }
   const rgb = backgroundColorRgb.value;
 
@@ -182,7 +182,6 @@ const textColor = computed(() => {
   border: transparent solid 0.1rem;
 
   &.transparent {
-    color: var(--e-color-text);
     background: rgba(0, 0, 0, 0);
 
     &:hover {
