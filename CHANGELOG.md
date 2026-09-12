@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.87
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.86...v0.0.87)
+
+### 🚀 Enhancements
+
+- E-undecorated-link: i18n ([c8be034](https://github.com/wd-4000/exakt/commit/c8be034))
+
+### 🩹 Fixes
+
+- E-btn and e-icon-button transparent background incorrectly overriding color ([41ac871](https://github.com/wd-4000/exakt/commit/41ac871))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.86
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.85...v0.0.86)
