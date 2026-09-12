@@ -1,6 +1,7 @@
 <template>
   <e-undecorated-link
-    :to="disabled ? undefined : resolvedTo"
+    :to="to"
+    :disabled="disabled"
     :class="{ 'grow-on-mobile': responsive }"
   >
     <e-btn
@@ -46,33 +47,16 @@
   </e-undecorated-link>
 </template>
 <script setup lang="ts">
-import { computed, useNuxtApp, useRoute } from "#imports";
-import type { NuxtApp } from "#app";
-import type {
-  RouteLocationNormalizedLoaded,
-  RouteLocationRaw,
-} from "vue-router";
-
-/**
- * The parts of @nuxtjs/i18n we care about.
- *
- * Its plugin hands these to the Nuxt app (`nuxt.provide("localePath", ...)`),
- * so we can pick them up when they are there instead of importing `#i18n`,
- * which only exists once the module is installed. `$routeBaseName` superseded
- * `$getRouteBaseName` in v10, so accept either.
- */
-interface I18nInjections {
-  $localePath?: (to: string, locale?: string) => string;
-  $routeBaseName?: (route: RouteLocationNormalizedLoaded) => string | undefined;
-  $getRouteBaseName?: (
-    route: RouteLocationNormalizedLoaded,
-  ) => string | undefined;
-}
+import { computed, useRoute } from "#imports";
+import { isRouteName, useI18nRouting } from "../../../utils/routing";
 
 const props = withDefaults(
   defineProps<{
     /**
      * A path (`/settings`) or a route name (`settings`). This is done for @nuxt/i18n sake.
+     *
+     * A target matches the whole section below it: `/settings` is active on
+     * `/settings/profile`, `settings` is active on `settings-profile`.
      */
     to?: string;
     label?: string;
@@ -87,29 +71,10 @@ const props = withDefaults(
 );
 
 const route = useRoute();
-const {
-  $localePath: localePath,
-  $routeBaseName,
-  $getRouteBaseName,
-} = useNuxtApp() as NuxtApp & I18nInjections;
-const routeBaseName = $routeBaseName ?? $getRouteBaseName;
-
-/** Anything that isn't a path is treated as a route name. */
-const isRouteName = (to: string) => !to.startsWith("/");
+const { localePath, routeBaseName } = useI18nRouting();
 
 /** Trailing slashes carry no meaning here, but `/` has to stay `/`. */
 const normalize = (path: string) => path.replace(/\/+$/, "") || "/";
-
-/** `to` in a shape <nuxt-link> understands, localized where applicable. */
-const resolvedTo = computed<RouteLocationRaw | undefined>(() => {
-  if (!props.to) {
-    return undefined;
-  }
-  if (localePath) {
-    return localePath(props.to);
-  }
-  return isRouteName(props.to) ? { name: props.to } : props.to;
-});
 
 const active = computed(() => {
   if (!props.to) {
