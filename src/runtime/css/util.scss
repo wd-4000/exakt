@@ -169,7 +169,6 @@ body {
 @media screen and (min-width: (exakt.$e-md-screen-breakpoint)) {
   .md-and-under {
       display: none !important;
-  
 }
 }
 
@@ -180,7 +179,7 @@ body {
 @media screen and (max-width: (exakt.$e-md-screen-breakpoint)) {
   .md-and-over {
       display: none !important;
-  
+
 }
 }
 
@@ -227,6 +226,11 @@ input,
 label {
   text-decoration: none !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+// Overshadow useragent styles with a gentle :where
+:where(button, input, select, textarea) {
+  color: inherit;
 }
 
 .slide-up-enter-active,

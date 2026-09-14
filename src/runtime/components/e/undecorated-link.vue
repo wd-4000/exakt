@@ -1,5 +1,8 @@
 <template>
-  <nuxt-link :to="resolvedTo"><slot /></nuxt-link>
+  <nuxt-link
+    class="e-undecorated-link"
+    :to="resolvedTo"
+  ><slot /></nuxt-link>
 </template>
 <script setup lang="ts">
 import { computed } from "#imports";
@@ -30,11 +33,16 @@ const resolvedTo = computed<RouteLocationRaw | undefined>(() => {
   return (localePath && localePath(to)) || to;
 });
 </script>
-<style scoped>
-nuxt-link,
-a {
+<style>
+.e-undecorated-link {
   text-decoration: none !important;
   color: inherit !important;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* iOS data detectors relink phone numbers, dates and addresses in the slot. */
+.e-undecorated-link [x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: none !important;
 }
 </style>
