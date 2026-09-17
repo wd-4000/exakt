@@ -10,6 +10,9 @@ $directions: (
     .m#{$name}-#{$i} {
       margin-#{$direction}: #{0.2rem * $i};
     }
+    .nm#{$name}-#{$i} {
+      margin-#{$direction}: #{-0.2rem * $i};
+    }
   }
 
   .my-#{$i} {
@@ -17,10 +20,21 @@ $directions: (
     margin-bottom: #{0.2rem * $i};
   }
 
+  .nmy-#{$i} {
+    margin-top: #{-0.2rem * $i};
+    margin-bottom: #{-0.2rem * $i};
+  }
+
   .mx-#{$i} {
     margin-left: #{0.2rem * $i};
     margin-right: #{0.2rem * $i};
   }
+
+  .nmy-#{$i} {
+    margin-left: #{-0.2rem * $i};
+    margin-right: #{-0.2rem * $i};
+  }
+
 
   .ma-#{$i} {
     margin: #{0.2rem * $i} !important;
