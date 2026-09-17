@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.88
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.87...v0.0.88)
+
+### 🚀 Enhancements
+
+- Negative margin classes ([11c65c9](https://github.com/wd-4000/exakt/commit/11c65c9))
+
+### 🩹 Fixes
+
+- Buttons and links inheriting blue text color on certain apple systems ([38a6859](https://github.com/wd-4000/exakt/commit/38a6859))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.87
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.86...v0.0.87)
