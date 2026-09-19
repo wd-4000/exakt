@@ -48,6 +48,8 @@
         :autocomplete="autocomplete"
         :spellcheck="spellcheck"
         class="input"
+        :inputmode="inputmode"
+        :pattern="pattern"
         :required="required"
         :placeholder="placeholder"
         :aria-invalid="!!error || undefined"
@@ -144,7 +146,8 @@ const props = withDefaults(
     hint?: string;
     error?: string | boolean;
     id?: string;
-
+    pattern?: string;
+    inputmode?: "search" | "text" | "email" | "tel" | "url" | "none" | "numeric" | "decimal" ;
   }>(),
   {
     id: undefined,
@@ -163,6 +166,8 @@ const props = withDefaults(
     defaultValue: undefined,
     hint: undefined,
     error: undefined,
+    pattern: undefined,
+    inputmode: undefined,
   }
 );
 
