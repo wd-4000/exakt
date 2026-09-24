@@ -209,7 +209,8 @@ const textColor = computed(() => {
     border: transparent solid 0.1rem;
   }
 
-  &:active, &.depressed {
+  &:active, &.depressed,
+  .e-undecorated-link:active > &:not(.e-disabled):not(.loading) {
     .e-btn-content {
       transform: scale(0.85);
     }
