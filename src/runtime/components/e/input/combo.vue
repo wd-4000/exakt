@@ -9,9 +9,10 @@
       @update:visible="dropdownVisible = $event"
       @update:model-value="updateSelection"
     >
+      <!-- "drilling down the props is a bad pattern" Well BOO HOO ! -->
       <e-input-text
         v-model="searchFieldComputed"
-        v-bind="{ label, placeholder, icon, hint,error }"
+        v-bind="{ ...$attrs, width, label, placeholder, icon, hint,error }"
         solid
         :disabled="disabled"
         :class="{ 'e-disabled': props.disabled }"
