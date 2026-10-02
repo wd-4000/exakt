@@ -128,7 +128,11 @@ a {
 
   $color-map: map.set($color-map, "i-outline", color.change($source-i, $lightness: $full + $factor*30%));
 
-  $color-map: map.set($color-map, "bg", $source);
+  @if $light == 1 {
+    $color-map: map.set($color-map, "bg", color.adjust($source, $lightness: -5%));
+  } @else {
+    $color-map: map.set($color-map, "bg", $source);
+  }
   $color-map: map.set($color-map, "fg", color.adjust($source, $lightness: 2%));
 
 
