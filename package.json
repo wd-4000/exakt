@@ -1,6 +1,6 @@
 {
   "name": "@exakt/ui",
-  "version": "0.0.88",
+  "version": "0.0.89",
   "description": "A UI library for Nuxt.js",
   "license": "MIT",
   "type": "module",
@@ -17,7 +17,7 @@
   ],
   "scripts": {
     "prepack": "nuxt-module-build build",
-    "dev": "nuxi dev playground --host 0.0.0.0",
+    "dev": "nuxi dev playground -p 2999",
     "dev:build": "nuxi build playground",
     "dev:prepare": "nuxt-module-build --stub && nuxi prepare playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",

@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.89
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.88...v0.0.89)
+
+### 🚀 Enhancements
+
+- E-input-number: use the crown's recommended number input type https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/ ([86e0143](https://github.com/wd-4000/exakt/commit/86e0143))
+- Drill down e-input-combo props ([b53c044](https://github.com/wd-4000/exakt/commit/b53c044))
+- Darker bg on light color ([cf67b4a](https://github.com/wd-4000/exakt/commit/cf67b4a))
+
+### 🩹 Fixes
+
+- E-btn: fix :active animation when surrounded by e-undecorated-link ([c73ec78](https://github.com/wd-4000/exakt/commit/c73ec78))
+
+### ❤️ Contributors
+
+- WD-4000 ([@wd-4000](https://github.com/wd-4000))
+
 ## v0.0.88
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.87...v0.0.88)
