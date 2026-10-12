@@ -148,6 +148,19 @@
       use-key="name"
     />
 
+    <h3>Switch</h3>
+
+    <e-input-switch v-model="state.switch">
+      Speaker power
+    </e-input-switch>
+    <e-input-switch
+      :model-value="true"
+      disabled
+      class="mb-5"
+    >
+      Disabled
+    </e-input-switch>
+
     <e-input-date type="date" />
 
     <e-input-text
@@ -184,6 +197,7 @@ const state = reactive({
   button1loading: false,
   dialog1: false,
   dropdown: 0,
+  switch: false,
 });
 const chip = ref(false);
 const presets = [
