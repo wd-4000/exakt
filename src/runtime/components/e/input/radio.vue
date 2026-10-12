@@ -96,9 +96,11 @@ const selected = computed({
 
   &~.checkmark::after {
     transform: scale(1) !important;
-    background-color: var(--e-color-primary);
   }
 
+  &:not(:checked)~.checkmark::after {
+    background-color: var(--e-color-primary);
+  }
 
 }
 
@@ -107,19 +109,19 @@ const selected = computed({
   background-color: var(--e-color-primary);
 }
 
-/* Create the indicator (the dot/circle - hidden when not checked) */
+/* Create the indicator */
 .checkmark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the indicator (dot/circle) when checked */
+/* Show the indicator when checked */
 .label input:checked~.checkmark:after {
   transform: scale(1);
 }
 
-/* Style the indicator (dot/circle) */
+/* Style the indicator */
 .label .checkmark:after {
   --size: 0.6rem;
 
