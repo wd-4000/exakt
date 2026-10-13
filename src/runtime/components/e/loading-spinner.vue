@@ -2,9 +2,9 @@
   <div class="cont d-flex flex-center">
     <svg
       class="spinner"
-      viewBox="0 0 66 66" 
-
+      viewBox="0 0 66 66"
       xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
     >
       <circle
         class="op-1"
@@ -74,6 +74,27 @@ $duration: 1.5s;
   transform-origin: center;
   animation: dash $duration ease-in-out infinite,
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: rotator-full $duration*2 linear infinite;
+  }
+
+  .path {
+    animation: none;
+    stroke-dashoffset: calc($offset / 2);
+  }
+
+  @keyframes rotator-full {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 
