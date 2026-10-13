@@ -1,6 +1,34 @@
 # Changelog
 
 
+## v0.0.90
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.89...v0.0.90)
+
+### 🚀 Enhancements
+
+- Switch technology ([aa750aa](https://github.com/wd-4000/exakt/commit/aa750aa))
+- Playground: include button disabled state ([c5a0bf0](https://github.com/wd-4000/exakt/commit/c5a0bf0))
+- E-input-switch: loading ([698886d](https://github.com/wd-4000/exakt/commit/698886d))
+
+### 🩹 Fixes
+
+- E-input-radio indicator disappearing on :active when checked ([8a011e1](https://github.com/wd-4000/exakt/commit/8a011e1))
+- Make loading-spinner decorative and respect prefers-reduced-motion ([66d4b53](https://github.com/wd-4000/exakt/commit/66d4b53))
+- E-btn: don't fully disable button upon loading and don't use the content scale animation when prefers-reduced-motion is on ([9834f88](https://github.com/wd-4000/exakt/commit/9834f88))
+- E-progress-linear: role progressbar and prefers-reduced-motion pulse animation ([7d130bb](https://github.com/wd-4000/exakt/commit/7d130bb))
+- E-input-switch: prefers-reduced-motion ([9929886](https://github.com/wd-4000/exakt/commit/9929886))
+- E-tr-scale: fade on prefers-reduced-motion ([1013959](https://github.com/wd-4000/exakt/commit/1013959))
+- E-input-radio: prefers-reduced-motion ([877fe38](https://github.com/wd-4000/exakt/commit/877fe38))
+
+### 🏡 Chore
+
+- Bump yarn ([29c0cbb](https://github.com/wd-4000/exakt/commit/29c0cbb))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.89
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.88...v0.0.89)
