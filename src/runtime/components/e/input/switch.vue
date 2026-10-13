@@ -83,6 +83,10 @@ const id = useId();
 .switch[aria-checked="true"] {
   &,
   .wrap:hover &:not(:disabled) {
+    background-color: rgba(var(--e-color-primary-rgb), 0.8);
+   // outline-color: var(--e-color-primary);
+  }
+  .wrap &:not(:disabled) {
     background-color: var(--e-color-primary);
    // outline-color: var(--e-color-primary);
   }
@@ -105,6 +109,37 @@ const id = useId();
   &[aria-checked="true"] {
     .knob {
       transform: translateX(calc(var(--translateX) * 0.9)) scale(0.9);
+    }
+  }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  .switch {
+    transition: background-color 0.4s, outline-color 0.4s;
+  }
+
+  .knob {
+    transition: background-color 0.4s;
+    transform: unset;
+  }
+
+  .switch:not(:disabled):active {
+    transform: unset;
+
+    &[aria-checked="false"] {
+      background-color: var(--e-color-i-depressed-2);
+
+      .knob {
+        transform: unset;
+      }
+    }
+    &[aria-checked="true"] {
+      background-color: rgba(var(--e-color-primary-rgb), 0.5) !important;
+
+      .knob {
+        transform: translateX(calc(var(--translateX)));
+      }
     }
   }
 }
