@@ -161,6 +161,12 @@
       Speaker power
     </e-input-switch>
     <e-input-switch
+      v-model="state.switch"
+      loading
+    >
+      Loading
+    </e-input-switch>
+    <e-input-switch
       :model-value="true"
       disabled
       class="mb-5"

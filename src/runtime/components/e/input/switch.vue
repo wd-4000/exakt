@@ -2,12 +2,15 @@
   <div class="wrap d-flex flex-align-center mt-3">
     <button
       :id="id"
+      ref="root"
       type="button"
       role="switch"
       class="switch"
+      :class="{ loading }"
       :aria-checked="!!modelValue"
+      :aria-disabled="loading || undefined"
       :disabled="disabled"
-      @click="emit('update:modelValue', !modelValue)"
+      @click="onClick"
     >
       <span
         class="knob"
@@ -22,12 +25,40 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useId } from '#imports';
+import { onBeforeUnmount, ref, useId, watch } from '#imports';
 
-defineProps<{ modelValue?: boolean, disabled?: boolean }>();
+const props = withDefaults(defineProps<{
+  modelValue?: boolean,
+  disabled?: boolean,
+  loading?: boolean,
+  /** Read out by screen readers when loading starts. */
+  loadingLabel?: string,
+}>(), { loadingLabel: "Loading…" });
 const emit = defineEmits(["update:modelValue"]);
 
 const id = useId();
+
+// Loading keeps the switch focusable so we need to prevent toggling here
+const onClick = () => {
+  if (props.loading) return;
+  emit('update:modelValue', !props.modelValue);
+};
+
+// not in TypeScript's DOM types yet
+const root = ref<HTMLElement & { ariaNotify?: (announcement: string) => void }>();
+let notifyTimer: ReturnType<typeof setTimeout> | undefined;
+
+// don't announce short loads
+watch(
+  () => props.loading,
+  (loading) => {
+    clearTimeout(notifyTimer);
+    if (loading) {
+      notifyTimer = setTimeout(() => root.value?.ariaNotify?.(props.loadingLabel), 300);
+    }
+  },
+);
+onBeforeUnmount(() => clearTimeout(notifyTimer));
 </script>
 <style lang="scss" scoped>
 * {
@@ -75,18 +106,18 @@ const id = useId();
 }
 
 /* Hover */
-.wrap:hover .switch:not(:disabled) {
+.wrap:hover .switch:not(:disabled, .loading) {
   background-color: var(--e-color-elev-2);
 }
 
 /* Checked */
 .switch[aria-checked="true"] {
   &,
-  .wrap:hover &:not(:disabled) {
+  .wrap:hover &:not(:disabled, .loading) {
     background-color: rgba(var(--e-color-primary-rgb), 0.8);
    // outline-color: var(--e-color-primary);
   }
-  .wrap &:not(:disabled) {
+  .wrap &:not(:disabled, .loading) {
     background-color: var(--e-color-primary);
    // outline-color: var(--e-color-primary);
   }
@@ -98,7 +129,7 @@ const id = useId();
 }
 
 /* Pressed */
-.switch:not(:disabled):active {
+.switch:not(:disabled, .loading):active {
   transform: scale(0.9);
 
   &[aria-checked="false"] {
@@ -124,7 +155,7 @@ const id = useId();
     transform: unset;
   }
 
-  .switch:not(:disabled):active {
+  .switch:not(:disabled, .loading):active {
     transform: unset;
 
     &[aria-checked="false"] {
@@ -148,10 +179,20 @@ const id = useId();
   outline: var(--e-color-primary) solid 0.125rem;
 }
 
-.switch:disabled {
+.switch:disabled,
+.switch.loading {
   opacity: 0.5;
-  cursor: not-allowed;
+}
 
+.switch.loading {
+  &,
+  & ~ .label {
+    cursor: progress;
+  }
+}
+
+.switch:disabled {
+  &,
   & ~ .label {
     cursor: not-allowed;
   }
