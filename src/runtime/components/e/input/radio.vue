@@ -137,7 +137,24 @@ const selected = computed({
   transform: scale(0);
   transition: transform 0.25s;
   box-sizing: border-box;
+}
 
+@media (prefers-reduced-motion: reduce) {
+  .label .checkmark:after {
+    transform: scale(1);
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
 
+  .label input:checked~.checkmark:after, .label:active .checkmark:after  {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .label:active input {
+    &~.checkmark {
+      transform: none;
+    }
+  }
 }
 </style>
