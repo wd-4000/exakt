@@ -54,6 +54,13 @@
     </EBtn>
     <EBtn
       :loading="state.button1loading"
+      @click="state.button1loading = !state.button1loading"
+      disabled
+    >
+      Primary disabled button
+    </EBtn>
+    <EBtn
+      :loading="state.button1loading"
       background="i"
       @click="state.button1loading = !state.button1loading"
     >
