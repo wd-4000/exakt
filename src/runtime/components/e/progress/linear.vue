@@ -4,6 +4,7 @@
       v-if="modelValue"
       class="e-progress-linear bg-elev"
       :class="posClass"
+      role="progressbar"
     />
   </Transition>
 </template>
@@ -62,6 +63,24 @@ const posClass = computed(() => {
 
   background-color: var(--e-color-primary);
   animation: progressLinear 1.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .e-progress-linear:before {
+    left: 0;
+    animation: progressPulse 2s ease-in-out infinite;
+  }
+}
+
+@keyframes progressPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
 }
 
 @keyframes progressLinear {
