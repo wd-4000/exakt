@@ -1,10 +1,12 @@
 <template>
   <component
     :is="button ? 'button' : 'div'"
+    ref="root"
     class="e-btn"
     :style="{ width }"
     :type="type"
-    :disabled="disabled || loading"
+    :disabled="button ? disabled : undefined"
+    :aria-disabled="(!button && disabled) || loading || undefined"
     :class="{
       active,
       inactive,
@@ -19,6 +21,7 @@
       'custom-text-color': color && !isRootTextColor,
       ...colorClasses,
     }"
+    @click="onClick"
   >
     <div
       ref="content"
@@ -44,7 +47,7 @@
   </component>
 </template>
 <script lang="ts" setup>
-import { computed, useNuxtApp } from "#imports";
+import { computed, onBeforeUnmount, ref, useNuxtApp, watch } from "#imports";
 const { $exakt } = useNuxtApp();
 const props = withDefaults(
   defineProps<{
@@ -59,12 +62,14 @@ const props = withDefaults(
     block?: boolean;
     loading?: boolean;
     fab?: boolean;
-    /// Pretend the button is being pressed right now
+    /**  Pretend the button is being pressed right now */
     depressed?: boolean;
     disabled?: boolean;
     align?: string;
     type?: "button" | "submit" | "reset";
     button?: boolean;
+    /** Read out by screen readers when loading starts. */
+    loadingLabel?: string;
   }>(),
   {
     type: "button",
@@ -76,8 +81,36 @@ const props = withDefaults(
     align: "center",
     color: undefined,
     button: true,
+    loadingLabel: "Loading…",
   },
 );
+
+const emit = defineEmits<{ click: [event: MouseEvent] }>();
+
+// Loading keeps the button focusable so we need to prevent clicks here
+const onClick = (event: MouseEvent) => {
+  if (props.loading || props.disabled) {
+    event.preventDefault();
+    return;
+  }
+  emit("click", event);
+}
+
+// not in TypeScript's DOM types yet
+const root = ref<HTMLElement & { ariaNotify?: (announcement: string) => void }>();
+let notifyTimer: ReturnType<typeof setTimeout> | undefined;
+
+// don't announce short loads
+watch(
+  () => props.loading,
+  (loading) => {
+    clearTimeout(notifyTimer);
+    if (loading) {
+      notifyTimer = setTimeout(() => root.value?.ariaNotify?.(props.loadingLabel), 300);
+    }
+  },
+);
+onBeforeUnmount(() => clearTimeout(notifyTimer));
 
 
 
@@ -209,12 +242,21 @@ const textColor = computed(() => {
     border: transparent solid 0.1rem;
   }
 
-  &:active, &.depressed,
-  .e-undecorated-link:active > &:not(.e-disabled):not(.loading) {
-    .e-btn-content {
-      transform: scale(0.85);
+  @media (prefers-reduced-motion: no-preference) {
+    &:active:not(.e-disabled):not(.loading), &.depressed,
+    .e-undecorated-link:active > &:not(.e-disabled):not(.loading) {
+      .e-btn-content {
+        transform: scale(0.85);
+      }
     }
   }
+  @media (prefers-reduced-motion: reduce) {
+    &:active:not(.e-disabled):not(.loading), &.depressed,
+    .e-undecorated-link:active > &:not(.e-disabled):not(.loading) {
+      opacity: 0.5;
+    }
+  }
+
 
   &.fab {
     position: fixed;
