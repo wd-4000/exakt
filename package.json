@@ -27,9 +27,9 @@
   },
   "dependencies": {
     "fontverter": "^2.0.0",
-    "harfbuzzjs": "^1.6.0",
+    "harfbuzzjs": "^1.6.3",
     "material-symbols": "latest",
-    "sass-embedded": "^1.103.1"
+    "sass-embedded": "^1.105.2"
   },
   "devDependencies": {
     "@nuxt/eslint": "1.17.0",
@@ -37,17 +37,17 @@
     "@nuxt/kit": "^4.6.2",
     "@nuxt/module-builder": "^1.0.3",
     "@nuxt/schema": "^4.6.2",
-    "@nuxt/test-utils": "^4.1.0",
-    "@types/node": "^20.2.4",
+    "@nuxt/test-utils": "^4.3.4",
+    "@types/node": "^26.6.5",
     "changelogen": "^0.6.2",
-    "eslint": "^10.2.1",
+    "eslint": "^10.13.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-prettier": "^5.5.5",
+    "eslint-plugin-prettier": "^5.5.7",
     "eslint-plugin-unused-imports": "^4.4.1",
     "nuxt": "^4.6.2",
     "typescript": "^6.0.3",
     "vitest": "^4.1.5",
-    "vue-tsc": "^3.2.7"
+    "vue-tsc": "^3.3.13"
   },
   "directories": {
     "test": "test"

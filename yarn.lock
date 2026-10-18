@@ -1032,21 +1032,21 @@ __metadata:
     "@nuxt/kit": "npm:^4.6.2"
     "@nuxt/module-builder": "npm:^1.0.3"
     "@nuxt/schema": "npm:^4.6.2"
-    "@nuxt/test-utils": "npm:^4.1.0"
-    "@types/node": "npm:^20.2.4"
+    "@nuxt/test-utils": "npm:^4.3.4"
+    "@types/node": "npm:^26.6.5"
     changelogen: "npm:^0.6.2"
-    eslint: "npm:^10.2.1"
+    eslint: "npm:^10.13.0"
     eslint-config-prettier: "npm:^10.1.8"
-    eslint-plugin-prettier: "npm:^5.5.5"
+    eslint-plugin-prettier: "npm:^5.5.7"
     eslint-plugin-unused-imports: "npm:^4.4.1"
     fontverter: "npm:^2.0.0"
-    harfbuzzjs: "npm:^1.6.0"
+    harfbuzzjs: "npm:^1.6.3"
     material-symbols: "npm:latest"
     nuxt: "npm:^4.6.2"
-    sass-embedded: "npm:^1.103.1"
+    sass-embedded: "npm:^1.105.2"
     typescript: "npm:^6.0.3"
     vitest: "npm:^4.1.5"
-    vue-tsc: "npm:^3.2.7"
+    vue-tsc: "npm:^3.3.13"
   languageName: unknown
   linkType: soft
 
@@ -1667,7 +1667,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/test-utils@npm:^4.0.0, @nuxt/test-utils@npm:^4.1.0":
+"@nuxt/test-utils@npm:^4.0.0, @nuxt/test-utils@npm:^4.3.4":
   version: 4.3.4
   resolution: "@nuxt/test-utils@npm:4.3.4"
   dependencies:
@@ -2551,12 +2551,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^20.2.4":
-  version: 20.19.43
-  resolution: "@types/node@npm:20.19.43"
+"@types/node@npm:^26.6.5":
+  version: 26.6.5
+  resolution: "@types/node@npm:26.6.5"
   dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10/cb060ea17ef9f1fc9d47cfb00098175b25fc6f6bae3c08a89ec7ba1be3353445ccf8af62d88c591e6413c09713f7705a71684a27ef01d2bccac4be96b00cacac
+    undici-types: "npm:~8.9.0"
+  checksum: 10/03780cc68280b566af47c0f673318e665258dbdcc953737a83c11593424d55aecb8b2642a573da33f76cb4dd5457379548388b78ab284cb3b762030e5d58b252
   languageName: node
   linkType: hard
 
@@ -4949,7 +4949,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^5.5.5":
+"eslint-plugin-prettier@npm:^5.5.7":
   version: 5.5.7
   resolution: "eslint-plugin-prettier@npm:5.5.7"
   dependencies:
@@ -5108,7 +5108,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^10.2.1":
+"eslint@npm:^10.13.0":
   version: 10.13.0
   resolution: "eslint@npm:10.13.0"
   dependencies:
@@ -5786,7 +5786,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"harfbuzzjs@npm:^1.6.0":
+"harfbuzzjs@npm:^1.6.3":
   version: 1.6.3
   resolution: "harfbuzzjs@npm:1.6.3"
   checksum: 10/95dc3f910ed5533202acceb344426832607e2006f7ce0da9250dfb5e6090f483d4e453e0297444a0f16f5dd7a65a8a0cb708cbfd8b896d8a8aa2b23af95c6361
@@ -8637,7 +8637,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass-embedded@npm:^1.103.1":
+"sass-embedded@npm:^1.105.2":
   version: 1.105.2
   resolution: "sass-embedded@npm:1.105.2"
   dependencies:
@@ -9584,10 +9584,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici-types@npm:~6.21.0":
-  version: 6.21.0
-  resolution: "undici-types@npm:6.21.0"
-  checksum: 10/ec8f41aa4359d50f9b59fa61fe3efce3477cc681908c8f84354d8567bb3701fafdddf36ef6bff307024d3feb42c837cf6f670314ba37fc8145e219560e473d14
+"undici-types@npm:~8.9.0":
+  version: 8.9.0
+  resolution: "undici-types@npm:8.9.0"
+  checksum: 10/8785591929de2b71d281c684e915c4a8c41becc225adbf42a3e89148f8b384724a21533494c30a1cbb85b4cbccd088d020788ff4f2d605013eb2863cd47a1639
   languageName: node
   linkType: hard
 
@@ -10376,7 +10376,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vue-tsc@npm:^3.2.7":
+"vue-tsc@npm:^3.3.13":
   version: 3.3.13
   resolution: "vue-tsc@npm:3.3.13"
   dependencies:
