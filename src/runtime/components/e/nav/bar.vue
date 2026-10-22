@@ -13,7 +13,6 @@ nav {
   z-index: 5;
   min-height: 3.5rem;
   border-radius: var(--e-rounded-border-radius);
-  background: var(--e-color-bg);
   display: flex;
   align-items: center;
   gap: 0.4rem;
