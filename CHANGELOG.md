@@ -1,6 +1,24 @@
 # Changelog
 
 
+## v0.0.91
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.90...v0.0.91)
+
+### 🚀 Enhancements
+
+- Expose link styling as e-link-style ([0d7529d](https://github.com/wd-4000/exakt/commit/0d7529d))
+- Transparent nav-bar on desktop ([52da775](https://github.com/wd-4000/exakt/commit/52da775))
+
+### 🏡 Chore
+
+- Update nuxt to 4.6.2 ([7e76d48](https://github.com/wd-4000/exakt/commit/7e76d48))
+- Bump deps ([85f842d](https://github.com/wd-4000/exakt/commit/85f842d))
+
+### ❤️ Contributors
+
+- WD-4000 <preparefordeallocation@outlook.com>
+
 ## v0.0.90
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.89...v0.0.90)
