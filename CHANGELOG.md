@@ -5,31 +5,27 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.90...v0.0.91)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Expose link styling as e-link-style ([0d7529d](https://github.com/wd-4000/exakt/commit/0d7529d))
 - Transparent nav-bar on desktop ([52da775](https://github.com/wd-4000/exakt/commit/52da775))
 
-### 🏡 Chore
+### Chore
 
 - Update nuxt to 4.6.2 ([7e76d48](https://github.com/wd-4000/exakt/commit/7e76d48))
 - Bump deps ([85f842d](https://github.com/wd-4000/exakt/commit/85f842d))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.90
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.89...v0.0.90)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Switch technology ([aa750aa](https://github.com/wd-4000/exakt/commit/aa750aa))
 - Playground: include button disabled state ([c5a0bf0](https://github.com/wd-4000/exakt/commit/c5a0bf0))
 - E-input-switch: loading ([698886d](https://github.com/wd-4000/exakt/commit/698886d))
 
-### 🩹 Fixes
+### Fixes
 
 - E-input-radio indicator disappearing on :active when checked ([8a011e1](https://github.com/wd-4000/exakt/commit/8a011e1))
 - Make loading-spinner decorative and respect prefers-reduced-motion ([66d4b53](https://github.com/wd-4000/exakt/commit/66d4b53))
@@ -39,314 +35,234 @@
 - E-tr-scale: fade on prefers-reduced-motion ([1013959](https://github.com/wd-4000/exakt/commit/1013959))
 - E-input-radio: prefers-reduced-motion ([877fe38](https://github.com/wd-4000/exakt/commit/877fe38))
 
-### 🏡 Chore
+### Chore
 
 - Bump yarn ([29c0cbb](https://github.com/wd-4000/exakt/commit/29c0cbb))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.89
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.88...v0.0.89)
 
-### 🚀 Enhancements
+### Enhancements
 
 - E-input-number: use the crown's recommended number input type https://technology.blog.gov.uk/2020/02/24/why-the-gov-uk-design-system-team-changed-the-input-type-for-numbers/ ([86e0143](https://github.com/wd-4000/exakt/commit/86e0143))
 - Drill down e-input-combo props ([b53c044](https://github.com/wd-4000/exakt/commit/b53c044))
 - Darker bg on light color ([cf67b4a](https://github.com/wd-4000/exakt/commit/cf67b4a))
 
-### 🩹 Fixes
+### Fixes
 
 - E-btn: fix :active animation when surrounded by e-undecorated-link ([c73ec78](https://github.com/wd-4000/exakt/commit/c73ec78))
-
-### ❤️ Contributors
-
-- WD-4000 ([@wd-4000](https://github.com/wd-4000))
 
 ## v0.0.88
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.87...v0.0.88)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Negative margin classes ([11c65c9](https://github.com/wd-4000/exakt/commit/11c65c9))
 
-### 🩹 Fixes
+### Fixes
 
 - Buttons and links inheriting blue text color on certain apple systems ([38a6859](https://github.com/wd-4000/exakt/commit/38a6859))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.87
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.86...v0.0.87)
 
-### 🚀 Enhancements
+### Enhancements
 
 - E-undecorated-link: i18n ([c8be034](https://github.com/wd-4000/exakt/commit/c8be034))
 
-### 🩹 Fixes
+### Fixes
 
 - E-btn and e-icon-button transparent background incorrectly overriding color ([41ac871](https://github.com/wd-4000/exakt/commit/41ac871))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.86
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.85...v0.0.86)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Improve light i colors ([f4c82c3](https://github.com/wd-4000/exakt/commit/f4c82c3))
 - E-nav-btn: disabled ([ab9cc09](https://github.com/wd-4000/exakt/commit/ab9cc09))
 - Slimmer e-undecorated-link ([20a03f2](https://github.com/wd-4000/exakt/commit/20a03f2))
 
-### 🩹 Fixes
+### Fixes
 
 - E-input-radio useids behavior ([1f3abba](https://github.com/wd-4000/exakt/commit/1f3abba))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.85
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.84...v0.0.85)
 
-### 🩹 Fixes
+### Fixes
 
 - I18n nav-btn ([289df48](https://github.com/wd-4000/exakt/commit/289df48))
-
-### ❤️ Contributors
-
-- WD-4000 ([@wd-4000](https://github.com/wd-4000))
 
 ## v0.0.84
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.83...v0.0.84)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Icon font preloading ([12fd05a](https://github.com/wd-4000/exakt/commit/12fd05a))
-
-### ❤️ Contributors
-
-- WD-4000 ([@wd-4000](https://github.com/wd-4000))
 
 ## v0.0.83
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.82...v0.0.83)
 
-### 🚀 Enhancements
+### Enhancements
 
 - See if we can pull off switching to sass-embedded ([0d1c5b2](https://github.com/wd-4000/exakt/commit/0d1c5b2))
 - Icon font subsetting ([c9866a9](https://github.com/wd-4000/exakt/commit/c9866a9))
 
-### 🏡 Chore
+### Chore
 
 - Bump deps ([d0fc7bd](https://github.com/wd-4000/exakt/commit/d0fc7bd))
-
-### ❤️ Contributors
-
-- WD-4000 ([@wd-4000](https://github.com/wd-4000))
 
 ## v0.0.82
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.81...v0.0.82)
 
-### 🚀 Enhancements
+### Enhancements
 
 - E-dialog comment that would help with keyboard offset but only on chromium and also messes up UX in other fun ways which is why it is a comment ([f927c4c](https://github.com/wd-4000/exakt/commit/f927c4c))
 
-### 🩹 Fixes
+### Fixes
 
 - Destroy e-input-combo using responsive dialog styling and opaque focus sheet on mobile ([2854ca6](https://github.com/wd-4000/exakt/commit/2854ca6))
 - E-input-radio useIds ([6e65fb2](https://github.com/wd-4000/exakt/commit/6e65fb2))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.81
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.80...v0.0.81)
 
-### 🚀 Enhancements
+### Enhancements
 
 - E-btn depression ([81821c8](https://github.com/wd-4000/exakt/commit/81821c8))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.80
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.79...v0.0.80)
 
-### 🩹 Fixes
+### Fixes
 
 - Color- and bg- precedence ([73bcafb](https://github.com/wd-4000/exakt/commit/73bcafb))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.79
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.78...v0.0.79)
 
-### 🚀 Enhancements
+### Enhancements
 
 - IconButton: add active and background props ([c514943](https://github.com/wd-4000/exakt/commit/c514943))
 - Select: use button element, add ARIA and disabled ([d13cbf7](https://github.com/wd-4000/exakt/commit/d13cbf7))
 - Text: support custom id prop ([18a7655](https://github.com/wd-4000/exakt/commit/18a7655))
 
-### 🩹 Fixes
+### Fixes
 
 - Plugin: support elev-2/3 in parseColor ([b6ab938](https://github.com/wd-4000/exakt/commit/b6ab938))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.78
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.77...v0.0.78)
 
-### 🚀 Enhancements
+### Enhancements
 
 - E-input-dropdown (& descendants): callback on item shadows select ([62d37a8](https://github.com/wd-4000/exakt/commit/62d37a8))
 
-### 🩹 Fixes
+### Fixes
 
 - E-input-radio: maybe actually fix secondary key ([20dbf43](https://github.com/wd-4000/exakt/commit/20dbf43))
 - DropdownItem: why not make ID also nullable? ([4a21f0e](https://github.com/wd-4000/exakt/commit/4a21f0e))
 - E-input-radio: secondary key type ([b0b2657](https://github.com/wd-4000/exakt/commit/b0b2657))
 
-### 🏡 Chore
+### Chore
 
 - Prepack: specify the build command explicitly ([2a65211](https://github.com/wd-4000/exakt/commit/2a65211))
 - Bump nuxt to 4.4.8 ([418ce21](https://github.com/wd-4000/exakt/commit/418ce21))
-
-### ❤️ Contributors
-
-- WD-4000 ([@wd-4000](https://github.com/wd-4000))
 
 ## v0.0.77
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.76...v0.0.77)
 
-### 🩹 Fixes
+### Fixes
 
 - E-input-radio: make secondary key properly optional ([8e5e520](https://github.com/wd-4000/exakt/commit/8e5e520))
 - E-undecorated-link: make to nullable ([db3b141](https://github.com/wd-4000/exakt/commit/db3b141))
 - E-input-combo: Fix item type ([0c1438c](https://github.com/wd-4000/exakt/commit/0c1438c))
 
-### ❤️ Contributors
-
-- WD-4000 ([@wd-4000](https://github.com/wd-4000))
-
 ## v0.0.76
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.75...v0.0.76)
 
-### 🩹 Fixes
+### Fixes
 
 - E-input-combo: take null as value ([b1daa00](https://github.com/wd-4000/exakt/commit/b1daa00))
 - E-input-radio: improve typing ([2536bf5](https://github.com/wd-4000/exakt/commit/2536bf5))
-
-### ❤️ Contributors
-
-- WD-4000 ([@wd-4000](https://github.com/wd-4000))
 
 ## v0.0.75
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.74...v0.0.75)
 
-### 🩹 Fixes
+### Fixes
 
 - Also accept null for optional modelValue props ([0dd12fe](https://github.com/wd-4000/exakt/commit/0dd12fe))
 - E-input-select: allow string (for useIds=true) ([d8ae138](https://github.com/wd-4000/exakt/commit/d8ae138))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.74
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.73...v0.0.74)
 
-### 🩹 Fixes
+### Fixes
 
 - E-dropdown, e-select: nullable icon and model value ([60afce5](https://github.com/wd-4000/exakt/commit/60afce5))
 
-### 🏡 Chore
+### Chore
 
 - Update deps ([5f4bb6f](https://github.com/wd-4000/exakt/commit/5f4bb6f))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.73
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.72...v0.0.73)
 
-### 🩹 Fixes
+### Fixes
 
 - Remove extraneous blurhash dependency ([afb2b5d](https://github.com/wd-4000/exakt/commit/afb2b5d))
 - Add id to dropdownItem type ([b859737](https://github.com/wd-4000/exakt/commit/b859737))
 - Kind of fix eslint ([b953408](https://github.com/wd-4000/exakt/commit/b953408))
 - More type issues in $exakt and components ([ec6b1b1](https://github.com/wd-4000/exakt/commit/ec6b1b1))
 
-### 🏡 Chore
+### Chore
 
 - Bump nuxt to 4.4.4 ([4a10b14](https://github.com/wd-4000/exakt/commit/4a10b14))
 - Bump deps ([85d6fe3](https://github.com/wd-4000/exakt/commit/85d6fe3))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.72
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.71...v0.0.72)
 
-### 🩹 Fixes
+### Fixes
 
 - Component type errors ([166a9f5](https://github.com/wd-4000/exakt/commit/166a9f5))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.71
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.70...v0.0.71)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Destroy lodash dependency ([e20134f](https://github.com/wd-4000/exakt/commit/e20134f))
 - E-undecorated-link: make to optional ([5b966bf](https://github.com/wd-4000/exakt/commit/5b966bf))
 
-### 🩹 Fixes
+### Fixes
 
 - E-undecorated-link: use nuxt-link instead of router-link ([f793fbf](https://github.com/wd-4000/exakt/commit/f793fbf))
-
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
 
 ## v0.0.70
 
 
-### 🚀 Enhancements
+### Enhancements
 
 - Clickable-card component ([580bd39](https://github.com/wd-4000/exakt/commit/580bd39))
 - Support more text than john pork in sidebar ([0654f46](https://github.com/wd-4000/exakt/commit/0654f46))
@@ -373,7 +289,7 @@
 - E-input-text: add hint and error ([216b99d](https://github.com/wd-4000/exakt/commit/216b99d))
 - BREAKING: e-input-combo: hint and error, old hint attribute renamed to dropdownHint ([e85e16e](https://github.com/wd-4000/exakt/commit/e85e16e))
 
-### 🩹 Fixes
+### Fixes
 
 - Dropdown ([ece78b3](https://github.com/wd-4000/exakt/commit/ece78b3))
 - Fab padding on safari ([451986e](https://github.com/wd-4000/exakt/commit/451986e))
@@ -399,7 +315,7 @@
 - Weird icon size for nav-btn ([858a557](https://github.com/wd-4000/exakt/commit/858a557))
 - E-dropdown: make activator stretchy (also impacts e-input-combo) ([d2dc833](https://github.com/wd-4000/exakt/commit/d2dc833))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.8 ([215948c](https://github.com/wd-4000/exakt/commit/215948c))
 - **release:** V0.0.9 ([fba7ad7](https://github.com/wd-4000/exakt/commit/fba7ad7))
@@ -475,64 +391,51 @@
 - Bump nuxt to 4.12 ([55b55e0](https://github.com/wd-4000/exakt/commit/55b55e0))
 - **release:** V0.0.69 ([88b7e97](https://github.com/wd-4000/exakt/commit/88b7e97))
 
-### ❤️ Contributors
-
-- WD-4000 <preparefordeallocation@outlook.com>
-
 ## v0.0.69
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.68...v0.0.69)
 
-### 🚀 Enhancements
+### Enhancements
 
 - (?) bottom nav text enlargement ([7eb60f6](https://github.com/wd-4000/exakt/commit/7eb60f6))
 - E-input-text: add hint and error ([d1e491b](https://github.com/wd-4000/exakt/commit/d1e491b))
 - BREAKING: e-input-combo: hint and error, old hint attribute renamed to dropdownHint ([c661761](https://github.com/wd-4000/exakt/commit/c661761))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.68 ([e284571](https://github.com/wd-4000/exakt/commit/e284571))
 - Bump yarn to 4.12.0 ([91b8268](https://github.com/wd-4000/exakt/commit/91b8268))
 - Bump nuxt to 4.12 ([9798747](https://github.com/wd-4000/exakt/commit/9798747))
 
-### ❤️ Contributors
-
-- Microplastic@pronounmail.com <microplastic@157-003.eduroam.rwth-aachen.de>
-- Jorb <hello@jorb.cc>
-
 ## v0.0.68
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.67...v0.0.68)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Don't horizontally align e-alert, tweak stage 2 icon ([c8fb6e1](https://github.com/wd-4000/exakt/commit/c8fb6e1))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.67 ([c005c99](https://github.com/wd-4000/exakt/commit/c005c99))
 - Bump nuxt to 4.3.1 ([ca11ef1](https://github.com/wd-4000/exakt/commit/ca11ef1))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.67
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.65...v0.0.67)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Support IDs in e-dropdown and e-input-select ([a82b6b7](https://github.com/wd-4000/exakt/commit/a82b6b7))
 - Tweak light mode colors ([af0ede0](https://github.com/wd-4000/exakt/commit/af0ede0))
 - More polished nav ([44a95bc](https://github.com/wd-4000/exakt/commit/44a95bc))
 
-### 🩹 Fixes
+### Fixes
 
 - Weird icon size for nav-btn ([0f5d2c0](https://github.com/wd-4000/exakt/commit/0f5d2c0))
 - E-dropdown: make activator stretchy (also impacts e-input-combo) ([a7f6cf7](https://github.com/wd-4000/exakt/commit/a7f6cf7))
 
-### 🏡 Chore
+### Chore
 
 - Lint? ([33cc649](https://github.com/wd-4000/exakt/commit/33cc649))
 - Yarn install ([fab8cc4](https://github.com/wd-4000/exakt/commit/fab8cc4))
@@ -540,68 +443,48 @@
 - Bump nuxt to 4.1.1 ([dff0aaf](https://github.com/wd-4000/exakt/commit/dff0aaf))
 - Bump nuxt to 4.1.3 ([ca93471](https://github.com/wd-4000/exakt/commit/ca93471))
 
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
-
 ## v0.0.65
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.64...v0.0.65)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Select ([c531ac5](https://github.com/wd-4000/exakt/commit/c531ac5))
 
-### 🏡 Chore
+### Chore
 
 - Lint ([0dcca72](https://github.com/wd-4000/exakt/commit/0dcca72))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.64
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.63...v0.0.64)
 
-### 🩹 Fixes
+### Fixes
 
 - Remove uglyyyy underline on dropdowns with hrefs ([68a5647](https://github.com/wd-4000/exakt/commit/68a5647))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.63
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.62...v0.0.63)
 
-### 🏡 Chore
+### Chore
 
 - Lint ([e9ea32a](https://github.com/wd-4000/exakt/commit/e9ea32a))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.62
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.61...v0.0.62)
 
-### 🩹 Fixes
+### Fixes
 
 - Slightly improve dropdown x offset ([3e2214d](https://github.com/wd-4000/exakt/commit/3e2214d))
 - Really not great handling of icon-only nav buttons ([a77f21b](https://github.com/wd-4000/exakt/commit/a77f21b))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.61
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.58...v0.0.61)
 
-### 🚀 Enhancements
+### Enhancements
 
 - E-input-checkbox ([2525341](https://github.com/wd-4000/exakt/commit/2525341))
 - E-input-combo (but it actually kind of works) ([22b2b4b](https://github.com/wd-4000/exakt/commit/22b2b4b))
@@ -609,7 +492,7 @@
 - Container size settings ([cb35eea](https://github.com/wd-4000/exakt/commit/cb35eea))
 - Improve e-dialog ([f49f345](https://github.com/wd-4000/exakt/commit/f49f345))
 
-### 🩹 Fixes
+### Fixes
 
 - Fix and slightly break dropdown ([4fda47b](https://github.com/wd-4000/exakt/commit/4fda47b))
 - E-input-checkbox ([577f53a](https://github.com/wd-4000/exakt/commit/577f53a))
@@ -617,128 +500,96 @@
 - E-input-text: null values not getting modified ([4b90709](https://github.com/wd-4000/exakt/commit/4b90709))
 - E-input-text: accidental quadruple equals ([76128df](https://github.com/wd-4000/exakt/commit/76128df))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.58 ([5ef9560](https://github.com/wd-4000/exakt/commit/5ef9560))
 - Bump yarn and nuxt ([2007403](https://github.com/wd-4000/exakt/commit/2007403))
 - Bump nuxt to 3.16.2 ([3175176](https://github.com/wd-4000/exakt/commit/3175176))
 
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
-
 ## v0.0.58
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.56...v0.0.58)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Improve nav on mobile ([8c935e2](https://github.com/wd-4000/exakt/commit/8c935e2))
 - Migrate to @use rules instead of @import ([7b3c114](https://github.com/wd-4000/exakt/commit/7b3c114))
 
-### 🩹 Fixes
+### Fixes
 
 - Weird behavior with default value ([941d2ea](https://github.com/wd-4000/exakt/commit/941d2ea))
 - D-flex for e-chip ([795c129](https://github.com/wd-4000/exakt/commit/795c129))
 - Legacy scss bickering ([992c23b](https://github.com/wd-4000/exakt/commit/992c23b))
 - Properly import material-symbols ([f373147](https://github.com/wd-4000/exakt/commit/f373147))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.56 ([704b5d0](https://github.com/wd-4000/exakt/commit/704b5d0))
 - Bump nuxt to 3.14.1592 ([ef58cae](https://github.com/wd-4000/exakt/commit/ef58cae))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.56
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.55...v0.0.56)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Wrap text input to make click listener work ([068920e](https://github.com/wd-4000/exakt/commit/068920e))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.55 ([d58b217](https://github.com/wd-4000/exakt/commit/d58b217))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.55
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.54...v0.0.55)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Default content for input ([4f2c4f9](https://github.com/wd-4000/exakt/commit/4f2c4f9))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.54
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.53...v0.0.54)
 
-### 🩹 Fixes
+### Fixes
 
 - Some stuff ([715e695](https://github.com/wd-4000/exakt/commit/715e695))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.53 ([096d946](https://github.com/wd-4000/exakt/commit/096d946))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.53
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.52...v0.0.53)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Modify loading spinner size ([50f76cd](https://github.com/wd-4000/exakt/commit/50f76cd))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.52 ([f426d26](https://github.com/wd-4000/exakt/commit/f426d26))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.52
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.51...v0.0.52)
 
-### 🩹 Fixes
+### Fixes
 
 - Text input placeholder ([19eb69e](https://github.com/wd-4000/exakt/commit/19eb69e))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.51 ([1be71f9](https://github.com/wd-4000/exakt/commit/1be71f9))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.51
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.50...v0.0.51)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.50 ([4f5da42](https://github.com/wd-4000/exakt/commit/4f5da42))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.50
 
@@ -748,13 +599,9 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.48...v0.0.49)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.48 ([ce79b43](https://github.com/wd-4000/exakt/commit/ce79b43))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.48
 
@@ -768,47 +615,35 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.45...v0.0.46)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.45 ([573a67f](https://github.com/wd-4000/exakt/commit/573a67f))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.45
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.44...v0.0.45)
 
-### 🩹 Fixes
+### Fixes
 
 - Opacity reduction @hover on transparent buttons ([c120ed9](https://github.com/wd-4000/exakt/commit/c120ed9))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.44 ([6f1334b](https://github.com/wd-4000/exakt/commit/6f1334b))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.44
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.43...v0.0.44)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Hr ([047cee2](https://github.com/wd-4000/exakt/commit/047cee2))
 - Bg-* classes mandate text color feat: less js-intensive buttons ([332de13](https://github.com/wd-4000/exakt/commit/332de13))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.43 ([c0a8a5c](https://github.com/wd-4000/exakt/commit/c0a8a5c))
 - Lint ([03b4838](https://github.com/wd-4000/exakt/commit/03b4838))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.43
 
@@ -822,13 +657,9 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.40...v0.0.41)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.40 ([c73281d](https://github.com/wd-4000/exakt/commit/c73281d))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.40
 
@@ -842,71 +673,51 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.37...v0.0.38)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.37 ([b91fb48](https://github.com/wd-4000/exakt/commit/b91fb48))
 - Lint ([fed03b2](https://github.com/wd-4000/exakt/commit/fed03b2))
-
-### ❤️ Contributors
-
-- Jorb <hello@jorb.cc>
 
 ## v0.0.37
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.36...v0.0.37)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.36 ([09e6fcc](https://github.com/wd-4000/exakt/commit/09e6fcc))
 - Lint ([b6bbf5d](https://github.com/wd-4000/exakt/commit/b6bbf5d))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.36
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.35...v0.0.36)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.35 ([8f79318](https://github.com/wd-4000/exakt/commit/8f79318))
-
-### ❤️ Contributors
-
-- Wd4000 <git@jorb.cc>
 
 ## v0.0.35
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.34...v0.0.35)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Add yellow ([a8ed346](https://github.com/wd-4000/exakt/commit/a8ed346))
 
-### 🩹 Fixes
+### Fixes
 
 - Change focus sheet height ([e0166b0](https://github.com/wd-4000/exakt/commit/e0166b0))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.34 ([bc98139](https://github.com/wd-4000/exakt/commit/bc98139))
-
-### ❤️ Contributors
-
-- Wd4000 <git@jorb.cc>
 
 ## v0.0.34
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.33...v0.0.34)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.33 ([680b467](https://github.com/wd-4000/exakt/commit/680b467))
-
-### ❤️ Contributors
-
-- Wd4000 <git@jorb.cc>
 
 ## v0.0.33
 
@@ -916,14 +727,10 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.30...v0.0.32)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.30 ([e81ccfe](https://github.com/wd-4000/exakt/commit/e81ccfe))
 - **release:** V0.0.31 ([775d2b0](https://github.com/wd-4000/exakt/commit/775d2b0))
-
-### ❤️ Contributors
-
-- Wd4000 <git@jorb.cc>
 
 ## v0.0.31
 
@@ -933,158 +740,118 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.29...v0.0.30)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.29 ([d1dac96](https://github.com/wd-4000/exakt/commit/d1dac96))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.29
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.28...v0.0.29)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Sidebar: slightly janky active tab indicator ([0f20064](https://github.com/wd-4000/exakt/commit/0f20064))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.28 ([d7d49d7](https://github.com/wd-4000/exakt/commit/d7d49d7))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.28
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.27...v0.0.28)
 
-### 🩹 Fixes
+### Fixes
 
 - Forgor to commit ([62291fe](https://github.com/wd-4000/exakt/commit/62291fe))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.27 ([e24ff6e](https://github.com/wd-4000/exakt/commit/e24ff6e))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.27
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.26...v0.0.27)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Support more text than john pork in sidebar ([0e4f3dd](https://github.com/wd-4000/exakt/commit/0e4f3dd))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.26 ([91fe667](https://github.com/wd-4000/exakt/commit/91fe667))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.26
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.25...v0.0.26)
 
-### 🩹 Fixes
+### Fixes
 
 - Lint and prepack ([1851510](https://github.com/wd-4000/exakt/commit/1851510))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.25 ([c3aa51b](https://github.com/wd-4000/exakt/commit/c3aa51b))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.25
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.24...v0.0.25)
 
-### 🚀 Enhancements
+### Enhancements
 
 - Clickable-card component ([105c466](https://github.com/wd-4000/exakt/commit/105c466))
 
-### 🩹 Fixes
+### Fixes
 
 - Sidebar break: button (potentially) ([88e225d](https://github.com/wd-4000/exakt/commit/88e225d))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.24 ([68c4627](https://github.com/wd-4000/exakt/commit/68c4627))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.24
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.23...v0.0.24)
 
-### 🩹 Fixes
+### Fixes
 
 - Fab padding on safari ([0120871](https://github.com/wd-4000/exakt/commit/0120871))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.23 ([ebc70c2](https://github.com/wd-4000/exakt/commit/ebc70c2))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.23
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.21...v0.0.23)
 
-### 🩹 Fixes
+### Fixes
 
 - Dropdown ([df71b3f](https://github.com/wd-4000/exakt/commit/df71b3f))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.21 ([d2a78f6](https://github.com/wd-4000/exakt/commit/d2a78f6))
 - **release:** V0.0.22 ([120621a](https://github.com/wd-4000/exakt/commit/120621a))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.22
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.21...v0.0.22)
 
-### 🩹 Fixes
+### Fixes
 
 - Dropdown ([df71b3f](https://github.com/wd-4000/exakt/commit/df71b3f))
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.21 ([d2a78f6](https://github.com/wd-4000/exakt/commit/d2a78f6))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.21
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.20...v0.0.21)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.20 ([571af79](https://github.com/wd-4000/exakt/commit/571af79))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.20
 
@@ -1102,13 +869,9 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.16...v0.0.17)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.16 ([efea542](https://github.com/wd-4000/exakt/commit/efea542))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.16
 
@@ -1118,28 +881,20 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.13...v0.0.15)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.14 ([2523a2d](https://github.com/wd-4000/exakt/commit/2523a2d))
 - **release:** V0.0.13 ([bef897e](https://github.com/wd-4000/exakt/commit/bef897e))
 - **release:** V0.0.14 ([9770bab](https://github.com/wd-4000/exakt/commit/9770bab))
 
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
-
 ## v0.0.14
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.13...v0.0.14)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.14 ([2523a2d](https://github.com/wd-4000/exakt/commit/2523a2d))
 - **release:** V0.0.13 ([bef897e](https://github.com/wd-4000/exakt/commit/bef897e))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.13
 
@@ -1149,26 +904,17 @@
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.9...v0.0.14)
 
-### 🏡 Chore
+### Chore
 
 - **release:** V0.0.9 ([419151c](https://github.com/wd-4000/exakt/commit/419151c))
-
-### ❤️ Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
 
 ## v0.0.9
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.8...v0.0.9)
 
 
-### 🏡 Chore
+### Chore
 
   - **release:** V0.0.8 ([7a2ec30](https://github.com/wd-4000/exakt/commit/7a2ec30))
 
-### ❤️  Contributors
-
-- Wd4000 ([@wd-4000](http://github.com/wd-4000))
-
 ## v0.0.8
-

@@ -13,4 +13,5 @@ export default {
     style: { title: "Styles" },
     ci: { title: "CI" },
   },
+  noAuthors: true,
 };
