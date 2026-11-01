@@ -100,7 +100,7 @@ const props = withDefaults(
     useIds: false,
     hint: undefined,
     title: undefined,
-    responsive: true,
+    responsive: false,
   },
 );
 
