@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.92
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.91...v0.0.92)
+
+### Enhancements
+
+- Dropdowns not responsive by default ([9b43416](https://github.com/wd-4000/exakt/commit/9b43416))
+
+### Chore
+
+- Bump nuxt to 4.6.4 ([af4510c](https://github.com/wd-4000/exakt/commit/af4510c))
+
 ## v0.0.91
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.90...v0.0.91)
