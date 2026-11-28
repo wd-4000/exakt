@@ -32,8 +32,7 @@
           v-for="(item, i) in items"
           :key="i"
           class="fullwidth"
-          :href="item.href ? item.href : undefined"
-          :to="item.to ? item.to : undefined"
+          v-bind="item.to ? { to: item.to } : item.href ? { href: item.href } : {}"
         >
           <e-btn
             ref="btn"
