@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.93
+
+[compare changes](https://github.com/wd-4000/exakt/compare/v0.0.92...v0.0.93)
+
+### Fixes
+
+- E-dropdown: don't pass href to e-undecorated-link unless needed ([30c84d5](https://github.com/wd-4000/exakt/commit/30c84d5))
+
+### Chore
+
+- Bump nuxt to 4.7 ([4f3ea87](https://github.com/wd-4000/exakt/commit/4f3ea87))
+
 ## v0.0.92
 
 [compare changes](https://github.com/wd-4000/exakt/compare/v0.0.91...v0.0.92)
